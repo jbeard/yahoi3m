@@ -1,0 +1,94 @@
+division = {
+	name = "15. Lujun"
+	location = 9143
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+corps = {
+	name = "11. Jun"
+	location = 9143
+	regiment = { type = hq_brigade name = "11. Jun HQ" historical_model = 0 }
+	division= {
+		name = "Xin 7. Bubing Shi"
+		location = 9143
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+	}
+	division= {
+		name = "Xin 7. Qibing Shi"
+		location = 9143
+		regiment = { type = cavalry_brigade historical_model = 0 }
+		regiment = { type = cavalry_brigade historical_model = 0 }
+	}
+	division= {
+		name = "10. Duli Lü"
+		location = 9143
+		regiment = { type = infantry_brigade historical_model = 0 }
+		regiment = { type = infantry_brigade historical_model = 0 }
+	}
+}
+corps = {
+	name = "Xin 2. Jun"
+	location = 9115
+	regiment = { type = hq_brigade name = "Xin 2. Jun HQ" historical_model = 0 }
+	division= {
+		name = "Xin 9. Bubing Shi"
+		location = 9115
+		regiment = { type = infantry_brigade historical_model = 0 }
+		regiment = { type = infantry_brigade historical_model = 0 }
+	}
+	division= {
+		name = "1. Qibing Lü"
+		location = 9115
+		regiment = { type = cavalry_brigade historical_model = 0 }
+		regiment = { type = cavalry_brigade historical_model = 0 }
+	}
+}
+division = {
+	name = "Tunganistan Jun"
+	location = 9115
+	regiment = { type = militia_brigade historical_model = 0 }
+	regiment = { type = militia_brigade historical_model = 0 }
+}
+division = {
+	name = "3. Jun"
+	location = 9115
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "10. Jun"
+	location = 9142
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "15. Jun"
+	location = 9143
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "25. Jun"
+	location = 7390
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "31. Jun"
+	location = 9171
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "41. Jun"
+	location = 7404
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "25. Bubing Shi"
+	location = 7404
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}

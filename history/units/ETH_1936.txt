@@ -1,0 +1,67 @@
+corps = {
+	name = "Imperial Army"
+	location = 9943
+	regiment = { type = hq_brigade name = "Imperial Army HQ" historical_model = 0 }
+	division= {
+		name = "Imperial Bodyguard"
+		location = 9943
+		regiment = { type = infantry_brigade historical_model = 0 }
+		regiment = { type = infantry_brigade historical_model = 0 }
+		regiment = { type = infantry_brigade historical_model = 0 }
+	}
+	division= {
+		name = "1. Division"
+		location = 9943
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+	}
+	division= {
+		name = "2. Division"
+		location = 9943
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+	}
+}
+corps = {
+	name = "1. Militia Corps"
+	location = 9979
+	regiment = { type = hq_brigade name = "1. Militia Corps HQ" historical_model = 0 }
+	division= {
+		name = "1. Militia"
+		location = 9979
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+	}
+	division= {
+		name = "2. Militia"
+		location = 9979
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+	}
+}
+corps = {
+	name = "2. Militia Corps"
+	location = 9887
+	regiment = { type = hq_brigade name = "2. Militia Corps HQ" historical_model = 0 }
+	division= {
+		name = "3. Militia"
+		location = 9887
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+	}
+	division= {
+		name = "4. Militia"
+		location = 9887
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+		regiment = { type = militia_brigade historical_model = 0 }
+	}
+}
+
+
+

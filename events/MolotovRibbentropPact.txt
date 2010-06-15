@@ -1,0 +1,671 @@
+###########################
+# Molotov-Ribbentrop Pact #
+###########################
+# Soviet - Reaction Event
+country_event = {
+
+	id = 1501
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1501"
+	desc = "EVTDESC1501"
+	picture = "Mol_Rib"
+
+	option = {
+		name = "EVTOPTA1501"			# A Most Excellent Proposition
+		ai_chance = { factor = 100 }
+
+		# Estonia
+		EST_820 = { add_core = SOV }
+		EST_906 = { add_core = SOV }
+		EST_985 = { add_core = SOV }
+		EST_1062 = { add_core = SOV }
+		
+		# Latvia
+		LAT_1261 = { add_core = SOV }
+		LAT_1096 = { add_core = SOV }
+		LAT_1220 = { add_core = SOV }
+		LAT_1222 = { add_core = SOV }
+		LAT_1098 = { add_core = SOV }
+		LAT_1140 = { add_core = SOV }
+		LAT_1311 = { add_core = SOV }
+
+		# Lithuania
+		LIT_1395 = { add_core = SOV }
+		LIT_1577 = { add_core = SOV }
+		LIT_1531 = { add_core = SOV }
+		LIT_1355 = { add_core = SOV }
+		LIT_1442 = { add_core = SOV }
+		LIT_1308 = { add_core = SOV }
+
+		add_core = 45
+		# Finland
+		add_core = 58
+		add_core = 90
+		add_core = 472
+		add_core = 507
+		add_core = 542
+		add_core = 543
+		add_core = 581
+		FIN_698 = { add_core = SOV }
+
+		# Bessarabia
+		ROM_3307 = { add_core = SOV }
+		add_core = 2902
+		add_core = 2969
+		add_core = 3308
+		add_core = 3377
+		add_core = 3376
+		add_core = 3446
+		add_core = 3038
+		add_core = 3106
+		add_core = 3172
+
+		relation = { who = GER value = 15 }
+		relation = { who = FIN value = -5 }
+		relation = { who = POL value = -50 }
+		relation = { who = LIT value = -10 }
+		relation = { who = LAT value = -10}
+		relation = { who = EST value = -10 }
+		neutrality = -5
+		GER = { country_event = 1502 }
+	}
+	option = {
+		name = "EVTOPTB1501"			# No deals with the enemies of the Workers!
+		relation = { who = GER value = -15 }
+		GER = { country_event = 1503 }
+	}
+	option = {
+		name = "EVTOPTC1501"			# Propose an unholy alliance
+		relation = { who = GER value = 25 }
+		GER = { country_event = 1504 }
+	}
+}
+
+# Response to Germany - Soviet Accepts
+country_event = {
+
+	id = 1502
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1502"
+	desc = "EVTDESC1502"
+	picture = "Mol_Rib"
+
+	option = {
+		name = "EVTOPTA1502"			# OK
+		SOV = { set_country_flag = mol_rib_pact }
+		add_core = 1685
+		add_core = 1746
+		add_core = 1806
+		add_core = 2036
+		poland_bydgoszgz = { add_core = GER }
+		poland_poznan = { add_core = GER }
+		non_aggression_pact = SOV
+	}
+}
+
+# Response to Germany - Soviet Refuses
+country_event = {
+
+	id = 1503
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1503"
+	desc = "EVTDESC1503"
+	picture = "Mol_Rib"
+
+	option = {
+		name = "EVTOPTA1503"			# OK
+		relation = { who = SOV value = -20 }
+		add_core = 1685
+		add_core = 1746
+		add_core = 1806
+		poland_bydgoszgz = { add_core = GER }
+		poland_poznan = { add_core = GER }
+	}
+}
+
+# Response to Germany - Soviet Proposes Alliance
+country_event = {
+
+	id = 1504
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1504"
+	desc = "EVTDESC1504"
+	picture = "Mol_Rib"
+
+	option = {
+		name = "EVTOPTA1504"			# Refuse alliance, but stand by pact
+		ai_chance = { factor = 100 }
+		relation = { who = SOV value = 5 }
+		add_core = 1685
+		add_core = 1746
+		add_core = 1806
+		poland_poznan = { add_core = GER }
+		poland_bydgoszgz = { add_core = GER }
+		SOV = { set_country_flag = soviet_accepts_mol_rib_pact }
+		SOV = { country_event = 1505 }
+	}
+	option = {
+		name = "EVTOPTB1504"			# Let the world tremble!
+		relation = { who = SOV value = 15 }
+		relation = { who = ENG value = -30 }
+		relation = { who = USA value = -30 }
+		relation = { who = FRA value = -30 }
+		create_alliance = SOV
+		dissent = 20
+		neutrality = -5
+		add_core = 1685
+		add_core = 1746
+		add_core = 1806
+		poland_poznan = { add_core = GER }
+		poland_bydgoszgz = { add_core = GER }
+		SOV = { set_country_flag = soviet_accepts_mol_rib_pact }
+		SOV = { country_event = 1506 }
+	}
+}
+
+# Response to Soviet - Germany refuses a full alliance, but stands by the pact
+country_event = {
+
+	id = 1505
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1505"
+	desc = "EVTDESC1505"
+	picture = "Mol_Rib"
+
+	option = {
+		name = "EVTOPTA1505"			# Too bad
+		relation = { who = GER value = -15 }
+		
+		# Estonia
+		EST_820 = { add_core = SOV }
+		EST_906 = { add_core = SOV }
+		EST_985 = { add_core = SOV }
+		EST_1062 = { add_core = SOV }
+		
+		# Latvia
+		LAT_1261 = { add_core = SOV }
+		LAT_1096 = { add_core = SOV }
+		LAT_1220 = { add_core = SOV }
+		LAT_1222 = { add_core = SOV }
+		LAT_1098 = { add_core = SOV }
+		LAT_1140 = { add_core = SOV }
+		LAT_1311 = { add_core = SOV }
+
+		# Lithuania
+		LIT_1395 = { add_core = SOV }
+		LIT_1577 = { add_core = SOV }
+		LIT_1531 = { add_core = SOV }
+		LIT_1355 = { add_core = SOV }
+		LIT_1442 = { add_core = SOV }
+		LIT_1308 = { add_core = SOV }
+
+		# Finland
+		add_core = 45
+		add_core = 58
+		add_core = 90
+		add_core = 472
+		add_core = 507
+		add_core = 542
+		add_core = 543
+		add_core = 581
+		FIN_698 = { add_core = SOV }
+
+		# Bessarabia
+		ROM_3307 = { add_core = SOV }
+		add_core = 2902
+		add_core = 2969
+		add_core = 3308
+		add_core = 3377
+		add_core = 3376
+		add_core = 3446
+		add_core = 3038
+		add_core = 3106
+		add_core = 3172
+	}
+}
+
+# Response to Soviet - Germany accepts a full alliance
+country_event = {
+
+	id = 1506
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1505"
+	desc = "EVTDESC1505"
+	picture = "Mol_Rib"
+
+	option = {
+		name = "EVTOPTA1506"			# Let the world tremble!
+		relation = { who = ENG value = -30 }
+		relation = { who = USA value = -30 }
+		relation = { who = FRA value = -30 }
+		
+		# Estonia
+		EST_820 = { add_core = SOV }
+		EST_906 = { add_core = SOV }
+		EST_985 = { add_core = SOV }
+		EST_1062 = { add_core = SOV }
+		
+		# Latvia
+		LAT_1261 = { add_core = SOV }
+		LAT_1096 = { add_core = SOV }
+		LAT_1220 = { add_core = SOV }
+		LAT_1222 = { add_core = SOV }
+		LAT_1098 = { add_core = SOV }
+		LAT_1140 = { add_core = SOV }
+		LAT_1311 = { add_core = SOV }
+
+		# Lithuania
+		LIT_1395 = { add_core = SOV }
+		LIT_1577 = { add_core = SOV }
+		LIT_1531 = { add_core = SOV }
+		LIT_1355 = { add_core = SOV }
+		LIT_1442 = { add_core = SOV }
+		LIT_1308 = { add_core = SOV }
+
+		# Finland
+		add_core = 45
+		add_core = 58
+		add_core = 90
+		add_core = 472
+		add_core = 507
+		add_core = 542
+		add_core = 543
+		add_core = 581
+		FIN_698 = { add_core = SOV }
+
+		# Bessarabia
+		ROM_3307 = { add_core = SOV }
+		add_core = 2902
+		add_core = 2969
+		add_core = 3308
+		add_core = 3377
+		add_core = 3376
+		add_core = 3446
+		add_core = 3038
+		add_core = 3106
+		add_core = 3172
+	}
+}
+
+#Moved to the "surrender" events
+#Eastern Poland to Soviet
+#country_event = {
+# 
+# 	id = 1507
+# 
+# 	trigger = {
+# 		tag = GER
+# 		SOV = { has_country_flag = soviet_accepts_mol_rib_pact }
+# 		POL_1752 = { owned_by = GER }
+# 		POL_1634 = { owned_by = GER }
+# 		POL_1811 = { owned_by = GER }
+# 		POL_1931 = { owned_by = GER }
+# 		POL_1873 = { owned_by = GER }
+# 		POL_1987 = { owned_by = GER }
+# 		POL_2046 = { owned_by = GER }
+# 		POL_1987 = { owned_by = GER }
+# 		POL_2162 = { owned_by = GER }
+# 		POL_2219 = { owned_by = GER }
+# 		POL_2509 = { owned_by = GER }
+# 		POL_2391 = { owned_by = GER }
+# 		POL_2636 = { owned_by = GER }
+# 		POL_1987 = { owned_by = GER }
+# 		POL_2769 = { owned_by = GER }
+# 		POL_3036 = { owned_by = GER }
+# 		controls = 1928	# Warszawa
+# 		not = { war_with = SOV }
+# 	}
+# 	
+# 	mean_time_to_happen =  {
+# 		months = 1
+# 	}
+# 
+# 	title = "EVTNAME1507"
+# 	desc = "EVTDESC1507"
+# 
+# 	option = {
+# 		name = "EVTOPTA1507"					# Honor the Pact
+# 		ai_chance = { factor = 100 }
+# 		POL_1752 = { secede_province = SOV }
+# 		POL_1634 = { secede_province = SOV }
+# 		POL_1811 = { secede_province = SOV }
+# 		POL_1931 = { secede_province = SOV }
+# 		POL_1873 = { secede_province = SOV }
+# 		POL_1987 = { secede_province = SOV }
+# 		POL_2046 = { secede_province = SOV }
+# 		POL_1987 = { secede_province = SOV }
+# 		POL_2162 = { secede_province = SOV }
+# 		POL_2219 = { secede_province = SOV }
+# 		POL_2509 = { secede_province = SOV }
+# 		POL_2391 = { secede_province = SOV }
+# 		POL_2636 = { secede_province = SOV }
+# 		POL_1987 = { secede_province = SOV }
+# 		POL_2769 = { secede_province = SOV }
+# 		POL_3036 = { secede_province = SOV }
+# 		set_country_flag = germany_honors_the_pact
+# 		relation = { who = SOV value = 10 }
+# 	}
+# 	option = {
+# 		name = "EVTOPTB1507"					# Dishonor the Pact
+# 		relation = { who = SOV value = -30 }
+# 	}
+# }
+# Informs Soviet - Germany Honors the Pact
+# country_event = {
+#
+#	id = 1508
+#
+#	is_triggered_only = yes
+#
+#	title = "EVTNAME1508"
+#	desc = "EVTDESC1508"
+#
+#	option = {
+#		name = "EVTOPTA1508"					# Fantastic!
+#	}
+#}
+
+# Romania - Reaction Event
+country_event = {
+
+	id = 1509
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1509"
+	desc = "EVTDESC1509"
+	picture = "romania"
+
+	option = {
+		name = "EVTOPTA1509"					# Accept
+		ai_chance = { factor = 100 }
+		ROM_3307 = {
+			secede_province = SOV
+			add_core = SOV
+		}
+		2902 = {
+			secede_province = SOV
+			add_core = SOV
+		}
+		2969 = {
+			secede_province = SOV
+			add_core = SOV
+		}
+		3308 = {
+			secede_province = SOV
+			add_core = SOV
+		}
+		3377 = {
+			secede_province = SOV
+			add_core = SOV
+		}
+		3376 = {
+			secede_province = SOV
+			add_core = SOV
+		}
+		3446 = {
+			secede_province = SOV
+			add_core = SOV
+		}
+		3038 = {
+			secede_province = SOV
+			add_core = SOV
+		}
+		3106 = {
+			secede_province = SOV
+			add_core = SOV
+		}
+		3172 = {
+			secede_province = SOV
+			add_core = SOV
+		}
+		relation = { who = SOV value = 15 }
+		set_country_flag = bessarabia_to_the_soviet
+		SOV = { country_event = 1510 }
+	}
+	option = {
+		name = "EVTOPTB1509"					# Refuse
+		war = SOV
+		relation = { who = SOV value = -25 }
+		relation = { who = GER value = -15 }
+		SOV = { country_event = 1511 }
+	}
+}
+
+# Response to Soviet - Accept
+country_event = {
+
+	id = 1510
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1510"
+	desc = "EVTDESC1510"
+	picture = "romania"
+
+	option = {
+		name = "EVTOPTA1510"					# Excellent!
+		threat = { who = ROM value = 5 }
+	}
+}
+
+# Response to Soviet - Refuse
+country_event = {
+
+	id = 1511
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1511"
+	desc = "EVTDESC1511"
+	picture = "romania_tank"
+
+	option = {
+		name = "EVTOPTA1511"					# They will rue this day...
+	}
+}
+
+# Estonia - Reaction Event
+country_event = {
+
+	id = 1512
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1512"
+	desc = "EVTDESC1512"
+	picture = "soviet_law"
+
+	option = {
+		name = "EVTOPTA1512"					# Accept the inevitable
+		ai_chance = { factor = 100 }
+		EST_820 = { limit = { owned_by = EST } secede_province = SOV add_core = SOV }
+		EST_906 = { limit = { owned_by = EST } secede_province = SOV add_core = SOV }
+		EST_985 = { limit = { owned_by = EST } secede_province = SOV add_core = SOV }
+		EST_1062 = { limit = { owned_by = EST } secede_province = SOV add_core = SOV }
+		SOV = { country_event = 1513 }
+	}
+	option = {
+		name = "EVTOPTB1512"					# Fight for independence
+		war = SOV
+		relation = { who = SOV value = -20 }
+		relation = { who = GER value = -10 }
+		SOV = { country_event = 1514 }
+	}
+}
+
+# Response to Soviet - Annexation
+country_event = {
+
+	id = 1513
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1513"
+	desc = "EVTDESC1513"
+	picture = "soviet_law"
+
+	option = {
+		name = "EVTOPTA1513"					# Good
+		inherit = EST
+	}
+}
+
+# Response to Soviet - War
+country_event = {
+
+	id = 1514
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1514"
+	desc = "EVTDESC1514"
+	picture = "soviet_air"
+
+	option = {
+		name = "EVTOPTA1514"					# OK
+	}
+}
+
+# Latvia - Reaction Event
+country_event = {
+
+	id = 1515
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1515"
+	desc = "EVTDESC1515"
+	picture = "soviet_law"
+
+	option = {
+		name = "EVTOPTA1515"					# Accept the inevitable
+		ai_chance = { factor = 100 }
+		LAT_1261 = { limit = { owned_by = LAT } secede_province = SOV add_core = SOV }
+		LAT_1096 = { limit = { owned_by = LAT } secede_province = SOV add_core = SOV }
+		LAT_1220 = { limit = { owned_by = LAT } secede_province = SOV add_core = SOV }
+		LAT_1222 = { limit = { owned_by = LAT } secede_province = SOV add_core = SOV }
+		LAT_1098 = { limit = { owned_by = LAT } secede_province = SOV add_core = SOV }
+		LAT_1140 = { limit = { owned_by = LAT } secede_province = SOV add_core = SOV }
+		LAT_1311 = { limit = { owned_by = LAT } secede_province = SOV add_core = SOV }
+		SOV = { country_event = 1516 }
+	}
+	option = {
+		name = "EVTOPTB1515"					# Fight for independence
+		war = SOV
+		relation = { who = SOV value = -20 }
+		relation = { who = GER value = -10 }
+		SOV = { country_event = 1517 }
+	}
+}
+
+# Response to Soviet - Annexation
+country_event = {
+
+	id = 1516
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1516"
+	desc = "EVTDESC1516"
+	picture = "soviet_law"
+
+	option = {
+		name = "EVTOPTA1516"					# Good
+		inherit = LAT
+	}
+}
+
+# Response to Soviet - War
+country_event = {
+
+	id = 1517
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1517"
+	desc = "EVTDESC1517"
+	picture = "soviet_air"
+
+	option = {
+		name = "EVTOPTA1517"					# OK
+	}
+}
+
+# Lithuania - Reaction Event
+country_event = {
+
+	id = 1518
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1518"
+	desc = "EVTDESC1518"
+	picture = "soviet_law"
+
+	option = {
+		name = "EVTOPTA1518"					# Accept the inevitable
+		ai_chance = { factor = 100 }
+		
+		LIT_1395 = { limit = { owned_by = LIT } secede_province = SOV add_core = SOV }
+		LIT_1577 = { limit = { owned_by = LIT } secede_province = SOV add_core = SOV }
+		LIT_1531 = { limit = { owned_by = LIT } secede_province = SOV add_core = SOV }
+		LIT_1531 = { limit = { owned_by = LIT } secede_province = SOV add_core = SOV }
+		LIT_1355 = { limit = { owned_by = LIT } secede_province = SOV add_core = SOV }
+		LIT_1442 = { limit = { owned_by = LIT } secede_province = SOV add_core = SOV }	
+		LIT_1308 = { limit = { owned_by = LIT } secede_province = SOV add_core = SOV }	
+		SOV = { country_event = 1519 }
+	}
+	option = {
+		name = "EVTOPTB1518"					# Fight for independence
+		war = SOV
+		relation = { who = SOV value = -20 }
+		relation = { who = GER value = -10 }
+		SOV = { country_event = 1520 }
+	}
+}
+
+# Response to Soviet - Annexation
+country_event = {
+
+	id = 1519
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1519"
+	desc = "EVTDESC1519"
+	picture = "soviet_law"
+
+	option = {
+		name = "EVTOPTA1519"					# Good
+		inherit = LIT
+	}
+}
+
+# Response to Soviet - War
+country_event = {
+
+	id = 1520
+
+	is_triggered_only = yes
+
+	title = "EVTNAME1520"
+	desc = "EVTDESC1520"
+	picture = "soviet_air"
+
+	option = {
+		name = "EVTOPTA1520"					# OK
+	}
+}

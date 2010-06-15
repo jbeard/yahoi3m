@@ -1,0 +1,283 @@
+division = {
+	name = "1. Jun"
+	location = 5177
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "7. Jun"
+	location = 7425
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "14. Jun"
+	location = 5728
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "22. Jun"
+	location = 5709
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "27. Jun"
+	location = 5709
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "30. Jun"
+	location = 7446
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "37. Jun"
+	location = 7435
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "38. Jun"
+	location = 9296
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "39. Jun"
+	location = 5686
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "40. Jun"
+	location = 5400
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "46. Jun"
+	location = 7425
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "51. Jun"
+	location = 7435
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "57. Jun"
+	location = 7425
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "67. Jun"
+	location = 7435
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "1. Xin Jun"
+	location = 9202
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "4. Lujun"
+	location = 5664
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "20. Lujun"
+	location = 5681
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "26. Lujun"
+	location = 5496
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "2. Bubing Shi"
+	location = 5494
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "21. Bubing Shi"
+	location = 5573
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "51. Bubing Shi"
+	location = 5474
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "Jiangxi Silingbu"
+	location = 7486
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "Fujian Silingbu"
+	location = 5728
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "Anhui Silingbu"
+	location = 5449
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "Henan Silingbu"
+	location = 5401
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "Hubei Silingbu"
+	location = 7514
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "Xibei Silingbu"
+	location = 7514
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "Jiaodao Zongdui"
+	location = 5494
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+corps = {
+	name = "Suijing Zongtuan"
+	location = 5405
+	regiment = { type = hq_brigade name = "Suijing Zongtuan HQ" historical_model = 0 }
+	division= {
+		name = "Customs Police 1st Detachment"
+		location = 5405
+		regiment = { type = infantry_brigade historical_model = 0 }
+		regiment = { type = infantry_brigade historical_model = 0 }
+	}
+	division= {
+		name = "Customs Police 2nd Detachment"
+		location = 5405
+		regiment = { type = infantry_brigade historical_model = 0 }
+		regiment = { type = infantry_brigade historical_model = 0 }
+	}
+}
+division = {
+	name = "Shanghai Jingbei"
+	location = 5542
+	regiment = { type = infantry_brigade historical_model = 0 }
+	regiment = { type = infantry_brigade historical_model = 0 }
+}
+division = {
+	name = "Marine Brigade"
+	location = 5542
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+}
+division = {
+	name = "Jiangsu Baoantui"
+	location = 5494
+	regiment = { type = militia_brigade historical_model = 0 }
+	regiment = { type = militia_brigade historical_model = 0 }
+}
+division = {
+	name = "Anhui Baoantui"
+	location = 5636
+	regiment = { type = militia_brigade historical_model = 0 }
+	regiment = { type = militia_brigade historical_model = 0 }
+}
+division = {
+	name = "Zhejiang Baoantui"
+	location = 5573
+	regiment = { type = militia_brigade historical_model = 0 }
+	regiment = { type = militia_brigade historical_model = 0 }
+}
+division = {
+	name = "Hunan Baoantui"
+	location = 7520
+	regiment = { type = militia_brigade historical_model = 0 }
+	regiment = { type = militia_brigade historical_model = 0 }
+}
+division = {
+	name = "Hubei Baoantui"
+	location = 7508
+	regiment = { type = militia_brigade historical_model = 0 }
+	regiment = { type = militia_brigade historical_model = 0 }
+}
+division = {
+	name = "Henan Baoantui"
+	location = 5401
+	regiment = { type = militia_brigade historical_model = 0 }
+	regiment = { type = militia_brigade historical_model = 0 }
+}
+division = {
+	name = "Gansu Baoantui"
+	location = 9266
+	regiment = { type = militia_brigade historical_model = 0 }
+	regiment = { type = militia_brigade historical_model = 0 }
+}
+division = {
+	name = "Jiangxi Baoantui"
+	location = 5681
+	regiment = { type = militia_brigade historical_model = 0 }
+	regiment = { type = militia_brigade historical_model = 0 }
+}
+division = {
+	name = "Fujian Baoantui"
+	location = 5728
+	regiment = { type = militia_brigade historical_model = 0 }
+	regiment = { type = militia_brigade historical_model = 0 }
+}
+navy = {
+	name = "1st Fleet"
+	base = 5542
+	location = 5542
+	ship = { type = light_cruiser name = "Ning-Hai" historical_model = 1 }
+	ship = { type = transport_ship name = "1. Yunshujian Dadui" historical_model = 0 }
+}
+air = {
+	name = "1. Kongjun"
+	base = 5681
+	location = 5681
+	wing = { type = tactical_bomber name = "1. Kongjun" historical_model = 0 }
+}
+air = {
+	name = "2. Kongjun"
+	base = 5681
+	location = 5681
+	wing = { type = interceptor name = "2. Kongjun" historical_model = 0 }
+}
+navy = {
+	name = "Di 1 Jiandui"
+	base = 5542
+	location = 5542
+	ship = { type = light_cruiser name = "Ying-Swei" historical_model = 0 }
+	ship = { type = light_cruiser name = "Chao-Ho" historical_model = 0 }
+	ship = { type = light_cruiser name = "Hai-Chen" historical_model = 0 }
+	ship = { type = destroyer name = "1. Quzujian Dadui" historical_model = 0 }
+	ship = { type = destroyer name = "2. Quzujian Dadui" historical_model = 0 }
+}
+
+
+

@@ -1,0 +1,11 @@
+division = {
+	name = "Manila Garrison"
+	location = 6142
+	is_reserve = yes 
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+}
+
+
+

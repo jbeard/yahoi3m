@@ -1,0 +1,12 @@
+owner = DEN
+controller = DEN
+add_core = DEN
+
+infra = 2
+
+infra = 2
+1941.4.10 = {
+	owner = USA
+	controller = USA
+	add_core = USA
+}

@@ -1,0 +1,236 @@
+#########################
+# Head of state changes #
+#########################
+country_event = {
+	
+	id = 11000
+
+	trigger = {
+		tag = ENG
+		head_of_state = 1001
+		or = {
+			government = market_liberalism
+			government = social_democracy
+			government = social_liberalism
+			government = social_conservatism
+			government = constitutional_monarchy
+		}
+		not = { has_country_flag = george_v_stays }
+	}
+
+	mean_time_to_happen =  {
+		months = 1
+	}
+	
+	title = "The death of George V"
+	desc = "Suffering from severe illness our beloved king George V passed away this morning. May he rest in peace."
+	picture = "news_paper"
+
+	option = {
+		name = "The king is dead, long live the king."		# Oh noes!
+		ai_chance = { factor = 95 }
+		head_of_state = 1031
+	}
+	option = {
+		name = "I live forever!"				# Oh noes!
+		ai_chance = { factor = 5 }
+		set_country_flag = george_v_stays
+	}
+}
+country_event = {
+	
+	id = 11001
+
+	trigger = {
+		tag = ENG
+		head_of_state = 1031
+		or = {
+			government = market_liberalism
+			government = social_democracy
+			government = social_liberalism
+			government = social_conservatism
+			government = constitutional_monarchy
+
+		}
+		not = { has_country_flag = edward_viii_stays }
+	}
+
+	mean_time_to_happen =  {
+		months = 6
+	}
+	
+	title = "The king abdicates"
+	desc = "I have found it impossible to carry the heavy burden of responsibility and to discharge my duties as king as I would wish to do without the help and support of the woman I love."
+	picture = "news_paper"
+
+	option = {
+		name = "His brother can do the job"			# Sweetie
+		ai_chance = { factor = 95 }
+		head_of_state = 1033
+	}
+	option = {
+		name = "Love can wait"					# A real man
+		ai_chance = { factor = 5 }
+		set_country_flag = edward_viii_stays
+	}
+}
+######################
+# Government changes #
+######################
+country_event = {
+	
+	id = 11002
+
+	trigger = {
+		tag = ENG
+		or = {
+			government = market_liberalism
+			government = social_democracy
+			government = social_liberalism
+			government = social_conservatism
+			government = constitutional_monarchy
+
+		}
+		year = 1937
+		head_of_government = 1002
+		head_of_state = 1033
+		not = { has_country_flag = baldwin_remains }
+	}
+
+	mean_time_to_happen =  {
+		months = 1
+	}
+	
+	title = "Baldwin retires"
+	desc = "Baldwin had defused a political crisis by turning the kings marriage into a constitutional question. His discreet resolution of resigning met with general approval and restored his popularity."
+	picture = "constitutional"
+
+	option = {
+		name = "Appoint Chamberlain"			# Good choice for now
+		ai_chance = { factor = 95 }
+		head_of_government = 1004
+		armament_minister = 1163
+		minister_of_security = 1083
+		chief_of_staff = 1117
+		chief_of_army = 1117
+		chief_of_navy = 1137
+		chief_of_air = 1149
+	}
+	option = {
+		name = "Baldwin is the man"			# Hm...
+		ai_chance = { factor = 5 }
+		set_country_flag = baldwin_remains
+	}
+}
+country_event = {
+	
+	id = 11003
+
+	trigger = {
+		tag = ENG
+		or = {
+			government = market_liberalism
+			government = social_democracy
+			government = social_liberalism
+			government = social_conservatism
+			government = constitutional_monarchy
+
+		}
+		war_with = GER
+		head_of_government = 1004
+		year = 1939
+		not = { has_country_flag = warcabinet }
+	}
+
+	mean_time_to_happen =  {
+		months = 1
+	}
+	
+	title = "The war cabinet"
+	desc = "After Germanys attack on Poland Neville Chamberlain reconstructed his existing government so as to prosecute the Second World War. The most dramatic change to the ministerial line-up saw the return of Winston Churchill as First Lord of the Admiralty."
+	picture = "chameberlain"
+
+	option = {
+		name = "A new cabinet"			# Good choice for now
+		ai_chance = { factor = 95 }
+		head_of_government = 1004
+		foreign_minister = 1045
+		armament_minister = 1163
+		minister_of_security = 1061
+		minister_of_intelligence = 1006
+		chief_of_staff = 1118
+		chief_of_army = 1118
+		chief_of_navy = 1140
+		chief_of_air = 1149
+		set_country_flag = warcabinet
+	}
+	option = {
+		name = "No need for that"		# We will see...
+		ai_chance = { factor = 5 }
+		set_country_flag = warcabinet
+	}
+}
+country_event = {
+	
+	id = 11004
+
+	trigger = {
+		tag = ENG
+		or = {
+			government = market_liberalism
+			government = social_democracy
+			government = social_liberalism
+			government = social_conservatism
+			government = constitutional_monarchy
+
+		}
+		war_with = GER
+		or = {
+			year = 1941
+			and = {
+				year = 1940
+				month = 4
+			}
+		}
+		not = { has_country_flag = elections1940 }
+		not = { head_of_government = 1038 }
+	}
+
+	mean_time_to_happen =  {
+		months = 1
+	}
+	
+	title = "Chamberlain resigns"
+	desc = "On 10 May 1940, hours before the German invasion of France by a advance through the Low Countries, it became clear that the country had no confidence in Chamberlain's prosecution of the war and so Chamberlain resigned."
+	picture = "parliamentary_scandal"
+
+	option = {
+		name = "Scissor beats paper."			# Churchill ftw.
+		ai_chance = { factor = 95 }
+		head_of_government = 1038
+		foreign_minister = 1045
+		armament_minister = 1179
+		minister_of_security = 1061
+		minister_of_intelligence = 1103
+		chief_of_staff = 1119
+		chief_of_army = 1119
+		chief_of_navy = 1140
+		chief_of_air = 1147
+		set_country_flag = elections1940
+	}
+	option = {
+		name = "Resign? I stay!"			# Oh oh!
+		ai_chance = { factor = 5 }
+		head_of_government = 1004
+		foreign_minister = 1045
+		armament_minister = 1163
+		minister_of_security = 1061
+		minister_of_intelligence = 1103
+		chief_of_staff = 1118
+		chief_of_army = 1118
+		chief_of_navy = 1140
+		chief_of_air = 1149
+		set_country_flag = elections1940
+	}
+}
+

@@ -1,0 +1,1259 @@
+# Allies invades Italy
+country_event = {
+	
+	id = 503
+
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = ITA
+		faction = axis
+		war_with = ENG
+		GER = { war_with = ENG }
+		FROM = { TAG = ENG }
+	}
+
+	title = "EVTNAME503"
+	desc = "EVTDESC503"
+	picture = "Ita_Surrender"
+
+	option = {
+		name = "EVTOPTA503"
+		ai_chance = { factor = 100 }
+		libya_region = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = ENG }
+		italian_somaliland_region = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = ENG }
+		eritrea_region = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = ENG }
+		northern_italy_region = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = RSI }
+		slovenia_region = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		montenegro_region = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }	
+		albania_region = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		ITA_3561 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		ITA_3562 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		ITA_3976 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		YUG_4493 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		GRE_5204 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		GRE_5137 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		GRE_5004 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		GRE_5005 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		GRE_4870 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		GRE_4919 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		GRE_4921 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		GRE_5076 = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = GER }
+		4044 = { secede_province = GER }
+		4171 = { secede_province = GER }
+		4236 = { secede_province = GER }
+		4430 = { secede_province = GER }
+		4368 = { secede_province = GER }
+		4495 = { secede_province = GER }
+		5381 = { secede_province = GER }
+		3696 = { secede_province = GER }
+		relation = { who = USA value = 50 }
+		relation = { who = ENG value = 50 }
+		relation = { who = SOV value = 30 }
+		relation = { who = GER value = -40 }
+		GER = { create_vassal = RSI }
+		leave_faction = axis
+		join_faction = allies
+		dissent = -10
+		ENG = { end_war = ITA }
+		
+		head_of_state = 3036
+		head_of_government = 3048
+		foreign_minister = 3055
+		armament_minister = 3076
+		minister_of_security = 3100
+		minister_of_intelligence = 3118
+		chief_of_staff = 3125
+		chief_of_army = 3144
+		chief_of_navy = 3154
+		chief_of_air = 3165
+		ENG = { country_event = 501 }
+	}
+	option = {
+		name = "EVTOPTB503"
+		form_government_in_exile = yes
+		FROM = { country_event = 515 }
+	}	
+}
+
+# Allies invades Italy
+country_event = {
+	
+	id = 519
+
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = ITA
+		faction = axis
+		war_with = ENG
+		GER = { not = { war_with = ENG } }
+		FROM = { TAG = ENG }
+	}
+
+	title = "EVTNAME503"
+	desc = "EVTDESC503"
+	picture = "Ita_Surrender"
+
+	option = {
+		name = "EVTOPTA503"
+		ai_chance = { factor = 100 }
+		libya_region = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = ENG }
+		italian_somaliland_region = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = ENG }
+		eritrea_region = { limit = { or = { owned_by = ITA controlled_by = ITA } } secede_province = ENG }
+		relation = { who = USA value = 50 }
+		relation = { who = ENG value = 50 }
+		relation = { who = SOV value = 30 }
+		leave_faction = axis
+		join_faction = allies
+		dissent = -10
+		ENG = { end_war = ITA }
+		
+		head_of_state = 3036
+		head_of_government = 3048
+		foreign_minister = 3055
+		armament_minister = 3076
+		minister_of_security = 3100
+		minister_of_intelligence = 3118
+		chief_of_staff = 3125
+		chief_of_army = 3144
+		chief_of_navy = 3154
+		chief_of_air = 3165
+		ENG = { country_event = 501 }
+	}
+	option = {
+		name = "EVTOPTB503"
+		form_government_in_exile = yes
+		FROM = { country_event = 515 }
+	}	
+}
+
+# Vichy Regime
+country_event = {
+	
+	id = 504
+
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = FRA
+		war_with = GER
+		NOT = { exists = VIC }
+		OR = {
+			FROM = { TAG = GER }
+			FROM = { TAG = ITA }
+			FROM = { TAG = SPA }
+			FROM = { TAG = SPR }
+		}
+		NOT = { has_country_flag = fr_signs_peace }
+	}
+
+	title = "EVTNAME504"
+	desc = "EVTDESC504"
+	picture = "VIC"
+
+	option = {
+		name = "EVTOPTA504"					# Continue the fight as Free France
+		ai_chance = { factor = 100 }
+		set_country_flag = fr_signs_peace
+		northern_france_region = { secede_province = GER }
+		western_france_region = { secede_province = GER }
+		VIC = { inherit = FRA }
+		VIC = {
+			head_of_state = 57001
+			head_of_government = 57002
+			foreign_minister = 57002
+			armament_minister = 57019
+			minister_of_security = 57026
+			minister_of_intelligence = 57006
+			chief_of_staff = 57002
+			chief_of_army = 57034
+			chief_of_navy = 57002
+			chief_of_air = 57010
+			capital = 3484 # Vichy
+			infantry_brigade = 3484
+			infantry_brigade = 3484
+			infantry_brigade = 3484
+			infantry_brigade = 3484
+			infantry_brigade = 3484
+			infantry_brigade = 5299
+			infantry_brigade = 5299
+			infantry_brigade = 6236
+			infantry_brigade = 6236
+			FRA_10037 = { secede_province = FRA }
+			FRA_9921 = { secede_province = FRA }
+			FRA_9804 = { secede_province = FRA }
+			FRA_9860 = { secede_province = FRA }
+			9731 = { secede_province = FRA }
+			9858 = { secede_province = FRA }
+			add_core = 485
+			add_core = 10627
+			add_core = 7715
+			add_core = 7705
+		}
+		southern_france_region = { add_core = VIC }
+		french_indochine_region = { add_core = VIC }
+		north_africa_region = { add_core = VIC }
+		syrian_region = { add_core = VIC }
+		FRA_6178 = { add_core = VIC }
+		FRA_7704 = { add_core = VIC }
+		FRA_4359 = { add_core = VIC }
+		FRA_9933 = { add_core = VIC }
+		FRA_9867 = { add_core = VIC }
+		# Make sure Vichy is set up properly
+		FRA = {
+			national_unity = 90
+			##De Gaulle Cabinet##
+			head_of_state = 2031
+			head_of_government = 2031
+			minister_of_security = 2036
+			chief_of_staff = 2031
+			foreign_minister = 2061
+			armament_minister = 2088
+			minister_of_intelligence = 2134
+			chief_of_army = 2164
+			chief_of_navy = 2178
+			chief_of_air = 2193
+			capital = 10028 # Brazzaville
+			join_faction = allies
+			10028 = { air_base = 4 }
+			infantry_brigade = 10028
+			infantry_brigade = 10028
+			infantry_brigade = 10028
+			infantry_brigade = 10028
+			infantry_brigade = 10028			
+		}
+		GER = { country_event = 532 }
+		ITA = { country_event = 517 }
+		SPA = { country_event = 530 }
+		SPR = { country_event = 531 }
+		form_government_in_exile = yes
+	}
+}
+
+# Vichy France - Italy
+country_event = {
+	
+	id = 517
+
+	is_triggered_only = yes
+
+	title = "EVTNAME514"
+	desc = "EVTDESC514"
+	picture = "VIC"
+
+	option = {
+		name = "EVTOPTA514"
+		southern_france_region = { secede_province = VIC }
+		northern_france_region = { secede_province = GER }
+		western_france_region = { secede_province = GER }
+		ITA = { southern_france_region = { secede_province = VIC } }
+		VIC = {
+			4038 = { secede_province = ITA }
+			3969 = { secede_province = ITA }
+			3826 = { secede_province = ITA }
+		}
+	}
+}
+
+# Vichy France - Nationalist Spain
+country_event = {
+	
+	id = 530
+
+	is_triggered_only = yes
+
+	title = "EVTNAME514"
+	desc = "EVTDESC514"
+	picture = "VIC"
+	
+	trigger = {
+		SPA = {
+			faction = axis
+		}
+		NOT = {
+			exists = SPR
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA514"
+		southern_france_region = { secede_province = VIC }
+		northern_france_region = { secede_province = GER }
+		western_france_region = { secede_province = GER }
+		SPA = { southern_france_region = { secede_province = VIC } }
+		VIC = {
+			4027 = { secede_province = SPA }
+			3959 = { secede_province = SPA }
+			3826 = { secede_province = SPA }
+		}
+		GER = {
+			3816 = { secede_province = SPA }
+			3958 = { secede_province = SPA }
+			3815 = { secede_province = SPA }
+			3887 = { secede_province = SPA }
+			3747 = { secede_province = SPA }
+			3612 = { secede_province = SPA }
+		}
+	}
+}
+
+# Vichy France - Republican Spain
+country_event = {
+	
+	id = 531
+
+	is_triggered_only = yes
+
+	title = "EVTNAME514"
+	desc = "EVTDESC514"
+	picture = "VIC"
+	
+	trigger = {
+		SPR = {
+			faction = axis
+		}
+		NOT = {
+			exists = SPA
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA514"
+		southern_france_region = { secede_province = VIC }
+		northern_france_region = { secede_province = GER }
+		western_france_region = { secede_province = GER }
+		SPR = { southern_france_region = { secede_province = VIC } }
+		VIC = {
+			4027 = { secede_province = SPR }
+			3959 = { secede_province = SPR }
+			3826 = { secede_province = SPR }
+		}
+		GER = {
+			3816 = { secede_province = SPR }
+			3958 = { secede_province = SPR }
+			3815 = { secede_province = SPR }
+			3887 = { secede_province = SPR }
+			3747 = { secede_province = SPR }
+			3612 = { secede_province = SPR }
+		}
+	}
+}
+
+# Vichy France - Germany
+country_event = {
+	
+	id = 532
+
+	is_triggered_only = yes
+
+	title = "EVTNAME514"
+	desc = "EVTDESC514"
+	picture = "VIC"
+	
+	option = {
+		name = "EVTOPTA514"
+		southern_france_region = { secede_province = VIC }
+		northern_france_region = { secede_province = GER }
+		western_france_region = { secede_province = GER }
+		GER = { southern_france_region = { secede_province = VIC } }
+	}
+}
+
+# Spanish Civil War
+country_event = {
+	
+	id = 505
+
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = SPR
+		FROM = { TAG = SPA }
+	}
+	
+	title = "EVTNAME513"
+	desc = "EVTDESC505"
+	picture = "SPA_Victory"
+
+	option = {
+		name = "EVTOPTA513"
+		SPA = {
+			split_troops = 1.0
+			capital = 4540
+			organisation = 15
+			head_of_state = 10032
+			head_of_government = 10046
+			foreign_minister = 10057
+			armament_minister = 10090
+			minister_of_security = 10129
+			minister_of_intelligence = 10162
+			chief_of_staff = 10183
+			chief_of_army = 10206
+			chief_of_navy = 10230
+			inherit = SPR
+		}
+		eastern_spain_region = { add_core = SPA }
+		northern_spain_region = { add_core = SPA }
+		eastern_spain_region = { remove_core = SPR }
+		northern_spain_region = { remove_core = SPR }
+		SPR_5321 = { add_core = SPA }
+		SPR_5289 = { add_core = SPA }
+		SPR_4913 = { add_core = SPA }
+		SPR_9506 = { add_core = SPA }
+		SPR_9451 = { add_core = SPA }
+		SPR_10002 = { add_core = SPA }
+		SPR_5321 = { remove_core = SPR }
+		SPR_5289 = { remove_core = SPR }
+		SPR_4913 = { remove_core = SPR }
+		SPR_9506 = { remove_core = SPR }
+		SPR_9451 = { remove_core = SPR }
+		SPR_10002 = { remove_core = SPR }
+		FROM = { country_event = 514 }
+	}
+}
+
+# Spanish Civil War
+country_event = {
+	
+	id = 513
+
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = SPA
+		FROM = { TAG = SPR }
+	}
+
+	title = "EVTNAME513"
+	desc = "EVTDESC513"
+	picture = "SPA_Victory"
+
+	option = {
+		name = "EVTOPTA513"
+		SPR = {
+			split_troops = 1.0
+			capital = 4540
+			organisation = 15
+			inherit = SPA
+		}
+		FROM = { country_event = 514 }
+	}
+}
+
+# Finnish Winter War
+country_event = {
+	
+	id = 506
+
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = FIN
+		war_with = SOV
+		FROM = { TAG = SOV }
+		NOT = { war_with = ENG }
+		not = { has_country_flag = fi_signs_peace }
+	}
+
+	title = "EVTNAME506"
+	desc = "EVTDESC506"
+	picture = "End_Winter_War"
+
+	option = {
+		name = "EVTOPTA506"					# Fold to Russian Demands
+		ai_chance = { factor = 100 }
+		set_country_flag = fi_signs_peace
+		FROM = { country_event = 516 }
+	}
+	option = {
+		name = "EVTOPTB506"					 # We will never surrender!
+		set_country_flag = fi_signs_peace
+		relation = { who = SOV value = -50 }
+		relation = { who = GER value = 50 }
+	}
+}
+
+# Finnish Winter War
+country_event = {
+	
+	id = 516
+
+	is_triggered_only = yes
+
+	title = "EVTNAME506"
+	desc = "EVTDESC506"
+	picture = "End_Winter_War"
+
+	option = {
+		name = "EVTOPTA516"							# We'll settle for what we asked for
+		ai_chance = { factor = 100 }
+		FIN = {
+			FIN_698 = { secede_province = SOV }
+			FIN_580 = { secede_province = SOV }
+			FIN_507 = { secede_province = SOV }
+			dissent = 10
+		}
+		relation = { who = FIN value = 10 }
+		end_war = FIN
+		dissent = -10	
+	}
+	option = {
+		name = "EVTOPTB516"							# Create a Puppet
+		create_vassal = FROM
+	}
+	option = {
+		name = "EVTOPTC516"							# Annex them
+		surrender_inherit = FROM
+	}
+}
+
+# Bitter Peace v.1
+country_event = {
+	id = 507
+	title = "EVTNAME507"
+	desc = "EVTDESC507"
+	picture = "Bitter_Peace"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = SOV
+		SOV = {
+			NOT = {
+				war_with = JAP
+			}
+		}
+		FROM = {
+			TAG = GER
+		}
+		NOT = {
+			has_country_flag = su_signs_peace
+		}
+	}
+
+	option = {
+		name = "EVTOPTA507"					# We surrender! Just let us keep what we still have.
+		ai_chance = { factor = 100 }
+		set_country_flag = su_signs_peace
+		remove_minister = 4002 # Iosif V. Stalin
+		remove_minister = 4076 # Vyacheslav Molotov
+		head_of_government = 4075 # Lavrenti P. Beria
+		minister_of_security = 4075 # Lavrenti P. Beria
+		western_russia_region = { secede_province = GER }
+		central_western_russia_region = { secede_province = GER }
+		baltic_states_region = { secede_province = GER }
+		bessarabia = { secede_province = GER }
+		capital = 8594 # Novosibirsk
+		
+		relation = { who = ENG value = -15 }
+		relation = { who = FRA value = -15 }
+		relation = { who = USA value = -15 }
+		relation = { who = GER value = 50 }
+		relation = { who = JAP value = 50 }
+		relation = { who = ROM value = 20 }
+		relation = { who = HUN value = 20 }
+		relation = { who = FIN value = 20 }
+		relation = { who = MAN value = 20 }
+		
+		GER = { end_war = SOV }
+		non_aggression_pact = GER   #No more immediate re-decs
+		GER = { threat { who = SOV  value = -50} }   #Drop in the bucket most likely
+		ITA = { end_war = SOV }
+		non_aggression_pact = ITA
+		RSI = { end_war = SOV }
+		non_aggression_pact = RSI
+		MAN = { end_war = SOV }
+		non_aggression_pact = MAN
+		FIN = { end_war = SOV }
+		non_aggression_pact = FIN
+		ROM = { end_war = SOV }
+		non_aggression_pact = ROM
+		SLO = { end_war = SOV }
+		non_aggression_pact = SLO
+		CRO = { end_war = SOV }
+		non_aggression_pact = CRO
+		VIC = { end_war = SOV }
+		non_aggression_pact = VIC
+		BUL = { end_war = SOV }
+		non_aggression_pact = BUL
+		PER = { end_war = SOV }
+		non_aggression_pact = PER
+		HUN = { end_war = SOV }
+		non_aggression_pact = HUN
+		dissent = 10
+		neutrality = 100
+		threat {who = all value = -200 }  #Soviets just got their butts kicked, hardly a threat to world peace
+		FROM = { country_event = 514 }
+		GER = { country_event = 31001 }
+	}
+	option = {
+		name = "EVTOPTB507"					 # Fight to the bitter end!
+		set_country_flag = su_signs_peace
+		relation = { who = ENG value = 15 }
+		relation = { who = FRA value = 15 }
+		relation = { who = USA value = 15 }
+		dissent = 30
+	}
+}
+
+# Bitter Peace v.2
+country_event = {
+	id = 518
+	title = "EVTNAME507"
+	desc = "EVTDESC507"
+	picture = "Bitter_Peace"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = SOV
+		SOV = {
+			war_with = JAP
+		}
+		NOT = {
+			has_country_flag = su_signs_peace
+		}
+		FROM = {
+			TAG = GER
+		}
+	}
+
+	option = {
+		name = "EVTOPTA507"					# We surrender! Just let us keep what we still have.
+		ai_chance = { factor = 100 }
+		set_country_flag = su_signs_peace
+		remove_minister = 4002 # Iosif V. Stalin
+		remove_minister = 4076 # Vyacheslav Molotov
+		head_of_government = 4075 # Lavrenti P. Beria
+		minister_of_security = 4075 # Lavrenti P. Beria
+		western_russia_region = { secede_province = GER }
+		central_western_russia_region = { secede_province = GER }
+		baltic_states_region = { secede_province = GER }
+		bessarabia = { secede_province = GER }
+		khabarovskiy_kray_region { secede_province = JAP }
+		capital = 8594 # Novosibirsk
+		
+		relation = { who = ENG value = -15 }
+		relation = { who = FRA value = -15 }
+		relation = { who = USA value = -15 }
+		relation = { who = GER value = 50 }
+		relation = { who = JAP value = 50 }
+		relation = { who = ROM value = 20 }
+		relation = { who = HUN value = 20 }
+		relation = { who = FIN value = 20 }
+		relation = { who = MAN value = 20 }
+		
+		GER = { end_war = SOV }
+		non_aggression_pact = GER   #No more immediate re-decs
+		GER = { threat { who = SOV  value = -50} }   #Drop in the bucket most likely
+		ITA = { end_war = SOV }
+		non_aggression_pact = ITA
+		RSI = { end_war = SOV }
+		non_aggression_pact = RSI
+		MAN = { end_war = SOV }
+		non_aggression_pact = MAN
+		FIN = { end_war = SOV }
+		non_aggression_pact = FIN
+		ROM = { end_war = SOV }
+		non_aggression_pact = ROM
+		SLO = { end_war = SOV }
+		non_aggression_pact = SLO
+		CRO = { end_war = SOV }
+		non_aggression_pact = CRO
+		VIC = { end_war = SOV }
+		non_aggression_pact = VIC
+		BUL = { end_war = SOV }
+		non_aggression_pact = BUL
+		PER = { end_war = SOV }
+		non_aggression_pact = PER
+		HUN = { end_war = SOV }
+		non_aggression_pact = HUN
+		dissent = 10
+		neutrality = 100
+		threat {who = all value = -200 }  #Soviets just got their butts kicked, hardly a threat to world peace
+		FROM = { country_event = 514 }
+		GER = { country_event = 31001 }
+	}
+	option = {
+		name = "EVTOPTB507"					 # Fight to the bitter end!
+		set_country_flag = su_signs_peace
+		relation = { who = ENG value = 15 }
+		relation = { who = FRA value = 15 }
+		relation = { who = USA value = 15 }
+		dissent = 30
+	}
+}
+
+# Germany surrenders v.2
+country_event = {
+	
+	id = 520
+
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = GER
+		OR = {
+			FROM = { TAG = USA }
+			FROM = { TAG = FRA }
+			FROM = { TAG = ENG }
+			FROM = { TAG = SOV }
+		}
+		NOT = { has_country_flag = ge_signs_peace }
+	}
+
+	title = "EVTNAME508"
+	desc = "EVTDESC508"
+	picture = "ger_surrender"
+
+	option = {
+		name = "EVTOPTA508"					# Surrender
+		ai_chance = { factor = 100 }
+		set_country_flag = ge_signs_peace
+		CZE = { surrender_inherit = SLO } # Remaining troops or provinces
+		czechoslovakia_region = { secede_province = CZE }
+		austria_region = { secede_province = AUS }
+		belgium_region = { secede_province = BEL }
+		the_netherlands_region = { secede_province = HOL }
+		denmark_region = { secede_province = DEN }
+		norway_region = { secede_province = NOR }
+		greece_region = { secede_province = GRE }
+		albania_region = { secede_province = ALB }
+		YUG = { surrender_inherit = CRO } # Remaining troops or provinces
+		yugoslavia_region = { secede_province = YUG }
+		2429 = { secede_province = LUX }
+		ITA_3562 = { secede_province = ITA }
+		ITA_3561 = { secede_province = ITA }
+		3696 = { secede_province = ITA }
+		north_germany_region = {
+			limit = { controlled_by = SOV }
+			secede_province = SOV
+		}
+		poland_region = {
+			limit = { controlled_by = SOV }
+			secede_province = SOV
+		}
+		CZE_2967 = {
+			limit = { controlled_by = SOV }
+			secede_province = SOV
+		} # Carpathian Ruthenia
+		2898 = { secede_province = SOV } # Uzhhorod
+		2832 = { secede_province = SOV } # Uzhok
+		SOV = { end_war = GER }
+		DEN = { end_war = GER }
+		NOR = { end_war = GER }
+		FRA = { end_war = GER }
+		HOL = { end_war = GER }
+		BEL = { end_war = GER }
+		AUS = { end_war = GER }
+		GRE = { end_war = GER } 
+		YUG = { end_war = GER }
+		ITA = { end_war = GER }
+		ALB = { end_war = GER }
+		USA = { end_war = GER }
+		ENG = { end_war = GER }
+		LUX = { end_war = GER }
+		country_event = 521
+		country_event = 522
+		country_event = 523
+		FROM = { country_event = 514 }
+	}
+	option = {							# Crack down on defeatists and fight to the end
+		name = "EVTOPTB508"
+		set_country_flag = ge_signs_peace
+		dissent = 15
+		national_unity = -10
+	}
+}
+
+# National Restructuring: SOV Puppets Greater DDR
+country_event = {
+	
+	id = 521
+
+	is_triggered_only = yes
+
+	title = "EVTNAME521"
+	desc = "EVTDESC508"
+	picture = "Mol_Rib"
+	
+	trigger = {
+		SOV = {
+			controls = 1861
+			controls = 2372
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA521"
+		west_germany_region = {
+			add_core = DDR
+			secede_province = DDR
+		}
+		east_germany_region = {
+			add_core = DDR
+			secede_province = DDR
+		}
+		polish_germany_region = { secede_province = POL }
+		SOV = {
+			create_vassal = DDR
+			create_vassal = POL
+		}
+		
+		# Release any possible vassals
+		release_vassal = DEN
+		release_vassal = NOR 
+		release_vassal = FRA 
+		release_vassal = HOL 
+		release_vassal = BEL 
+		release_vassal = AUS 
+		release_vassal = GRE
+		release_vassal = YUG
+		release_vassal = ITA
+		release_vassal = ALB
+		release_vassal = LUX
+		release_vassal = RSI
+		
+		# Remove any possible faction members
+		DEN = { leave_faction = axis }
+		NOR = { leave_faction = axis } 
+		FRA = { leave_faction = axis }
+		HOL = { leave_faction = axis }
+		BEL = { leave_faction = axis }
+		AUS = { leave_faction = axis }
+		GRE = { leave_faction = axis }
+		YUG = { leave_faction = axis }
+		ITA = { leave_faction = axis }
+		ALB = { leave_faction = axis }
+		LUX = { leave_faction = axis }
+		RSI = { leave_faction = axis }
+		BUL = { leave_faction = axis }
+		SLO = { leave_faction = axis }
+		ROM = { leave_faction = axis }
+		HUN = { leave_faction = axis }
+		CRO = { leave_faction = axis }
+		FIN = { leave_faction = axis }
+	}
+}
+
+# National Restructuring: SOV and Allies divide Germany
+country_event = {
+	
+	id = 522
+
+	is_triggered_only = yes
+
+	title = "EVTNAME521"
+	desc = "EVTDESC508"
+	picture = "Mol_Rib"
+	
+	trigger = {
+		SOV = {
+			controls = 1861
+			NOT = {
+				controls = 2372
+			}
+		}
+	}
+	
+	option = {
+		name = "EVTOPTA521"
+		west_germany_region = {
+			add_core = DFR 
+			secede_province = DFR
+		}
+		east_germany_region = {
+			add_core = DDR 
+			secede_province = DDR
+		}
+		
+		# Release any possible vassals
+		release_vassal = DEN
+		release_vassal = NOR 
+		release_vassal = FRA 
+		release_vassal = HOL 
+		release_vassal = BEL 
+		release_vassal = AUS 
+		release_vassal = GRE
+		release_vassal = YUG
+		release_vassal = ITA
+		release_vassal = ALB
+		release_vassal = LUX
+		release_vassal = RSI
+		
+		# Remove any possible faction members
+		DEN = { leave_faction = axis }
+		NOR = { leave_faction = axis } 
+		FRA = { leave_faction = axis }
+		HOL = { leave_faction = axis }
+		BEL = { leave_faction = axis }
+		AUS = { leave_faction = axis }
+		GRE = { leave_faction = axis }
+		YUG = { leave_faction = axis }
+		ITA = { leave_faction = axis }
+		ALB = { leave_faction = axis }
+		LUX = { leave_faction = axis }
+		RSI = { leave_faction = axis }
+		BUL = { leave_faction = axis }
+		SLO = { leave_faction = axis }
+		ROM = { leave_faction = axis }
+		HUN = { leave_faction = axis }
+		CRO = { leave_faction = axis }
+		FIN = { leave_faction = axis }
+		
+		SOV = {
+			create_vassal = DDR
+		}
+		ENG = {
+			create_vassal = DFR
+		}
+	}
+}
+
+# National Restructuring: Allies Puppets GER
+country_event = {
+	
+	id = 523
+
+	is_triggered_only = yes
+
+	title = "EVTNAME521"
+	desc = "EVTDESC508"
+	picture = "Mol_Rib"
+	
+	trigger = {
+		2372 = {
+			controller = {
+				faction = allies
+			}
+		}
+		1861 = {
+			controller = {
+				faction = allies
+			}
+		}
+	}
+	
+	
+	option = {
+		name = "EVTOPTA521"
+		west_germany_region = {
+			add_core = DFR 
+			secede_province = DFR
+		}
+		east_germany_region = {
+			add_core = DFR 
+			secede_province = DFR
+		}
+		ENG = {
+			create_vassal = DFR
+		}
+		
+		# Release any possible vassals
+		release_vassal = DEN
+		release_vassal = NOR 
+		release_vassal = FRA 
+		release_vassal = HOL 
+		release_vassal = BEL 
+		release_vassal = AUS 
+		release_vassal = GRE
+		release_vassal = YUG
+		release_vassal = ITA
+		release_vassal = ALB
+		release_vassal = LUX
+		release_vassal = RSI
+		
+		# Remove any possible faction members
+		DEN = { leave_faction = axis }
+		NOR = { leave_faction = axis } 
+		FRA = { leave_faction = axis }
+		HOL = { leave_faction = axis }
+		BEL = { leave_faction = axis }
+		AUS = { leave_faction = axis }
+		GRE = { leave_faction = axis }
+		YUG = { leave_faction = axis }
+		ITA = { leave_faction = axis }
+		ALB = { leave_faction = axis }
+		LUX = { leave_faction = axis }
+		RSI = { leave_faction = axis }
+		BUL = { leave_faction = axis }
+		SLO = { leave_faction = axis }
+		ROM = { leave_faction = axis }
+		HUN = { leave_faction = axis }
+		CRO = { leave_faction = axis }
+		FIN = { leave_faction = axis }
+	}
+}
+
+# Surrender to Germany
+country_event = {
+	
+	id = 509
+
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = POL
+		war_with = GER
+		FROM = { TAG = GER }
+		SOV = { has_country_flag = mol_rib_pact }
+		GER = {
+			not = { war_with = SOV }
+		}
+	}
+
+	title = "EVTNAME509"
+	desc = "EVTDESC509"
+	picture = "Mol_Rib"
+	
+	option = {
+		name = "EVTOPTA509"
+		GER = { country_event = 510 }
+	}
+	option = {
+		name = "EVTOPTB509"
+		ai_chance = { factor = 100 }
+		POL = { eastern_poland = { secede_province = SOV } }
+		eastern_poland = { add_core = SOV }
+		form_government_in_exile = yes
+		FROM = { country_event = 515 }
+	}
+}
+
+# Poland Surrenders
+country_event = {
+	
+	id = 510
+
+	is_triggered_only = yes
+
+	title = "EVTNAME510"
+	desc = "EVTDESC510"
+	picture = "Mol_Rib"
+
+	option = {
+		name = "EVTOPTA510"
+		ai_chance = { factor = 70 }
+		POL = { eastern_poland = { secede_province = SOV } }
+		eastern_poland = { add_core = SOV }
+		surrender_inherit = POL
+		POL = { form_government_in_exile = yes }
+		SOV = { country_event = 511 }
+	}
+	option = {
+		name = "EVTOPTB510"
+		ai_chance = { factor = 30 }
+		POL = { eastern_poland = { secede_province = SOV } }
+		eastern_poland = { add_core = SOV }
+		SOV = { country_event = 511 }
+		create_vassal = POL
+	}	
+}
+
+# Eastern Poland to Soviet
+country_event = {
+	
+	id = 511
+
+	is_triggered_only = yes
+
+	title = "EVTNAME511"
+	desc = "EVTDESC511"
+	picture = "Mol_Rib"
+
+	option = {
+		name = "EVTOPTA511"
+		relation = { who = GER value = 10 }
+	}
+}
+
+# Poland Surrenders or keeps fighting
+country_event = {
+	
+	id = 512
+
+	is_triggered_only = yes
+	
+	trigger = {
+		TAG = POL
+		war_with = GER
+		FROM = { TAG = GER }
+		SOV = { not = { has_country_flag = mol_rib_pact } }
+		# GER = { controls = 1928	} # Warszawa
+	}
+
+	title = "EVTNAME500"
+	desc = "EVTDESC500"
+	picture = "Mol_Rib"
+
+	option = {
+		name = "EVTOPTA500"
+		ai_chance = { factor = 100 }
+		GER = { country_event = 501 }
+	}
+	option = {
+		name = "EVTOPTB500"
+		form_government_in_exile = yes
+		FROM = { country_event = 515 }
+	}
+}
+
+# Choose between surrender or fight
+country_event = {
+	
+	id = 500
+
+	is_triggered_only = yes
+
+	major = yes
+	
+	trigger = {
+		is_in_any_faction = yes
+		num_in_faction = 2
+	}
+
+	title = "EVTNAME500"
+	desc = "EVTDESC500"
+	picture = "greek_soldiers"
+
+	option = {
+		name = "EVTOPTA500"
+		form_government_in_exile = yes
+		FROM = { country_event = 515 }
+	}
+	option = {
+		name = "EVTOPTB500"
+		FROM = { country_event = 501 }
+	}	
+}
+
+# Choose between surrender or fight
+country_event = {
+	
+	id = 502
+
+	is_triggered_only = yes
+
+	major = yes
+
+	trigger = {
+		OR = { 
+			is_in_any_faction = no
+			NOT = { num_in_faction = 2 }
+		}
+	}
+
+	title = "EVTNAME500"
+	desc = "EVTDESC500"
+	picture = "Bitter_Peace"
+
+	option = {
+		name = "EVTOPTB500"
+		FROM = { country_event = 501 }
+	}	
+}
+
+# Annex or create a puppet
+country_event = {
+	
+	id = 501
+
+	is_triggered_only = yes
+
+	title = "EVTNAME501"
+	desc = "EVTDESC501"
+	picture = "Bitter_Peace"
+
+	option = {
+		name = "EVTOPTA501"
+		surrender_inherit = FROM
+		ai_chance = { 
+			factor = 90
+			modifier = {
+				factor = 0
+				tag = ITA
+				FROM = { tag =  ETH }
+			}
+		}
+	}
+	option = {
+		name = "EVTOPTB501"
+		create_vassal = FROM
+		ai_chance = { 
+			factor = 10
+			modifier = {
+				factor = 0
+				tag = GER
+			}
+		}
+	}
+}
+
+# COUNTRY has capitulated
+country_event = {
+	
+	id = 514
+
+	is_triggered_only = yes
+
+	title = "EVTNAME514"
+	desc = "EVTDESC514"
+	picture = "Bitter_Peace"
+
+	option = {
+		name = "EVTOPTA514"
+	}
+}
+
+# Refuses to surrender
+country_event = {
+	
+	id = 515
+
+	is_triggered_only = yes
+
+	title = "EVTNAME515"
+	desc = "EVTDESC515"
+	picture = "greek_soldiers"
+
+	option = {
+		name = "EVTOPTA515"
+	}
+}
+
+# Divide Soviet
+country_event = {
+
+	id = 31001
+	
+	is_triggered_only = yes
+	
+	title = "EVTNAME31001"
+	desc = "EVTDESC31001"
+	picture = "Bitter_Peace"
+	
+	option = {
+		name = "EVTOPTA31001"
+		bessarabia = {
+			limit = {
+				exists = ROM
+				ROM = {
+					faction = axis
+				}
+			}
+			secede_province = ROM
+			change_controller = ROM
+		}
+		karelia = {
+			limit = {
+				exists = FIN
+				FIN = {
+					faction = axis
+				}
+			}
+			secede_province = FIN
+			change_controller = FIN
+		}
+	}
+}

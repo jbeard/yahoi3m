@@ -1,0 +1,44 @@
+EVTNAME2704;Expansion of Mengkukuo;;Expansion von Megkukuo;;;;;;;;;;;x
+EVTDESC2704;These provinces now belong to Mengkukuo;;Diese Provinzen gehören nun zu Megkukuo;;;;;;;;;;;x
+expand_mengkukuo_title;The Expansion of Mengkukuo;;Die Expansion von Megkukuo;;;;;;;;;;;x
+expand_mengkukuo_desc;More land claimed by Mengkukuo has fallen into our hands, we should add incorporate these lands into Mengkukuo to allow them to govern it under our guidance.;;Mehr Land, das von Megkukuo beansprucht wird, ist uns in die Hände gefallen, wir sollten es in Megkukuo integrierren damit sie es in unserem Namen regieren.;;;;;;;;;;;x
+MODIFIER_LOCAL_RESOURCES;Local Resources;;Lokale Ressourcen;;;;;;;;;;;x
+POL_MOBILIZE_DRO_V3;To fully mobilise our reserves we need §Y$MP$§W manpower.;;Um unsere Reserven komplett zu mobilisieren benötigen wir §Y$MP$§W Männer.;;;;;;;;;;;x,,,
+PORT_SHIPS;The port here can ship in §Y$SIZE$§W units of supplies and fuel every day.;;Der Hafen hier kann täglich §Y$SIZE$§W Einheiten Nachschub und Treibstoff aufnehmen.;;;;;;;;;;;x,,,
+THE_DATE_IS_BEFORE;It is before §Y$DATE$§\n;Ceci est antérieur §Y$DATE$§\n;Es ist vor §Y$DATE$§\n;;Es antes §Y$DATE$§\n;;;;;;;;;x,,,
+THE_DATE_IS_AFTER;It is at least §Y$DATE$§\n ;C'est au moins §Y$DATE$§\n;Es ist zumindest §Y$DATE$§\n;;Es de al menos §Y$DATE$§\n;;;;;;;;;x,,,
+EVTNAME2902;The Restoration of France;;Die Wiedererrichtung Frankreichs;;;;;;;;;;;x
+EVTDESC2902;With the recovery of Paris, De Gaulle has vindicated his choice to continue the fight and restore the honour of France. The Vichy regime has been thoroughly discredited and now the Free French movement is the one, true, legitimate voice of the French people. The Vichy regime has accepted the inevitable and surrendered their authority to the De Gaulle. ;;Mit der Rückeroberung von Paris hat De Gaulle sein Versprechen wahrgemacht als er gesagt hat dass er den Kampf fortsetzen und die Ehre Frankreichs wiederherstellen wolle. Das Vichy-Regime wurde komplett diskreditiert und die freifranzösische Bewegung ist die einzig wahre, legitime Stimme des französischen Volkes. Das Vichy-Regime hat das Unvermeidbare akzeptiert und ihre Authorität an De Gaulle abgeben. ;;;;;;;;;;;x
+EVTOPTA2902;Vive la France;;Vive la France;;;;;;;;;;;x
+mengkukuo_region;Mengkukuo;;Mengkukuo;;;;;;;;;;;x
+independent_mengkukuo_title;The formation of Mengkukuo;;Die Errichtung Mengkukuos;;;;;;;;;;;x
+independent_mengkukuo_desc;The Kwangtung army command has maintained contacts with various important personages in Inner Mongolia. Using these willing collaborators we can set up a regime there that will keep the area quiet while we conquer else where.;;Das Oberkommando der Kwangtung-Armee hat mit mehreren wichtigen Persönlichkeiten in der inneren Mongolei gute Beziehungen gepflegt. Mit der Hilfe dieser willigen Kollaborateure können wir ein Regime einrichten, dass diese Gebiete ruhig halten wird, während wir andere Gebiete erobern.;;;;;;;;;;;x
+ ;;;;;;;;;;;;;;x
+EVTNAME5040;Economic Boost;;Wirtschaftlicher Aufschwung;;;;;;;;;;;x
+EVTDESC5040;Due to a surge in productivity our factories are currently producing more goods, although we are not sure how long this will be sustained;;Aufgrund einer Steigerung der Produktivität produzieren unsere Fabriken derzeit mehr Güter, jedoch sind wir nicht sicher wie lange das anhalten wird.;;;;;;;;;;;x
+EVTOPTA5040;War harder not smarter;;Härter, nicht klüger kämpfen;;;;;;;;;;;x
+EVTNAME5041;Surge of Volunteers.;;Freiwilligenwelle;;;;;;;;;;;x
+EVTDESC5041;You men of manly baring are standing up and saying they are ready to fight for our country. ;;Die tapferen Männer stehen auf und bekünden, dass sie bereit sind für unser Land zu kämpfen;;;;;;;;;;;x
+EVTOPTA5041;Let's fight;;Lasst uns kämpfen;;;;;;;;;;;x
+EVTNAME5042;Coal donations;;Kohlegeschenke;;;;;;;;;;;x
+EVTDESC5042;To fuel our war machine our people have donated some of thier own coal stocks to the government.;;Um unsere Kriegsmaschinerie anzutreiben haben unsere Leute ihre eigenen Kohlevorräte an uns übergeben.;;;;;;;;;;;x
+EVTOPTA5042;We will set the world ablaze.;;Wir werden die Welt in Brand setzen;;;;;;;;;;;x
+EVTNAME5043;Metal Donations;;Metallgeschenke;;;;;;;;;;;x
+EVTDESC5043;The war effort needs materials and our civilial population has gathered up things pots and pans and metal railings from fences to supply more metal for industries.;;Der Krieg benötigt Rohstoffe und unsere Zivilbevölkerung hat Töpfe, Pfannen und Zaunrollen gesammelt, um uns das Metall zur Verfügung zu stellen.;;;;;;;;;;;x
+EVTOPTA5043;Give me more, damn you!;;Ich will mehr, verdammt!;;;;;;;;;;;x
+EVTNAME5044;Rare Material Donations;;Geschenke an seltenen Materialien;;;;;;;;;;;x
+EVTDESC5044;To aid us in the war effort the home front have been donating things like spare tires and the like to help sustain our productive capacity.;;Um unseren Krieg zu unterstützen hat die Heimatfront Dinge wie Ersatzreifen und Ähnliches gesammelt, um unsere Produktion zu stärken.;;;;;;;;;;;x
+EVTOPTA5044;We will use these for Victory;;Wir werden sie zum Sieg nutzen;;;;;;;;;;;x
+economic_boost;Economic Boost;;Wirtschaftlicher Aufschwung;;;;;;;;;;;x
+desc_economic_boost;Our economy has been boosted;;Unsere Wirtschaft wurde verbessert;;;;;;;;;;;x
+volunteer_surge;Volunteer Surge;;Freiwilligenwelle;;;;;;;;;;;x
+desc_volunteer_surge;Our volunteers are surging;;Freiwillige strömen unserer Armee zu;;;;;;;;;;;x
+STRMONTHLY_CHANGE;Monthly Change:;;Monatsänderung:;;;;;;;;;;;x
+STW_CONV;Convoy/ASW Warfare: ;;Konvoi/ASW-Kriegsführung;;;;;;;;;;;x
+STW_ALLIES;Allied Help: ;;Alliierte Hilfe:;;;;;;;;;;;x
+STW_BOMB;Strategic Bombing: ;;Strategische Bombardierung:;;;;;;;;;;;x
+non_core;Non Core;;Nicht-Stamm;;;;;;;;;;;x
+MILACCOFFDESC;$COUNTRY$ is offering us Transit Rights. Accepting will allow us to move ships and armies into their territory.;;;;;;;;;;;;;x
+EVTNAME31001;To The Victors Go The Spoils;Pour les vainqueurs, le butin;Die Sieger gehen die Beute;;Para los vencedores van los despojos;;;;;;;;x;
+EVTDESC31001;With the Soviet threat in the East destroyed, it is time to divide the spoils.  Your allies will want the lands the Soviets stole from them.;Avec la menace soviétique au Moyen-détruits, il est temps de partager le butin. Vos alliés voudront que les terres les Soviétiques en volant de leur part.;Mit der sowjetischen Bedrohung im Osten zerstört, ist es Zeit, die Beute zu teilen. Ihre Verbündeten wollen die Länder die Sowjets besiegt und von ihnen.;;Con la amenaza soviética en el Oriente destruidos, es el momento de dividir el botín. Tus aliados querrán las tierras de los soviéticos les robaba.;;;;;;;;x;
+EVTOPTA31001;Reward your allies;Récompensez vos alliés;Belohnen Sie Ihre Verbündeten;;Premie a sus aliados;;;;;;;;x;

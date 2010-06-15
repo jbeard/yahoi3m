@@ -1,0 +1,74 @@
+###################################
+# Destruction of the French Fleet #
+###################################
+country_event = {
+	
+	id = 2601
+
+	is_triggered_only = yes
+	
+	title = "EVTNAME2601"
+	desc = "EVTDESC2601"
+	picture = "naval_reinforcements"
+
+	option = {
+		name = "EVTOPTA2601"			# How dare they!
+		relation = { who = ENG value = -10 }
+	}
+}
+
+#############################
+# King George V passes away #
+#############################
+country_event = {
+	
+	id = 2602
+
+	trigger = {
+		tag = ENG
+		head_of_state = 1001 
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+
+		modifier = {}		
+	}
+	
+	title = "EVTNAME2602"
+	desc = "EVTDESC2602"
+	picture = "news_paper"
+
+	option = {
+		name = "EVTOPTA2602"
+		head_of_state = 1031
+	}
+}
+
+#########################
+# Edward VIII abdicates #
+#########################
+country_event = {
+	
+	id = 2603
+
+	trigger = {
+		tag = ENG
+		head_of_state = 1031
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+
+		modifier = {}	
+	}
+	
+	title = "EVTNAME2603"
+	desc = "EVTDESC2603"
+	picture = "minister_resign"
+
+	option = {
+		name = "EVTOPTA2603"
+		head_of_state = 1033		# George VI
+	}
+}

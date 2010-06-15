@@ -1,0 +1,789 @@
+armygroup = {
+	name = "North China Army"
+	location = 4888
+	regiment = { type = hq_brigade name = "North China Army HQ" historical_model = 0 }
+	army = {
+		name = "1st Army"
+		location = 4981
+		regiment = { type = hq_brigade name "1st Army HQ" historical_model = 0 }
+		division= {
+			name = "36. Hoheishidan"
+			location = 4981
+			regiment = { type = infantry_brigade name = "222nd Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "223rd Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "224th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "37. Hoheishidan"
+			location = 4935
+			regiment = { type = infantry_brigade name = "225th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "226th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "227th Infantry Regiment" historical_model = 0 }
+		}
+	}
+	army = {
+		name = "13. Hendan"
+		location = 4934
+		regiment = { type = hq_brigade name = "13. Hendan HQ" historical_model = 0 }
+		division= {
+			name = "15. Hoheishidan"
+			location = 4934
+			regiment = { type = infantry_brigade name = "51st Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "60th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "67th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "17. Hoheishidan"
+			location = 4886
+			regiment = { type = infantry_brigade name = "53rd Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "64th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "81st Infantry Regiment" historical_model = 0 }
+		}
+	}
+	army = {
+		name = "Mongol Army"
+		location = 7159
+		regiment = { type = hq_brigade name = "Mongol Army HQ" historical_model = 0 }
+		division= {
+			name = "26. Hoheishidan"
+			location = 7233
+			regiment = { type = infantry_brigade name = "11th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "12th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "13th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "2. Independent Mixed Brigade"
+			location = 7233
+			regiment = { type = infantry_brigade name = "2nd Infantry Brigade" historical_model = 0 }
+			regiment = { type = artillery_brigade name = "Artillery of the 2nd Mixed Brigade" historical_model = 0 }
+			regiment = { type = engineer_brigade name = "Engineers of the 2nd Mixed Brigade" historical_model = 0 }
+		}
+		division= {			
+			name = "1 Moukogo Kiheishidan"
+			location = 7183
+			regiment = { type = cavalry_brigade historical_model = 0 }
+			regiment = { type = cavalry_brigade historical_model = 0 }
+		}
+		division= {
+			name = "2 Moukogo Kiheishidan"
+			location = 7183
+			regiment = { type = cavalry_brigade historical_model = 0 }
+			regiment = { type = cavalry_brigade historical_model = 0 }
+		}
+		division= {
+			name = "3 Moukogo Kiheishidan"
+			location = 7183
+			regiment = { type = cavalry_brigade historical_model = 0 }
+			regiment = { type = cavalry_brigade historical_model = 0 }
+		}
+		division= {
+			name = "4 Moukogo Kiheishidan"
+			location = 8872
+			regiment = { type = cavalry_brigade historical_model = 0 }
+			regiment = { type = cavalry_brigade historical_model = 0 }
+		}
+		division= {
+			name = "5 Moukogo Kiheishidan"
+			location = 8872
+			regiment = { type = cavalry_brigade historical_model = 0 }
+			regiment = { type = cavalry_brigade historical_model = 0 }
+		}
+	}
+}
+theatre = {
+	name = "Kwantung Theater Army HQ"
+	location = 5020
+	regiment = { type = hq_brigade name = "Kwantung Theater Army HQ" historical_model = 0 }
+	division= {
+		name = "10. Hoheishidan"
+		location = 4386
+		regiment = { type = infantry_brigade name = "10th Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "39th Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "63rd Infantry Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "28. Hoheishidan"
+		location = 4259
+		regiment = { type = infantry_brigade name = "3rd Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "30th Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "36th Infantry Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Kwantung Defence Command"
+		location = 7139
+		regiment = { type = garrison_brigade name = "1st Garrison Force" historical_model = 0 }
+		regiment = { type = garrison_brigade name = "2nd Garrison Force" historical_model = 0 }
+		regiment = { type = garrison_brigade name = "3rd Garrison Force" historical_model = 0 }
+		regiment = { type = police_brigade name = "1/KTA MP brigade" historical_model = 0 }
+	}
+	army = {
+		name = "3. Hendan"
+		location = 8750
+		regiment = { type = hq_brigade name = "3. Hendan HQ" historical_model = 0 }
+		division= {
+			name = "9. Hoheishidan"
+			location = 8750
+			regiment = { type = infantry_brigade name = "7th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "19th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "35th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "12. Hoheishidan"
+			location = 8803
+			regiment = { type = infantry_brigade name = "24th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "46th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "48th Infantry Regiment" historical_model = 0 }
+		}
+	}
+	army = {
+		name = "4. Hendan"
+		location = 8637
+		regiment = { type = hq_brigade name = "4. Hendan HQ" historical_model = 0 }
+		division= {
+			name = "1. Hoheishidan"
+			location = 8573
+			regiment = { type = infantry_brigade name = "1st Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "49th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "57th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "2. Border Guards"
+			location = 8606
+			regiment = { type = garrison_brigade name = "5th Border Guard" historical_model = 0 }
+			regiment = { type = garrison_brigade name = "6th Border Guard" historical_model = 0 }
+			regiment = { type = garrison_brigade name = "7th Border Guard" historical_model = 0 }
+		}
+		division= {
+			name = "3. Border Guards"
+			location = 8605
+			regiment = { type = garrison_brigade name = "13th Border Guard" historical_model = 0 }
+			regiment = { type = garrison_brigade name = "5th Garrison Force" historical_model = 0 }
+			regiment = { type = garrison_brigade name = "8th Border Guard" historical_model = 0 }
+		}
+	}
+	army = {
+		name = "5. Hendan"
+		location = 7078
+		regiment = { type = hq_brigade name = "5. Hendan HQ" historical_model = 0 }
+		division= {
+			name = "4. Border Guards"
+			location = 7043
+			regiment = { type = garrison_brigade name = "4th Border Guard" historical_model = 0 }
+			regiment = { type = garrison_brigade name = "12th Border Guard" historical_model = 0 }
+			regiment = { type = garrison_brigade name = "9th Garrison Force" historical_model = 0 }
+		}
+		division= {
+			name = "5. Border Guards"
+			location = 7061
+			regiment = { type = garrison_brigade name = "6th Border Guard" historical_model = 0 }
+			regiment = { type = garrison_brigade name = "8th Border Guard" historical_model = 0 }
+			regiment = { type = garrison_brigade name = "9th Border Guard" historical_model = 0 }
+		}
+		division= {
+			name = "3 Manchuko Kiheishidan"
+			location = 7062
+			regiment = { type = cavalry_brigade name = "23rd Cavalry Regiment" historical_model = 0 }
+			regiment = { type = cavalry_brigade name = "24th Cavalry Regiment" historical_model = 0 }
+		}
+	}
+	army = {
+		name = "6. Hendan"
+		location = 3927
+		regiment = { type = hq_brigade name = "6. Hendan HQ" historical_model = 0 }
+		division= {
+			name = "14. Hoheishidan"
+			location = 7099
+			regiment = { type = infantry_brigade name = "2nd Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "15th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "59th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "23. Hoheishidan"
+			location = 3994
+			regiment = { type = infantry_brigade name = "64th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "71st Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "72nd Infantry Regiment" historical_model = 0 }
+		}
+	}
+	army = {
+		name = "20. Hendan"
+		location = 4127
+		regiment = { type = hq_brigade name = "20. Hendan HQ" historical_model = 0 }
+		division= {
+			name = "8. Hoheishidan"
+			location = 4194
+			regiment = { type = infantry_brigade name = "5th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "17th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "31st Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "25. Hoheishidan"
+			location = 4128
+			regiment = { type = infantry_brigade name = "14th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "40th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "70th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "6. Border Guards"
+			location = 4062
+			regiment = { type = garrison_brigade name = "2nd Border Guard" historical_model = 0 }
+			regiment = { type = garrison_brigade name = "3rd Border Guard" historical_model = 0 }
+			regiment = { type = garrison_brigade name = "4th Border Guard" historical_model = 0 }
+		}
+	}
+}
+army = {
+	name = "14. Hendan"
+	location = 5737
+	regiment = { type = hq_brigade name = "14. Hendan HQ" historical_model = 0 }
+	division= {
+		name = "16. Hoheishidan"
+		location = 5737
+		regiment = { type = infantry_brigade name = "9th Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "20th Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "33rd Infantry Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "48. Hoheishidan"
+		location = 5809
+		regiment = { type = infantry_brigade name = "1st (Taiwan) Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "2nd (Taiwan) Infantry Regiment" historical_model = 0 }
+		regiment = { type = motorized_brigade name = "47th Infantry Regiment" historical_model = 0 }
+	}
+}
+corps = {
+	name = "16. Hendan"
+	location = 5315
+	regiment = { type = hq_brigade name = "16. Hendan HQ" historical_model = 0 }
+	division= {
+		name = "2. Hoheishidan"
+		location = 5315
+		regiment = { type = infantry_brigade name = "4th Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "16th Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "29th Infantry Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Imperial Guards"
+		location = 5315
+		regiment = { type = motorized_brigade name = "3rd Guards Regiment" historical_model = 0 }
+		regiment = { type = motorized_brigade name = "4th Guards Regiment" historical_model = 0 }
+		regiment = { type = motorized_brigade name = "5th Guards Regiment" historical_model = 0 }
+		regiment = { type = artillery_brigade name = "Guards Artillery Regiment" historical_model = 0 }
+	}
+}
+division= {
+	name = "1. Pacific Garrison Guards"
+	location = 5966
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+}
+division= {
+	name = "2. Pacific Garrison Guards"
+	location = 10663
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+}
+division= {
+	name = "3. Pacific Garrison Guards"
+	location = 10651
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+}
+division= {
+	name = "4. Pacific Garrison Guards"
+	location = 10653
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+}
+division= {
+	name = "5. Pacific Garrison Guards"
+	location = 10657
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+	regiment = { type = garrison_brigade historical_model = 0 }
+}
+theatre = {
+	name = "Imperial General HQ"
+	location = 5315
+	regiment = { type = hq_brigade name = "Imperial General HQ" historical_model = 0 }
+
+	division= {
+		name = "4. Hoheishidan"
+		location = 5315
+		regiment = { type = infantry_brigade name = "8th Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "37th Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "61st Infantry Regiment" historical_model = 0 }
+	}
+	army = {
+		name = "North Japan Army"
+		location = 4986
+		regiment = { type = hq_brigade name = "North Japan Army HQ" historical_model = 0 }
+		division= {
+			name = "1. Home Guards"
+			location = 4986
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+		}
+		division= {
+			name = "2. Home Guards"
+			location = 7238
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+		}
+	}
+	army = {
+		name = "Central Japan Army"
+		location = 5346
+		regiment = { type = hq_brigade name = "Central Japan Army HQ" historical_model = 0 }
+		division = {
+			name = "53. Hoheishidan"
+			location = 5346
+			regiment = { type = infantry_brigade name = "119th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "128th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "151st Infantry Regiment" historical_model = 0 }
+		}
+	}
+	army = {
+		name = "West Japan Army"
+		location = 5370
+		regiment = { type = hq_brigade name = "West Japan Army HQ" historical_model = 0 }
+		division= {
+			name = "8. Home Guards"
+			location = 5370
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+		}
+		division= {
+			name = "14. Home Guards"
+			location = 5425
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+		}
+	}
+	army = {
+		name = "East Japan Army"
+		location = 5543	
+		regiment = { type = hq_brigade name = "East Japan Army HQ" historical_model = 0 }
+		division = {
+			name = "52. Hoheishidan"
+			location = 5543
+			regiment = { type = infantry_brigade name = "69th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "107th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "150th Infantry Regiment" historical_model = 0 }
+		}
+	}
+	army = {
+		name = "Korean Army"
+		location = 5116
+		regiment = { type = hq_brigade name = "Korean Army HQ" historical_model = 0 }
+		division= {
+			name = "19. Hoheishidan"
+			location = 4522
+			regiment = { type = infantry_brigade name = "73rd Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "74th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "75th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "76th Infantry Regiment"historical_model = 0 }
+		}
+		division= {
+			name = "20. Hoheishidan"
+			location = 4691
+			regiment = { type = infantry_brigade name = "77th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "78th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "79th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "80th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "1. Korean Garrison"
+			location = 5116
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+		}
+		division= {
+			name = "2. Korean Garrison"
+			location = 5341
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+			regiment = { type = garrison_brigade historical_model = 0 }
+		}
+	}
+	division= {
+		name = "Iwo Jima Garrison"
+		location = 10642
+		regiment = { type = garrison_brigade name = "Iwo Jima Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Minami Torishima Garrison"
+		location = 10643
+		regiment = { type = garrison_brigade name = "Minami Torishima Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Palau Garrison"
+		location = 6291
+		regiment = { type = garrison_brigade name = "Palau Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Yap Garrison"
+		location = 10645
+		regiment = { type = garrison_brigade name = "Yap Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Satawan Garrison"
+		location = 10652
+		regiment = { type = garrison_brigade name = "Satawan Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Kwajalein Garrison"
+		location = 10658
+		regiment = { type = garrison_brigade name = "Kwajalein Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Naha Garrison"
+		location = 5759
+		regiment = { type = garrison_brigade name = "Naha Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Ostrov Paramusir Garrison"
+		location = 6875
+		regiment = { type = garrison_brigade name = "Ostrov Paramusir Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Ponape Garrison"
+		location = 10653
+		regiment = { type = garrison_brigade name = "Ponape Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Truk Garrison"
+		location = 10651
+		regiment = { type = garrison_brigade name = "Truk Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Saipan Garrison"
+		location = 5966
+		regiment = { type = garrison_brigade name = "Saipan Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "Eniwetok Garrison"
+		location = 10663
+		regiment = { type = garrison_brigade name = "Eniwetok Regiment" historical_model = 0 }
+	}
+}
+navy = {
+	name = "Nihon Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = battlecruiser name = "IJN Kongo" historical_model = 1 pride = yes }
+	ship = { type = battlecruiser name = "IJN Hiei" historical_model = 1 }
+	ship = { type = battlecruiser name = "IJN Haruna" historical_model = 1 }
+}
+navy = {
+	name = "1. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = battlecruiser name = "IJN Kirishima" historical_model = 1 }
+	ship = { type = battleship name = "IJN Fuso" historical_model = 1 }
+	ship = { type = battleship name = "IJN Yamashiro" historical_model = 1 }
+}
+navy = {
+	name = "2. Kaigun"
+	base = 5425
+	location = 5425
+	ship = { type = battleship name = "IJN Ise" historical_model = 1 }
+	ship = { type = battleship name = "IJN Hyuga" historical_model = 1 }
+	ship = { type = battleship name = "IJN Nagato" historical_model = 2 }
+}
+navy = {
+	name = "3. Kaigun"
+	base = 5478
+	location = 5478
+	ship = { type = battleship name = "IJN Mutsu" historical_model = 2 }
+}
+navy = {
+	name = "4. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = light_cruiser name = "IJN Tatsuta" historical_model = 0 }
+	ship = { type = light_cruiser name = "IJN Hirado" historical_model = 0 }
+	ship = { type = light_cruiser name = "IJN Yahagi" historical_model = 0 }
+	ship = { type = light_cruiser name = "IJN Kuma" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Tama" historical_model = 1 }
+}
+navy = {
+	name = "5. Kaigun"
+	base = 5425
+	location = 5425
+	ship = { type = heavy_cruiser name = "IJN Furutaka" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Kitikama" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Kiso" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Oi" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Nagara" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "IJN Izumo" historical_model = 0 }
+	ship = { type = light_cruiser name = "IJN Tenryu" historical_model = 0 }
+}
+navy = {
+	name = "6. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = light_cruiser name = "IJN Natori" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Kinu" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Yuru" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "IJN Asama" historical_model = 0 }
+}
+navy = {
+	name = "7. Kaigun"
+	base = 5478
+	location = 5478
+	ship = { type = light_cruiser name = "IJN Yubari" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Isuzu" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Sendai" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Abukuma" historical_model = 1 }
+	ship = { type = light_cruiser name = "IJN Jintsu" historical_model = 1 }
+}
+navy = {
+	name = "8. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = heavy_cruiser name = "IJN Kako" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "IJN Aoba" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "IJN Kinugasa" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "IJN Nachi" historical_model = 2 }
+	ship = { type = heavy_cruiser name = "IJN Haguro" historical_model = 2 }
+	ship = { type = light_cruiser name = "IJN Naka" historical_model = 1 }
+}
+navy = {
+	name = "9. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = heavy_cruiser name = "IJN Myoko" historical_model = 2 }
+	ship = { type = heavy_cruiser name = "IJN Ashigara" historical_model = 2 }
+	ship = { type = heavy_cruiser name = "IJN Atago" historical_model = 2 }
+	ship = { type = heavy_cruiser name = "IJN Takao" historical_model = 2 }
+	ship = { type = heavy_cruiser name = "IJN Chokai" historical_model = 2 }
+}
+navy = {
+	name = "10. Kaigun"
+	base = 5478
+	location = 5478
+	ship = { type = heavy_cruiser name = "IJN Maya" historical_model = 2 }
+	ship = { type = light_cruiser name = "IJN Mikuma" historical_model = 3 }
+	ship = { type = light_cruiser name = "IJN Mogami" historical_model = 3 }
+}
+navy = {
+	name = "11. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = escort_carrier name = "IJN Zuiho" historical_model = 1 air = { location = 5315 wing = { type = cag historical_model = 1 } } }
+}
+navy = {
+	name = "12. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = carrier name = "IJN Akagi" historical_model = 2 air = { location = 5315 wing = { type = cag historical_model = 1 } } air = { location = 5315 wing = { type = cag historical_model = 1 } } }
+}
+navy = {
+	name = "13. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = carrier name = "IJN Kaga" historical_model = 2 air = { location = 5315 wing = { type = cag historical_model = 1 } } air = { location = 5315 wing = { type = cag historical_model = 1 } } }
+}
+navy = {
+	name = "14. Kaigun"
+	base = 5425
+	location = 5425
+	ship = { type = carrier name = "IJN Ryujo" historical_model = 2 air = { location = 5425 wing = { type = cag historical_model = 1 } } air = { location = 5425 wing = { type = cag historical_model = 1 } } }
+}
+navy = {
+	name = "15. Kaigun"
+	base = 5370
+	location = 5370
+	ship = { type = destroyer name = "1 Kuchikukantai" historical_model = 0 }
+	ship = { type = destroyer name = "2 Kuchikukantai" historical_model = 0 }
+	ship = { type = destroyer name = "3 Kuchikukantai" historical_model = 0 }
+	ship = { type = transport_ship name = "1 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "2 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "3 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "4 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "5 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "6 Yuso Sentai" historical_model = 0 }
+}
+navy = {
+	name = "16. Kaigun"
+	base = 5370
+	location = 5370
+	ship = { type = destroyer name = "7 Kuchikukantai" historical_model = 0 }
+	ship = { type = transport_ship name = "7 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "8 Yuso Sentai" historical_model = 0 }
+}
+navy = {
+	name = "18. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = destroyer name = "15 Kuchikukantai" historical_model = 1 }
+	ship = { type = destroyer name = "16 Kuchikukantai" historical_model = 1 }
+	ship = { type = transport_ship name = "8 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "9 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "10 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "11 Yuso Sentai" historical_model = 0 }
+}
+navy = {
+	name = "19. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = destroyer name = "18 Kuchikukantai" historical_model = 1 }
+	ship = { type = destroyer name = "19 Kuchikukantai" historical_model = 1 }
+	ship = { type = transport_ship name = "12 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "13 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "14 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "15 Yuso Sentai" historical_model = 0 }
+}
+navy = {
+	name = "20. Kaigun"
+	base = 5425
+	location = 5425
+	ship = { type = transport_ship name = "16 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "17 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "18 Yuso Sentai" historical_model = 0 }
+	ship = { type = transport_ship name = "19 Yuso Sentai" historical_model = 0 }
+}
+navy = {
+	name = "21. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = submarine name = "1 Sensuikantai" historical_model = 0 }
+	ship = { type = submarine name = "2 Sensuikantai" historical_model = 0 }
+}
+navy = {
+	name = "22. Kaigun"
+	base = 5425
+	location = 5425
+	ship = { type = submarine name = "5 Sensuikantai" historical_model = 2 }
+	ship = { type = submarine name = "6 Sensuikantai" historical_model = 2 }
+}
+navy = {
+	name = "23. Kaigun"
+	base = 5543
+	location = 5543
+	ship = { type = submarine name = "7 Sensuikantai" historical_model = 2 }
+	ship = { type = submarine name = "8 Sensuikantai" historical_model = 2 }
+	ship = { type = submarine name = "9 Sensuikantai" historical_model = 2 }
+	ship = { type = submarine name = "10 Sensuikantai" historical_model = 3 }
+}
+air = {
+	name = "1. Nihon Koukuujieitai"
+	base = 5315
+	location = 5315
+	wing = { type = tactical_bomber name = "1 Keibakugekiki no Hikodan" historical_model = 0 }
+}
+air = {
+	name = "2. Nihon Koukuujieitai"
+	base = 5315
+	location = 5315
+	wing = { type = tactical_bomber name = "2 Keibakugekiki no Hikodan" historical_model = 0 }
+}
+air = {
+	name = "1. Hikoutai"
+	base = 5020
+	location = 5020
+	wing = { type = tactical_bomber name = "3 Keibakugekiki no Hikodan" historical_model = 0 }
+}
+air = {
+	name = "3. Nihon Koukuujieitai"
+	base = 5020
+	location = 5020
+	wing = { type = tactical_bomber name = "4 Keibakugekiki no Hikodan" historical_model = 0 }
+}
+air = {
+	name = "2. Hikoutai"
+	base = 5020
+	location = 5020
+	wing = { type = tactical_bomber name = "5 Keibakugekiki no Hikodan" historical_model = 0 }
+}
+air = {
+	name = "4. Nihon Koukuujieitai"
+	base = 5315
+	location = 5315
+	wing = { type = naval_bomber name = "13 Kaigunkugekiki no Hikodan" historical_model = 0 }
+}
+air = {
+	name = "5. Nihon Koukuujieitai"
+	base = 5020
+	location = 5020
+	wing = { type = naval_bomber name = "33 Goraikugekiki no Hikodan" historical_model = 0 }
+}
+air = {
+	name = "1 Zerosen no Hikodan"
+	base = 7139
+	location = 7139
+	wing = { type = interceptor name = "1 Zerosen no Hikodan" historical_model = 0 }
+}
+air = {
+	name = "2 Zerosen no Hikodan"
+	base = 7139
+	location = 7139
+	wing = { type = interceptor name = "2 Zerosen no Hikodan" historical_model = 0 }
+}
+air = {
+	name = "3 Zerosen no Hikodan"
+	base = 5020
+	location = 5020
+	wing = { type = interceptor name = "3 Zerosen no Hikodan" historical_model = 0 }
+}
+air = {
+	name = "4 Zerosen no Hikodan"
+	base = 5315
+	location = 5315
+	wing = { type = interceptor name = "4 Zerosen no Hikodan" historical_model = 0 }
+}
+navy = {
+	name = "17. Kaigun"
+	base = 5370
+	location = 5370
+	ship = { type = destroyer name = "4 Kuchikukantai" historical_model = 0 }
+	ship = { type = destroyer name = "5 Kuchikukantai" historical_model = 0 }
+	ship = { type = destroyer name = "6 Kuchikukantai" historical_model = 0 }
+}
+navy = {
+	name = "24. Kaigun"
+	base = 5370
+	location = 5370
+	ship = { type = destroyer name = "8 Kuchikukantai" historical_model = 0 }
+	ship = { type = destroyer name = "9 Kuchikukantai" historical_model = 0 }
+	ship = { type = destroyer name = "10 Kuchikukantai" historical_model = 0 }
+	ship = { type = destroyer name = "11 Kuchikukantai" historical_model = 1 }
+	ship = { type = destroyer name = "12 Kuchikukantai" historical_model = 1 }
+	ship = { type = destroyer name = "13 Kuchikukantai" historical_model = 1 }
+	ship = { type = destroyer name = "14 Kuchikukantai" historical_model = 1 }
+}
+navy = {
+	name = "25. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = destroyer name = "17 Kuchikukantai" historical_model = 1 }
+}
+navy = {
+	name = "26. Kaigun"
+	base = 5315
+	location = 5315
+	ship = { type = destroyer name = "20 Kuchikukantai" historical_model = 1 }
+}
+
+
+
+military_construction = {
+	country = JAP
+	destroyer = {
+		name = "21 Kuchikukantai"
+		historical_model = 1
+	}
+	cost = 1.50
+	progress = 0
+	duration = 91
+}

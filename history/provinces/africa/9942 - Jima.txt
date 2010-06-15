@@ -1,0 +1,16 @@
+owner = ETH
+controller = ETH
+add_core = ETH
+energy = 1.00
+industry = 1
+infra = 2
+manpower = 1.00
+leadership = 0.10
+1936.5.9 = {
+	owner = ITA
+	controller = ITA
+}
+1941.4.6 = {
+	owner = ETH
+	controller = ETH
+}

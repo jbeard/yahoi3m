@@ -1,0 +1,11 @@
+owner = AST
+controller = AST
+add_core = AST
+
+energy = 1.00
+
+infra = 6
+
+infra = 6
+
+infra = 6

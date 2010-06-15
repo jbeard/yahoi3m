@@ -1,0 +1,10 @@
+owner = FRA
+controller = FRA
+add_core = FRA
+
+points = 2
+infra = 10
+
+1941.6.22 = {
+	controller = GER
+}

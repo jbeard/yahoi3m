@@ -1,0 +1,33 @@
+####################################
+# Destruction of the French Fleet  #
+####################################
+# Mers-el-Kébir
+diplomatic_decisions = {
+
+	destruction_of_french_fleet = {
+		potential = {
+			tag = ENG
+			not = { has_country_flag = destruction_of_the_french_fleet }
+			exists = VIC
+			ENG = { war_with = GER }
+			VIC = {
+				or = {
+					10561 = { units_in_province = 1 }
+					10563 = { units_in_province = 1 }
+				}
+			}
+		}
+		allow = {
+			VIC = { not = { war_with = GER } }
+		}
+		effect = {
+			set_country_flag = destruction_of_the_french_fleet
+			relation = { who = VIC value = -30 }
+			national_unity = 2
+			VIC = { country_event = 2601 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

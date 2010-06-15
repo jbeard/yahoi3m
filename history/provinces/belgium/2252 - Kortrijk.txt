@@ -1,0 +1,8 @@
+owner = BEL
+controller = BEL
+add_core = BEL
+
+infra = 10
+1941.6.22 = {
+	controller = GER
+}

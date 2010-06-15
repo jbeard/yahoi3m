@@ -1,0 +1,6 @@
+owner = USA
+controller = USA
+add_core = USA
+metal = 9.00
+energy = 107.00
+infra = 6

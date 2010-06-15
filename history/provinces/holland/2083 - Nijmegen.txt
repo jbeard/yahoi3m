@@ -1,0 +1,13 @@
+owner = HOL
+controller = HOL
+add_core = HOL
+
+energy = 7.00
+rare_materials = 1.00
+industry = 4
+infra = 10
+leadership = 0.1
+
+1940.5.28 = {
+	controller = GER
+}

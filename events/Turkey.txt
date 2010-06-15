@@ -1,0 +1,39 @@
+########################
+# The death of Ataturk #
+########################
+country_event = {
+	
+	id = 17100
+
+	trigger = {
+		tag = TUR
+		head_of_state = 12001
+		or = {
+			government = national_socialism
+			government = fascist_republic
+			government = right_wing_autocrat
+		}
+		not = { has_country_flag = ataturk }
+		year = 1938
+	}
+
+	mean_time_to_happen =  {
+		months = 1
+	}
+	
+	title = "The death of Atatürk"
+	desc = "Suffering from severe illness our president, Mustafa Kemal Atatürk, passed away this morning. May he rest in peace."
+	picture = "news_paper"
+
+	option = {
+		name = "Good bye first president"		# Oh noes!
+		ai_chance = { factor = 95 }
+		head_of_state = 12002
+		set_country_flag = ataturk
+	}
+	option = {
+		name = "Rumours!"				# Oh noes!
+		ai_chance = { factor = 5 }
+		set_country_flag = ataturk
+	}
+}

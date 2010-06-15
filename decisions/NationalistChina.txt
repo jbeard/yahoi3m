@@ -1,0 +1,118 @@
+#############################################
+# Chinese Alliance against the Soviet Union #
+#############################################
+diplomatic_decisions = {
+
+	chinese_alliance_against_soviet = {
+		potential = {
+			tag = CHI
+			not = { has_country_flag = chinese_alliance_against_the_soviet }
+			CHC = {
+				not = { faction = comintern }
+				or = {
+					is_subject = no
+					vassal_of = CHI
+					vassal_of = CSX
+					vassal_of = CGX
+					vassal_of = CXB
+					vassal_of = CYN
+					vassal_of = SIK
+				}
+			}
+			CSX = {
+				not = { faction = comintern }
+				or = {
+					is_subject = no
+					vassal_of = CHI
+					vassal_of = CHC
+					vassal_of = CGX
+					vassal_of = CXB
+					vassal_of = CYN 
+					vassal_of = SIK
+				}
+			}
+			CGX = {
+				not = { faction = comintern }
+				or = {
+					is_subject = no
+					vassal_of = CHI
+					vassal_of = CHC
+					vassal_of = CSX
+					vassal_of = CXB
+					vassal_of = CYN
+					vassal_of = SIK
+				}
+			}
+			CXB = {
+				not = { faction = comintern }
+				or = {
+					is_subject = no
+					vassal_of = CHI
+					vassal_of = CHC
+					vassal_of = CSX
+					vassal_of = CGX
+					vassal_of = CYN
+					vassal_of = SIK
+				}
+			}
+			CYN = {
+				not = { faction = comintern }
+				or = {
+					is_subject = no
+					vassal_of = CHI
+					vassal_of = CHC
+					vassal_of = CSX
+					vassal_of = CGX
+					vassal_of = CXB
+					vassal_of = SIK
+				}
+			}
+			SIK = {
+				not = { faction = comintern }
+				or = {
+					is_subject = no
+					vassal_of = CHI
+					vassal_of = CHC
+					vassal_of = CSX
+					vassal_of = CGX
+					vassal_of = CXB
+					vassal_of = CYN
+				}
+			}
+			SOV = {
+				or = {
+					war_with = CHI
+					war_with = CHC
+					war_with = CSX
+					war_with = CGX
+					war_with = CXB
+					war_with = SIK
+					war_with = CYN
+				}
+				not = { alliance_with = CHI }
+				not = { alliance_with = CHC }
+				not = { alliance_with = CSX }
+				not = { alliance_with = CGX }
+				not = { alliance_with = CXB }
+				not = { alliance_with = CYN }
+				not = { alliance_with = SIK }
+			}
+		}
+		allow = {
+			is_subject = no
+		}
+		effect = {
+			set_country_flag = chinese_alliance_against_the_soviet
+			dissent = -5
+			CHC = { country_event = 2801 }
+			CSX = { country_event = 2801 }
+			CGX = { country_event = 2801 }
+			CXB = { country_event = 2801 }
+			CYN = { country_event = 2801 }
+			SIK = { country_event = 2801 }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

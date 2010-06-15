@@ -1,0 +1,6 @@
+owner = SWE
+controller = SWE
+add_core = SWE
+
+metal = 30.00
+infra = 6

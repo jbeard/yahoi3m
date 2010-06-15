@@ -1,0 +1,92 @@
+collaboration_government = {
+	local_partisan_support = 1
+	local_manpower_modifier = -0.50
+	local_leadership_modifier = -0.60
+	local_ic = -1.0
+	local_resources = -0.5
+
+}
+
+military_government = {
+	allow = {
+	}
+	local_partisan_support = 2
+	local_manpower_modifier = -0.60
+	local_leadership_modifier = -0.70
+	local_ic = -0.75
+	local_resources = -0.3
+
+}
+
+full_occupation = {
+	allow = {
+		OR = {
+			civil_law = repression
+			civil_law = totalitarian_system
+		}
+	}
+	local_partisan_support = 5
+	local_manpower_modifier = -0.75
+	local_leadership_modifier = -0.80
+	local_ic = -0.50
+	local_resources = -0.2
+
+
+}
+
+total_exploitation = {
+	allow = {
+		civil_law = totalitarian_system
+	}
+	local_partisan_support = 10
+	local_manpower_modifier = -1.0
+	local_leadership_modifier = -1.0
+	local_ic = -0.25
+	local_resources = -0.1
+
+}
+
+civil_war = {
+	allow = {
+		OR = {
+			AND = {
+				tag = SPA
+				FROM = { tag = SPR } 
+			}
+			AND = {
+				tag = SPR
+				FROM = { tag = SPA } 
+			}
+			AND = {
+				OR = {
+					tag = CHI
+					tag = CHC
+					tag = CGX
+					tag = CYN
+					tag = CXB
+					tag = MAN
+					tag = MEN
+					tag = CSX
+				}
+				OR = {
+					FROM = { tag = CHI }
+					FROM = { tag = CHC }
+					FROM = { tag = CGX }
+					FROM = { tag = CYN }
+					FROM = { tag = CXB }
+					FROM = { tag = MAN }
+					FROM = { tag = MEN }
+					FROM = { tag = CSX }
+				}
+			}
+			AND = {
+				tag = FRA
+				FROM = { tag = VIC } 
+			}
+			AND = {
+				tag = VIC
+				FROM = { tag = FRA } 
+			}
+		}
+	}
+}

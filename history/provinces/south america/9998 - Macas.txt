@@ -1,0 +1,7 @@
+owner = ECU
+controller = ECU
+add_core = ECU
+
+infra = 4
+
+infra = 4

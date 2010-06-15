@@ -1,0 +1,66 @@
+#################
+# Operation Zet #
+#################
+country_event = {
+	
+	id = 2201
+
+	trigger = {
+		tag = SOV
+		exists = CHI
+		exists = JAP
+		JAP = { war_with = CHI }
+		not = { war_with = CHI }
+		not = { year = 1940 }
+	}
+
+	mean_time_to_happen =  {
+		months = 16
+	}
+
+	title = "EVTNAME2201"
+	desc = "EVTDESC2201"
+	picture = "assistance"
+
+	option = {
+		name = "EVTOPTA2201"			# Send aid to China
+  		neutrality = -3
+		money = -500
+		supplies = -1000
+		CHI = {
+			country_event = 2202
+		}
+	}
+	option = {
+		name = "EVTOPTB2201"			# China must stand alone
+		neutrality = 5
+	}
+}
+
+# China - Response from the Soviet Union
+country_event = {
+	
+	id = 2202
+
+	is_triggered_only = yes
+
+	title = "EVTNAME2202"
+	desc = "EVTDESC2202"
+	picture = "assistance"
+
+	option = {
+		name = "EVTOPTA2202"			# This will strengthen us greatly
+		ai_chance = { factor = 100 }
+		# Chengdu
+		9415 = { air_base = 1 }
+		9415 =  { strategic_bomber = current }
+		9415 = { interceptor = current }	
+		relation = { who = SOV value = 10 }
+		supplies = 1000
+		non_aggression_pact = SOV
+	}
+	option = {
+		name = "EVTOPTB2202"			# We do not need this help
+		neutrality = 4
+	}
+}

@@ -1,0 +1,9 @@
+owner = CYN
+controller = CYN
+add_core = CYN
+add_core = CHI
+add_core = CHC
+metal = 13.00
+infra = 1
+
+infra = 4

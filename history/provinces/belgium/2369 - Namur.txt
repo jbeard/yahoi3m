@@ -1,0 +1,12 @@
+owner = BEL
+controller = BEL
+add_core = BEL
+
+energy = 20.00
+industry = 2
+infra = 10
+manpower = 1.00
+leadership = 0.10
+1940.5.28 = {
+	controller = GER
+}

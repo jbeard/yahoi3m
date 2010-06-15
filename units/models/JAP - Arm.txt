@@ -1,0 +1,129 @@
+armor_brigade.0 = {
+	tank_gun = 0
+	tank_engine = 0
+	tank_armour = 0
+	tank_reliability = 0
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+armor_brigade.1 = {
+	tank_gun = 1
+	tank_engine = 1
+	tank_armour = 0
+	tank_reliability = 0
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+armor_brigade.2 = {
+	tank_gun = 1
+	tank_engine = 1
+	tank_armour = 1
+	tank_reliability = 1
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+armor_brigade.3 = {
+	tank_gun = 2
+	tank_engine = 2
+	tank_armour = 2
+	tank_reliability = 2
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+armor_brigade.4 = {
+	tank_gun = 3
+	tank_engine = 3
+	tank_armour = 4
+	tank_reliability = 3
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+armor_brigade.5 = {
+	tank_gun = 4
+	tank_engine = 4
+	tank_armour = 4
+	tank_reliability = 4
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+armor_brigade.6 = {
+	tank_gun = 5
+	tank_engine = 5
+	tank_armour = 5
+	tank_reliability = 5
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+light_armor_brigade.0 = {
+	lighttank_gun = 0
+	lighttank_engine = 0
+	lighttank_armour = 0
+	lighttank_reliability = 0
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+
+light_armor_brigade.1 = {
+	lighttank_gun = 1
+	lighttank_engine = 0
+	lighttank_armour = 1
+	lighttank_reliability = 0
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+light_armor_brigade.2 = {
+	lighttank_gun = 2
+	lighttank_engine = 2
+	lighttank_armour = 2
+	lighttank_reliability = 2
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+light_armor_brigade.3 = {
+	lighttank_gun = 3
+	lighttank_engine = 3
+	lighttank_armour = 3
+	lighttank_reliability = 3
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+heavy_armor_brigade.0 = {
+	heavy_tank_gun = 0
+	heavy_tank_engine = 0
+	heavy_tank_armour = 0
+	heavy_tank_reliability = 0
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}
+
+heavy_armor_brigade.1 = {
+	heavy_tank_gun = 0
+	heavy_tank_engine = 1
+	heavy_tank_armour = 1
+	heavy_tank_reliability = 1
+	spearhead_doctrine = 0
+	schwerpunkt = 0
+	blitzkrieg = 0
+}

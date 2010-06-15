@@ -1,0 +1,10 @@
+owner = SOV
+controller = SOV
+add_core = SOV
+crude_oil = 4.00
+infra = 6
+air_base = 2
+
+infra = 4
+
+infra = 4

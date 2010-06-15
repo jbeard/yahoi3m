@@ -1,0 +1,1909 @@
+###################################################################
+# Triggered modifiers are here.
+# these are checked for each countries once/month and then applied.
+#
+# Effects are fully scriptable here.
+###################################################################
+
+# Naval Supremacy in the West
+naval_supremacy_in_the_west = {
+
+	potential = {
+		is_in_any_faction = yes
+		OR = {
+			TAG = USA
+			TAG = ENG
+			TAG = GER
+			TAG = ITA
+			TAG = FRA
+			TAG = SOV
+		}
+	}
+	
+	trigger = {
+		controls = 10336
+		controls = 10150 
+		controls = 9982 
+		controls = 7721 
+		controls = 9739 
+		controls = 9699  
+		controls = 9658 
+		controls = 7350
+		controls = 3597
+		controls = 6671
+		10336 = {
+			controller = {
+				faction = THIS
+			}
+		}
+	}
+	
+	global_leadership_modifier = 0.15
+	icon = 1
+}
+
+# Naval Supremacy in the East
+naval_supremacy_in_the_east = {
+
+	potential = {
+		is_in_any_faction = yes
+		OR = {
+			TAG = USA
+			TAG = ENG
+			TAG = GER
+			TAG = JAP
+			TAG = SOV
+		}
+	}
+
+	trigger = {
+		controls = 10680
+		controls = 6854
+		controls = 8575
+		controls = 6875
+		controls = 8229
+		controls = 8468
+		controls = 8470
+		controls = 7009
+		controls = 7238
+		controls = 5341
+			10680 = {
+			controller = {
+				faction = THIS
+			}
+		}
+	}
+	
+	global_leadership_modifier = 0.15
+	icon = 2
+}
+
+# Neutrality
+neutrality = {
+
+	potential = {
+		NOT = {
+			OR = {
+				faction = allies
+				faction = axies
+				faction = comintern
+			}
+		}
+	}
+	
+	trigger = {
+		NOT = {
+			faction = allies
+			faction = axis
+			faction = comintern
+		}
+	}
+	
+	research_efficiency = -0.05
+	espionage_bonus = 0.1
+	counter_espionage = 0.1
+	icon = 14
+}
+
+# Winter War
+winter_war = {
+
+	potential = {
+		TAG = FIN
+	}
+	
+	trigger = {
+		TAG = FIN
+		OR = {
+			faction = axis
+			faction = allies
+		}
+		FIN = { 
+			war_with = SOV
+		}
+		OR = {
+			month = 11
+			NOT = {
+				month = 5
+			}
+		}
+	}
+	
+	org_regain = 0.5
+	reinforcement_bonus = 0.5
+	land_organisation = 0.25
+	icon = 4
+}
+
+# Sino-Soviet Nonaggression Pact
+sino_soviet_nonaggression_pact = {
+	
+	potential = {
+		OR = {
+			TAG = CHI
+			TAG = CHC
+			TAG = SOV
+		}
+	}
+
+	trigger = {
+		OR = {
+			TAG = SOV
+			TAG = CHI
+			TAG = CHC
+		}
+		SOV = {
+			OR = {
+				alliance_with = CHI
+				alliance_with = CHC
+			}
+		}
+	}
+	
+	global_supplies = 0.1
+	air_organisation = 0.1
+	icon = 13
+}
+
+# Polish Corridor POL
+polish_corridor_pol = {
+	
+	potential = {
+		TAG = POL
+		NOT = {
+			TAG = GER
+		}
+	}
+
+	trigger = {
+		TAG = POL
+		1626 = {
+		controlled_by = POL
+		}
+	}
+
+	global_leadership_modifier = 0.1
+	icon = 15
+}
+
+# Polish Corridor GER
+polish_corridor_ger = {
+	
+	potential = {
+		TAG = GER
+		NOT = {
+			TAG = POL
+		}
+	}
+	
+	trigger = {
+		TAG = GER
+		1626 = {
+		controlled_by = GER
+		}
+	}
+	
+	supply_throughput = 0.05
+	naval_organisation = 0.05
+	icon = 15 
+}
+
+# Polish Corridor
+polish_corridor = {
+
+	potential = {
+		OR = {
+			TAG = SWE
+			TAG = ENG
+			TAG = SOV
+			TAG = FIN
+			TAG = FRA
+			TAG = ITA
+			TAG = HUN
+		}
+		NOT = {
+			TAG = POL
+			TAG = GER
+		}
+	}
+
+	trigger = {
+		TAG = THIS
+		1626 = {
+		controlled_by = THIS
+		}
+	}
+	
+	supply_throughput = 0.05
+	naval_organisation = 0.02
+	global_leadership_modifier = 0.02
+	icon = 15
+}
+
+# Pact of Steel
+pact_of_steel = {
+
+	potential = {
+		faction = axis
+	}
+
+	trigger = {
+		GER = {
+			faction = axis
+		}
+		ITA = {
+			faction = axis
+		}
+	}
+	
+	global_supplies = 0.05
+	research_efficiency = 0.05
+	icon = 12
+}
+
+# Lapland War
+lapland_war = {
+
+	potential = {
+		TAG = FIN
+	}
+	
+	trigger = {
+		GER = {
+			war_with = FIN
+		}
+		OR = {
+			month = 11
+			NOT = {
+				month = 5
+			}
+		}
+	}
+	
+	org_regain = 0.15
+	reinforcement_bonus = 0.15
+	land_organisation = 0.1
+	icon = 10
+}
+
+#General Winter
+general_winter = {
+
+	potential = {
+		TAG = SOV
+	}
+	
+	trigger = {
+		TAG = SOV
+		war_with = GER
+		GER = {
+			OR = {
+				controls = 1534
+				controls = 2223
+				controls = 1991
+				controls = 3175
+				controls = 1535
+				controls = 1182
+				controls = 1102
+				controls = 909
+				controls = 782
+			}
+		}
+		OR = {
+			month = 11
+		}
+		NOT = {
+			month = 5
+		}
+	}
+	
+	org_regain = 0.3
+	reinforcement_bonus = 0.3
+	icon = 8
+}
+
+# Great Army
+great_army = {
+
+	trigger = {
+		total_amount_of_divisions = 200
+	}
+	
+	global_leadership = 0.15
+	org_regain = 0.15
+	icon = 5
+}
+	
+# Grand Fleet
+great_naval_army = {
+
+	trigger = {
+		total_amount_of_ships = 100
+	}
+	
+	global_leadership = 0.15
+	org_regain = 0.15
+	icon = 6
+}
+
+# Great Air Army
+great_air_army = {
+
+	trigger = {
+		total_amount_of_planes = 75
+	}
+	
+	global_leadership = 0.15
+	org_regain = 0.15
+	icon = 7
+}
+
+# Prosperous Convoy
+prosperous_convoy = {
+
+	trigger = {
+		strat_convoy_impact = 10
+	}
+	
+	global_revolt_risk = -0.1
+	global_supplies = 0.15
+	global_leadership = 0.15
+	icon = 9
+}
+
+# Veteran Army
+veteran_army = {
+
+	trigger = {
+		land_battles_fought = 250
+	}
+	
+	land_organisation = 0.05
+	global_leadership_modifier = 0.05 
+	org_regain = 0.05
+	icon = 5
+}
+
+# Veteran Navy
+veteran_navy = {
+	
+	trigger = {
+		naval_battles_fought = 250
+	}
+	
+	naval_organisation = 0.05
+	global_leadership_modifier = 0.05
+	org_regain = 0.05
+	icon = 6
+}
+
+# Veteran Air Force
+veteran_air_force = {
+	
+	trigger = {
+		air_battles_fought = 250
+	}
+	
+	air_organisation = 0.05
+	global_leadership_modifier = 0.05
+	org_regain = 0.05
+	icon = 7
+}
+
+# Control over the Mediterranean
+mediterranean_control = {
+
+	potential = {
+		OR = {
+			TAG = ITA
+			TAG = SPA
+			TAG = GRE
+			TAG = ENG
+			TAG = FRA
+			TAG = TUR
+		}
+	}
+	
+	trigger = {
+		controls = 5002	
+		controls = 4913
+		controls = 4486
+		controls = 4914
+		controls = 5138
+		controls = 5233
+		controls = 5359
+		controls = 5381
+		controls = 10731
+		controls = 5172
+		controls = 5139
+	}
+	
+	global_supplies = 0.2
+	naval_capacity = 0.2
+	icon = 16
+}
+
+# Blockade of the Mediterranean
+blockade_mediterranean = {
+
+	potential = {
+		OR = {
+			TAG = ITA
+			TAG = SPA
+			TAG = GRE
+			TAG = ENG
+			TAG = FRA
+			TAG = TUR
+		}
+	}
+	
+	trigger = {
+		controls = 5002	
+		controls = 4913
+		controls = 4486
+		controls = 4914
+		controls = 5138
+		controls = 5233
+		controls = 5359
+		controls = 5381
+		controls = 10731
+		controls = 5172
+		controls = 5139
+		
+		OR = {
+			5002 = {
+				is_blockaded = yes 
+			}	
+			4913 = {
+				is_blockaded = yes 
+			}
+			4486 = {
+				is_blockaded = yes 
+			}
+			4914 = {
+				is_blockaded = yes 
+			}
+			5138 = {
+				is_blockaded = yes 
+			}
+			5233 = {
+				is_blockaded = yes 
+			}
+		}
+		OR = {
+			5359 = {
+				is_blockaded = yes 
+			}
+			5381 = {
+				is_blockaded = yes 
+			}
+			10731 = {
+				is_blockaded = yes 
+			}
+			5172 = {
+				is_blockaded = yes 
+			}
+			5139 = {
+				is_blockaded = yes
+			}
+		}
+	}
+	
+	global_supplies = -0.15
+	naval_capacity = -0.15
+	icon = 17
+}
+
+# Panama Channel
+control_over_panama_channel = {
+	
+	potential = {
+		OR = {
+			TAG = USA
+			TAG = JAP
+		}	
+	}
+	
+	trigger = {
+		controls = 7717
+		controls = 7722
+	}
+
+	supply_throughput = 0.1
+	global_resources = 0.1
+	icon = 16
+}
+
+# Blockade of the Panama Channel
+blockade_panama_channel = {
+
+	potential = {
+		OR = {
+			TAG = USA
+			TAG = JAP
+		}
+	}
+	
+	trigger = {
+		owns = 7717
+		owns = 7722
+		controls = 7717
+		controls = 7722
+		
+		7722 = {
+			is_blockaded = yes 
+			}
+		7717 = {
+			is_blockaded = yes 
+		}
+	}
+
+	industrial_efficiency = -0.1
+	research_efficiency = -0.1
+	icon = 17
+}
+
+# Control over the Black Sea
+control_over_the_black_sea = {
+
+	potential = {
+		NOT = {
+			faction = allies
+		}
+		OR = {
+			TAG = SOV
+			TAG = TUR
+			TAG = ROM
+		}
+	}
+
+	trigger = {
+		controls = 4441
+		controls = 4123
+		controls = 3919
+		controls = 3580
+		controls = 3309
+		controls = 3310
+		controls = 3245
+		controls = 3581
+		controls = 2913
+		controls = 3180
+		controls = 3449
+		controls = 3379
+		controls = 4059
+		controls = 4503
+		controls = 4186
+	}
+	
+	supply_throughput = 0.15
+	global_leadership_modifier = 0.1
+	icon = 16
+}
+
+# Blockade of the Black Sea
+blockade_black_sea = {
+
+	potential = {
+		NOT = {
+			faction = allies
+		}
+		OR = {
+			TAG = SOV
+			TAG = TUR
+			TAG = ROM
+		}
+	}
+
+	trigger = {
+		controls = 4441
+		controls = 4123
+		controls = 3919
+		controls = 3580
+		controls = 3309
+		controls = 3310
+		controls = 3245
+		controls = 3581
+		controls = 2913
+		controls = 3180
+		controls = 3449
+		controls = 3379
+		controls = 4059
+		controls = 4503
+		controls = 4186
+		
+		OR = {
+			4441 = {
+				is_blockaded = yes
+			}
+			4123 = {
+				is_blockaded = yes
+			}
+			3919 = {
+				is_blockaded = yes
+			}
+			3580 = {
+				is_blockaded = yes
+			}
+			3309 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			3310 = {
+				is_blockaded = yes
+			}
+			3245 = {
+				is_blockaded = yes
+			}
+			3581 = {
+				is_blockaded = yes
+			}
+			2913 = {
+				is_blockaded = yes
+			}
+			3180 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			3449 = {
+				is_blockaded = yes
+			}
+			3379 = {
+				is_blockaded = yes
+			}
+			4059 = {
+				is_blockaded = yes
+			}
+			4503 = {
+				is_blockaded = yes
+			}
+			4186 = {
+				is_blockaded = yes
+			}
+		}
+	}
+	
+	research_efficiency = -0.12
+	global_leadership_modifier = -0.15
+	icon = 17
+}
+
+# Suez Channel
+control_over_suez_channel = {
+
+	potential = {
+		OR = {
+			TAG = ENG
+			TAG = ITA
+			TAG = FRA
+			TAG = GRE
+			TAG = TUR
+		}
+	}
+	
+	trigger = {
+		controls = 5563
+		controls = 5589
+		controls = 5612
+		controls = 5631
+		controls = 5644
+		controls = 5657
+		controls = 5656
+		controls = 5688
+		controls = 5668
+		controls = 9630
+		controls = 9664
+		controls = 9767
+		controls = 9768
+		controls = 9826
+		controls = 9808
+	}
+	
+	territorial_pride = 0.12
+	global_leadership_modifier = 0.12
+	icon = 16
+}
+
+# Blockade of the Suez Channel
+blockade_suez_channel = {
+
+	potential = {
+		OR = {
+			TAG = ENG
+			TAG = ITA
+			TAG = FRA
+			TAG = GRE
+			TAG = TUR
+		}
+	}
+	
+	trigger = {
+		controls = 5563
+		controls = 5589
+		controls = 5612
+		controls = 5631
+		controls = 5644
+		controls = 5657
+		controls = 5656
+		controls = 5688
+		controls = 5668
+		controls = 9630
+		controls = 9664
+		controls = 9767
+		controls = 9768
+		controls = 9826
+		controls = 9808
+		
+		OR = {
+			5563 = {
+				is_blockaded = yes
+			}
+			5589 = {
+				is_blockaded = yes
+			}
+			5612 = {
+				is_blockaded = yes
+			}
+			5631 = {
+				is_blockaded = yes
+			}
+			5644 = {
+				is_blockaded = yes
+			}
+			5657 = {
+				is_blockaded = yes
+			}
+			5656 = {
+				is_blockaded = yes
+			}
+			5688 = {
+				is_blockaded = yes
+			}
+			5668 = {
+				is_blockaded = yes
+			}
+			9630 = {
+				is_blockaded = yes
+			}
+			9664 = {
+				is_blockaded = yes
+			}
+			9767 = {
+				is_blockaded = yes
+			}
+			9768 = {
+				is_blockaded = yes
+			}
+			9826 = {
+				is_blockaded = yes
+			}
+			9808 = {
+				is_blockaded = yes
+			}
+		}
+	}
+	
+	research_efficiency = -0.07
+	espionage_bonus = -0.1
+	icon = 17
+}
+
+# Makassar Strait
+control_over_makassar_strait = {
+	
+	potential = {
+		OR = {
+			TAG = HOL
+			TAG = ENG
+			TAG = JAP
+			TAG = AST
+		}
+	}
+	
+	trigger = {
+		controls = 6478
+		controls = 6508
+		controls = 6492
+		controls = 7788
+		controls = 7782
+		controls = 7775
+		controls = 7759
+		controls = 7749 
+		controls = 6416 
+		controls = 6401 
+		controls = 6472 
+		controls = 6455 
+		controls = 6444 
+		controls = 6408 
+		controls = 6434 
+		controls = 6428 
+		controls = 6424 
+		controls = 6421 
+		controls = 6407 
+		controls = 6400
+		total_amount_of_ships = 10
+	}
+	
+	territorial_pride = 0.1
+	global_leadership_modifier = 0.1
+	icon = 16
+}
+
+# Blockade of Makassar Strait
+blockade_makassar_strait = {
+
+	potential = {
+		OR = {
+			TAG = HOL
+			TAG = ENG
+			TAG = JAP
+			TAG = AST
+		}
+	}
+	
+	trigger = {
+		controls = 6478
+		controls = 6508
+		controls = 6492
+		controls = 7788
+		controls = 7782
+		controls = 7775
+		controls = 7759
+		controls = 7749 
+		controls = 6416 
+		controls = 6401 
+		controls = 6472 
+		controls = 6455 
+		controls = 6444 
+		controls = 6408 
+		controls = 6434 
+		controls = 6428 
+		controls = 6424 
+		controls = 6421 
+		controls = 6407 
+		controls = 6400
+		
+		OR = {
+			6478 = {
+				is_blockaded = yes
+			}
+			6508 = {
+				is_blockaded = yes
+			}
+			6492 = {
+				is_blockaded = yes
+			}
+			7788 = {
+				is_blockaded = yes
+			}
+			7782 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			7775 = {
+				is_blockaded = yes
+			}
+			7759 = {
+				is_blockaded = yes
+			}
+			7749 = {
+				is_blockaded = yes
+			}
+			6416 = {
+				is_blockaded = yes
+			}
+			6401 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			6472 = {
+				is_blockaded = yes
+			}
+			6455 = {
+				is_blockaded = yes
+			}
+			6444 = {
+				is_blockaded = yes
+			}
+			6408 = {
+				is_blockaded = yes
+			}
+			6434 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			6428 = {
+				is_blockaded = yes
+			}
+			6424 = {
+				is_blockaded = yes
+			}
+			6421 = {
+				is_blockaded = yes
+			}
+			6407 = {
+				is_blockaded = yes
+			}
+			6400 = {
+				is_blockaded = yes
+			}
+		}
+		total_amount_of_ships = 10
+	}
+	
+	global_leadership_modifier = -0.15
+	espionage_bonus = -0.1
+	icon = 17
+}
+
+# Control over Gibraltar
+control_over_gibraltar = {
+	
+	potential = {
+		OR = {
+			TAG = SPA
+			TAG = ENG
+			TAG = FRA
+		}
+	}
+	
+	trigger = {
+		controls = 5191
+		controls = 5258
+	}
+	
+	global_supplies = 0.05
+	supply_consumption = -0.05
+	icon = 16
+}
+
+# Blockade of Gibraltar
+blockade_gibraltar = {
+
+	potential = {
+		OR = {
+			TAG = SPA
+			TAG = ENG
+			TAG = FRA
+			TAG = ITA
+			TAG = GRE
+		}
+	}
+	
+	trigger = {
+		controls = 5191
+		controls = 5258
+		5191 = {
+			is_blockaded = yes 
+			}
+		5258 = {
+			is_blockaded = yes 
+		}
+	}
+	
+	global_leadership_modifier = -0.03
+	supply_consumption = 0.04
+	icon = 17
+}
+
+# Control over Öresund
+control_over_oresund = {
+	
+	potential = {
+		OR = {
+			TAG = SWE
+			TAG = NOR
+			TAG = DEN
+			TAG = GER
+			TAG = ENG
+		}
+	}
+	
+	trigger = {
+		controls = 1526
+		controls = 1481
+		controls = 1482
+		controls = 1437
+		controls = 1436
+		controls = 1391
+		controls = 1435
+		controls = 1572
+		controls = 1483
+		controls = 1438
+		controls = 1392
+	}
+	
+	territorial_pride = 0.15
+	global_supplies = 0.1
+	icon = 16
+}
+
+# Blockade of Öresund
+blockade_oresund = {
+	
+	potential = {
+		OR = {
+			TAG = SWE
+			TAG = NOR
+			TAG = DEN
+			TAG = GER
+			TAG = ENG
+		}
+	}
+	
+	trigger = {
+		controls = 1526
+		controls = 1481
+		controls = 1482
+		controls = 1437
+		controls = 1436
+		controls = 1391
+		controls = 1435
+		controls = 1572
+		controls = 1483
+		controls = 1438
+		controls = 1392
+		
+		OR = {
+			1526 = {
+				is_blockaded = yes 
+			}
+			1481 = {
+				is_blockaded = yes 
+			}
+			1482 = {
+				is_blockaded = yes 
+			}
+			1437 = {
+				is_blockaded = yes 
+			}
+			1436 = {
+				is_blockaded = yes 
+			}
+		}
+		OR = {
+			1391 = {
+				is_blockaded = yes 
+			}
+			1435 = {
+				is_blockaded = yes 
+			}
+			1572 = {
+				is_blockaded = yes 
+			}
+			1483 = {
+				is_blockaded = yes 
+			}
+			1438 = {
+				is_blockaded = yes 
+			}
+			1392 = {
+				is_blockaded = yes
+			}
+		}
+	}
+	
+	global_leadership_modifier = -0.1
+	global_supplies = -0.15
+	icon = 17
+}
+
+
+# Control of the English Channel
+control_english_channel = {
+
+	potential = {
+		OR = {
+			TAG = FRA
+			TAG = ENG
+			TAG = SPA
+			TAG = GER
+		}
+		NOT = {
+			faction = comintern
+		}
+	}
+
+	trigger = {
+		controls = 2307
+		controls = 2250
+		controls = 2078
+		controls = 2021
+		controls = 7938
+		controls = 2195
+		controls = 2422
+		controls = 2541
+	}
+	
+	global_leadership_modifier = 0.1
+	dissent = -0.1
+	icon = 16
+	
+}
+
+# Blockade of the English Channel
+blockade_english_channel = {
+
+	potential = {
+		OR = {
+			TAG = FRA
+			TAG = ENG
+			TAG = SPA
+			TAG = GER
+		}
+		NOT = {
+			faction = comintern
+		}
+	}
+
+	trigger = {
+		controls = 2307
+		controls = 2250
+		controls = 2078
+		controls = 2021
+		controls = 7938
+		controls = 2195
+		controls = 2422
+		controls = 2541
+		
+		OR = {
+			2307 = {
+				is_blockaded = yes
+			}
+			2250 = {
+				is_blockaded = yes
+			}
+			2078 = {
+				is_blockaded = yes
+			}
+			2021 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			7938 = {
+				is_blockaded = yes
+			}
+			2195 = {
+				is_blockaded = yes
+			}
+			2422 = {
+				is_blockaded = yes
+			}
+			2541 = {
+				is_blockaded = yes
+			}
+		}
+	}
+	
+	global_leadership_modifier = -0.15
+	global_revolt_risk = 0.15
+	icon = 17
+	
+}
+
+# Persian Gulf
+control_over_persian_gulf = {
+	
+	potential = {
+		OR = {
+			TAG = IRQ
+			TAG = ENG
+			TAG = SAU
+			TAG = PER
+		}
+	}
+	
+	trigger = {
+		controls = 9598
+		controls = 9429
+		controls = 9578
+		controls = 9538
+		controls = 9365
+		controls = 9427
+	}
+
+	research_efficiency = 0.1
+	supply_throughput = 0.1
+	icon = 16
+}
+
+# Blockade of the Persian Gulf
+blockade_persian_gulf = {
+
+	potential = {
+		OR = {
+			TAG = IRQ
+			TAG = ENG
+			TAG = SAU
+			TAG = PER
+		}
+	}
+	
+	trigger = {
+		controls = 9598
+		controls = 9429
+		controls = 9578
+		controls = 9538
+		controls = 9365
+		controls = 9427
+		
+		OR = {
+			9598 = {
+				is_blockaded = yes
+			}
+			9429 = {
+				is_blockaded = yes
+			}
+			9578 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			9538 = {
+				is_blockaded = yes
+			}
+			9365 = {
+				is_blockaded = yes
+			}
+			9427 = {
+				is_blockaded = yes
+			}
+		}
+	}
+
+	research_efficiency = -0.1
+	global_leadership_modifier = -0.1
+	icon = 17
+}
+
+# Gulf of Tonkin
+control_over_tonkin_gulf = {
+	
+	potential = {
+		OR = {
+			TAG = FRA
+			TAG = CHI
+			TAG = JAP
+			TAG = ENG
+		}
+	}
+	
+	trigger = {
+		controls = 6060
+		controls = 5994
+		controls = 5985
+		controls = 5946
+		controls = 5945
+		controls = 5919
+	}
+
+	research_efficiency = 0.1
+	global_leadership_modifier = 0.1
+	icon = 16
+}
+
+# Blockade of the Gulf of Tonkin
+blockade_tonkin_gulf = {
+
+	potential = {
+		OR = {
+			TAG = FRA
+			TAG = CHI
+			TAG = JAP
+			TAG = ENG
+		}
+	}
+
+	trigger = {
+		controls = 6060
+		controls = 5994
+		controls = 5985
+		controls = 5946
+		controls = 5945
+		controls = 5919
+		
+		OR = {
+			6060 = {
+				is_blockaded = yes
+			}
+			5994 = {
+				is_blockaded = yes
+			}
+			5985 = {
+				is_blockaded = yes
+			}
+			5946 = {
+				is_blockaded = yes
+			}
+			5945 = {
+				is_blockaded = yes
+			}
+			5919 = {
+				is_blockaded = yes
+			}
+		}
+	}
+
+	industrial_efficiency = -0.1
+	global_leadership_modifier = -0.1
+	icon = 17
+}
+
+# Gulf of Mexico
+control_over_mexico_gulf = {
+	
+	potential = {
+		OR = {
+			TAG = MEX
+			TAG = USA
+			TAG = CUB
+		}
+	}
+	
+	trigger = {
+		controls = 8080
+		controls = 7521
+		controls = 6433
+		controls = 7670
+		controls = 1091
+		controls = 50
+		controls = 7669
+	}
+	
+	research_efficiency = 0.15
+	supply_throughput = 0.15
+	icon = 16
+}
+
+
+# Blockade of the Gulf of Mexico
+blockade_mexico_gulf = {
+	
+	potential = {
+		OR = {
+			TAG = MEX
+			TAG = USA
+			TAG = CUB
+		}
+	}
+	
+	trigger = {
+		controls = 8080
+		controls = 7521
+		controls = 6433
+		controls = 7670
+		controls = 1091
+		controls = 50
+		controls = 7669
+		
+		OR = {
+		8080 = {
+				is_blockaded = yes
+			}
+		7521 = {
+				is_blockaded = yes
+			}
+		6433 = {
+				is_blockaded = yes
+			}
+		7670 = {
+				is_blockaded = yes
+			}
+		1091 = {
+				is_blockaded = yes
+			}
+		50 = {
+				is_blockaded = yes
+			}
+		7669 = {
+				is_blockaded = yes
+			}
+		}
+	}
+	
+	industrial_efficiency = -0.1
+	global_leadership_modifier = -0.1
+	icon = 17
+}
+
+# Turkish Strait
+control_over_iskenderun_gulf = {
+	
+	potential = {
+		OR = {
+			TAG = TUR
+			TAG = ENG
+			TAG = FRA
+			TAG = GRE
+			TAG = ITA
+		}
+	}
+	
+	trigger = {
+		controls = 5047
+		controls = 5127
+		controls = 5139
+		controls = 5299
+		controls = 4976
+	}
+
+	research_efficiency = 0.15
+	supply_throughput = 0.15
+	icon = 16
+}
+
+# Blockade of the Gulf of Iskenderun
+blockade_iskenderun_gulf = {
+
+	potential = {
+		OR = {
+			TAG = TUR
+			TAG = ENG
+			TAG = FRA
+			TAG = GRE
+			TAG = ITA
+		}
+	}
+	
+	trigger = {
+		controls = 5047
+		controls = 5127
+		controls = 5139
+		controls = 5299
+		controls = 4976
+		
+		OR = {
+			5047 = {
+				is_blockaded = yes
+			}
+			5127 = {
+				is_blockaded = yes
+			}
+			5139 = {
+				is_blockaded = yes
+			}
+			5299 = {
+				is_blockaded = yes
+			}
+			4976 = {
+				is_blockaded = yes
+			}
+		}
+	}
+
+	industrial_efficiency = -0.1
+	global_leadership_modifier = -0.1
+	icon = 17
+}
+
+# Gulf of Chihli
+control_over_chihli_gulf = {
+
+	potential = {
+		OR = {
+			TAG = TUR
+			TAG = ENG
+			TAG = FRA
+			TAG = GRE
+			TAG = ITA
+		}
+	}
+	
+	trigger = {
+		controls = 5145
+		controls = 5020
+		controls = 5054
+		controls = 5178
+		controls = 5086
+		controls = 5019
+		controls = 5181
+		controls = 4982
+		controls = 5146
+		controls = 4892
+	}
+
+	research_efficiency = 0.2
+	supply_throughput = 0.2
+	icon = 16
+}
+
+# Blockade of the Gulf of Chihli
+blockade_chihli_gulf = {
+
+	potential = {
+		OR = {
+			TAG = JAP
+			TAG = CHI
+			TAG = SOV
+			TAG = MAN
+		}
+	}
+	
+	trigger = {
+		controls = 5145
+		controls = 5020
+		controls = 5054
+		controls = 5178
+		controls = 5086
+		controls = 5019
+		controls = 5181
+		controls = 4982
+		controls = 5146
+		controls = 4892
+		
+		OR = {
+			5145 = {
+				is_blockaded = yes
+			}
+			5020 = {
+				is_blockaded = yes
+			}
+			5054 = {
+				is_blockaded = yes
+			}
+			5178 = {
+				is_blockaded = yes
+			}
+			5086 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			5019 = {
+				is_blockaded = yes
+			}
+			5181 = {
+				is_blockaded = yes
+			}
+			4982 = {
+				is_blockaded = yes
+			}
+			5146 = {
+				is_blockaded = yes
+			}
+			4892 = {
+				is_blockaded = yes
+			}
+		}
+	}
+
+	industrial_efficiency = -0.1
+	global_leadership_modifier = -0.1
+	icon = 17
+}
+
+# Taiwan Strait
+control_over_taiwan_strait = {
+	
+	potential = {
+		OR = {
+			TAG = JAP
+			TAG = CHI
+			TAG = PHI
+			TAG = CGX
+			TAG = FRA
+		}
+	}
+	
+	trigger = {
+		controls = 5809
+		controls = 5823
+		controls = 5757
+		controls = 5728
+		controls = 5737
+	}
+
+	research_efficiency = 0.1
+	supply_throughput = 0.1
+	icon = 16
+}
+
+# Blockade of the Taiwan Strait
+blockade_taiwan_strait = {
+	
+	potential = {
+		OR = {
+			TAG = JAP
+			TAG = CHI
+			TAG = PHI
+			TAG = CGX
+			TAG = FRA
+		}
+	}
+	
+	trigger = {
+		controls = 5809
+		controls = 5823
+		controls = 5757
+		controls = 5728
+		controls = 5737
+		
+		OR = {
+			5809 = {
+				is_blockaded = yes
+			}
+			5823 = {
+				is_blockaded = yes
+			}
+			5757 = {
+				is_blockaded = yes
+			}
+			5728 = {
+				is_blockaded = yes
+			}
+			5737 = {
+				is_blockaded = yes
+			}
+		}
+	}
+
+	global_resources = -0.1
+	global_leadership_modifier = -0.1
+	icon = 17
+}
+
+# Mozambique Channel
+control_over_mozambique_channel = {
+	
+	potential = {
+		OR = {
+			TAG = FRA
+			TAG = ENG
+			TAG = POR
+			TAG = ITA
+		}
+	}
+	
+	trigger = {
+		controls = 10340
+		controls = 10345
+		controls = 10334
+		controls = 10312
+		controls = 10288
+		controls = 10261
+		controls = 10247
+		controls = 10261
+		controls = 11386
+		controls = 10205
+		controls = 10230
+		controls = 10274
+		controls = 10300
+		controls = 10319
+	}
+
+	research_efficiency = 0.1
+	supply_throughput = 0.1
+	icon = 16
+}
+
+# Blockade of the Mozambique Channel
+blockade_mozambique_channel = {
+	
+	potential = {
+		OR = {
+			TAG = FRA
+			TAG = ENG
+			TAG = POR
+			TAG = ITA
+		}
+	}
+	
+	trigger = {
+		controls = 10340
+		controls = 10345
+		controls = 10334
+		controls = 10312
+		controls = 10288
+		controls = 10261
+		controls = 10247
+		controls = 10261
+		controls = 11386
+		controls = 10205
+		controls = 10230
+		controls = 10274
+		controls = 10300
+		controls = 10319
+		
+		OR = {
+			10340 = {
+				is_blockaded = yes
+			}
+			10345 = {
+				is_blockaded = yes
+			}
+			10334 = {
+				is_blockaded = yes
+			}
+			10312 = {
+				is_blockaded = yes
+			}
+			10288 = {
+				is_blockaded = yes
+			}
+			10261 = {
+				is_blockaded = yes
+			}
+			10247 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			10261 = {
+				is_blockaded = yes
+			}
+			11386 = {
+				is_blockaded = yes
+			}
+			10205 = {
+				is_blockaded = yes
+			}
+			10230 = {
+				is_blockaded = yes
+			}
+			10274 = {
+				is_blockaded = yes
+			}
+			10300 = {
+				is_blockaded = yes
+			}
+			10319 = {
+				is_blockaded = yes
+			}
+		}
+	}
+
+	global_resources = -0.1
+	global_leadership_modifier = -0.1
+	icon = 17
+}
+# Gulf of Finland
+control_finland_gulf = {
+
+	potential = {
+		OR = {
+			TAG = FIN
+			TAG = GER
+			TAG = SOV
+			TAG = SWE
+		}
+		NOT = {
+			faction = allies
+		}
+	}
+
+	trigger = {
+		controls = 985 
+		controls = 779 
+		controls = 906 
+		controls = 780 
+		controls = 739 
+		controls = 863 
+		controls = 819 
+		controls = 696 
+		controls = 864 
+		controls = 820 
+		controls = 781 
+		controls = 782 
+		controls = 698 
+		controls = 697 
+		controls = 699
+	}
+	
+	global_resources = 0.2
+	global_leadership_modifier = 0.1
+	icon = 16
+}
+
+# Blockade of the Gulf of Finland
+blockade_finland_gulf = {
+
+	potential = {
+		NOT = {
+			faction = allies
+		}
+		OR = {
+			TAG = FIN
+			TAG = GER
+			TAG = SOV
+			TAG = SWE
+		}
+	}
+
+	trigger = {
+		controls = 985 
+		controls = 779 
+		controls = 906 
+		controls = 780 
+		controls = 739 
+		controls = 863 
+		controls = 819 
+		controls = 696 
+		controls = 864 
+		controls = 820 
+		controls = 781 
+		controls = 782 
+		controls = 698 
+		controls = 697 
+		controls = 699
+		
+		OR = {
+			985 = {
+				is_blockaded = yes
+			}
+			779 = {
+				is_blockaded = yes
+			}
+			906 = {
+				is_blockaded = yes
+			}
+			780 = {
+				is_blockaded = yes
+			}
+			739 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			863 = {
+				is_blockaded = yes
+			}
+			819 = {
+				is_blockaded = yes
+			}
+			696 = {
+				is_blockaded = yes
+			}
+			864 = {
+				is_blockaded = yes
+			}
+			820 = {
+				is_blockaded = yes
+			}
+		}
+		OR = {
+			781 = {
+				is_blockaded = yes
+			}
+			782 = {
+				is_blockaded = yes
+			}
+			698 = {
+				is_blockaded = yes
+			}
+			697 = {
+				is_blockaded = yes
+			}
+			699= {
+				is_blockaded = yes
+			}
+		}
+	}
+
+	global_leadership_modifier = -0.15
+	icon = 17
+}

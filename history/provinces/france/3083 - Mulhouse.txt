@@ -1,0 +1,13 @@
+owner = FRA
+controller = FRA
+add_core = FRA
+
+energy = 8.00
+rare_materials = 5.00
+land_fort = 10
+anti_air = 3
+infra = 10
+
+1941.6.22 = {
+	controller = GER
+}

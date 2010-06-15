@@ -1,0 +1,11 @@
+owner = ENG
+controller = ENG
+add_core = ENG
+metal = 4.00
+rare_materials = 6.00
+infra = 6
+manpower = 1.00
+leadership = 0.10
+1942.6.4 = {
+	controller = JAP
+}

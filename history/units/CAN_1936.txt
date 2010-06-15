@@ -1,0 +1,29 @@
+division = {
+	name = "1st Candian Division"
+	location = 3342
+	is_reserve = yes
+	regiment = { type = infantry_brigade name = "1st Canadian Infantry Brigade" historical_model = 0 }
+	regiment = { type = infantry_brigade name = "2nd Canadian Infantry Brigade" historical_model = 0 }
+	regiment = { type = infantry_brigade name = "3rd Canadian Infantry Brigade" historical_model = 0 }
+}
+
+navy = {
+	name = "Canadian Transport Fleet"
+	base = 6997
+	location = 6997
+	ship = { type = transport_ship name = "'Empress of Japan' Flotilla" historical_model = 0 }
+	ship = { type = transport_ship name = "'Empress of Australia' Flotilla" historical_model = 0 }
+	ship = { type = transport_ship name = "'Empress of Britain' Flotilla" historical_model = 0 }
+	ship = { type = transport_ship name = "'Empress of Canada' Flotilla" historical_model = 0 }
+	ship = { type = transport_ship name = "'Empress of Russia' Flotilla" historical_model = 0 }
+	ship = { type = transport_ship name = "'Empress of Asia' Flotilla" historical_model = 0 }
+}
+navy = {
+	name = "Royal Canadian Navy"
+	base = 6997
+	location = 6997
+	ship = { type = destroyer name = "Destroyer Flotilla 1" historical_model = 0 }
+}
+
+
+

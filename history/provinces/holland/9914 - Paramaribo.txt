@@ -1,0 +1,6 @@
+owner = HOL
+controller = HOL
+add_core = HOL
+metal = 50.00
+infra = 6
+naval_base = 3

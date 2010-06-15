@@ -1,0 +1,51 @@
+gui=
+{
+language=l_english
+}
+graphics=
+{
+size=
+{
+    x=1600
+    y=1024
+}
+
+refreshRate=60
+fullScreen=yes
+shadows=no
+shadowSize=1024
+multi_sampling=8
+anisotropic_filtering=0
+gamma=50.000000
+}
+sound_fx_volume=78.000000
+music_volume=22.000000
+scroll_speed=100.000000
+camera_rotation_speed=50.000000
+zoom_speed=50.000000
+mouse_speed=50.000000
+master_volume=100.000000
+ambient_volume=50.000000
+mapRenderingOptions=
+{
+renderTrees=yes
+onmap=yes
+simpleWater=no
+alwaysCounters=no
+counter_distance=100.000000
+waves=yes
+counter_scale=1.000000
+render_hierarchy=yes
+show_unit_names=yes
+}
+lastplayer="Player"
+lasthost="192.168.0.211"
+serveradress="diplomacy.valkyrienet.com"
+autosave="MONTHLY"
+simple=no
+categories=
+{
+1 1 1 1 1 1 }
+outliner=
+{
+6 1 2 4 3 5 7 9 }

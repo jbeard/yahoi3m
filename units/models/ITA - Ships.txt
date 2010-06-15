@@ -1,0 +1,216 @@
+destroyer.0 = {
+	destroyer_armament = 0
+	destroyer_antiaircraft = 0
+	destroyer_engine = 0
+	destroyer_armour = 0
+	smallwarship_radar = 0
+	smallwarship_asw = 0
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+destroyer.1 = {
+	destroyer_armament = 1
+	destroyer_antiaircraft = 0
+	destroyer_engine = 1
+	destroyer_armour = 0
+	smallwarship_radar = 0
+	smallwarship_asw = 0
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+
+destroyer.2 = {
+	destroyer_armament = 2
+	destroyer_antiaircraft = 1
+	destroyer_engine = 2
+	destroyer_armour = 1
+	smallwarship_radar = 0
+	smallwarship_asw = 0
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+destroyer.3 = {
+	destroyer_armament = 3
+	destroyer_antiaircraft = 2
+	destroyer_engine = 2
+	destroyer_armour = 2
+	smallwarship_radar = 0
+	smallwarship_asw = 1
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+light_cruiser.0 = {
+	lightcruiser_armament = 0
+	lightcruiser_antiaircraft = 0
+	lightcruiser_engine = 0
+	lightcruiser_armour = 0
+	smallwarship_radar = 0
+	smallwarship_asw = 0
+	light_cruiser_escort_role = 0 
+	light_cruiser_crew_training = 0 
+	spotting = 0 
+}
+
+light_cruiser.1 = {
+	lightcruiser_armament = 1
+	lightcruiser_antiaircraft = 1
+	lightcruiser_engine = 1
+	lightcruiser_armour = 0
+	smallwarship_radar = 0
+	smallwarship_asw = 0
+	light_cruiser_escort_role = 0 
+	light_cruiser_crew_training = 0 
+	spotting = 0 
+}
+
+
+light_cruiser.2 = {
+	lightcruiser_armament = 1
+	lightcruiser_antiaircraft = 1
+	lightcruiser_engine = 2
+	lightcruiser_armour = 2
+	smallwarship_radar = 0
+	smallwarship_asw = 0
+	light_cruiser_escort_role = 0 
+	light_cruiser_crew_training = 0 
+	spotting = 0 
+}
+
+light_cruiser.3 = {
+	lightcruiser_armament = 2
+	lightcruiser_antiaircraft = 2
+	lightcruiser_engine = 3
+	lightcruiser_armour = 3
+	smallwarship_radar = 0
+	smallwarship_asw = 0
+	light_cruiser_escort_role = 0 
+	light_cruiser_crew_training = 0 
+	spotting = 0 
+}
+
+heavy_cruiser.0 = {
+	heavycruiser_armament = 0
+	heavycruiser_antiaircraft = 0
+	heavycruiser_engine = 0
+	heavycruiser_armour = 0
+	largewarship_radar = 0
+	cruiser_warfare = 0 
+	cruiser_crew_training = 0 
+}
+
+heavy_cruiser.1 = {
+	heavycruiser_armament = 1
+	heavycruiser_antiaircraft = 1
+	heavycruiser_engine = 1
+	heavycruiser_armour = 0
+	largewarship_radar = 0
+	cruiser_warfare = 0 
+	cruiser_crew_training = 0  
+}
+
+heavy_cruiser.2 = {
+	heavycruiser_armament = 2
+	heavycruiser_antiaircraft = 2
+	heavycruiser_engine = 2
+	heavycruiser_armour = 2
+	largewarship_radar = 0
+	cruiser_warfare = 0 
+	cruiser_crew_training = 0 
+}
+
+battleship.0 = {
+	capitalship_armament = 0
+	battleship_antiaircraft = 0
+	battleship_engine = 0
+	battleship_armour = 0
+	largewarship_radar = 0
+	battlefleet_concentration_doctrine = 0 
+	battleship_crew_training = 0 
+}
+
+battleship.1 = {
+	capitalship_armament = 1
+	battleship_antiaircraft = 1
+	battleship_engine = 1
+	battleship_armour = 1
+	largewarship_radar = 0
+	battlefleet_concentration_doctrine = 0 
+	battleship_crew_training = 0  
+}
+
+battleship.4 = {
+	capitalship_armament = 4
+	battleship_antiaircraft = 3
+	battleship_engine = 4
+	battleship_armour = 3
+	largewarship_radar = 0
+	battlefleet_concentration_doctrine = 0 
+	battleship_crew_training = 0 
+}
+
+carrier.1 = {
+	carrier_hanger = 1
+	carrier_antiaircraft = 0
+	carrier_engine = 1
+	carrier_armour = 1
+	largewarship_radar = 0
+	carrier_group_doctrine = 0 
+	carrier_crew_training = 0  
+	radar_training = 0 
+}
+
+submarine.0 = {
+	submarine_antiaircraft = 0
+	submarine_engine = 0
+	submarine_hull = 0
+	submarine_torpedoes= 0
+	submarine_sonar = 0
+	submarine_airwarningequipment = 0
+	fleet_auxiliary_submarine_doctrine = 0 
+	submarine_crew_training = 0 
+	electric_powered_torpedo = 0 
+}
+
+submarine.1 = {
+	submarine_antiaircraft = 0
+	submarine_engine = 0
+	submarine_hull = 1
+	submarine_torpedoes = 1
+	submarine_sonar = 0
+	submarine_airwarningequipment = 0
+	fleet_auxiliary_submarine_doctrine = 0 
+	submarine_crew_training = 0  
+	electric_powered_torpedo = 0 
+}
+
+submarine.2 = {
+	submarine_antiaircraft = 1
+	submarine_engine = 2
+	submarine_hull = 1
+	submarine_torpedoes = 1
+	submarine_sonar = 0
+	submarine_airwarningequipment = 0
+	fleet_auxiliary_submarine_doctrine = 0 
+	submarine_crew_training = 0 
+	electric_powered_torpedo = 0 
+}
+
+submarine.3 = {
+	submarine_antiaircraft = 2
+	submarine_engine = 3
+	submarine_hull = 2
+	submarine_torpedoes = 3
+	submarine_sonar= 0
+	submarine_airwarningequipment = 0
+	fleet_auxiliary_submarine_doctrine = 0 
+	submarine_crew_training= 0 
+	electric_powered_torpedo = 0 
+}

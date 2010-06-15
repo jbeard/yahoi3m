@@ -1,0 +1,470 @@
+#############
+# Lendlease #
+#############
+
+# US lend lease
+country_event = {
+	
+	id = 14100
+
+	trigger = {
+		or = {
+			government = market_liberalism
+			government = social_democracy
+			government = social_liberalism
+			government = social_conservatism
+		}
+		or = {
+			year = 1941
+			war = yes
+			is_in_any_faction = yes
+		}
+		not = { faction = axis }
+		tag = USA
+		not = { has_country_flag = lendlease }
+	}
+
+	mean_time_to_happen =  {
+		months = 1
+	}
+
+	title = "Lend-lease act"
+	desc = "EVTNAME1602"
+	picture = "parliamentary_scandal"
+
+	option = {
+		name = "Help our allies!"		# OK
+		ai_chance = { factor = 95 }
+		set_country_flag = lendlease
+		set_country_flag = lendlease_passed
+		neutrality = -5
+	}
+	option = {
+		name = "No support."			# Nope
+		ai_chance = { factor = 5 }
+		set_country_flag = lendlease
+		neutrality = 5
+	}
+}
+
+# Lend lease for Uk
+# Start ENG
+country_event = {
+	
+	id = 14101
+
+	trigger = {
+		tag = USA
+		exists = ENG
+		not = { war_with = ENG }
+		not = { faction = axis }
+		ENG = { war_with = GER }
+		ENG = { 
+			not = { faction = axis }
+		}
+		or = {
+			government = market_liberalism
+			government = social_democracy
+			government = social_liberalism
+			government = social_conservatism
+		}
+		not = { has_country_flag = nolendleaseforuk }
+		has_country_flag = lendlease_passed
+	}
+
+	mean_time_to_happen =  {
+		months = 3
+	}
+
+	title = "The arsenal of democracy"
+	desc = "The lend-lease act allows us to send help to our allies in the UK. What shall we do?"
+	picture = "Lend_Lease"
+
+	option = {
+		name = "Send help."			# OK
+		ai_chance = { factor = 95 }
+		ENG = { country_event = 11100 }
+		add_country_modifier = {
+			name = "lendlease_give_uk"
+			duration = -1
+		}
+		set_country_flag = lend_lease_at_least_once_uk
+		relation = { who = ENG value = 5 }
+		neutrality = -1
+	}
+	option = {
+		name = "Not this time!"			# Delay
+		ai_chance = { factor = 4 }
+		ENG = { country_event = 11101 }
+		remove_country_modifier = "lendlease_give_uk"
+	}
+	option = {
+		name = "...and never again!"			# Stop it for once and all
+		ai_chance = { factor = 1 }
+		ENG = { country_event = 11102 }
+		remove_country_modifier = "lendlease_give_uk"
+		set_country_flag = nolendleaseforuk
+		relation = { who = ENG value = -100 }
+		neutrality = 10
+	}
+}
+# End of lend-lease for ENG
+country_event = {
+	
+	id = 14102
+
+	trigger = {
+		tag = USA
+		exists = ENG
+		not = {
+			ENG = { war_with = GER }
+		}
+		has_country_flag = lend_lease_at_least_once_uk
+		or = {
+			GER = { government_in_exile = yes }
+			not = { exists = GER }
+		}
+	}
+
+	mean_time_to_happen =  {
+		months = 0.1
+	}
+
+	title = "End of the lend-lease transits."
+	desc = "Now that the Axis has been crushed no further help is needed."
+	picture = "parliamentary_scandal"
+
+	option = {
+		name = "OK"			# OK
+		ai_chance = { factor = 100 }
+		ENG = { country_event = 11103 }
+		remove_country_modifier = "lendlease_give_uk"
+		set_country_flag = nolendleaseforuk
+		clr_country_flag = lend_lease_at_least_once_uk
+	}
+}
+country_event = {
+	
+	id = 14103
+
+	trigger = {
+		tag = USA
+		or = {
+			not = { exists = ENG }
+			ENG = { government_in_exile = yes }
+			ENG = { is_puppet = yes }
+		}
+		has_country_flag = lend_lease_at_least_once_uk
+	}
+
+	mean_time_to_happen =  {
+		months = 0.1
+	}
+
+	title = "End of the lend-lease transits."
+	desc = "Now that England has been crushed no further help is needed."
+	picture = "parliamentary_scandal"
+
+	option = {
+		name = "Oh no!"			# OK
+		ai_chance = { factor = 100 }
+		ENG = { country_event = 11103 }
+		remove_country_modifier = "lendlease_give_uk"
+		set_country_flag = nolendleaseforuk
+		clr_country_flag = lend_lease_at_least_once_uk
+	}
+}
+# End ENG
+
+# Start SOV
+country_event = {
+	
+	id = 14111
+
+	trigger = {
+		tag = USA
+		exists = SOV
+		not = { war_with = SOV }
+		not = { faction = axis }
+		SOV = { war_with = GER }
+		SOV = { 
+			not = { faction = axis }
+		}
+		or = {
+			government = market_liberalism
+			government = social_democracy
+			government = social_liberalism
+			government = social_conservatism
+			government = federal_socialist_republic
+			government = socialist_republic
+			government = left_wing_radicals
+		}
+		not = { has_country_flag = nolendleaseforsov }
+		has_country_flag = lendlease_passed
+	}
+
+	mean_time_to_happen =  {
+		months = 3
+	}
+
+	title = "The arsenal of democracy"
+	desc = "The lend-lease act allows us to send help to our friends in the Soviet Union. What shall we do?"
+	picture = "Lend_Lease_SOV"
+
+	option = {
+		name = "Send help."			# OK
+		ai_chance = { factor = 95 }
+		SOV = { country_event = 13100 }
+		add_country_modifier = {
+			name = "lendlease_give_sov"
+			duration = -1
+		}
+		set_country_flag = lend_lease_at_least_once_sov
+		relation = { who = SOV value = 5 }
+		neutrality = -1
+	}
+	option = {
+		name = "Not this time!"			# Delay
+		ai_chance = { factor = 4 }
+		SOV = { country_event = 13101 }
+		remove_country_modifier = "lendlease_give_sov"
+	}
+	option = {
+		name = "...and never again!"			# Stop it for once and all
+		ai_chance = { factor = 1 }
+		SOV = { country_event = 13102 }
+		remove_country_modifier = "lendlease_give_sov"
+		set_country_flag = nolendleaseforsov
+		relation = { who = SOV value = -100 }
+		neutrality = 10
+	}
+}
+#End of lend-lease for SOV
+country_event = {
+	
+	id = 14112
+
+	trigger = {
+		tag = USA
+		exists = SOV
+		not = {
+			SOV = { war_with = GER }
+		}
+		has_country_flag = lend_lease_at_least_once_sov
+		or = {
+			GER = { government_in_exile = yes }
+			not = { exists = GER }
+		}
+	}
+
+	mean_time_to_happen =  {
+		months = 0.1
+	}
+
+	title = "End of the lend-lease transits."
+	desc = "Now that the Axis has been crushed no further help is needed."
+	picture = "parliamentary_scandal"
+
+	option = {
+		name = "OK"			# OK
+		ai_chance = { factor = 100 }
+		SOV = { country_event = 13103 }
+		remove_country_modifier = "lendlease_give_sov"
+		set_country_flag = nolendleaseforsov
+		clr_country_flag = lend_lease_at_least_once_sov
+	}
+}
+country_event = {
+	
+	id = 14113
+
+	trigger = {
+		tag = USA
+		or = {
+			not = { exists = SOV }
+			SOV = { government_in_exile = yes }
+			SOV = { is_puppet = yes }
+		}
+		has_country_flag = lend_lease_at_least_once_sov
+	}
+
+	mean_time_to_happen =  {
+		months = 0.1
+	}
+
+	title = "End of the lend-lease transits."
+	desc = "Now that the Soviet Union has been crushed no further help is needed."
+	picture = "parliamentary_scandal"
+
+	option = {
+		name = "Oh no!"			# OK
+		ai_chance = { factor = 100 }
+		SOV = { country_event = 13103 }
+		remove_country_modifier = "lendlease_give_sov"
+		set_country_flag = nolendleaseforsov
+		clr_country_flag = lend_lease_at_least_once_sov
+	}
+}
+# End SOV
+
+# Reaction events
+# UK reaction events
+# US sends help
+country_event = {
+	
+	id = 11100
+
+	is_triggered_only = yes
+
+	title = "Help from the US"
+	desc = "A shipment from our allies in America arrived today."
+	picture = "Lend_Lease"
+
+	option = {
+		name = "Great"			# Great
+		ai_chance = { factor = 100 }
+		add_country_modifier = {
+			name = "lendlease_take_uk"
+			duration = -1
+		}
+		supplies = 3000
+		crude_oil = 1000
+		relation = { who = USA value = 5 }
+		national_unity = 1
+	}
+}
+#delayed
+country_event = {
+	
+	id = 11101
+
+	is_triggered_only = yes
+
+	title = "Delivery delayed"
+	desc = "A shipment from the US was delayed, hopefully they send help soon."
+	picture = "Lend_Lease"
+
+	option = {
+		name = "OK"			# OK
+		ai_chance = { factor = 100 }
+		remove_country_modifier = "lendlease_take_uk"
+	}
+}
+#They stopped it!
+country_event = {
+	
+	id = 11102
+
+	is_triggered_only = yes
+
+	title = "No help from the US!"
+	desc = "The US decided to stop their military help."
+	picture = "Lend_Lease"
+
+	option = {
+		name = "Oh no!"			# OK
+		ai_chance = { factor = 100 }
+		remove_country_modifier = "lendlease_take_uk"
+		relation = { who = USA value = -100 }
+		national_unity = -10
+	}
+}
+#End of the war
+country_event = {
+	
+	id = 11103
+
+	is_triggered_only = yes
+
+	title = "The war is over!"
+	desc = "No further help is needed."
+	picture = "Lend_Lease"
+
+	option = {
+		name = "Ok!"			# OK
+		ai_chance = { factor = 100 }
+		remove_country_modifier = "lendlease_take_uk"
+	}
+}
+# SOV reaction events
+# US sends help
+country_event = {
+	
+	id = 13100
+
+	is_triggered_only = yes
+
+	title = "Help from the US"
+	desc = "A shipment from our friends in America arrived today."
+	picture = "Lend_Lease_SOV"
+
+	option = {
+		name = "Great"			# Great
+		ai_chance = { factor = 100 }
+		add_country_modifier = {
+			name = "lendlease_take_sov"
+			duration = -1
+		}
+		supplies = 3000
+		crude_oil = 1000
+		relation = { who = USA value = 5 }
+		national_unity = 1
+	}
+}
+#delayed
+country_event = {
+	
+	id = 13101
+
+	is_triggered_only = yes
+
+	title = "Delivery delayed"
+	desc = "A shipment from the US was delayed, hopefully they send help soon."
+	picture = "Lend_Lease_SOV"
+
+	option = {
+		name = "OK"			# OK
+		ai_chance = { factor = 100 }
+		remove_country_modifier = "lendlease_take_sov"
+	}
+}
+#They stopped it!
+country_event = {
+	
+	id = 13102
+
+	is_triggered_only = yes
+
+	title = "No help from the US!"
+	desc = "The US decided to stop their military help."
+	picture = "Lend_Lease_SOV"
+
+	option = {
+		name = "Oh no!"			# OK
+		ai_chance = { factor = 100 }
+		remove_country_modifier = "lendlease_take_sov"
+		relation = {
+			who = USA
+			value = -100
+		}
+		national_unity = -10
+	}
+}
+#End of the war
+country_event = {
+	
+	id = 13103
+
+	is_triggered_only = yes
+
+	title = "The war is over!"
+	desc = "No further help is needed."
+	picture = "Lend_Lease_SOV"
+
+	option = {
+		name = "Oh no!"			# OK
+		ai_chance = { factor = 100 }
+		remove_country_modifier = "lendlease_take_sov"
+	}
+}
+# End reaction events

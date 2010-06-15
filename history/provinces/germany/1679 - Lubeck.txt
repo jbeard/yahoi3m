@@ -1,0 +1,6 @@
+owner = GER
+controller = GER
+add_core = GER
+
+anti_air = 1
+infra = 10

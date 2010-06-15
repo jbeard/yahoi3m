@@ -1,0 +1,84 @@
+ ########################
+# Independent Mengkukuo #
+########################
+
+diplomatic_decisions = {
+
+	independent_mengkukuo = {
+		potential = {
+			tag = JAP
+			NOT = { exists = MEN }
+			JAP = {
+				owns = 7259
+ 				owns = 7276
+				owns = 4834
+				owns = 7312
+				owns = 7326
+				owns = 4885
+				owns = 4933
+				owns = 4978
+				owns = 4932
+				owns = 4980
+				owns = 5017
+				owns = 7359
+				owns = 7338 
+				owns = 7325
+				owns = 7349
+				owns = 7337
+				
+			}
+		}
+
+		effect = {
+			JAP = {
+				mengkukuo_region = {
+					secede_province = MEN
+					add_core = MEN
+				}
+			} 
+			create_vassal = MEN
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	expand_mengkukuo = {
+		potential = {
+			tag = JAP
+			exists = MEN
+			exists = CXB
+			CXB = {
+				owns = 9089
+				owns = 7377
+				owns = 7390
+				owns = 7384	
+				owns = 5052
+				owns = 7348
+				owns = 7367
+				owns = 7358
+			}
+		}
+		allow = {
+			JAP = {
+				controls = 9089
+				controls = 7377
+				controls = 7390
+				controls = 7384	
+				controls = 5052
+				controls = 7348
+				controls = 7367
+				controls = 7358
+			}
+		}
+
+		effect = {
+			CXB = {
+				country_event = 2704
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

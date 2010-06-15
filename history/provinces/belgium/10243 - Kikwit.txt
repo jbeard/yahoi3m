@@ -1,0 +1,8 @@
+owner = BEL
+controller = BEL
+add_core = BEL
+metal = 10.00
+rare_materials = 4.00
+infra = 4
+
+infra = 1

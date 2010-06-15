@@ -1,0 +1,10 @@
+owner = HOL
+controller = HOL
+add_core = HOL
+
+energy = 1.00
+industry = 1
+infra = 10
+1940.5.28 = {
+	controller = GER
+}

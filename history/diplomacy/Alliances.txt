@@ -1,0 +1,23 @@
+# Nationalist China - Guangxi Clique
+alliance = {
+	first = CHI
+	second = CGX
+	start_date = 1935.1.1
+	end_date = 1945.9.2
+}
+
+# Nationalist China - Shanxi
+alliance = {
+	first = CHI
+	second = CSX
+	start_date = 1935.1.1
+	end_date = 1945.9.2
+}
+
+# Nationalist China - Communist China
+alliance = {
+	first = CHI
+	second = CHC
+	start_date = 1935.1.1
+	end_date = 1945.9.2
+}
