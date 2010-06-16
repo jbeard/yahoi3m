@@ -2308,8 +2308,6 @@ USA_light_cruiser_7;Worcester-class;Classe Worcester;Worcester-Klasse;;Clase Wor
 USA_light_cruiser_8;Spruance-class;Classe Spruance;Spruance-Klasse;;Clase Spruance;;;;;;;;;x
 USA_light_cruiser_9;Kidd-class;Classe Kidd;Kidd-Klasse;;Clase Kidd;;;;;;;;;x
 USA_light_cruiser_10;Arleigh Burke-class;Classe Arleigh Burke;Arleigh Burke-Klasse;;Clase Arleigh Burke;;;;;;;;;x
-
-
 USA_heavy_cruiser_0;Pensacola-class;Classe Pensacola;Pensacola-Klasse;;Clase Pensacola;;;;;;;;;x
 USA_heavy_cruiser_1;Northampton-class;Classe Northampton;Northampton-Klasse;;Clase Northampton;;;;;;;;;x
 USA_heavy_cruiser_2;Portland-class;Classe Portland;Portland-Klasse;;Clase Portland;;;;;;;;;x
@@ -2367,13 +2365,23 @@ USA_escort_carrier_6;Saipan-class;Classe Saipan;Saipan-Klasse;;Clase Saipan;;;;;
 USA_escort_carrier_7;Iwo Jima-class;Classe Iwo Jima;Iwo Jima-Klasse;;Clase Iwo Jima;;;;;;;;;x
 USA_escort_carrier_8;Tarawa-class;Classe Tarawa;Tarawa-Klasse;;Clase Tarawa;;;;;;;;;x
 USA_submarine_0;S-boat;S-boat;S-Boat;;S-boat;;;;;;;;;x
-USA_submarine_1;R-boat;R-boat;R-Boat;;R-boat;;;;;;;;;x
-USA_submarine_2;Barracuda-class;Classe Barracuda;Barracuda-Klasse;;Clase Barracuda;;;;;;;;;x
-USA_submarine_3;Perch-class;Classe Perch;Perch-Klasse;;Clase Perch;;;;;;;;;x
-USA_submarine_4;Tang-class;Classe Tang;Tang-Klasse;;Clase Tang;;;;;;;;;x
-USA_submarine_5;Barbel-class;Classe Barbel;Barbel-Klasse;;Clase Barbel;;;;;;;;;x
-USA_submarine_6;Nautilus-class;Classe Nautilus;Nautilus-Klasse;;Clase Nautilus;;;;;;;;;x
+USA_submarine_1;Porpoise-class;Classe Porpoise;Porpoise-Klasse;;Clase Porpoise;;;;;;;;;x
+USA_submarine_2;Sargo-class;Classe Sargo;Sargo-Klasse;;Clase Sargo;;;;;;;;;x
+USA_submarine_3;Tambor-class;Classe Tambor;Tambor-Klasse;;Clase Tambor;;;;;;;;;x
+USA_submarine_4;Gato-class;Classe Gato;Gato-Klasse;;Clase Gato;;;;;;;;;x
+USA_submarine_5;Balao-class;Classe Balao;Balao-Klasse;;Clase Balao;;;;;;;;;x
+USA_submarine_6;Tench-class;Classe Tench;Tench-Klasse;;Clase Tench;;;;;;;;;x
+USA_submarine_7;Barracuda-class;Classe Barracuda;Barracuda-Klasse;;Clase Barracuda;;;;;;;;;x
+USA_submarine_8;Tang-class;Classe Tang;Tang-Klasse;;Clase Tang;;;;;;;;;x
+USA_submarine_9;Sailfish-class;Classe Sailfish;Sailfish-Klasse;;Clase Sailfish;;;;;;;;;x
+USA_submarine_10;Barbel-class;Classe Barbel;Barbel-Klasse;;Clase Barbel;;;;;;;;;x
 USA_nuclear_submarine_0;Nautilus-class;Classe Nautilus;Nautilus-Klasse;;Clase Nautilus;;;;;;;;;x
+USA_nuclear_submarine_1;Skate-class;Classe Skate;Skate-Klasse;;Clase Skate;;;;;;;;;x
+USA_nuclear_submarine_2;Skipjack-class;Classe Skipjack;Skipjack-Klasse;;Clase Skipjack;;;;;;;;;x
+USA_nuclear_submarine_3;Thresher-class;Classe Thresher;Thresher-Klasse;;Clase Thresher;;;;;;;;;x
+USA_nuclear_submarine_4;Sturgeon-class;Classe Sturgeon;Sturgeon-Klasse;;Clase Sturgeon;;;;;;;;;x
+USA_nuclear_submarine_5;Los Angeles-class;Classe Los Angeles;Los Angeles-Klasse;;Clase Los Angeles;;;;;;;;;x
+USA_nuclear_submarine_6;Seawolf-class;Classe Seawolf;Seawolf-Klasse;;Clase Seawolf;;;;;;;;;x
 #;;;;;;;;;;;;;;x
 VEN_light_armor_brigade_0;CV-33;CV-33;CV-33;;CV-33;;;;;;;;;x
 VEN_light_armor_brigade_1;M2A4;M2A4;M2A4;;M2A4;;;;;;;;;x
