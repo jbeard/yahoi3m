@@ -242,7 +242,7 @@ unit_names = {
 	}
 
 	battleship = {
-		"USS West Virginia (BB-48)" "USS North Carolina (BB-55)" "USS Washington (BB-56)"
+		"USS North Carolina (BB-55)" "USS Washington (BB-56)"
 		"USS South Dakota (BB-57)*" "USS Indiana (BB-58)" "USS Massachusetts (BB-59)" "USS Alabama (BB-60)"
 		"USS Iowa (BB-61)*" "USS New Jersey (BB-62)" "USS Missouri (BB-63)" "USS Wisconsin (BB-64)" "USS Illinois (BB-65)" "USS Kentucky (BB-66)"
 		"USS Montana (BB-67)*" "USS Ohio (BB-68)" "USS Maine (BB-69)" "USS New Hampshire (BB-70)" "USS Louisiana (BB-71)" "USS South Carolina (BB-72)"
