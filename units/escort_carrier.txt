@@ -17,7 +17,7 @@ escort_carrier = {
 	#Building Costs
 	build_cost_ic = 3.50
 	build_cost_manpower = 2.00
-	build_time = 300
+	build_time = 150
 
 	#Misc Abilities
 	maximum_speed = 18.00
