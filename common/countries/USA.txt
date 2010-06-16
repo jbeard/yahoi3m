@@ -269,12 +269,16 @@ unit_names = {
 		"USS Bremerton (CA-130)" "USS Fall River (CA-131)" "USS Macon (CA-132)" "USS Toledo (CA-133)" "USS Los Angeles (CA-135)" "USS Chicago (CA-136)"
 		"USS Oregon City (CA-122)*" "USS Albany (CA-123)" "USS Rochester (CA-124)" "USS Cambridge (CA-126)" "USS Bridgeport (CA-127)" "USS Kansas City (CA-128)" "USS Tulsa (CA-129)" "USS Norfolk (CA-137)" "USS Scranton (CA-138)"
 		"USS Des Moines (CA-134)*" "USS Salem (CA-139)" "USS Newport News (CA-148)" "USS Dallas (CA-150)"
-		"USS Long Beach (CGN-160)*"
 	}
 	battlecruiser = {
 		"USS Alaska (CB-1)*" "USS Guam (CB-2)" "USS Hawaii (CB-3)" "USS Philippines (CB-4)" "USS Puerto Rico (CB-5)" "USS Samoa (CB-6)" "USS United States (CB-7)"
 		"USS Chesapeake (CB-8)" "USS Constitution (CB-9)" "USS President (CB-10)" "USS Congress (CB-11)" "USS Constellation (CB-12)"
 		"USS Union (CB-14)" "USS Liberty (CB-15)"
+		"Boston (CAG-1)*" "Canberra (CAG-2)*"
+		"Galveston (CLG-3)*" "Little Rock (CLG-4)" "Oklahoma City (CLG-5)"
+		"Providence (CLG-6)*" "Springfield (CLG-7)" "Topeka (CLG-8)"
+		"Long Beach (CGN-9)*"
+		"Albany (CG-10)*" "USS Chicago (CG-11)" "USS Columbus (CG-12)" "USS Rochester (CG-13)" "USS Bremerton (CG-14)"
 		"Leahy (CG-16)*" "Harry E. Yarnell (CG-17)" "Worden (CG-18)" "Dale (CG-19)" "Richmond K. Turner (CG-20)" "Gridley (CG-21)" "England (CG-22)" "Halsey (CG-23)" "Reeves (CG-24)"
 		"Belknap (CG-26)" "Josephus Daniels (CG-27)" "Wainwright (CG-28)" "Jouett (CG-29)" "Horne (CG-30)" "Sterett (CG-31)" "William H. Standley (CG-32)" "Fox (CG-33)" "Biddle (CG-34)"
 		"Truxtun (CGN-35)" "California (CGN-36)" "South Carolina (CGN-37)"

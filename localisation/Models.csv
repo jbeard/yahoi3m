@@ -2305,6 +2305,11 @@ USA_light_cruiser_4;Oakland-class;Classe Oakland;Oakland-Klasse;;Clase Oakland;;
 USA_light_cruiser_5;Galveston-class;Classe Galveston;Galveston-Klasse;;Clase Galveston;;;;;;;;;x
 USA_light_cruiser_6;Fargo-class;Classe Fargo;Fargo-Klasse;;Clase Fargo;;;;;;;;;x
 USA_light_cruiser_7;Worcester-class;Classe Worcester;Worcester-Klasse;;Clase Worcester;;;;;;;;;x
+USA_light_cruiser_8;Spruance-class;Classe Spruance;Spruance-Klasse;;Clase Spruance;;;;;;;;;x
+USA_light_cruiser_9;Kidd-class;Classe Kidd;Kidd-Klasse;;Clase Kidd;;;;;;;;;x
+USA_light_cruiser_10;Arleigh Burke-class;Classe Arleigh Burke;Arleigh Burke-Klasse;;Clase Arleigh Burke;;;;;;;;;x
+
+
 USA_heavy_cruiser_0;Pensacola-class;Classe Pensacola;Pensacola-Klasse;;Clase Pensacola;;;;;;;;;x
 USA_heavy_cruiser_1;Northampton-class;Classe Northampton;Northampton-Klasse;;Clase Northampton;;;;;;;;;x
 USA_heavy_cruiser_2;Portland-class;Classe Portland;Portland-Klasse;;Clase Portland;;;;;;;;;x
@@ -2317,10 +2322,14 @@ USA_battlecruiser_0;Lexington-class;Classe Lexington;Lexington-Klasse;;Clase Lex
 USA_battlecruiser_1;Saratoga-class;Classe Saratoga;Saratoga-Klasse;;Clase Saratoga;;;;;;;;;x
 USA_battlecruiser_2;Ranger-class;Classe Ranger;Ranger-Klasse;;Clase Ranger;;;;;;;;;x
 USA_battlecruiser_3;Alaska-class;Classe Alaska;Alaska-Klasse;;Clase Alaska;;;;;;;;;x
-USA_battlecruiser_4;Leahy-class;Classe Leahy;Leahy-Klasse;;Clase Leahy;;;;;;;;;x
-USA_battlecruiser_5;Belknap-class;Classe Belknap;Belknap-Klasse;;Clase Belknap;;;;;;;;;x
-USA_battlecruiser_6;Truxtun-class;Classe Truxtun;Truxtun-Klasse;;Clase Truxtun;;;;;;;;;x
-USA_battlecruiser_7;Virginia-class;Classe Virginia;Virginia-Klasse;;Clase Virginia;;;;;;;;;x
+USA_battlecruiser_4;Boston-class;Classe Boston;Boston-Klasse;;Clase Boston;;;;;;;;;x
+USA_battlecruiser_5;Galveston-class;Classe Galveston;Galveston-Klasse;;Clase Galveston;;;;;;;;;x
+USA_battlecruiser_6;Providence-class;Classe Providence;Providence-Klasse;;Clase Providence;;;;;;;;;x
+USA_battlecruiser_7;Albany-class;Classe Albany;Albany-Klasse;;Clase Albany;;;;;;;;;x
+USA_battlecruiser_8;Leahy-class;Classe Leahy;Leahy-Klasse;;Clase Leahy;;;;;;;;;x
+USA_battlecruiser_9;Belknap-class;Classe Belknap;Belknap-Klasse;;Clase Belknap;;;;;;;;;x
+USA_battlecruiser_10;Truxtun-class;Classe Truxtun;Truxtun-Klasse;;Clase Truxtun;;;;;;;;;x
+USA_battlecruiser_11;Virginia-class;Classe Virginia;Virginia-Klasse;;Clase Virginia;;;;;;;;;x
 USA_destroyer_0;Clemson-class;Classe Clemson;Clemson-Klasse;;Clase Clemson;;;;;;;;;x
 USA_destroyer_1;Farragut-class;Classe Farragut;Farragut-Klasse;;Clase Farragut;;;;;;;;;x
 USA_destroyer_2;Somers-class;Classe Somers;Somers-Klasse;;Clase Somers;;;;;;;;;x
@@ -2328,6 +2337,18 @@ USA_destroyer_3;Fletcher-class;Classe Fletcher;Fletcher-Klasse;;Clase Fletcher;;
 USA_destroyer_4;Gearing-class;Classe Gearing;Gearing-Klasse;;Clase Gearing;;;;;;;;;x
 USA_destroyer_5;Forest Sherman-class;Classe Forest Sherman;Forest Sherman-Klasse;;Clase Forest Sherman;;;;;;;;;x
 USA_destroyer_6;Adams-class;Classe Adams;Adams-Klasse;;Clase Adams;;;;;;;;;x
+USA_destroyer_0;Clemson-class;Classe Clemson;Clemson-Klasse;;Clase Clemson;;;;;;;;;x
+USA_destroyer_1;Mahan-class;Classe Mahan;Mahan-Klasse;;Clase Mahan;;;;;;;;;x
+USA_destroyer_2;Bagley-class;Classe Bagley;Bagley-Klasse;;Clase Bagley;;;;;;;;;x
+USA_destroyer_3;Benham-class;Classe Benham;Benham-Klasse;;Clase Benham;;;;;;;;;x
+USA_destroyer_4;Sims-class;Classe Sims;Sims-Klasse;;Clase Sims;;;;;;;;;x
+USA_destroyer_5;Benson-class;Classe Benson;Benson-Klasse;;Clase Benson;;;;;;;;;x
+USA_destroyer_6;Gleaves-class;Classe Gleaves;Gleaves-Klasse;;Clase Gleaves;;;;;;;;;x
+USA_destroyer_7;Fletcher-class;Classe Fletcher;Fletcher-Klasse;;Clase Fletcher;;;;;;;;;x
+USA_destroyer_8;Allen M. Sumner-class;Classe Allen M. Sumner;Allen M. Sumner-Klasse;;Clase Allen M. Sumner;;;;;;;;;x
+USA_destroyer_9;Gearing-class;Classe Gearing;Gearing-Klasse;;Clase Gearing;;;;;;;;;x
+USA_destroyer_10;Forrest Sherman-class;Classe Forrest Sherman;Forrest Sherman-Klasse;;Clase Forrest Sherman;;;;;;;;;x
+USA_destroyer_11;Charles F. Adams-class;Classe Charles F. Adams;Charles F. Adams-Klasse;;Clase Charles F. Adams;;;;;;;;;x
 USA_carrier_1;Lexington-class;Classe Lexington;Lexington-Klasse;;Clase Lexington;;;;;;;;;x
 USA_carrier_2;Yorktown-class;Classe Yorktown;Yorktown-Klasse;;Clase Yorktown;;;;;;;;;x
 USA_carrier_4;Essex-class;Classe Essex;Essex-Klasse;;Clase Essex;;;;;;;;;x
