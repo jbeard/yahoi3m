@@ -2291,22 +2291,36 @@ USA_battleship_4;Colorado-class;Classe Colorado;Colorado-Klasse;;Clase Colorado;
 USA_battleship_5;South Dakota-class;Classe South Dakota;South Dakota-Klasse;;Clase South Dakota;;;;;;;;;x
 USA_battleship_6;Iowa-class;Classe Iowa;Iowa-Klasse;;Clase Iowa;;;;;;;;;x
 USA_super_heavy_battleship_0;Montana-class;Classe Montana;Montana-Klasse;;Clase Montana;;;;;;;;;x
-USA_light_cruiser_1;Chester-class;Classe Chester;Chester-Klasse;;Clase Chester;;;;;;;;;x
-USA_light_cruiser_2;Omaha-class;Classe Omaha;Omaha-Klasse;;Clase Omaha;;;;;;;;;x
-USA_light_cruiser_3;Brooklyn-class;Classe Brooklyn;Brooklyn-Klasse;;Clase Brooklyn;;;;;;;;;x
-USA_light_cruiser_4;Cleveland-class;Classe Cleveland;Cleveland-Klasse;;Clase Cleveland;;;;;;;;;x
-USA_light_cruiser_5;Worcester-class;Classe Worcester;Worcester-Klasse;;Clase Worcester;;;;;;;;;x
-USA_light_cruiser_6;Galveston-class;Classe Galveston;Galveston-Klasse;;Clase Galveston;;;;;;;;;x
+USA_super_heavy_battleship_1;Michigan-class;Classe Michigan;Michigan-Klasse;;Clase Michigan;;;;;;;;;x
+USA_super_heavy_battleship_2;Utah-class;Classe Utah;Utah-Klasse;;Clase Utah;;;;;;;;;x
+USA_super_heavy_battleship_3;Texas-class;Classe Texas;Texas-Klasse;;Clase Texas;;;;;;;;;x
+USA_super_heavy_battleship_4;Arizona-class;Classe Arizona;Arizona-Klasse;;Clase Arizona;;;;;;;;;x
+USA_super_heavy_battleship_5;Tennessee-class;Classe Tennessee;Tennessee-Klasse;;Clase Tennessee;;;;;;;;;x
+USA_super_heavy_battleship_6;West Virginia-class;Classe West Virginia;West Virginia-Klasse;;Clase West Virginia;;;;;;;;;x
+USA_light_cruiser_0;Chester-class;Classe Chester;Chester-Klasse;;Clase Chester;;;;;;;;;x
+USA_light_cruiser_1;Omaha-class;Classe Omaha;Omaha-Klasse;;Clase Omaha;;;;;;;;;x
+USA_light_cruiser_2;Brooklyn-class;Classe Brooklyn;Brooklyn-Klasse;;Clase Brooklyn;;;;;;;;;x
+USA_light_cruiser_3;Cleveland-class;Classe Cleveland;Cleveland-Klasse;;Clase Cleveland;;;;;;;;;x
+USA_light_cruiser_4;Oakland-class;Classe Oakland;Oakland-Klasse;;Clase Oakland;;;;;;;;;x
+USA_light_cruiser_5;Galveston-class;Classe Galveston;Galveston-Klasse;;Clase Galveston;;;;;;;;;x
+USA_light_cruiser_6;Fargo-class;Classe Fargo;Fargo-Klasse;;Clase Fargo;;;;;;;;;x
+USA_light_cruiser_7;Worcester-class;Classe Worcester;Worcester-Klasse;;Clase Worcester;;;;;;;;;x
 USA_heavy_cruiser_0;Pensacola-class;Classe Pensacola;Pensacola-Klasse;;Clase Pensacola;;;;;;;;;x
 USA_heavy_cruiser_1;Northampton-class;Classe Northampton;Northampton-Klasse;;Clase Northampton;;;;;;;;;x
-USA_heavy_cruiser_2;New Orleans-class;Classe New Orleans;New Orleans-Klasse;;Clase New Orleans;;;;;;;;;x
+USA_heavy_cruiser_2;Portland-class;Classe Portland;Portland-Klasse;;Clase Portland;;;;;;;;;x
+USA_heavy_cruiser_3;New Orleans-class;Classe New Orleans;New Orleans-Klasse;;Clase New Orleans;;;;;;;;;x
 USA_heavy_cruiser_4;Baltimore-class;Classe Baltimore;Baltimore-Klasse;;Clase Baltimore;;;;;;;;;x
-USA_heavy_cruiser_5;Des Moines-class;Classe Des Moines;Des Moines-Klasse;;Clase Des Moines;;;;;;;;;x
-USA_heavy_cruiser_6;Long Beach-class;Classe Long Beach;Long Beach-Klasse;;Clase Long Beach;;;;;;;;;x
-USA_heavy_cruiser_7;Leahy-class;Classe Leahy;Leahy-Klasse;;Clase Leahy;;;;;;;;;x
-USA_battlecruiser_2;Lexington-class;Classe Lexington;Lexington-Klasse;;Clase Lexington;;;;;;;;;x
-USA_battlecruiser_4;Alaska-class;Classe Alaska;Alaska-Klasse;;Clase Alaska;;;;;;;;;x
-USA_battlecruiser_6;CGN 42-class;Classe CGN 42;CGN 42-Klasse;;Clase CGN 42;;;;;;;;;x
+USA_heavy_cruiser_5;Oregon City-class;Classe Oregon City;Oregon City-Klasse;;Clase Oregon City;;;;;;;;;x
+USA_heavy_cruiser_6;Des Moines-class;Classe Des Moines;Des Moines-Klasse;;Clase Des Moines;;;;;;;;;x
+USA_heavy_cruiser_7;Long Beach-class;Classe Long Beach;Long Beach-Klasse;;Clase Long Beach;;;;;;;;;x
+USA_battlecruiser_0;Lexington-class;Classe Lexington;Lexington-Klasse;;Clase Lexington;;;;;;;;;x
+USA_battlecruiser_1;Saratoga-class;Classe Saratoga;Saratoga-Klasse;;Clase Saratoga;;;;;;;;;x
+USA_battlecruiser_2;Ranger-class;Classe Ranger;Ranger-Klasse;;Clase Ranger;;;;;;;;;x
+USA_battlecruiser_3;Alaska-class;Classe Alaska;Alaska-Klasse;;Clase Alaska;;;;;;;;;x
+USA_battlecruiser_4;Leahy-class;Classe Leahy;Leahy-Klasse;;Clase Leahy;;;;;;;;;x
+USA_battlecruiser_5;Belknap-class;Classe Belknap;Belknap-Klasse;;Clase Belknap;;;;;;;;;x
+USA_battlecruiser_6;Truxtun-class;Classe Truxtun;Truxtun-Klasse;;Clase Truxtun;;;;;;;;;x
+USA_battlecruiser_7;Virginia-class;Classe Virginia;Virginia-Klasse;;Clase Virginia;;;;;;;;;x
 USA_destroyer_0;Clemson-class;Classe Clemson;Clemson-Klasse;;Clase Clemson;;;;;;;;;x
 USA_destroyer_1;Farragut-class;Classe Farragut;Farragut-Klasse;;Clase Farragut;;;;;;;;;x
 USA_destroyer_2;Somers-class;Classe Somers;Somers-Klasse;;Clase Somers;;;;;;;;;x
@@ -2318,17 +2332,19 @@ USA_carrier_1;Lexington-class;Classe Lexington;Lexington-Klasse;;Clase Lexington
 USA_carrier_2;Yorktown-class;Classe Yorktown;Yorktown-Klasse;;Clase Yorktown;;;;;;;;;x
 USA_carrier_4;Essex-class;Classe Essex;Essex-Klasse;;Clase Essex;;;;;;;;;x
 USA_carrier_5;Midway-class;Classe Midway;Midway-Klasse;;Clase Midway;;;;;;;;;x
-USA_carrier_6;United States-class;Classe United States;United States-Klasse;;Clase United States;;;;;;;;;x
-USA_carrier_7;Forrestal-class;Classe Forrestal;Forrestal-Klasse;;Clase Forrestal;;;;;;;;;x
-USA_carrier_8;Kitty Hawk-class;Classe Kitty Hawk;Kitty Hawk-Klasse;;Clase Kitty Hawk;;;;;;;;;x
-USA_carrier_9;Enterprise-class;Classe Enterprise;Enterprise-Klasse;;Clase Enterprise;;;;;;;;;x
-USA_escort_carrier_0;Langley-class;Classe Langley;Langley-Klasse;;Clase Langley;;;;;;;;;x
-USA_escort_carrier_1;Langley-class;Classe Langley;Langley-Klasse;;Clase Langley;;;;;;;;;x
-USA_escort_carrier_2;Langley-class;Classe Langley;Langley-Klasse;;Clase Langley;;;;;;;;;x
-USA_escort_carrier_3;Independence-class;Classe Independence;Independence-Klasse;;Clase Independence;;;;;;;;;x
-USA_escort_carrier_4;Independence-class;Classe Independence;Independence-Klasse;;Clase Independence;;;;;;;;;x
-USA_escort_carrier_5;Saipan-class;Classe Saipan;Saipan-Klasse;;Clase Saipan;;;;;;;;;x
+USA_carrier_6;Forrestal-class;Classe Forrestal;Forrestal-Klasse;;Clase Forrestal;;;;;;;;;x
+USA_carrier_7;Kitty Hawk-class;Classe Kitty Hawk;Kitty Hawk-Klasse;;Clase Kitty Hawk;;;;;;;;;x
+USA_carrier_8;Enterprise-class;Classe Enterprise;Enterprise-Klasse;;Clase Enterprise;;;;;;;;;x
+USA_carrier_8;Nimitz-class;Classe Nimitz;Nimitz-Klasse;;Clase Nimitz;;;;;;;;;x
+USA_escort_carrier_0;Long Island-class;Classe Long Island;Long Island-Klasse;;Clase Long Island;;;;;;;;;x
+USA_escort_carrier_1;Bogue-class;Classe Bogue;Bogue-Klasse;;Clase Bogue;;;;;;;;;x
+USA_escort_carrier_2;Sangamon-class;Classe Sangamon;Sangamon-Klasse;;Clase Sangamon;;;;;;;;;x
+USA_escort_carrier_3;Casablanca-class;Classe Casablanca;Casablanca-Klasse;;Clase Casablanca;;;;;;;;;x
+USA_escort_carrier_4;Commencement Bay-class;Classe Commencement Bay;Commencement Bay-Klasse;;Clase Commencement Bay;;;;;;;;;x
+USA_escort_carrier_5;Independence-class;Classe Independence;Independence-Klasse;;Clase Independence;;;;;;;;;x
 USA_escort_carrier_6;Saipan-class;Classe Saipan;Saipan-Klasse;;Clase Saipan;;;;;;;;;x
+USA_escort_carrier_7;Iwo Jima-class;Classe Iwo Jima;Iwo Jima-Klasse;;Clase Iwo Jima;;;;;;;;;x
+USA_escort_carrier_8;Tarawa-class;Classe Tarawa;Tarawa-Klasse;;Clase Tarawa;;;;;;;;;x
 USA_submarine_0;S-boat;S-boat;S-Boat;;S-boat;;;;;;;;;x
 USA_submarine_1;R-boat;R-boat;R-Boat;;R-boat;;;;;;;;;x
 USA_submarine_2;Barracuda-class;Classe Barracuda;Barracuda-Klasse;;Clase Barracuda;;;;;;;;;x
