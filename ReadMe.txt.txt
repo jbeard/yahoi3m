@@ -1,0 +1,119 @@
+2.03b:
+- Nationalist China no longer allied to Guanxi Clique and Shanxi
+- Reduced damage to CAGs (AIR_COMBAT_CAG_ORG_DAMAGE_MOD and AIR_COMBAT_CAG_STR_DAMAGE_MOD in defines.lua)
+- Gave Germany some interceptors in the 1941 bookmarks
+- Fixed some stray pixels in the provinces.bmp file
+- Added morale increases for infantry to Land Doctrine (Mass Assault)
+- Added morale increases for Mtn, Par and Mar to Land Doctrine (Integgrated support)
+- Added morale increases for Militia, Garrison to Land Doctrine (Large Front)
+- Fixed an issue so AA brigades have terrain penalties in line with other land units.
+- Added a small increase to AA brigades air attack.
+- Re-added the Swedish and Finnish leadership that was present in v1.4
+- Fixed an issue with Soviet planes in the 1936 scenario in a province with no airfield
+- New Lua AI scripts (i.e. the non-military AI)
+
+2.03:
+- Convoys should no longer ship either fuel or supplies when none are needed in the area
+- Fixed an issue with frequent setting up and cancelling of AI convoys (added a delay)
+- Fixed a crash in Clausewitz with certain GUI elements (OverlappingElementsBox)
+- Adapted to the latest Clausewitz version
+- Optimized unit removal from AI agent hierarchy for speed
+- Fixed a crash when units loaded on ships were deleted
+- Fixed an incorrect tooltip for threat
+- Province control is now more dependent on which ally actually borders it, even for faction-less allies
+- Fixed a crash with deleted units not always being removed from CAIUnit cached lists, which could cause crashes with the invasion response check
+- Fixed a crash that could occur when loading save games with weird province modifiers (from a different mod or something)
+- Fixed a crash with unit plan min forces not always being initialized correctly
+- Fixed a crash that could occur for AI CAGs with a null base
+- Fixed a crash bug with unit deletion if loaded on planes
+- Units loaded on planes are now properly deleted if the plane is destroyed
+- Removed the point of sea attack from CVLs
+- Fixed a bug with Sea Zone 11446 being in the Mediterranean region
+- NAP rules now change with 6 month intervals, down from 9
+- Unit AI: Fixed an issue with strategic air bombing only picking one target
+- Changed the strategic bombing order to stop targetting provinces below 1 IC immediately.
+- Naval AI: Rewrote ASW to use patrol orders instead of the useless convoy escort order
+- Naval AI: Prio on patrolling provinces around attacked convoys
+- Tech view tooltips don't overlap
+- Unit visibility more consistent
+- 3D missing collision objects can now be selected
+- Minor memory leaks removed
+- Unit AI: Fixed an issue with the creation of new Corps HQs for garrison divisions
+- Fixed a probable cause of crashes with deleted convoys in owner areas
+- Added a tooltip for when paratroops cannot load due to low org
+- Added some safety checks on reload pertaining to units with no location
+- Initial model submarines are now much worse at convoy attacks, but the gain from torpedo tech is higher
+- Small Warships ASW tech now provides a bit more detection
+- Convoy escorts now dish out a lot more org damage to raiders, and a bit more strength damage
+- Resource needs reported differently to the lua.
+- Unit AI: Snappier re-checks of temporarily blocked straits
+- Invasion AI: Fixed an issue where it would go brain dead if the country no longer has access to the current staging province
+- Fixed the bad naval base position for province Pärnu
+- Corrected VPs in Tibet
+- Fixed the trigger for the General Winter Strategic Effect
+- Fixed a bug with intra home area supply convoys
+- Fixed a bug with automated HQs below Theatre level suddenly deciding to defend the whole theatre front
+- Tweaked infrastructure in America
+- More Urban Terrain provinces added
+- Location fixes
+- Russia has more leadership
+- Vorenezh river corrected
+- New Lua AI scripts
+
+2.01:
+- Slightly decreased the impact of convoy raiding on national unity
+- Removed the naval base position in Strasbourg, so the province is no longer erroneously coastal
+- Fixed a bug with the call to arms dialog not being shown when clicking on the icon
+- The American ministers Wendell Willkie and Charles McNary are now properly Republicans
+- Fixed a bug with AI counts of serial production constructions
+- Major increase in fuel and supply consumption of armored and mechanized brigades
+- The repulsion factor of diplomatic influence is now scaled by relative IC, if the government ideology is alien to the faction ideology. (_ADEF_REPULSION_IC_FACTOR_ in defines.lua)
+- Added some Soviet garrison divisions in the OOBs
+- Unit AI: More emphasis on garrison of very high VP provinces and supplier province, even if they are in a front
+- Fixed the bug with changing a Law resetting brigade upgrade cost & time
+- Fixed some localization issues with the German text
+- Fixed the bug with a unit finishing construction resetting brigade upgrade cost & time
+- Drastically improved the effects of the naval tech 'smallwarship_asw'
+- The Game will now start with German Language (some bad lines in SemperFi.csv)
+- Increased the alignment drift of government ideology from 1.25 to 2 (IDEOLOGY_WEIGHT in defines.lua)
+- Tweaked the OOBs to ensure better sorting of submarine models
+- Invasion AI: Fixed an issue with locking up due to an invalid naval path between the fetch point of an army and the staging province
+- Invasion AI: Improved army fetch port checks
+- Added back a lost fix to units getting stuck in neutral territory
+- "Exiled" unit speed is no longer modified by lack of fuel
+- Fixed a trigger issue with the Strategic Effect 'blockade_suez_channel'.
+- Fixed a trigger issue with the Strategic Effect 'control_over_gibraltar'.
+- Fixed the Arcade Mode freeze during "Adapting History".
+- Partisans can no longer spawn in impassable provinces
+- Sent expeditionary forces of an annexed country will now be deleted
+- Can no longer call an ally who is in the same faction as the target
+- Fixed a crash (and general weirdness) with the return of expeditionary HQs
+- HQs under AI control that do not allow reorganization no longer split off damaged ships anyway
+- Changed the radio range rules so a HQ gets all benefits as long as each HQ in the chain is in range of its own HQ
+- Unit AI: Reduced network traffic by not sending explicit commands to detach units (they are detached by the attach command)
+- Unit AI: Improved hierarchy maintenance
+- Fixed a bug in Operation Zeppelin
+- The correct Italian 1936 OOB should now be used
+- Fixed a bug with automated Theatre HQs not responding to objectives set in non-hostile areas if they had a hostile front
+- Fixed some issues with HQ reassignment indecision
+- Tweaked some Northern Scandinavian provinces
+- When a country leaves a faction, all allied objectives related to it will be removed.
+- Fixed exploit where a player could assign too many CAGs to a carrier.
+- Britain can now oppose the Munich Agreement, which will weaken them, make the commonwealth much moreneutral and buff France and start WW2 early over czechoslovakia. The AI will never do this, but its an option intended for people playing Britain.
+- Added Events:
+    Baldwin Resigns
+    The Norwegian Debate
+    The King calls Churchill
+    The King calls Halifax
+- Further tweaks to the Japanese 1936 OOB
+- Fixed a bug with the visual unit hierarchy where detached divisions didn't update the hierarchy.
+- Newly deployed units are now added to the oob browser.
+- Buttons with shortcuts now have their shortcuts showing up in the tooltips.
+- If the player doesn't select exactly 15 victory conditions, the game randomly removes/adds conditions to make it 15.
+- Added some shortcuts to the oob browser and unit view.
+- Added some extra text to BattleWon, NavalBattleWon and AirBattleWon
+- All BattleWon, NavalBattleWon and AirBattleWon now have a short "We have won the battle of...!" or similar
+- Operation Tannenbaum is no longer a primary Victory Condition
+- Some changes to the Surrender events
+- Tech sharing is now removed properly when canceled.
+- Fixed the missing model picture bug
