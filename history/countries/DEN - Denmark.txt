@@ -158,7 +158,7 @@ civil_law = open_society
 1940.4.9 = {
 	 join_faction = allies
 	 neutrality = 0 
-	 } # Operation Weserübung
+	} # Operation Weserübung
 1940.4.10 = { oob = "empty.txt" 
 	government_in_exile = yes
 }

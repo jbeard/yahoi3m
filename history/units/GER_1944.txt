@@ -267,7 +267,7 @@ theatre= {
 			}
 			corps = {
 				name = "XXV. Armeekorps"
-				location = 2541
+				location = 2605
 				leader = 55 #Fahrmbacher
 				regiment = { type = hq_brigade name = "XXV. Armeekorps" historical_model = 0 }
 				division= {
@@ -286,7 +286,7 @@ theatre= {
 				}
 				division= {
 					name = "2. Fallschirmjäger-Division"
-					location = 2541 #Brest
+					location = 2605 #Brest
 					leader = 221 #Ramcke
 					regiment = { type = paratrooper_brigade name = "Fallschirmjäger Regiment 2" historical_model = 3 }
 					regiment = { type = paratrooper_brigade name = "Fallschirmjäger Regiment 7" historical_model = 3 }
@@ -3342,8 +3342,8 @@ navy = {
 }
 navy = {
 	name = "5. Zerstörergeschwader"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = destroyer name = "5. Zerstörergeschwader" historical_model = 3 }
 }
 navy = {
@@ -3354,8 +3354,8 @@ navy = {
 }
 navy = {
 	name = "7. Zerstörergeschwader"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = destroyer name = "7. Zerstörergeschwader" historical_model = 2 }
 }
 navy = {
@@ -3384,20 +3384,20 @@ navy = {
 	base = 65
 	location = 65
 	ship = { type = submarine name = "13. Unterseebootsflottille" historical_model = 1 }
-	ship = { type = submarine name = "14. Unterseebootsflottille" historical_model = 2 }
 }
 navy = {
 	name = "2. Unterseebootsflotte"
 	base = 808
 	location = 808
+	ship = { type = submarine name = "14. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "11. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "17. Unterseebootsflottille" historical_model = 2 }
+	ship = { type = submarine name = "5. Unterseebootsflottille" historical_model = 2 }
 }
 navy = {
 	name = "2. Unterseebootsflotte"
 	base = 1572
 	location = 1572
-	ship = { type = submarine name = "5. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "31. Unterseebootsflottille" historical_model = 1 }
 	ship = { type = submarine name = "32. Unterseebootsflottille" historical_model = 1 }
 }
@@ -3415,6 +3415,14 @@ navy = {
 	ship = { type = submarine name = "46. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "47. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "48. Unterseebootsflottille" historical_model = 2 }
+	ship = { type = submarine name = "27. Unterseebootsflottille" historical_model = 2 }
+	ship = { type = submarine name = "33. Unterseebootsflottille" historical_model = 2 }
+}
+
+navy = {
+	name = "31. Unterseebootsflotte"
+	base = 1570
+	location = 1570
 	ship = { type = submarine name = "49. Unterseebootsflottille" historical_model = 3 }
 	ship = { type = submarine name = "50. Unterseebootsflottille" historical_model = 3 }
 	ship = { type = submarine name = "51. Unterseebootsflottille" historical_model = 3 }
@@ -3424,14 +3432,19 @@ navy = {
 	ship = { type = submarine name = "55. Unterseebootsflottille" historical_model = 3 }
 	ship = { type = submarine name = "56. Unterseebootsflottille" historical_model = 3 }
 	ship = { type = submarine name = "57. Unterseebootsflottille" historical_model = 3 }
-	ship = { type = submarine name = "58. Unterseebootsflottille" historical_model = 4 }
-	ship = { type = submarine name = "27. Unterseebootsflottille" historical_model = 2 }
-	ship = { type = submarine name = "33. Unterseebootsflottille" historical_model = 2 }
 }
+
+navy = {
+	name = "32. Unterseebootsflotte"
+	base = 1570
+	location = 1570
+	ship = { type = submarine name = "58. Unterseebootsflottille" historical_model = 4 }
+}
+
 navy = {
 	name = "3. Unterseebootsflotte"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = submarine name = "1. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "9. Unterseebootsflottille" historical_model = 2 }
 }

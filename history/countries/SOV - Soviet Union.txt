@@ -397,7 +397,10 @@ civil_law = totalitarian_system
 } # Invasion of Poland
 1939.11.30 = {
 	economic_law = full_mobilisation
-} # The Finnish Winter War
+}
+1940.3.13 = {
+	set_country_flag = the_finnish_winter_war # The Finnish Winter War
+}
 1940.5.10 = {
 	head_of_state = 4001
 	head_of_government = 4002

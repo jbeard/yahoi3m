@@ -3,4 +3,6 @@ controller = GER
 add_core = GER
 
 anti_air = 1
+naval_base = 1
+
 infra = 10

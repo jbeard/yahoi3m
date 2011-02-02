@@ -2,7 +2,7 @@
 -- LUA Hearts of Iron 3 Production File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/23/2010
+-- Date Last Modified: 7/10/2010
 -----------------------------------------------------------
 
 -- ######################
@@ -30,53 +30,93 @@ local _MECHANIZED_BRIGADE_ = 12
 
 local _MOTORIZED_BRIGADE_ = 13
 
-local _BATTLECRUISER_ = 14
-local _BATTLESHIP_ = 15
-local _SUPER_HEAVY_BATTLESHIP_ = 16
-local _CARRIER_ = 17
-local _DESTROYER_ = 18
-local _ESCORT_CARRIER_ = 19
-local _LIGHT_CRUISER_ = 20
-local _HEAVY_CRUISER_ = 21
-local _SUBMARINE_ = 22
-local _NUCLEAR_SUBMARINE_ = 23
-local _TRANSPORT_SHIP_ = 24
 
-local _CAG_ = 25
-local _CAS_ = 26
-local _INTERCEPTOR_ = 27
-local _MULTI_ROLE_ = 28
-local _ROCKET_INTERCEPTOR_ = 29
-local _NAVAL_BOMBER_ = 30
-local _STRATEGIC_BOMBER_ = 31
-local _TACTICAL_BOMBER_ = 32
-local _TRANSPORT_PLANE_ = 33
-local _FLYING_BOMB_ = 34
-local _FLYING_ROCKET_ = 35
+local _ANTI_AIR_BRIGADE_ = 14
+local _ANTI_TANK_BRIGADE_ = 15
+local _ARTILLERY_BRIGADE_ = 16
+local _ENGINEER_BRIGADE_ = 17
+local _ROCKET_ARTILLERY_BRIGADE_ = 18
 
-local _ANTI_AIR_BRIGADE_ = 36
-local _ANTI_TANK_BRIGADE_ = 37
-local _ARTILLERY_BRIGADE_ = 38
-local _ENGINEER_BRIGADE_ = 39
-local _ROCKET_ARTILLERY_BRIGADE_ = 40
+local _ARMORED_CAR_BRIGADE_ = 19
+local _SP_ARTILLERY_BRIGADE_ = 20
+local _SP_RCT_ARTILLERY_BRIGADE_ = 21
+local _TANK_DESTROYER_BRIGADE_ = 22
 
-local _ARMORED_CAR_BRIGADE_ = 41
-local _SP_ARTILLERY_BRIGADE_ = 42
-local _SP_RCT_ARTILLERY_BRIGADE_ = 43
-local _TANK_DESTROYER_BRIGADE_ = 44
+local _POLICE_BRIGADE_ = 23
 
-local _POLICE_BRIGADE_ = 45
+
+local _BATTLECRUISER_ = 24
+local _BATTLESHIP_ = 25
+local _SUPER_HEAVY_BATTLESHIP_ = 26
+local _CARRIER_ = 27
+local _ESCORT_CARRIER_ = 28
+local _CAG_ = 29
+local _DESTROYER_ = 30
+local _LIGHT_CRUISER_ = 31
+local _HEAVY_CRUISER_ = 32
+local _SUBMARINE_ = 33
+local _NUCLEAR_SUBMARINE_ = 34
+local _TRANSPORT_SHIP_ = 35
+
+local _CAS_ = 36
+local _INTERCEPTOR_ = 37
+local _MULTI_ROLE_ = 38
+local _ROCKET_INTERCEPTOR_ = 39
+local _NAVAL_BOMBER_ = 40
+local _STRATEGIC_BOMBER_ = 41
+local _TACTICAL_BOMBER_ = 42
+local _TRANSPORT_PLANE_ = 43
+local _FLYING_BOMB_ = 44
+local _FLYING_ROCKET_ = 45
 
 local _HQ_BRIGADE_ = 46
 local _PARTISAN_BRIGADE_ = 47
 
+-- Static Arrays used for Ratio setup
+local _LandRatio_Units_ = {
+	'garrison_brigade', -- Garrison
+	'infantry_brigade', -- Infantry
+	'motorized_brigade', -- Motorized
+	'mechanized_brigade', -- Mechanized
+	'light_armor_brigade|armor_brigade|heavy_armor_brigade|super_heavy_armor_brigade', -- Armor
+	'militia_brigade', -- Militia
+	'cavalry_brigade'}; -- Cavalry
 
+local _AirRatio_Units_ = {
+	'interceptor|multi_role|rocket_interceptor', -- Fighter
+	'cas', -- CAS
+	'tactical_bomber', -- Tactical
+	'naval_bomber', -- Naval Bomber
+	'strategic_bomber'}; -- Strategic
+	
+local _NavalRatio_Units_ = {
+	'destroyer', -- Destroyers
+	'submarine', -- Submarines
+	'light_cruiser|heavy_cruiser', -- Cruisers
+	'battlecruiser|battleship|super_heavy_battleship', -- Capital
+	'escort_carrier', -- Escort Carrier
+	'carrier'}; -- Carrier
+		
 -- ######################
 -- Default parameters for countries 
 -- ######################
 
+
+
+
+
 -- Countries Default build weights for land based only
 local DefaultProdLand = {}
+
+-- Land Brigades vs Air Units ratio
+--   If Air Ratio is met AI will shift its Air IC to build land units
+function DefaultProdLand.LandToAirRatio(minister)
+	local laArray = {
+		8, -- Land Briages
+		1}; -- Air
+	
+	return laArray
+end
 
 function DefaultProdLand.ProductionWeights(minister)
 	local rValue
@@ -168,6 +208,16 @@ end
 -- Countries Default build weights for mixed based only
 local DefaultProdMix = {}
 
+-- Land Brigades vs Air Units ratio
+--   If Air Ratio is met AI will shift its Air IC to build land units
+function DefaultProdMix.LandToAirRatio(minister)
+	local laArray = {
+		8, -- Land Briages
+		1}; -- Air
+	
+	return laArray
+end
+
 function DefaultProdMix.ProductionWeights(minister)
 	local rValue
 	
@@ -176,7 +226,7 @@ function DefaultProdMix.ProductionWeights(minister)
 			0.50, -- Land
 			0.25, -- Air
 			0.20, -- Sea
-			0.5}; -- Other
+			0.05}; -- Other
 		
 		rValue = laArray	
 	else
@@ -308,6 +358,7 @@ function BalanceProductionSliders(ai, ministerCountry, prioSelection)
 	}
 	
 	local liOrigPrio = prioSelection
+	local lbIsMajor = ministerCountry:IsMajor()
 	
 	-- If country just started mobilizing (or gets bonus reinforcements for some other reason), boost reinforcements
 	if ( prioSelection == 0 or prioSelection == 3 )then
@@ -336,33 +387,48 @@ function BalanceProductionSliders(ai, ministerCountry, prioSelection)
 		changes[ CDistributionSetting._PRODUCTION_CONSUMER_ ] = changes[ CDistributionSetting._PRODUCTION_CONSUMER_ ] + 0.1
 	end
 	
-	
-	local supplyStockpile = ministerCountry:GetPool():Get( CGoodsPool._SUPPLIES_ ):Get()
-	
-	-- If the AI has less than 8 weeks of supply increase it by 10%
-	--    If the AI has more than 20 weeks of supply decrease it by 10%
-	if prioSelection == 0 then
+	-- Performance check make sure its above 0 before we even look at this
+	if changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] > 0 then
+		local supplyStockpile = ministerCountry:GetPool():Get( CGoodsPool._SUPPLIES_ ):Get()
 		local weeksSupplyUse = ministerCountry:GetDailyExpense( CGoodsPool._SUPPLIES_ ):Get() * 7
-		if (supplyStockpile < weeksSupplyUse * 8.0) then
-			changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] + 0.1
-		elseif (supplyStockpile > weeksSupplyUse * 20.0) and supplyStockpile > 4000 then
-			local newVal = changes[ CDistributionSetting._PRODUCTION_SUPPLY_  ] - 0.1
-			if newVal < 0 then
-				newVal = 0.0
+	
+		-- Major power check
+		if lbIsMajor then
+			-- Increase supply production by 25% if less than 20 weeks and stockpile less than 50k
+			if (supplyStockpile < weeksSupplyUse * 20.0) and supplyStockpile < 50000 then
+				changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] + (changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] * 0.25)
+				
+			-- Increase supply production by 15% if stockpile less than 70k
+			elseif supplyStockpile < 70000 then
+				changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] + (changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] * 0.15)
+				
+			-- Decrease supply production by 50% if stockpile greater than 90k
+			elseif supplyStockpile > 90000 then
+				changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] - (changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] * 0.5)
+				
+			-- Decrease supply production by 10% if stockpile greater than 80k
+			elseif supplyStockpile > 80000 then
+				changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] - (changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] * 0.1)
 			end
-			changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = newVal
+		else
+			-- Increase supply production by 25% if less than 8 weeks and stockpile less than 2k
+			if (supplyStockpile < weeksSupplyUse * 8.0) and supplyStockpile < 2000 then
+				changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] + (changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] * 0.25)
+				
+			-- Increase supply production by 15% if less than 20 weeks and stockpile less than 4k
+			elseif (supplyStockpile < weeksSupplyUse * 20.0) and supplyStockpile < 4000 then
+				changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] + (changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] * 0.15)
+				
+			-- Decrease supply production by 50% if stockpile greater than 10k
+			elseif supplyStockpile > 10000 then
+				changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] - (changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] * 0.5)
+				
+			-- Decrease supply production by 10% if more than 20 weeks and stockpile greater than 4k
+			elseif (supplyStockpile > weeksSupplyUse * 20.0) and supplyStockpile > 4000 then
+				changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] - (changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] * 0.1)
+			end
 		end
 	end
-	
-	-- If the AI has more than 50k in supplies already take 10% off the slider.
-	if supplyStockpile > 50000 then -- close to cap
-		local newVal = changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] - 0.1
-		if newVal < 0 then
-			newVal = 0.0
-		end
-		changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = newVal
-	end
-	
 	
 	-- Normalize the percentages based on priority so the total does not exceed 1.0 (100%)
 	local factor_left = 1
@@ -398,12 +464,7 @@ function BalanceProductionSliders(ai, ministerCountry, prioSelection)
 		if dissent > 0.01 then
 			changes[ CDistributionSetting._PRODUCTION_CONSUMER_ ] = changes[ CDistributionSetting._PRODUCTION_CONSUMER_ ] + factor_left
 		else
-			-- Only increase supplies with what is left over if we have over 50k
-			if supplyStockpile < 50000 then
-				changes[ CDistributionSetting._PRODUCTION_SUPPLY_ ] = changes[CDistributionSetting._PRODUCTION_SUPPLY_] + factor_left	
-			else
-				changes[ CDistributionSetting._PRODUCTION_PRODUCTION_ ] = changes[ CDistributionSetting._PRODUCTION_PRODUCTION_ ] + factor_left
-			end
+			changes[ CDistributionSetting._PRODUCTION_PRODUCTION_ ] = changes[ CDistributionSetting._PRODUCTION_PRODUCTION_ ] + factor_left
 		end
 	end
 	
@@ -438,16 +499,28 @@ function ManageProduction(minister)
 		--Utils.LUA_DEBUGOUT("Country: " .. tostring(ministerTag))
 		--Utils.LUA_DEBUGOUT("IC: " .. tostring(ministerCountry:GetTotalIC()))
 
-		local ministerTech = ministerCountry:GetTechnologyStatus()
-		local vbNaval = (ministerCountry:GetNumOfPorts() > 0 and ministerCountry:GetTotalIC() >= 20)
+		local loTechStatus = ministerCountry:GetTechnologyStatus()
+		local lbNaval = (ministerCountry:GetNumOfPorts() > 0 and ministerCountry:GetTotalIC() >= 20)
+		local lbAir = (ministerCountry:GetNumOfAirfields() > 0)
 		
-		local laProdWeights = GetBuildRatio(minister, ministerTag, vbNaval, "ProductionWeights")
-		local laLandRatio = GetBuildRatio(minister, ministerTag, vbNaval, "LandRatio")
-		local laSpecialForcesRatio = GetBuildRatio(minister, ministerTag, vbNaval, "SpecialForcesRatio")
-		local laAirRatio = GetBuildRatio(minister, ministerTag, vbNaval, "AirRatio")
-		local laRocketRatio = GetBuildRatio(minister, ministerTag, vbNaval, "RocketRatio")
-		local laNavalRatio = GetBuildRatio(minister, ministerTag, vbNaval, "NavalRatio")
-		local laTransportLandRatio = GetBuildRatio(minister, ministerTag, vbNaval, "TransportLandRatio")
+		local laProdWeights = GetBuildRatio(minister, ministerTag, lbNaval, "ProductionWeights")
+		local laLandRatio = GetBuildRatio(minister, ministerTag, lbNaval, "LandRatio")
+		local laSpecialForcesRatio = GetBuildRatio(minister, ministerTag, lbNaval, "SpecialForcesRatio")
+		local laAirRatio = GetBuildRatio(minister, ministerTag, lbNaval, "AirRatio")
+		local laRocketRatio = GetBuildRatio(minister, ministerTag, lbNaval, "RocketRatio")
+		local laNavalRatio = GetBuildRatio(minister, ministerTag, lbNaval, "NavalRatio")
+		local laLandToAirRatio = GetBuildRatio(minister, ministerTag, lbNaval, "LandToAirRatio")
+		local laTransportLandRatio = GetBuildRatio(minister, ministerTag, lbNaval, "TransportLandRatio")
+		
+		-- If no air fields set all of its ratios to 0 so the Air power code does not fire
+		if not(lbAir) then
+			for i = 1, table.getn(laAirRatio) do
+				laAirRatio[i] = 0
+			end
+			
+			-- Now move the Air IC over to the Land section
+			laProdWeights[1] = laProdWeights[1] + laProdWeights[2]
+		end
 		
 		-- Figure out how much IC is suppose to be designated in the appropriate area
 		local liPotentialLandIC = tonumber(tostring(icProdAllocated * laProdWeights[1]))
@@ -460,14 +533,48 @@ function ManageProduction(minister)
 		local liNeededNavalIC = 0
 		local liNeededOtherIC = 0
 		
+		-- Verify Build Ratios against avaialbe units
+		if Utils.HasCountryAIFunction( ministerTag, "_LandRatio_Units_") then
+			laLandRatio = VerifyRatio(loTechStatus, laLandRatio, Utils.CallCountryAI(ministerTag, "_LandRatio_Units_", minister))
+		else
+			laLandRatio = VerifyRatio(loTechStatus, laLandRatio, _LandRatio_Units_)
+		end
+
+		if Utils.HasCountryAIFunction( ministerTag, "_AirRatio_Units_") then
+			laAirRatio = VerifyRatio(loTechStatus, laAirRatio, Utils.CallCountryAI(ministerTag, "_AirRatio_Units_", minister))
+		else
+			laAirRatio = VerifyRatio(loTechStatus, laAirRatio, _AirRatio_Units_)
+		end
+		
+		if Utils.HasCountryAIFunction( ministerTag, "_NavalRatio_Units_") then
+			laNavalRatio = VerifyRatio(loTechStatus, laNavalRatio, Utils.CallCountryAI(ministerTag, "_NavalRatio_Units_", minister))
+		else
+			laNavalRatio = VerifyRatio(loTechStatus, laNavalRatio, _NavalRatio_Units_)
+		end
+		
+		
 		-- Figure out what the AI is currently producin in each category
 		for loBuildItem in ministerCountry:GetConstructions() do
 			if loBuildItem:IsMilitary() then
-				if loBuildItem:GetMilitary():IsLand() then
+				local loMilitary = loBuildItem:GetMilitary()
+				
+				if loMilitary:IsLand() then
 					liNeededLandIC = liNeededLandIC + loBuildItem:GetCost()
-				elseif loBuildItem:GetMilitary():IsAir() then
-					liNeededAirIC = liNeededAirIC + loBuildItem:GetCost()
-				elseif loBuildItem:GetMilitary():IsNaval() then
+				elseif loMilitary:IsAir() then
+					for loConstDef in loMilitary:GetBrigades() do
+						local loSubUnit = loConstDef:GetType()
+						
+						-- If it is a cag add it to naval IC count instead of air
+						if loSubUnit:IsCag() then
+							liNeededNavalIC = liNeededNavalIC + loBuildItem:GetCost()
+						else
+							liNeededAirIC = liNeededAirIC + loBuildItem:GetCost()
+						end
+						
+						-- Exit the loop right away
+						break
+					end
+				elseif loMilitary:IsNaval() then
 					liNeededNavalIC = liNeededNavalIC + loBuildItem:GetCost()
 				end
 			else
@@ -658,7 +765,17 @@ function ManageProduction(minister)
 		end		
 
 		-- Process Land Units
-		local liTotalLandUnits = 0
+		local liTotalLandUnits = 0 -- User for Special forces (it does not count support brigades
+		
+		-- Used to figure out Air to Land Ratio
+		local liTotalLandRatio = CalculateRatio(GetUnitCount(_GARRISON_BRIGADE_, _POLICE_BRIGADE_, prodArrayCounts, currentArrayCounts), laLandToAirRatio[1])
+		local liTotalAirRatio = CalculateRatio(GetUnitCount(_CAS_, _TRANSPORT_PLANE_, prodArrayCounts, currentArrayCounts), laLandToAirRatio[2])
+		
+		-- If the Air ratio is higher than the Land ration then move all the Air IC into Land
+		if liTotalAirRatio > liTotalLandRatio then
+			liNeededLandIC = liNeededLandIC + liNeededAirIC
+			liNeededAirIC = 0
+		end
 		
 		--    PERFORMANCE: only process if IC has been allocated
 		--       Naval check is adding for Convoy ratio calculating.
@@ -691,7 +808,7 @@ function ManageProduction(minister)
 				
 				-- Multiplier used to figure out how many units of each type you need
 				--   to keep the ratio
-				local liMultiplier = GetMultiplier(laLandUnitRatio)
+				local liMultiplier = GetMultiplier(laLandUnitRatio, laLandRatio)
 				
 				local laLandUnitNeed = {}
 				laLandUnitNeed[1] = (laLandRatio[1] * liMultiplier) - laLandUnitCount[1]
@@ -709,10 +826,10 @@ function ManageProduction(minister)
 				
 				-- Armor
 				if laLandUnitNeed[5] > 0 then
-					local lbLA = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("light_armor_brigade"))
-					local lbA = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("armor_brigade"))
-					local lbHA = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("heavy_armor_brigade"))
-					local lbSHA = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("super_heavy_armor_brigade"))
+					local lbLA = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("light_armor_brigade"))
+					local lbA = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("armor_brigade"))
+					local lbHA = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("heavy_armor_brigade"))
+					local lbSHA = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("super_heavy_armor_brigade"))
 
 					local liArmorCount = GetUnitCount(_LIGHT_ARMOR_BRIGADE_, _ARMOR_BRIGADE_, prodArrayCounts, currentArrayCounts)
 					local liHeavyCount = GetUnitCount(_HEAVY_ARMOR_BRIGADE_, _SUPER_HEAVY_ARMOR_BRIGADE_, prodArrayCounts, currentArrayCounts)
@@ -764,9 +881,9 @@ function ManageProduction(minister)
 				local liTotalSFNeeded = math.max(0, math.ceil((liTotalLandUnits / laSpecialForcesRatio[1]) * laSpecialForcesRatio[2]) - liTotalSFUnits)
 
 				if liTotalSFNeeded > 0 then
-					local lbMo = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("bergsjaeger_brigade"))
-					local lbMa = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("marine_brigade"))
-					local lbPa = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("paratrooper_brigade"))
+					local lbMo = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("bergsjaeger_brigade"))
+					local lbMa = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("marine_brigade"))
+					local lbPa = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("paratrooper_brigade"))
 					
 					local liMountainTotal = prodArrayCounts[_BERGSJAEGER_BRIGADE_] + currentArrayCounts[_BERGSJAEGER_BRIGADE_]
 					local liMarineTotal = prodArrayCounts[_MARINE_BRIGADE_] + currentArrayCounts[_MARINE_BRIGADE_]
@@ -837,7 +954,7 @@ function ManageProduction(minister)
 			laAirUnitRatio[4] = CalculateRatio(laAirUnitCount[4], laAirRatio[4])
 			laAirUnitRatio[5] = CalculateRatio(laAirUnitCount[5], laAirRatio[5])
 
-			liMultiplier = GetMultiplier(laAirUnitRatio)
+			liMultiplier = GetMultiplier(laAirUnitRatio, laAirRatio)
 
 			local laAirUnitNeed = {}
 			laAirUnitNeed[1] = (laAirRatio[1] * liMultiplier) - laAirUnitCount[1]
@@ -848,9 +965,9 @@ function ManageProduction(minister)
 			
 			-- Fighters/Interceptors
 			if laAirUnitNeed[1] > 0 then
-				local lbIn = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("interceptor"))
-				local lbMf = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("multi_role"))
-				local lbRIn = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("rocket_interceptor"))
+				local lbIn = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("interceptor"))
+				local lbMf = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("multi_role"))
+				local lbRIn = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("rocket_interceptor"))
 				
 				local liUnitType
 			
@@ -890,8 +1007,8 @@ function ManageProduction(minister)
 			local loFlyingBomb = CSubUnitDataBase.GetSubUnit("flying_bomb")
 			local loFlyingRocket = CSubUnitDataBase.GetSubUnit("flying_rocket")
 			
-			local lbFlyingBomb = ministerCountry:GetTechnologyStatus():IsUnitAvailable(loFlyingBomb)
-			local lbFlyingRocket = ministerCountry:GetTechnologyStatus():IsUnitAvailable(loFlyingRocket)
+			local lbFlyingBomb = loTechStatus:IsUnitAvailable(loFlyingBomb)
+			local lbFlyingRocket = loTechStatus:IsUnitAvailable(loFlyingRocket)
 
 			-- Calculate how many Flying Weapons are needed			
 			if lbFlyingBomb or lbFlyingRocket then
@@ -905,15 +1022,6 @@ function ManageProduction(minister)
 				end
 				
 				laUnitNeeds[liUnitIndex] = math.max(0, math.ceil((liTotalAirUnits / laRocketRatio[1]) * laRocketRatio[2]) - liTotalFlyingWeapons)
-			end
-			
-			-- Figure out if we need any CAGs
-			local liCAGsNeeded = prodArrayCounts[_ESCORT_CARRIER_] + currentArrayCounts[_ESCORT_CARRIER_]
-			liCAGsNeeded = liCAGsNeeded +((prodArrayCounts[_CARRIER_] + currentArrayCounts[_CARRIER_]) * 2)
-			local liCAGsCount = prodArrayCounts[_CAG_] + currentArrayCounts[_CAG_]
-			
-			if liCAGsNeeded > liCAGsCount then
-				laUnitNeeds[_CAG_] = liCAGsNeeded - liCAGsCount
 			end
 		end
 			
@@ -937,7 +1045,7 @@ function ManageProduction(minister)
 			laNavalUnitRatio[5] = CalculateRatio(laNavalUnitCount[5], laNavalRatio[5])
 			laNavalUnitRatio[6] = CalculateRatio(laNavalUnitCount[6], laNavalRatio[6])
 			
-			liMultiplier = GetMultiplier(laNavalUnitRatio)
+			liMultiplier = GetMultiplier(laNavalUnitRatio, laNavalRatio)
 
 			local laNavalUnitNeed = {}
 			laNavalUnitNeed[1] = (laNavalRatio[1] * liMultiplier) - laNavalUnitCount[1]
@@ -950,7 +1058,7 @@ function ManageProduction(minister)
 			laUnitNeeds[_DESTROYER_] = laNavalUnitNeed[1]
 			-- Submarine, if you can do nuke shift everthing into Nuclear
 			if laNavalUnitNeed[2] > 0 then
-				if ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("nuclear_submarine")) then
+				if loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("nuclear_submarine")) then
 					laUnitNeeds[_NUCLEAR_SUBMARINE_] = laNavalUnitNeed[2]
 				else
 					laUnitNeeds[_SUBMARINE_] = laNavalUnitNeed[2]
@@ -958,8 +1066,8 @@ function ManageProduction(minister)
 			end
 			-- Cruisers Elastic Random for Light and Heavy but leaning to Light
 			if laNavalUnitNeed[3] > 0 then
-				local lbCL = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("light_cruiser"))
-				local lbCH = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("heavy_cruiser"))
+				local lbCL = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("light_cruiser"))
+				local lbCH = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("heavy_cruiser"))
 			
 				if lbCL and lbCH then
 					local liShift = (math.random(30, 80)) * 0.01
@@ -973,9 +1081,9 @@ function ManageProduction(minister)
 			end
 			-- Capital ships, process one a time if need be
 			if laNavalUnitNeed[4] > 0 then
-				local lbBC = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("battlecruiser"))
-				local lbBB = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("battleship"))
-				local lbSBB = ministerTech:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("super_heavy_battleship"))
+				local lbBC = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("battlecruiser"))
+				local lbBB = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("battleship"))
+				local lbSBB = loTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit("super_heavy_battleship"))
 				local liUnitType
 			
 				if lbBC and lbBB and lbSBB then
@@ -1009,6 +1117,15 @@ function ManageProduction(minister)
 			local liTotalTransports = (prodArrayCounts[_TRANSPORT_SHIP_] + currentArrayCounts[_TRANSPORT_SHIP_])
 			local liTotalTransportsNeeded = math.ceil((liTotalLandUnits / laTransportLandRatio[1]) * laTransportLandRatio[2]) - liTotalTransports
 			laUnitNeeds[_TRANSPORT_SHIP_] = math.max(0, liTotalTransportsNeeded)
+			
+			-- Figure out if we need any CAGs
+			local liCAGsNeeded = prodArrayCounts[_ESCORT_CARRIER_] + currentArrayCounts[_ESCORT_CARRIER_]
+			liCAGsNeeded = liCAGsNeeded +((prodArrayCounts[_CARRIER_] + currentArrayCounts[_CARRIER_]) * 2)
+			local liCAGsCount = prodArrayCounts[_CAG_] + currentArrayCounts[_CAG_]
+			
+			if liCAGsNeeded > liCAGsCount then
+				laUnitNeeds[_CAG_] = liCAGsNeeded - liCAGsCount
+			end
 		end
 		
 		-- Used in each area to calculate local costs
@@ -1087,7 +1204,7 @@ function BuildLandUnits(ic, minister, vbGoOver)
 	-- Build Special Forces Units
 	ic = BuildUnit(ic, minister, _BERGSJAEGER_BRIGADE_, 4, "bergsjaeger_brigade", 3, nil, 0, "Build_Mountain", vbGoOver)
 	ic = BuildUnit(ic, minister, _PARATROOPER_BRIGADE_, 3, "paratrooper_brigade", 3, nil, 0, "Build_Paratrooper", vbGoOver)
-	ic = BuildUnit(ic, minister, _MARINE_BRIGADE_, 3, "marine_brigade", 3, LegUnitArray, 1, "Build_Marine", vbGoOver)
+	ic = BuildUnit(ic, minister, _MARINE_BRIGADE_, 3, "marine_brigade", 3, nil, 1, "Build_Marine", vbGoOver)
 
 	ic = BuildUnit(ic, minister, _SUPER_HEAVY_ARMOR_BRIGADE_, 2, "super_heavy_armor_brigade", 2, ArmorUnitArray, 1, "Build_HeavyArmor", vbGoOver)
 	ic = BuildUnit(ic, minister, _HEAVY_ARMOR_BRIGADE_, 2, "heavy_armor_brigade", 2, ArmorUnitArray, 1, "Build_HeavyArmor", vbGoOver)
@@ -1104,22 +1221,19 @@ function BuildLandUnits(ic, minister, vbGoOver)
 	end
 
 	-- Handles Superior Firepower and give some variation to infantry division sizes
-	if table.getn(LegUnitArray) > 1 then
+	if table.getn(LegUnitArray) > 0 then
 		local loTech = CTechnologyDataBase.GetTechnology("superior_firepower")
 		local liLevel = minister:GetCountry():GetTechnologyStatus():GetLevel(loTech)
 
 		if liLevel > 0 then
+			-- 3 infantry and 2 Support
 			ic = BuildUnit(ic, minister, _INFANTRY_BRIGADE_, 4, "infantry_brigade", 3, LegUnitArray, 2, "Build_Infantry", vbGoOver)
 		else
-			if math.random(100) > 50 then
-				-- 2 infantry and 2 Support
-				ic = BuildUnit(ic, minister, _INFANTRY_BRIGADE_, 4, "infantry_brigade", 2, LegUnitArray, 2, "Build_Infantry", vbGoOver)
-			else
-				-- 3 infantry and 1 Support
-				ic = BuildUnit(ic, minister, _INFANTRY_BRIGADE_, 4, "infantry_brigade", 3, LegUnitArray, 1, "Build_Infantry", vbGoOver)
-			end
+			-- 2 infantry and 2 Support
+			ic = BuildUnit(ic, minister, _INFANTRY_BRIGADE_, 4, "infantry_brigade", 2, LegUnitArray, 2, "Build_Infantry", vbGoOver)
 		end
 	else
+		-- 3 infantry and 0 Support
 		ic = BuildUnit(ic, minister, _INFANTRY_BRIGADE_, 4, "infantry_brigade", 3, LegUnitArray, 1, "Build_Infantry", vbGoOver)
 	end
 	
@@ -1129,9 +1243,6 @@ function BuildLandUnits(ic, minister, vbGoOver)
 end
 
 function BuildAirUnits(ic, minister, vbGoOver)
-	-- Always Build CAG First
-	ic = BuildUnit(ic, minister, _CAG_, 4, "cag", 1, nil, 0, "Build_CAG", vbGoOver)
-
 	ic = BuildUnit(ic, minister, _TRANSPORT_PLANE_, 4, "transport_plane", 1, nil, 0, "Build_TransportPlane", vbGoOver)
 	ic = BuildUnit(ic, minister, _STRATEGIC_BOMBER_, 4, "strategic_bomber", 1, nil, 0, "Build_StrategicBomber", vbGoOver)
 	ic = BuildUnit(ic, minister, _TACTICAL_BOMBER_, 4, "tactical_bomber", 1, nil, 0, "Build_TacBomber", vbGoOver)
@@ -1146,9 +1257,11 @@ function BuildAirUnits(ic, minister, vbGoOver)
 end
 
 function BuildNavalUnits(ic, minister, vbGoOver)
+	-- Alwasy build Transports and CAGs first
 	ic = BuildUnit(ic, minister, _TRANSPORT_SHIP_, 3, "transport_ship", 1, nil, 0, "Build_Transport", vbGoOver)
+	ic = BuildUnit(ic, minister, _CAG_, 4, "cag", 1, nil, 0, "Build_CAG", vbGoOver)
 
-	ic = BuildUnit(ic, minister, _CARRIER_, 1, "carrier", 1, nil, "Build_Carrier", vbGoOver)
+	ic = BuildUnit(ic, minister, _CARRIER_, 1, "carrier", 1, nil, 0, "Build_Carrier", vbGoOver)
 	ic = BuildUnit(ic, minister, _SUPER_HEAVY_BATTLESHIP_, 1, "super_heavy_battleship", 1, nil, 0, "Build_SuperBattleship", vbGoOver)
 	ic = BuildUnit(ic, minister, _BATTLESHIP_, 1, "battleship", 1, nil, 0, "Build_Battleship", vbGoOver)
 	ic = BuildUnit(ic, minister, _BATTLECRUISER_, 1, "battlecruiser", 1, nil, 0, "Build_Battlecruiser", vbGoOver)
@@ -1223,19 +1336,54 @@ function GetBuildRatio(minister, ministerTag, vbNaval, vsType)
 		end					
 	end		
 end
-function GetMultiplier(vaArray)
+function GetMultiplier(vaUnitMultiplier, vaRatio)
 	local i = 2
-	local liMultiplier = vaArray[1]
+	local liMultiplier = vaUnitMultiplier[1]
+	local liAddToMultiplier = 2
 	
-	while i <= table.getn(vaArray) do
-		if liMultiplier < vaArray[i] then
-			liMultiplier = vaArray[i]
+	while i <= table.getn(vaUnitMultiplier) do
+		if vaRatio[i] > 0 then
+			if liAddToMultiplier > 0 and liMultiplier > 0 then
+				if math.max((liMultiplier - vaUnitMultiplier[i]), (vaUnitMultiplier[i] - liMultiplier)) > liAddToMultiplier then
+					liAddToMultiplier = 0
+				end
+			end
+			
+			if liMultiplier < vaUnitMultiplier[i] then
+				liMultiplier = vaUnitMultiplier[i]
+			end
 		end
+		
 		i = i + 1
 	end
 	
-	return liMultiplier
+	return liMultiplier + liAddToMultiplier
 end
+
+-- Goes through the ratios and sets them to 0 if the country can't build any of those units
+function VerifyRatio(voTechStatus, vaRatio, vaType)
+	for i = 1, table.getn(vaRatio) do
+		if vaRatio[i] > 0 then
+			local lbCanBuild = false
+			local laUnits = Utils.Split(vaType[i], '|')
+			
+			for x = 1, table.getn(laUnits) do
+				if voTechStatus:IsUnitAvailable(CSubUnitDataBase.GetSubUnit(laUnits[x])) then
+					lbCanBuild = true
+					break
+				end
+			end
+			
+			if not(lbCanBuild) then
+				vaRatio[i] = 0
+			end
+		end
+	end
+	
+	return vaRatio
+end
+
+
 -- #######################
 -- End of Helper Build Methods
 -- #######################
@@ -1469,7 +1617,11 @@ function ConstructBuildings(ai, minister, ministerTag, ministerCountry, ic, vbGo
 			--   Since there is no practical way to teach the AI to build forts just allow hooks for country specific stuff
 			if ic > 0.2 and loTechStatus:IsBuildingAvailable(air_base) then
 				if Utils.HasCountryAIFunction(ministerTag, "Build_AirBase") then
-					ic = Utils.CallCountryAI(ministerTag, "Build_AirBase", ic, minister, vbGoOver)				
+					ic = Utils.CallCountryAI(ministerTag, "Build_AirBase", ic, minister, vbGoOver)
+					
+				-- This country has no airfields so try and build one in its capital
+				elseif ministerCountry:GetNumOfAirfields() == 0 then
+					ic = Support.Build_AirBase(ic, minister, ministerCountry:GetActingCapitalLocation():GetProvinceID(), 1, vbGoOver) -- Cooktown
 				end
 			end
 			
@@ -1534,38 +1686,27 @@ function ConstructBuildings(ai, minister, ministerTag, ministerCountry, ic, vbGo
 	return ic
 end
 
-function CalculateHomeProduced(ministerCountry, voResourceType)
-	local liConvoyedIn = ministerCountry:GetConvoyedIn():Get(voResourceType):Get()
-	local liDailyHome = ministerCountry:GetHomeProduced():Get(voResourceType):Get()
-	local liDailyExpense = ministerCountry:GetDailyExpense(CGoodsPool._ENERGY_):Get()
-	
-	if liConvoyedIn > 0 then
-		-- If the Convoy in exceeds Home Produced by 10% it means they have a glutten coming in or
-		--   are a sea bearing country like ENG or JAP
-		--   so go ahead and count this as home produced up to 80% of it just in case something happens!
-		if liDailyHome > liDailyExpense then
-			liDailyHome = liDailyHome + liConvoyedIn
-		elseif liConvoyedIn > (liDailyHome * 0.1) then
-			liDailyHome = liDailyHome + (liConvoyedIn * 0.9)
-		end
-	end	
-	
-	return liDailyHome
-end
-
 function CoreProvincesLoop(ministerCountry, voTechStatus, viRocketCap, viReactorCap)
 	local liExpenseFactor = 0
 	local liHomeFactor = 0
 	local lbBuildIndustry = false
 	local laCorePrv = {}
 	
-	liExpenseFactor = ministerCountry:GetDailyExpense(CGoodsPool._ENERGY_):Get() * 0.5
-	liExpenseFactor = liExpenseFactor + ministerCountry:GetDailyExpense(CGoodsPool._METAL_):Get()
-	liExpenseFactor = liExpenseFactor + (ministerCountry:GetDailyExpense(CGoodsPool._RARE_MATERIALS_):Get() * 2)
+	local loEnergy = CResourceValues()
+	local loMetal = CResourceValues()
+	local loRare = CResourceValues()
 	
-	liHomeFactor = CalculateHomeProduced(ministerCountry, CGoodsPool._ENERGY_) * 0.5
-	liHomeFactor = liHomeFactor + CalculateHomeProduced(ministerCountry, CGoodsPool._METAL_)
-	liHomeFactor = liHomeFactor + (CalculateHomeProduced(ministerCountry, CGoodsPool._RARE_MATERIALS_) * 2)
+	loEnergy:GetResourceValues( ministerCountry, CGoodsPool._ENERGY_ )
+	loMetal:GetResourceValues( ministerCountry, CGoodsPool._METAL_ )
+	loRare:GetResourceValues( ministerCountry, CGoodsPool._RARE_MATERIALS_ )
+	
+	liExpenseFactor = loEnergy.vDailyExpense * 0.5
+	liExpenseFactor = liExpenseFactor + loMetal.vDailyExpense
+	liExpenseFactor = liExpenseFactor + (loRare.vDailyExpense * 2)
+	
+	liHomeFactor = Utils.CalculateHomeProduced(loEnergy) * 0.5
+	liHomeFactor = liHomeFactor + Utils.CalculateHomeProduced(loMetal)
+	liHomeFactor = liHomeFactor + (Utils.CalculateHomeProduced(loRare) * 2)
 	
 	-- We produce more than what we use so build more industry
 	if liHomeFactor > liExpenseFactor then
@@ -1641,51 +1782,54 @@ end
 -- Convoy Building
 -- #######################
 function ConstructConvoys(ai, minister, ministerTag, ministerCountry, ic)
-	local TransportsNeeded = ministerCountry:GetTotalNeededConvoyTransports()
-	local TransportsCurrent = ministerCountry:GetTotalConvoyTransports()
-	local PortCount = ministerCountry:GetNumOfPorts()
-	
-	if TransportsNeeded > TransportsCurrent and PortCount > 0 then
-		local TransportConstruction = minister:CountTransportsUnderConstruction()
-		local TransportsActuallyNeeded = TransportsNeeded - TransportsCurrent - TransportConstruction
-		local maxSerial
-		
-		-- Majors build 20% more than you need
-		if (ministerCountry:IsMajor()) then
-			maxSerial = 4
-			TransportsActuallyNeeded = ((TransportsNeeded - TransportsCurrent - TransportConstruction) * 1.20)
-
-		-- Minors just build exactly what you need or close to it
-		--   - they also do shorter runs since they needed resources more than majors
-		else
-			maxSerial = 2
-			TransportsActuallyNeeded = TransportsNeeded - TransportsCurrent - TransportConstruction
-		end
-		
-		if TransportsActuallyNeeded > 0 then
-			local cost = ministerCountry:GetConvoyBuildCost():Get()
-			local buildRequestCount = TransportsActuallyNeeded / defines.economy.CONVOY_CONSTRUCTION_SIZE
-			buildRequestCount = math.ceil( math.max( buildRequestCount, 1) )
-			ic = BuildTransportOrEscort(ai, ministerTag, buildRequestCount, maxSerial, false, cost, ic)
-		end
-	end
-	
-	-- Now Process Escorts Check
-	--   Performance check make sure they have IC to actually work with
 	if ic > 0 then
-		local EscortsNeeded = minister:CountTotalDesiredEscorts()
-		local EscortsCurrent = ministerCountry:GetEscorts()
+		local PortCount = ministerCountry:GetNumOfPorts()
+		
+		if PortCount > 0 then
+			local liNeeded = ministerCountry:GetTotalNeededConvoyTransports()
+			local liCurrent = ministerCountry:GetTotalConvoyTransports()
+			local liConstruction = minister:CountTransportsUnderConstruction()
+			local liActuallyNeeded
+			local maxSerial = 2
+			
+			-- Majors build 30% more than you need
+			if (ministerCountry:IsMajor()) then
+				liActuallyNeeded = Utils.Round((liNeeded * 1.30) - liCurrent - liConstruction )
 
-		if EscortsNeeded > EscortsCurrent and PortCount > 0 then
-			local EscortsConstruction = minister:CountEscortsUnderConstruction()
-			local EscortsActuallyNeeded = EscortsNeeded - EscortsCurrent - EscortsConstruction
-
-			if EscortsActuallyNeeded > 0 then
-				local cost = ministerCountry:GetEscortBuildCost():Get()
-				local buildRequestCount = EscortsActuallyNeeded / defines.economy.CONVOY_CONSTRUCTION_SIZE
+			-- Minors just build exactly what you need or close to it
+			--   - they also do shorter runs since they needed resources more than majors
+			else
+				liActuallyNeeded = liNeeded - liCurrent - liConstruction
+			end
+			
+			-- Make sure they always have a buffer of atleast 4
+			if liActuallyNeeded >= -1 and liActuallyNeeded <= 1 then
+				liActuallyNeeded = (math.max(0, liActuallyNeeded) + 4)
+			end
+			
+			if liActuallyNeeded > 0 then
+				local cost = ministerCountry:GetConvoyBuildCost():Get()
+				local buildRequestCount = liActuallyNeeded / defines.economy.CONVOY_CONSTRUCTION_SIZE
 				buildRequestCount = math.ceil( math.max( buildRequestCount, 1) )
-				ic = BuildTransportOrEscort(ai, ministerTag, buildRequestCount, 4, true, cost, ic)
-			end 
+				ic = BuildTransportOrEscort(ai, ministerTag, buildRequestCount, maxSerial, false, cost, ic)
+			end
+	
+			-- Now Process Escorts Check
+			--   Performance check make sure they have IC to actually work with
+			local liENeeded = minister:CountTotalDesiredEscorts()
+			local liECurrent = ministerCountry:GetEscorts()
+
+			if liENeeded > liECurrent then
+				local liEConstruction = minister:CountEscortsUnderConstruction()
+				local lEActuallyNeeded = liENeeded - liECurrent - liEConstruction
+
+				if lEActuallyNeeded > 0 then
+					local cost = ministerCountry:GetEscortBuildCost():Get()
+					local buildRequestCount = lEActuallyNeeded / defines.economy.CONVOY_CONSTRUCTION_SIZE
+					buildRequestCount = math.ceil( math.max( buildRequestCount, 1) )
+					ic = BuildTransportOrEscort(ai, ministerTag, buildRequestCount, 4, true, cost, ic)
+				end 
+			end
 		end
 	end
 	

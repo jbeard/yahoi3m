@@ -10,8 +10,9 @@ theatre = {
 			name = "1a Armata"
 			location = 3759
 			regiment = { type = hq_brigade name = "1a Armata HQ" historical_model = 0 }
+			
 			division = {
-				name = "2a Divisione 'Cacciatori delle Alpi'"
+				name = "22a Divisione 'Cacciatori delle Alpi'"
 				location = 3759	
 				is_reserve = yes
 				regiment = { type = infantry_brigade name = "51. Rgt. di fanteria" historical_model = 0 }
@@ -98,7 +99,7 @@ theatre = {
 				location = 3970
 				regiment = { type = hq_brigade name = "IV Corpo d'Armata HQ" historical_model = 0 }
 				division = {
-					name = "2nd Divisione 'Sforzesca'"
+					name = "2a Divisione 'Sforzesca'"
 					location = 3970
 					is_reserve = yes
 					regiment = { type = infantry_brigade name = "53. Rgt. di fanteria" historical_model = 0 }

@@ -6,4 +6,23 @@ infra = 1
 
 terrain = arctic
 1941.6.22 = {
-	controller = GER}
+	controller = GER
+infra = 2
+}
+
+
+
+1943.2.1 = {
+	controller = GER
+infra = 3
+air_base = 1
+}
+
+
+
+1944.6.20 = {
+	controller = GER
+infra = 3
+air_base = 1
+anti_air = 1
+}

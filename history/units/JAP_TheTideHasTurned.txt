@@ -811,6 +811,7 @@ navy = {
 	ship = { type = light_cruiser name = "IJN Nachi" historical_model = 2 }
 	ship = { type = light_cruiser name = "IJN Tama" historical_model = 2 }
 	ship = { type = light_cruiser name = "IJN Kiso" historical_model = 2 }
+	ship = { type = submarine name = "8 Sensuikantai" historical_model = 3 }
 }
 navy = {
 	name = "6. Fleet"
@@ -820,7 +821,6 @@ navy = {
 	ship = { type = submarine name = "1 Sensuikantai" historical_model = 2 }
 	ship = { type = submarine name = "2 Sensuikantai" historical_model = 2 }
 	ship = { type = submarine name = "3 Sensuikantai" historical_model = 2 }
-	ship = { type = submarine name = "8 Sensuikantai" historical_model = 3 }
 }
 navy = {
 	name = "8. Fleet 7 Squadron"

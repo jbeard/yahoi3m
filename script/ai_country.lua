@@ -7,7 +7,7 @@ function AI_GenerateNonHistoricalRelation(country, target)
 	if relation:HasAlliance() then 
 		desired = desired + 125
 		
-		if country:IsAtWar() and target:GetCountry():IsAtWar() then
+		if country:IsAtWar() and targetCountry:IsAtWar() then
 			desired = desired + 75
 		end
 	end

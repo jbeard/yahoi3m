@@ -10,6 +10,6 @@ infra = 7
 anti_air = 1
 air_base = 2
 manpower = 4.00
-leadership = 0.15
+leadership = 1.15
 points = 2
 

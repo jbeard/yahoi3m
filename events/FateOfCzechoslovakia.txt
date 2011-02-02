@@ -1,6 +1,70 @@
 ########################
 # The Treaty of Munich #
 ########################
+
+# United Kingdom decides.
+country_event = {
+
+	id = 1210
+	
+	is_triggered_only = yes
+	
+	title = "EVTNAME1210"
+	desc = "EVTDESC1210"
+	picture = "Munich"
+
+	option = {
+		ai_chance = { factor = 100 }
+
+		name = "EVTOPTA1210"			# Peace in our Time
+		neutrality = -5
+		relation = { who = GER value = -25 }
+		social_conservative = {
+			organisation = 25
+			popularity = 25
+		}
+
+		CZE = { country_event = 1201 }
+	}
+	option = {
+
+		ai_chance = { factor = 0 }
+		
+		name = "EVTOPTB1210"			# Oppose Agreement
+		USA = { neutrality = 20 }
+		AST = { neutrality = 20 }
+		CAN = { neutrality = 20 }
+		NZL = { neutrality = 20 }
+		SAF = { neutrality = 20 }
+		national_unity = -20
+		threat = { who = all value = 10 }
+		FRA = { country_event = 1211 }
+		CZE = { join_faction = allies }
+	}
+
+}
+
+country_event = {
+
+	id = 1211
+	
+	is_triggered_only = yes
+	
+	title = "EVTNAME1211"
+	desc = "EVTDESC1211"
+	picture = "Munich"
+
+	option = {
+		name = "EVTOPTA1211"			# France will Fight
+		neutrality = -10
+		national_unity = 10
+		relation = { who = CZE value = 20 }
+		war = GER
+	}
+
+}
+
+
 # Czechoslovakia - Reaction Event
 country_event = {
 

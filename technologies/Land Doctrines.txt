@@ -220,6 +220,15 @@ integrated_support_doctrine = {
     hq_brigade = {
         hard_attack = 0.1
     }
+	paratrooper_brigade = {
+		default_morale = 0.05
+			}
+	marine_brigade = {
+		default_morale = 0.05
+			}
+	bergsjaeger_brigade = {
+		default_morale = 0.05
+			}
 
     encirclement = 3
 
@@ -390,6 +399,9 @@ mass_assault = {
     hq_brigade = {
         defensiveness = 1
     }
+		infantry_brigade = {
+		default_morale = 0.05
+			}
 
     research_bonus_from = {
         grand_battleplan_theory = 0.3
@@ -488,6 +500,13 @@ large_front = {
     hq_brigade = {
         supply_consumption = -0.01
     }
+
+	militia_brigade = {
+		default_morale = 0.05
+			}
+	garrison_brigade = {
+		default_morale = 0.05
+			}
 
     shock = 3
     research_bonus_from = {

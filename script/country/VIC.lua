@@ -30,4 +30,22 @@ function P.DiploScore_Alliance(score, ai, actor, recipient, observer, action)
 	return score	
 end
 
+function P.DiploScore_DemandMilitaryAccess(liScore, voAI, voActorTag, voRecipientTag, voObserverTag)
+	-- Stay out of the war, we do not care whats happening around us
+	if not(voRecipientTag:GetCountry():IsAtWar()) then
+		liScore = 0
+	end
+	
+	return liScore	
+end
+
+function P.DiploScore_OfferMilitaryAccess(liScore, voAI, voActorTag, voRecipientTag, voObserverTag)
+	-- Stay out of the war, we do not care whats happening around us
+	if not(voRecipientTag:GetCountry():IsAtWar()) then
+		liScore = 0
+	end
+	
+	return liScore	
+end
+
 return AI_VIC

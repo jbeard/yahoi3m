@@ -6,4 +6,4 @@ industry = 1
 infra = 6
 air_base = 3
 manpower = 4.25
-leadership = 0.08
+leadership = 1.08

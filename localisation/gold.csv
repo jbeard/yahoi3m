@@ -10,7 +10,6 @@ RETREAT_TO_OI;Retreating to $WHERE$.;Retraite vers $WHERE$.;Rückzug nach $WHERE$
 ATTACKING_TO_OI;Attacking $WHERE$.;Attaque $WHERE$.;Angriff auf $WHERE$.;;Atacando $WHERE$.;;;;;;;;;x
 DEFENDING_OI;Defending.;Défense.;Verteidigung;;Defendiendo.;;;;;;;;;x
 RECOVERING_OI;Currently Reinforcing;Renforts actuels;Erhält Verstärkung;;Reforzando en este momento;;;;;;;;;x
-FROM_TECHNOLOGY;From Improved Technology;À partir de la technologie améliorée;Aus verbesserter Technologie;;De tecnología mejorada;;;;;;;;;x
 NEED_FUEL_OI;Waiting for Fuel;En attente de carburant;Warten auf Treibstoff;;Aguardando combustible;;;;;;;;;x
 NEED_SUPPLIES_OI;Waiting for Supplies;En attente de ravitaillement;Warten auf Nachschub;;Aguardando suministros;;;;;;;;;x
 USA_carrier_3;Yorktown-class;Classe Yorktown;Yorktown-Klasse;;Clase Yorktown;;;;;;;;;x
@@ -32,9 +31,6 @@ EVTDESC513;After a long and bloody struggle, the Republican forces finally manag
 EVTOPTA513;How could this happen?;Comment cela a-t-il pu se produire ?;Wie konnte das passieren?;;¿Cómo ha podido suceder?;;;;;;;;;x
 OV_NO_VALID_ORDER;No valid order is selected.;Aucun ordre valide sélectionné.;Kein gültiger Befehl ausgewählt.;;No se ha seleccionado ninguna orden válida.;;;;;;;;;x
 OV_NO_VALID_PROVINCES;No valid provinces selected;Aucune province valide sélectionnée.;Keine gültigen Provinzen ausgewählt.;;No se han seleccionado provincias válidas;;;;;;;;;x
-PROV4668;Biga;Biga;Biga;;Biga;;;;;;;;;x
-PROV9289;Islamabad;Islamabad;Islamabad;;Islamabad;;;;;;;;;x
-PROV4560;Gelibolu;Gelibolu;Gelibolu;;Gelibolu;;;;;;;;;x
 CONFIRM_CHANGE_LAW_TITLE;Change Law;Changer la loi;Gesetz ändern;;Cambiar ley;;;;;;;;;x
 CONFIRM_CHANGE_LAW_DESC;Are you sure you wish to enact the new law §Y$LAW$§W?;Êtes-vous sûr de vouloir adopter la nouvelle loi §Y$LAW$§W ?;Sind Sie sicher, das neue Gesetz §Y$LAW$§W erlassen zu wollen?;;¿Seguro que quieres promulgar la nueva ley §Y$LAW$§W?;;;;;;;;;x
 ESP_ESTIMATE_RES;Our spies estimate a total of §Y$NUM$§W $ITEM$;Nos espions estiment un total de §Y$NUM$§W $ITEM$;Die Schätzungen unserer Spione belaufen sich auf insgesamt §Y$NUM$§W $ITEM$;;Nuestros espías calculan un total de §Y$NUM$§W $ITEM$;;;;;;;;;x
@@ -59,7 +55,7 @@ PROV14128;Gough Island;Île de Gough;Gough Island;;Isla de Gough;;;;;;;;;x
 coastal_fort;Coastal Fort;Fort côtier;Küstenbefestigung;;Fortificación costera;;;;;;;;;x
 southern_france_region;Southern France;Sud de la France;Südfrankreich;;Sur de Francia;;;;;;;;;x
 DIP_HIGHEST_THREAT;Highest Threat :;Pire menace :;Größte Bedrohung:;;Mayor amenaza:;;;;;;;;;x
-DIP_HIGHEST_THREAT_TOOLTIP;The highest perceived threat in our region is §Y$COUNTRY$§W. Their threat value to us is §Y$VAL$§W;La pire menace qui pèse sur notre région est la suivante : §Y$COUNTRY$§W. La valeur de cette menace s’élève à : §Y$VAL$§W;Die vermutlich größte Bedrohung in unserer Region ist §Y$COUNTRY$§W. Ihr Bedrohungswert für uns ist §Y$VAL$§W;;La mayor amenaza percibida en nuestra región es §Y$COUNTRY$§W. Su valor de amenaza contra nosotros es de §Y$VAL$§W;;;;;;;;;x
+DIP_HIGHEST_THREAT_TOOLTIP;The highest perceived threat in their region is §Y$COUNTRY$§W. Their threat value to us is §Y$VAL$§W;La pire menace qui pèse sur notre région est la suivante : §Y$COUNTRY$§W. La valeur de cette menace s’élève à : §Y$VAL$§W;Die vermutlich größte Bedrohung in ihrer Region ist §Y$COUNTRY$§W. Ihr Bedrohungswert für uns ist §Y$VAL$§W;;La mayor amenaza percibida en nuestra región es §Y$COUNTRY$§W. Su valor de amenaza contra nosotros es de §Y$VAL$§W;;;;;;;;;x
 DIP_HIGHEST_THREAT_TOOLTIP_DELAYED;While you might not feel threatened by this nation, their belligerent actions may be used to jusitfy aggressive behaviour of your own;Même si vous ne vous sentez pas menacé par cette nation, leurs actions belligérantes peuvent suffire à justifier votre comportement agressif.;Während Sie sich vielleicht nicht von diesem Land bedroht fühlen, so können ihre kriegerischen Handlungen zur Rechtfertigung unseres eigenen aggressiven Verhaltens genutzt werden;;Si bien puede que no te sientas amenazado por esta nación, sus acciones beligerantes pueden emplearse para justificar un comportamiento agresivo por tu parte.;;;;;;;;;x
 VASSALPROVNUM;They will receive $NUMBER$ provinces.;Ils recevront $NUMBER$ provinces.;Sie erhalten $NUMBER$ Provinzen.;Otrzymaj¹ $NUMBER$ prowincji.;Recibirán $NUMBER$ provincias.;Riceveranno $NUMBER$ province.;$NUMBER$ tartományt fognak szerezni.;Obdrží $NUMBER$ provincií.;;;;;;x
 IS_NOT_VASSAL_OF;Is NOT a puppet of ;N’est PAS un état fantoche de ;Ist KEINE Marionette von ;;NO es un títere de ;;;;;;;;;x
@@ -79,7 +75,6 @@ POL_PARTY_MINISTER_DISSENT;Dissent penalty from ministers: ;Pénalité de dissiden
 POL_PARTY_DISTANCE_FROM_ORG;Distance from organisation value: ;Distance par rapport à la valeur d’organisation : ;Unterschied zum Organisationswert: ;;Distancia del valor de organización: ;;;;;;;;;x
 PO_NO_CHANGE;No changes this month;Aucun changement ce mois-ci;Keine Änderungen diesen Monat;;Sin cambios este mes;;;;;;;;;x
 FE_NONE_FOUND;None;Aucun;Keine;;Ninguno;;;;;;;;;x
-nuclear_physics_research;Nuclear Physics Research;Recherche en physique nucléaire;Atomphysikforschung;;Investigación de física nuclear;;;;;;;;;x
 EVTNAME2007;Spanish Civil War - French Intervention;Guerre civile espagnole – Intervention française;Spanischer Bürgerkrieg - Französische Intervention;;La Guerra Civil Española: La intervención francesa;;;;;;;;;x
 EVTDESC2007;In early 1936 after the electoral victory of the Socialists popular demands for social equality evolved into a virtual revolution against the clergy, landowners and monarchists. Mobs attacked churches and tried to collectivise farms. Unions started strikes and anarchists assassinated ‘enemies of the people’. The newly installed government was unable to restore order. The Spanish army joined the Conservatives and Catholics to put down the social revolution and they thus styled themselves, the Nationalists. The government facing an army rebellion styled themselves, Republicans and decided to fight joining in with the forces of revolution. The Spanish Civil War had begun! Many countries like Germany, Italy and the Soviet Union intervened with forces in the conflict.;Au début de l'année 1936, après la victoire électorale de la gauche, les demandes du peuple pour une plus grande égalité se transforment en une véritable révolution contre le clergé, les propriétaires terriens et les monarchistes. La foule s'en prend aux églises et tente de collectiviser des fermes. Les syndicats lancent des grèves et les anarchistes assassinent les « ennemis du peuple ». Le gouvernement nouvellement formé se montre incapable de rétablir l'ordre. L'armée espagnole se rallie aux conservateurs et aux catholiques pour écraser la révolution socialiste et forment le camp des nationalistes. Le gouvernement, qui doit résister à la rébellion de l'armée, regroupe les Républicains sous sa bannière et décide de joindre ses efforts à ceux des forces révolutionnaires. La guerre civile espagnole vient de commencer ! De nombreux pays comme l'Allemagne, l'Italie ou l'Union Soviétique interviennent directement, en envoyant des troupes.;Nach dem Wahlsieg der Sozialisten Anfang 1936 kulminierten die Rufe nach sozialer Gerechtigkeit binnen Kürze zu einer Revolution gegen Klerus, Landbesitzer und Monarchisten. Aufgebrachte Volksmengen griffen Kirchen an und versuchten, Bauernhöfe in Kollektive umzuwandeln. Gewerkschaften begannen Streiks, und Anarchisten ermordeten ‘Volksfeinde’. Die neu eingesetzte Regierung war unfähig, die Ordnung aufrecht zu halten. Im Kampf gegen die soziale Revolution schloss sich die spanische Armee den Konservativen und Katholiken an, und dieses neue politische Gebinde nannte sich nun Nationalisten. Angesichts des drohenden Armeeputsches ernannte sich die Regierung zu Republikanern und beschloss, an der Seite der Revolutionstruppen zu kämpfen. Der Spanische Bürgerkrieg hatte begonnen! Viele Länder wie Deutschland, Italien und die Sowjetunion schickten Truppen in den Konflikt.;;A principios de 1936, tras la victoria electoral de los socialistas, las exigencias populares de igualdad social se convirtieron virtualmente en una revolución contra el estamento clerical, los terratenientes y los monárquicos. Las masas atacaron iglesias e intentaron colectivizar granjas. Los sindicatos iniciaron huelgas y los anarquistas asesinaron a los 'enemigos del pueblo'. El recién elegido gobierno fue incapaz de restablecer el orden. El ejército español se unió a los conservadores y a los católicos para acabar con la revolución social, y se denominaron a sí mismos 'nacionales'. El gobierno que se enfrentaba a una rebelión militar se denominó a sí mismo 'republicano', y decidió unirse a las fuerzas revolucionarias. ¡La Guerra Civil Española había comenzado! Muchos países, como Alemania, Italia y la Unión Soviética, enviaron fuerzas para que intervinieran en el conflicto.;;;;;;;;;x
 EVTOPTA2007;We need all the help we can get;Nous avons besoin de toute l'aide possible;Wir brauchen alle Hilfe, die wir bekommen können;;Necesitamos toda la ayuda posible;;;;;;;;;x
@@ -107,7 +102,6 @@ stalinist_AST;Communist Party of Australia;Parti communiste australien;kommunist
 LEDGER_TRADED_FOR;Traded For;Provenant des importations;Eingehandelt;;Intercambiado por;;;;;;;;;x;
 LEDGER_TRADED_AWAY;Traded Away;D’exportations;Weggehandelt;;Enviado;;;;;;;;;x;
 ICON_EXPEDITION;Expeditionary Force;Corps expéditionnaire;Expeditionstruppen;;Fuerza expedicionaria;;;;;;;;;x;
-right_wing_autocrat_ruler;Generalissimus;Generalissimus;Generalissimus;;Generalissimus;;;;;;;;;x;
 SAVED_GAMES;Saved Game;Partie sauvegardée;Gespeicherter Spielstand;;Partida guardada;;;;;;;;;x;
 national_socialist_CZE;Sudetendeutsche Partei;Sudetendeutsche Partei;Sudetendeutsche Partei;;Sudetendeutsche Partei;;;;;;;;;;x
 fascistic_CZE;Národní obec faszisticka;Národní obec faszisticka;Národní obec faszisticka;;Národní obec faszisticka;;;;;;;;;;x
@@ -121,7 +115,6 @@ leninist_CZE;Ceskoslovenska Komunistická strana;Ceskoslovenska Komunistická stra
 stalinist_CZE;Komunistická strana Ceskoslovenska;Komunistická strana Ceskoslovenska;Komunistická strana Ceskoslovenska;;Komunistická strana Ceskoslovenska;;;;;;;;;;x
 FE_PAUSED_TEXT;Paused;Pause;Pausiert;;En pausa;;;;;;;;;;x
 construction_practical;Construction Practical;Connaissances pratiques en construction;Praktische Erf. - Bau;;Práctica de construcción;;;;;;;;;;x
-PV_OCEAN;Ocean;Océan;Ozean;;Océano;;;;;;;;;;x
 PV_OCEAN_DESC;Only ships can enter this province;Seuls les navires ont accès à cette province;Nur Schiffe können in diese Provinz fahren;;Solo los barcos pueden acceder a esta provincia;;;;;;;;;;x
 PROV14129;Bonin Islands;Îles Bonin;Bonin Islands;;Islas Bonin;;;;;;;;;x;
 PROV14130;Lake Michigan;Lac Michigan;Michigansee;;Lago Michigan;;;;;;;;;x;
@@ -160,7 +153,6 @@ MESSAGECAT_PROVS;Province Messages;Messages relatifs aux provinces;Provinzmeldun
 MESSAGECAT_EVENTS;Event Messages;Messages relatifs aux événements;Ereignismeldungen;;Mensajes de sucesos;;;;;;;;;x
 MESSAGECAT_OTHERS;Other Messages;Autres messages;Andere Meldungen;;Otros mensajes;;;;;;;;;x
 MESSAGECAT_ALL;All Messages;Tous les messages;Alle Meldungen;;Todos los mensajes;;;;;;;;;x
-MS_USERNAME;Username:;Nom d’utilisateur :;Benutzername:;;Nombre de usuario:;;;;;;;;;x
 MS_PASS;Password:;Mot de passe :;Passwort:;;Contraseña:;;;;;;;;;x
 MS_NOT_CONNECTED;Not connected;Pas de connexion;Nicht verbunden;;Sin conexión;;;;;;;;;x
 MS_CONNECTING;Connecting...;Connexion en cours...;Verbinden ...;;Conectando...;;;;;;;;;x

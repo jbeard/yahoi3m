@@ -8,7 +8,7 @@ coastal_fort = 2
 land_fort = 0
 infra = 8
 naval_base = 5
-air_base = 5
+air_base = 4
 1940.5.10 = {
 	controller = GER
 

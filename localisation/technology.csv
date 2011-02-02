@@ -596,7 +596,7 @@ submarine_engineering_research;Submarine Engineering Research;Recherche en ingén
 aeronautic_engineering_research;Aeronautic Engineering Research;Recherche en ingénierie aéronautique;Forschung: Luftfahrttechnik;;Investigación de ingeniería aeronáutica;;;;;;;;;;x,,
 rocket_science_research;Rocket Science Research;Recherche en fuséologie;Forschung: Raketentechnik;;Investigación de técnica de cohetes;;;;;;;;;;x,,
 chemical_engineering_research;Chemical Engineering Research;Recherche en génie chimique;Forschung: Verfahrenstechnik;;Investigación de ingeniería química;;;;;;;;;;x,,
-nuclear_physics_research;Nuclear Physics Research;Recherche en physique nucléaire;Forschung: Atomphysik;;Investigación de física nuclear;;;;;;;;;;x,,
+nuclear_physics_research;Nuclear Physics Research;Recherche en physique nucléaire;Atomphysikforschung;;Investigación de física nuclear;;;;;;;;;x
 jetengine_research;Jet Engine Research;Recherche de réacteurs;Forschung: Strahltriebwerke;;Investigación de motor a reacción;;;;;;;;;;x,,
 mechanicalengineering_research;Mechanical Engineering Research;Recherche en génie mécanique;Forschung: Maschinenbau;;Investigación de ingeniería mecánica;;;;;;;;;;x,,
 automotive_research;Automotive Research;Recherche sur l'autopropulsion;Forschung: Automobile;;Investigación automóvil;;;;;;;;;;x,,

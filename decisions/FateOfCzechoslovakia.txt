@@ -42,15 +42,11 @@ diplomatic_decisions = {
 			dissent = 5
 			sudetenland = { add_core = this }
 			threat = { who = CZE value = 5 }
-			relation = { who = FRA value = -10 }
-			relation = { who = ENG value = -10 }
 			relation = { who = CZE value = -20 }
-			ENG = { neutrality = -5 }
-			FRA = { neutrality = -5 }
 			neutrality = -5
 			threat = { who = all value = 15 }
 			set_country_flag = the_treaty_of_munich_sudetenland
-			CZE = { country_event = 1201 }
+			ENG = { country_event = 1210 }
 		}
 		ai_will_do = {
 			factor = 1

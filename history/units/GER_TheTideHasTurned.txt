@@ -720,7 +720,7 @@ theatre= {
 				}
 				division= {
 					name = "257. Infanterie-Division"
-					location = 2541
+					location = 2605
 					regiment = { type = infantry_brigade name = "Grenadier Regiment 457" historical_model = 3 }
 					regiment = { type = infantry_brigade name = "Grenadier Regiment 466" historical_model = 3 }
 					regiment = { type = infantry_brigade name = "Grenadier Regiment 477" historical_model = 3 }
@@ -3238,8 +3238,8 @@ theatre= {
 }
 navy = {
 	name = "Atlantische Flotte"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = battlecruiser name = "KMS Scharnhorst" historical_model = 3 }
 	ship = { type = battlecruiser name = "KMS Gneisenau" historical_model = 3 }
 	ship = { type = destroyer name = "1. Zerstörergeschwader" historical_model = 1 }
@@ -3300,12 +3300,6 @@ navy = {
 	ship = { type = submarine name = "51. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "52. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "53. Unterseebootsflottille" historical_model = 2 }
-	ship = { type = submarine name = "54. Unterseebootsflottille" historical_model = 3 }
-	ship = { type = submarine name = "55. Unterseebootsflottille" historical_model = 3 }
-	ship = { type = submarine name = "56. Unterseebootsflottille" historical_model = 3 }
-	ship = { type = submarine name = "57. Unterseebootsflottille" historical_model = 3 }
-	ship = { type = submarine name = "58. Unterseebootsflottille" historical_model = 3 }
-	ship = { type = submarine name = "59. Unterseebootsflottille" historical_model = 3 }
 }
 navy = {
 	name = "1. Unterseebootsflottille"
@@ -3369,8 +3363,8 @@ navy = {
 }
 navy = {
 	name = "22. Unterseebootsflottille"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = submarine name = "22. Unterseebootsflottille" historical_model = 1 }
 }
 navy = {
@@ -3393,22 +3387,35 @@ navy = {
 }
 navy = {
 	name = "26. Unterseebootsflottille"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = submarine name = "26. Unterseebootsflottille" historical_model = 1 }
 }
 navy = {
 	name = "27. Unterseebootsflottille"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = submarine name = "27. Unterseebootsflottille" historical_model = 2 }
 }
 navy = {
 	name = "29. Unterseebootsflottille"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = submarine name = "29. Unterseebootsflottille" historical_model = 2 }
 }
+
+navy = {
+	name = "31. Unterseebootsflottille"
+	base = 2605
+	location = 2605
+	ship = { type = submarine name = "54. Unterseebootsflottille" historical_model = 3 }
+	ship = { type = submarine name = "55. Unterseebootsflottille" historical_model = 3 }
+	ship = { type = submarine name = "56. Unterseebootsflottille" historical_model = 3 }
+	ship = { type = submarine name = "57. Unterseebootsflottille" historical_model = 3 }
+	ship = { type = submarine name = "58. Unterseebootsflottille" historical_model = 3 }
+	ship = { type = submarine name = "59. Unterseebootsflottille" historical_model = 3 }
+}
+
 air = {
 	name = "I. Fliegerkorps"
 	base = 1527
@@ -3480,14 +3487,14 @@ air = {
 }
 air = {
 	name = "KG 27"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	wing = { type = tactical_bomber name = "KG 27" historical_model = 2 }
 }
 air = {
 	name = "KG 28"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	wing = { type = tactical_bomber name = "KG 28" historical_model = 2 }
 }
 air = {
@@ -3498,20 +3505,20 @@ air = {
 }
 air = {
 	name = "KG 40"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	wing = { type = naval_bomber name = "KG 40" historical_model = 1 }
 }
 air = {
 	name = "KG 76"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	wing = { type = tactical_bomber name = "KG 76" historical_model = 2 }
 }
 air = {
 	name = "KG 77"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	wing = { type = tactical_bomber name = "KG 77" historical_model = 2 }
 }
 air = {

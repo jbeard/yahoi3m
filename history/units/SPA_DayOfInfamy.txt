@@ -291,8 +291,8 @@ armygroup= {
 }
 navy = {
 	name = "Armada de España"
-	base = 4547
-	location = 4547
+	base = 4548
+	location = 4548
 	ship = { type = light_cruiser name = "ARNE Navarra" historical_model = 0 }
 	ship = { type = destroyer name = "1a Flotilla de Destructores" historical_model = 1 }
 	ship = { type = transport_ship name = "Flotilla Villalpando" historical_model = 0 }
@@ -301,8 +301,8 @@ navy = {
 }
 navy = {
 	name = "I Flotilla de la Armada"
-	base = 4547
-	location = 4547
+	base = 4548
+	location = 4548
 	ship = { type = light_cruiser name = "ARNE Méndez Núñez" historical_model = 0 }
 	ship = { type = light_cruiser name = "ARNE Miguel de Cervantes" historical_model = 1 }
 	ship = { type = light_cruiser name = "ARNE Almirante Cervera" historical_model = 1 }
@@ -323,15 +323,15 @@ air = {
 }
 air = {
 	name = "Región Estrecho"
-	base = 4547
-	location = 4547
+	base = 4548
+	location = 4548
 	wing = { type = strategic_bomber name = "FAN 2-G-40 Estratégico" historical_model = 0 }
 	wing = { type = interceptor name = "FAN 7-G-5 de Caza" historical_model = 1 }
 }
 air = {
 	name = "Región Este"
-	base = 4547
-	location = 4547
+	base = 4548
+	location = 4548
 	wing = { type = tactical_bomber name = "FAN de Bombardeo" historical_model = 0 }
 	wing = { type = interceptor name = "FAN de Caza" historical_model = 0 }
 }

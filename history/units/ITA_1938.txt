@@ -150,7 +150,7 @@ theatre = {
 				location = 3758
 				regiment = { type = hq_brigade name = "IV Corpo d'Armata HQ" historical_model = 0 }
 				division = {
-					name = "2nd Divisione 'Sforzesca'"
+					name = "2a Divisione 'Sforzesca'"
 					location = 3758
 					is_reserve = yes
 					regiment = { type = infantry_brigade name = "53. Rgt. di fanteria" historical_model = 1 }
@@ -286,7 +286,7 @@ theatre = {
 				location = 3761
 				regiment = { type = hq_brigade name = "Corpo d'Armata Autotrasportabile HQ" historical_model = 0 }
 				division= {
-				name = "9a Divisione 'Pasubio'"
+					name = "9a Divisione 'Pasubio'"
 					location = 3761
 					is_reserve = yes
 					regiment = { type = motorized_brigade name = "79. Rgt. di fanteria" historical_model = 0 }

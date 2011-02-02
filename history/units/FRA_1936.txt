@@ -418,9 +418,9 @@ corps = {
 }
 navy = {
 	name = "1ère Flotte de France"
-	base = 2541
-	location = 2541
-	ship = { type = carrier name = "Béarn" historical_model = 1 air = { location = 2541 wing = { type = cag historical_model = 1 } } air = { location = 2541 wing = { type = cag historical_model = 1 } } }
+	base = 2605
+	location = 2605
+	ship = { type = carrier name = "Béarn" historical_model = 1 air = { location = 2605 wing = { type = cag historical_model = 1 } } air = { location = 2605 wing = { type = cag historical_model = 1 } } }
 	ship = { type = heavy_cruiser name = "Algérie" historical_model = 2 }
 	ship = { type = light_cruiser name = "Primauguet" historical_model = 1 }
 	ship = { type = light_cruiser name = "Duguay-Trouin" historical_model = 1 }
@@ -459,8 +459,8 @@ navy = {
 }
 navy = {
 	name = "4ème Flotte de France"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = battleship name = "Lorraine" historical_model = 1 }
 	ship = { type = battleship name = "Provence" historical_model = 1 }
 	ship = { type = heavy_cruiser name = "Colbert" historical_model = 1 }

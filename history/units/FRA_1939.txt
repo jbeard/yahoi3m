@@ -857,8 +857,8 @@ corps = {
 }
 navy = {
 	name = "1ère Flotte de France"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = light_cruiser name = "Primauguet" historical_model = 1 pride = yes }
 	ship = { type = transport_ship name = "1ère Flotille de Convoi" historical_model = 0 }
 }
@@ -915,8 +915,8 @@ navy = {
 }
 navy = {
 	name = "Flotte générale de transport"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = transport_ship name = "5ème Flotille de Convoi" historical_model = 0 }
 	ship = { type = transport_ship name = "6ème Flotille de Convoi" historical_model = 0 }
 	ship = { type = transport_ship name = "7ème Flotille de Convoi" historical_model = 0 }
@@ -987,10 +987,10 @@ air = {
 }
 navy = {
 	name = "5ème Flotte de France"
-	base = 2541
-	location = 2541
+	base = 2605
+	location = 2605
 	ship = { type = battlecruiser name = "Dunkerque" historical_model = 3 }
-	ship = { type = carrier name = "Béarn" historical_model = 1 air = { location = 2541 wing = { type = cag historical_model = 1 } } air = { location = 2541 wing = { type = cag historical_model = 1 } } }
+	ship = { type = carrier name = "Béarn" historical_model = 1 air = { location = 2605 wing = { type = cag historical_model = 1 } } air = { location = 2605 wing = { type = cag historical_model = 1 } } }
 	ship = { type = light_cruiser name = "Duguay-Trouin" historical_model = 1 }
 	ship = { type = light_cruiser name = "Lamotte-Picquet" historical_model = 1 }
 	ship = { type = light_cruiser name = "La Galissonnière" historical_model = 3 }

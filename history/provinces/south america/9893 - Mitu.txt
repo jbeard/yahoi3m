@@ -1,4 +1,5 @@
 owner = COL
 controller = COL
 add_core = COL
-infra = 2
+
+infra = 1

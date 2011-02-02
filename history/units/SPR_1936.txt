@@ -306,8 +306,8 @@ navy = {
 }
 navy = {
 	name = "Escuadrón de Batalla"
-	base = 4547
-	location = 4547
+	base = 4548
+	location = 4548
 	ship = { type = light_cruiser name = "ARE Miguel de Cervantes" historical_model = 1 }
 	ship = { type = transport_ship name = "1a Flotilla de Transporte Naval" historical_model = 0 }
 	ship = { type = transport_ship name = "2a Flotilla de Transporte Naval" historical_model = 0 }
@@ -334,8 +334,8 @@ navy = {
 }
 navy = {
 	name = "ARE Libertad"
-	base = 4547
-	location = 4547
+	base = 4548
+	location = 4548
 	ship = { type = light_cruiser name = "ARE Libertad" historical_model = 1 }
 }
 air = {
@@ -347,8 +347,8 @@ air = {
 }
 air = {
 	name = "2a Escuadra Aérea"
-	base = 4547
-	location = 4547
+	base = 4548
+	location = 4548
 	wing = { type = interceptor name = "1er Grupo de Caza" historical_model = 0 }
 	wing = { type = interceptor name = "3er Grupo de Caza" historical_model = 0 }
 }
@@ -368,8 +368,8 @@ air = {
 }
 navy = {
 	name = "I Flotilla de la Armada"
-	base = 4547
-	location = 4547
+	base = 4548
+	location = 4548
 	ship = { type = battleship name = "ARE Jaime I" historical_model = 0 pride = yes }
 	ship = { type = battleship name = "ARE España" historical_model = 0 }
 	ship = { type = light_cruiser name = "ARE Almirante Cervera" historical_model = 1 }

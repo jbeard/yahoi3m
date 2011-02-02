@@ -111,119 +111,127 @@ country_event = {
 #################################
 # End of the Finnish Winter War #
 #################################
-# country_event = {
-#
-#	id = 2506
-#	
-#	trigger = {
-#		tag = SOV
-#		or = {
-#			and = {
-#				FIN_698 = { controlled_by = SOV }
-#				FIN_580 = { controlled_by = SOV }
-#				FIN_507 = { controlled_by = SOV }
-#			}
-#			controls = 739
-#			FIN = { lost_national = 22 }
-#		}
-#		FIN = {
-#			war_with = SOV
-#			not = { faction = axis }
-#		}
-#	}
-#	
-#	mean_time_to_happen = {
-#		months = 1
-#
-#		modifier = {}		
-#	}
-#	
-#	title = "EVTNAME2506"
-#	desc = "EVTDESC2506"
-#
-#	option = {
-#		name = "EVTOPTA2506"			# We'll settle for what we asked for
-#		ai_chance = { factor = 100 }
-#		relation = { who = FIN value = 10 }
-#		FIN = { country_event = 2507 }
-#	}
-#	option = {
-#		name = "EVTOPTB2506"			# Let's bring them Socialism!
-#		relation = { who = FIN value = -150 }
-#		relation = { who = ENG value = -100 }
-#		relation = { who = FRA value = -100 }
-#		relation = { who = GER value = -75 }
-#		relation = { who = USA value = -75 }
-#		end_non_aggression_pact = GER
-#		end_non_aggression_pact = FRA
-#		end_non_aggression_pact = ENG
-#		end_non_aggression_pact = USA
-#	}
-#}
-# Finland - Reaction Event
-#country_event = {
-#
-#	id = 2507
-#	
-#	is_triggered_only = yes
-#	
-#	title = "EVTNAME2507"
-#	desc = "EVTDESC2507"
-#
-#	option = {
-#		name = "EVTOPTA2507"			# Fold to Russian Demands
-#		ai_chance = { factor = 100 }
-#		FIN_698 = { secede_province = SOV }
-#		FIN_580 = { secede_province = SOV }
-#		FIN_507 = { secede_province = SOV }
-#		relation = { who = SOV value = -25 }
-#		relation = { who = GER value = 25 }
-#		dissent = 10
-#		end_war = SOV
-#		SOV = { country_event = 2508 }
-#	}
-#	option = {
-#		name = "EVTOPTB2507"			# We will never surrender!
-#		relation = { who = SOV value = -50 }
-#		relation = { who = GER value = 50 }
-#		SOV = { country_event = 2512 }
-#	}
-#}
-# Soviet - Response from Finland, Finland Accepts
-#country_event = {
-#
-#	id = 2508
-#	
-#	is_triggered_only = yes
-#	
-#	title = "EVTNAME2508"
-#	desc = "EVTDESC2508"
-#
-#	option = {
-#		name = "EVTOPTA2508"			# Good!
-#		end_war = FIN
-#		dissent = -10
-#		set_country_flag = finnish_winter_war_ends
-#	}
-#}
-# Soviet - Response from Finland, Finland Refuses
-# country_event = {
-#
-#	id = 2512
-#	
-#	is_triggered_only = yes
-#	
-#	title = "EVTNAME2512"
-#	desc = "EVTDESC2512"
-#
-#	option = {
-#		name = "EVTOPTA2512"			# They will pay for this!
-#		dissent = 5
-#		neutrality = -2
-#	}
-#}
+country_event = {
 
-# Soviet - End of the Swedish Winter War
+	id = 2506
+	
+	trigger = {
+		tag = SOV
+		or = {
+			and = {
+				FIN_698 = { controlled_by = SOV }
+				FIN_580 = { controlled_by = SOV }
+				FIN_507 = { controlled_by = SOV }
+			}
+			controls = 739
+			FIN = { lost_national = 22 }
+		}
+		FIN = {
+			war_with = SOV
+			not = { faction = axis }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+
+		modifier = {}		
+	}
+	
+	title = "EVTNAME2506"
+	desc = "EVTDESC2506"
+
+	option = {
+		name = "EVTOPTA2506"			# We'll settle for what we asked for
+		ai_chance = { factor = 100 }
+		remove_country_modifier = disorganized_officer_corps
+		relation = { who = FIN value = 10 }
+		FIN = { country_event = 2507 }
+	}
+	option = {
+		name = "EVTOPTB2506"			# Let's bring them Socialism!
+		relation = { who = FIN value = -150 }
+		relation = { who = ENG value = -100 }
+		relation = { who = FRA value = -100 }
+		relation = { who = GER value = -75 }
+		relation = { who = USA value = -75 }
+		remove_country_modifier = disorganized_officer_corps
+		end_non_aggression_pact = GER
+		end_non_aggression_pact = FRA
+		end_non_aggression_pact = ENG
+		end_non_aggression_pact = USA
+	}
+}
+
+##Finland - Reaction Event##
+
+country_event = {
+
+	id = 2507
+	
+	is_triggered_only = yes
+	
+	title = "EVTNAME2507"
+	desc = "EVTDESC2507"
+
+	option = {
+		name = "EVTOPTA2507"			# Fold to Russian Demands
+		ai_chance = { factor = 100 }
+		FIN_698 = { secede_province = SOV }
+		FIN_580 = { secede_province = SOV }
+		FIN_507 = { secede_province = SOV }
+		relation = { who = SOV value = -25 }
+		relation = { who = GER value = 25 }
+		dissent = 10
+		end_war = SOV
+		SOV = { country_event = 2508 }
+	}
+	option = {
+		name = "EVTOPTB2507"			# We will never surrender!
+		relation = { who = SOV value = -50 }
+		relation = { who = GER value = 50 }
+		SOV = { country_event = 2512 }
+	}
+}
+ 
+##Soviet - Response from Finland, Finland Accepts##
+
+country_event = {
+
+	id = 2508
+	
+	is_triggered_only = yes
+	
+	title = "EVTNAME2508"
+	desc = "EVTDESC2508"
+
+	option = {
+		name = "EVTOPTA2508"			# Good!
+		end_war = FIN
+		dissent = -10
+		set_country_flag = finnish_winter_war_ends
+	}
+}
+ 
+##Soviet - Response from Finland, Finland Refuses##
+
+country_event = {
+
+	id = 2512
+	
+	is_triggered_only = yes
+	
+	title = "EVTNAME2512"
+	desc = "EVTDESC2512"
+
+	option = {
+		name = "EVTOPTA2512"			# They will pay for this!
+		dissent = 5
+		neutrality = -2
+	}
+}
+
+##Soviet - End of the Swedish Winter War##
 country_event = {
 
 	id = 2509
@@ -271,7 +279,8 @@ country_event = {
 }
 
 
-# Sweden - Offer from the Soviet Union
+##Sweden - Offer from the Soviet Union##
+
 country_event = {
 
 	id = 2510
@@ -292,7 +301,8 @@ country_event = {
 }
 
 
-# Soviet Union - Sweden accepts the offer
+##Soviet Union - Sweden accepts the offer##
+
 country_event = {
 
 	id = 2511

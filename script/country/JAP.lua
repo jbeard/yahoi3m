@@ -2,10 +2,20 @@
 -- LUA Hearts of Iron 3 Japan File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/22/2010
+-- Date Last Modified: 6/28/2010
 -----------------------------------------------------------
 local P = {}
 AI_JAP = P
+
+-- #######################################
+-- Static Production Variables overide
+function P.LandToAirRatio(minister)
+	local laArray = {
+		5, -- Land Briages
+		1}; -- Air
+	
+	return laArray
+end
 
 -- Tech weights
 --   1.0 = 100% the total needs to equal 1.0
@@ -183,9 +193,9 @@ function P.ProductionWeights(minister)
 		rValue = laArray
 	else
 		local laArray = {
-			0.25, -- Land
+			0.30, -- Land
 			0.25, -- Air
-			0.45, -- Sea
+			0.40, -- Sea
 			0.05}; -- Other
 		
 		rValue = laArray	
@@ -282,7 +292,7 @@ function P.ForeignMinister_EvaluateDecision(score, agent, decision, scope)
 	
 	if lsDecision == "marco_polo_bridge_incident" then
 		score = 0
-		local manTag = CCountryDataBase.GetTag("CSX") -- Shanxi
+		local manTag = CCountryDataBase.GetTag("MAN") -- Manchuria
 		local csxTag = CCountryDataBase.GetTag("CSX") -- Shanxi
 		local chiTag = CCountryDataBase.GetTag("CHI") -- China
 		local chcTag = CCountryDataBase.GetTag("CHC") -- Communist China
@@ -407,18 +417,55 @@ function P.DiploScore_OfferTrade(score, ai, actor, recipient, observer, voTraded
 	return score
 end
 
+-- Influence Ignore list
+function P.InfluenceIgnore(minister)
+	-- Ignore Denmark if they join allies don't waste the diplomacy
+	-- Ignore Poland as we will DOW them with Danzig or War event
+	-- Ignore Baltic states as Russia will annex them
+	-- Ignore Austria, Czechoslovakia as we will get them
+	-- Ignore Switzerland as there is no chance of them joining
+	-- Ignore Vichy, they wont join anyone unles DOWed
+	local laIgnoreList = {
+		"AUS",
+		"CZE",
+		"SCH",
+		"LAT",
+		"LIT",
+		"EST",
+		"VIC",
+		"DEN",
+		"POL"};
+	
+	return laIgnoreList
+end
+
 function P.DiploScore_InfluenceNation( score, ai, actor, recipient, observer )
 	local lsRepTag = tostring(recipient)
 	
-	if lsRepTag == "AUS" or lsRepTag == "CZE" or lsRepTag == "SCH" then
-		score = 0
-	elseif lsRepTag == "SIA" then
-		score = score + 70
+	if lsRepTag == "SIA" then
+		score = score + 500
 	elseif lsRepTag == "CHI" then
 		score = score - 20
 	end
 
 	return score
+end
+
+function P.DiploScore_InviteToFaction( score, ai, actor, recipient, observer)
+	local loRecipientGroup = recipient:GetCountry():GetRulingIdeology():GetGroup()
+	local loActorGroup = actor:GetCountry():GetRulingIdeology():GetGroup()
+
+	-- If they are not of the same Ideology group then dont join them no matter what!
+	if loActorGroup ~= loRecipientGroup then
+		score = 0
+	end
+	
+	return score
+end
+
+function P.DiploScore_Alliance(score, ai, actor, recipient, observer, action)
+	-- Just process the invite to faction code
+	return P.DiploScore_InviteToFaction( score, ai, actor, recipient, observer)	
 end
 
 return AI_JAP

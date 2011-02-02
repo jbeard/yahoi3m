@@ -2,7 +2,7 @@
 -- LUA Hearts of Iron 3 China File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/4/2010
+-- Date Last Modified: 6/30/2010
 -----------------------------------------------------------
 
 local P = {}
@@ -252,13 +252,13 @@ end
 -- Land ratio distribution
 function P.LandRatio(minister)
 	local laArray = {
-		2, -- Garrison
-		10, -- Infantry
+		0, -- Garrison
+		3, -- Infantry
 		0, -- Motorized
 		0, -- Mechanized
 		0, -- Armor
-		5, -- Militia
-		2}; -- Cavalry
+		3, -- Militia
+		0}; -- Cavalry
 
 	
 	return laArray

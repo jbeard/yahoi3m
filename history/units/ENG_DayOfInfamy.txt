@@ -944,6 +944,7 @@ navy = {
 	name = "7th Submarine Flotilla"
 	base = 1521
 	location = 1521		# Liverpool 
+	ship = { type = submarine name = "6th Submarine Flotilla" historical_model = 2 }
 	ship = { type = submarine name = "7th Submarine Flotilla" historical_model = 2 }
 }
 navy = {
@@ -959,7 +960,6 @@ navy = {
 	location = 1053	# Rosyth, should be 3. Clyde, 9 Dundee
 	leader = 1357	# Admiral Sir Max K Horton 
 	ship = { type = submarine name = "3rd Submarine Flotilla" historical_model = 1 }
-	ship = { type = submarine name = "6th Submarine Flotilla" historical_model = 2 }
 	ship = { type = submarine name = "9th Submarine Flotilla" historical_model = 1 }
 }
 navy = {

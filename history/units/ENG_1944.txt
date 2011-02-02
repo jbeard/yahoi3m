@@ -1368,7 +1368,6 @@ navy = {
 	base = 1255
 	location = 1255
 	ship = { type = submarine name = "1st Submarine Flotilla" historical_model = 1 }
-	ship = { type = submarine name = "2nd Submarine Flotilla" historical_model = 2 }
 }
 navy = {
 	name = "3rd Submarine Squadron"
@@ -1378,7 +1377,6 @@ navy = {
 	ship = { type = submarine name = "4th Submarine Flotilla" historical_model = 1 }
 	ship = { type = submarine name = "5th Submarine Flotilla" historical_model = 1 }
 	ship = { type = submarine name = "6th Submarine Flotilla" historical_model = 1 }
-	ship = { type = submarine name = "7th Submarine Flotilla" historical_model = 2 }
 }
 navy = {
 	name = "4th Submarine Squadron"
@@ -1394,12 +1392,14 @@ navy = {
 	location = 2078
 	ship = { type = submarine name = "11th Submarine Flotilla" historical_model = 1 }
 	ship = { type = submarine name = "12th Submarine Flotilla" historical_model = 1 }
-	ship = { type = submarine name = "13th Submarine Flotilla" historical_model = 2 }
 }
 navy = {
 	name = "6th Submarine Squadron"
 	base = 1255
 	location = 1255
+	ship = { type = submarine name = "2nd Submarine Flotilla" historical_model = 2 }
+	ship = { type = submarine name = "7th Submarine Flotilla" historical_model = 2 }
+	ship = { type = submarine name = "13th Submarine Flotilla" historical_model = 2 }
 	ship = { type = submarine name = "14th Submarine Flotilla" historical_model = 2 }
 }
 navy = {
@@ -1423,12 +1423,12 @@ navy = {
 	base = 1053
 	location = 1053
 	ship = { type = submarine name = "21th Submarine Flotilla" historical_model = 1 }
-	ship = { type = submarine name = "22th Submarine Flotilla" historical_model = 2 }
 }
 navy = {
 	name = "10th Submarine Squadron"
 	base = 5233
 	location = 5233
+	ship = { type = submarine name = "22th Submarine Flotilla" historical_model = 2 }
 	ship = { type = submarine name = "23th Submarine Flotilla" historical_model = 2 }
 }
 navy = {

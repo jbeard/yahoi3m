@@ -2,7 +2,7 @@
 -- LUA Hearts of Iron 3 Finland File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/10/2010
+-- Date Last Modified: 6/26/2010
 -----------------------------------------------------------
 
 local P = {}
@@ -75,6 +75,22 @@ end
 function P.CallLaw_training_laws(minister, voCurrentLaw)
 	local _SPECIALIST_TRAINING_ = 30
 	return CLawDataBase.GetLaw(_SPECIALIST_TRAINING_)
+end
+
+function P.Call_ForeignMinister(minister)
+	local ministerTag = minister:GetCountryTag()
+	local ministerCountry = ministerTag:GetCountry()
+
+	if not(ministerCountry:HasFaction()) then
+		-- Align with Germany if we go to war with the soviets
+		if ministerCountry:GetRelation(CCountryDataBase.GetTag("SOV")):HasWar() then
+			local loAction = CInfluenceAllianceLeader(minister:GetCountryTag(), CCountryDataBase.GetTag("GER"))
+			
+			if loAction:IsSelectable() then
+				minister:GetOwnerAI():PostAction(loAction)
+			end
+		end
+	end
 end
 
 return AI_FIN

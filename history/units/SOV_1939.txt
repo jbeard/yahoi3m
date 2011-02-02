@@ -1582,6 +1582,43 @@ theatre = {
 		}
 	}
 }
+
+division= {
+	name = "1. Garnizon Diviziya"
+	location = 1409 # Moscow
+	regiment = { type = garrison_brigade name = "1st Garrison Regiment" historical_model = 0 }
+	regiment = { type = garrison_brigade name = "2nd Garrison Regiment" historical_model = 0 }
+	regiment = { type = garrison_brigade name = "3rd Garrison Regiment" historical_model = 0 }
+	regiment = { type = artillery_brigade name = "1st Garrison Artillery" historical_model = 0 }
+}
+
+division= {
+	name = "2. Garnizon Diviziya"
+	location = 782 # Leningrad
+	regiment = { type = garrison_brigade name = "3st Garrison Regiment" historical_model = 0 }
+	regiment = { type = garrison_brigade name = "4nd Garrison Regiment" historical_model = 0 }
+	regiment = { type = garrison_brigade name = "5rd Garrison Regiment" historical_model = 0 }
+	regiment = { type = artillery_brigade name = "2st Garrison Artillery" historical_model = 0 }
+}
+
+division= {
+	name = "3. Garnizon Diviziya"
+	location = 2857 # Stalingrad
+	regiment = { type = garrison_brigade name = "6st Garrison Regiment" historical_model = 0 }
+	regiment = { type = garrison_brigade name = "7nd Garrison Regiment" historical_model = 0 }
+	regiment = { type = garrison_brigade name = "8rd Garrison Regiment" historical_model = 0 }
+	regiment = { type = artillery_brigade name = "3st Garrison Artillery" historical_model = 0 }
+}
+
+division= {
+	name = "4. Garnizon Diviziya"
+	location = 4390 # Vladivostok
+	regiment = { type = garrison_brigade name = "9st Garrison Regiment" historical_model = 0 }
+	regiment = { type = garrison_brigade name = "10nd Garrison Regiment" historical_model = 0 }
+	regiment = { type = garrison_brigade name = "11rd Garrison Regiment" historical_model = 0 }
+	regiment = { type = artillery_brigade name = "4st Garrison Artillery" historical_model = 0 }
+}
+
 theatre = {
 	name = "Far Eastern Theatre"
 	location = 4390

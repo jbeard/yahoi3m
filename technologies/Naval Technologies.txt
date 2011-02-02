@@ -300,12 +300,12 @@ smallwarship_radar = {
 
 smallwarship_asw = {
 	light_cruiser = {
-		sub_detection = 1.00
-		sub_attack = 0.80
+		sub_detection = 2.50
+		sub_attack = 1.00
 	}
 	destroyer = {
-		sub_detection = 1.00
-		sub_attack = 1.00
+		sub_detection = 3.00
+		sub_attack = 1.20
 	}
 
 	allow = {
@@ -333,10 +333,10 @@ smallwarship_asw = {
 
 	on_completion = electornicegineering_theory
 
-	difficulty = 5
-	start_year = 1939
-	first_offset = 1940
-	additional_offset = 1
+	difficulty = 3
+	start_year = 1940
+	first_offset = 1941
+	additional_offset = 2
 	folder = smallship_folder
 }
 
@@ -1086,7 +1086,7 @@ submarine_hull = {
 submarine_torpedoes = {
 	submarine = {
 		sea_attack = 0.2
-		convoy_attack = 3.0
+		convoy_attack = 5.0
 
 	}
 

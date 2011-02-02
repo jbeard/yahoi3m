@@ -2,7 +2,9 @@ owner = ITA
 controller = ITA
 add_core = ITA
 
+naval_base = 1
 infra = 8
+
 1943.9.23 = {
 	owner = RSI
 	controller = RSI

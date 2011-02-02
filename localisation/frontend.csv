@@ -217,7 +217,7 @@ CHATMESSAGE_MAP;*;*;*;*;*;*;*;;;;;;;x
 ######################################################################;;;;;;;;;;;;;;x
 ######################################################################;;;;;;;;;;;;;;x
 # Meta Server;;;;;;;;;;;;;;x
-MS_USERNAME;Username:;Nom d'utilisateur :;Benutzername:;Nazwa u¿ytkownika;Nombre de usuario:;Nome utente:;Felhasználói név:;Jméno uživatele:;;;;;;x
+MS_USERNAME;Username:;Nom d’utilisateur :;Benutzername:;;Nombre de usuario:;;;;;;;;;x
 MS_PASSWORD;Password:;Mot de passe :;Kennwort:;Has³o;Contraseña:;Password:;Jelszó:;Heslo:;;;;;;x
 MS_CREATE_GAME;Create Game;Créer une partie;Spiel erstellen;Stwórz grê;Crear juego;Creare partita;Új játék;Vytvoøit hru;;;;;;x
 MS_NAME;Name:;Nom :;Name:;Nazwa:;Nombre:;Nome:;Név;Jméno:;;;;;;x

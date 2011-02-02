@@ -976,9 +976,16 @@ navy = {
 	location = 10658
 	ship = { type = submarine name = "1 Sensuikantai" historical_model = 0 }
 	ship = { type = submarine name = "2 Sensuikantai" historical_model = 0 }
+}
+
+navy = {
+	name = "7. Fleet"
+	base = 10658
+	location = 10658
 	ship = { type = submarine name = "3 Sensuikantai" historical_model = 2 }
 	ship = { type = submarine name = "8 Sensuikantai" historical_model = 2 }
 }
+
 navy = {
 	name = "1. Carrier Fleet"
 	base = 5315
@@ -1038,11 +1045,6 @@ navy = {
 	name = "8. Kaigun"
 	base = 5543
 	location = 5543
-	ship = { type = submarine name = "1 Sensuikantai" historical_model = 0 }
-	ship = { type = submarine name = "2 Sensuikantai" historical_model = 0 }
-	ship = { type = submarine name = "3 Sensuikantai" historical_model = 0 }
-	ship = { type = submarine name = "4 Sensuikantai" historical_model = 0 }
-	ship = { type = submarine name = "5 Sensuikantai" historical_model = 0 }
 	ship = { type = submarine name = "6 Sensuikantai" historical_model = 1 }
 	ship = { type = submarine name = "7 Sensuikantai" historical_model = 1 }
 	ship = { type = submarine name = "8 Sensuikantai" historical_model = 1 }
@@ -1050,8 +1052,19 @@ navy = {
 	ship = { type = submarine name = "10 Sensuikantai" historical_model = 1 }
 	ship = { type = submarine name = "11 Sensuikantai" historical_model = 1 }
 	ship = { type = submarine name = "12 Sensuikantai" historical_model = 1 }
-	ship = { type = submarine name = "13 Sensuikantai" historical_model = 2 }
 }
+
+navy = {
+	name = "9. Kaigun"
+	base = 5543
+	location = 5543
+	ship = { type = submarine name = "1 Sensuikantai" historical_model = 0 }
+	ship = { type = submarine name = "2 Sensuikantai" historical_model = 0 }
+	ship = { type = submarine name = "3 Sensuikantai" historical_model = 0 }
+	ship = { type = submarine name = "4 Sensuikantai" historical_model = 0 }
+	ship = { type = submarine name = "5 Sensuikantai" historical_model = 0 }
+}
+
 air = {
 	name = "1 Zerosen no Hikodan"
 	base = 5020
@@ -1097,11 +1110,18 @@ navy = {
 	name = "2. Kaigun"
 	base = 5218
 	location = 5218
-	ship = { type = submarine name = "9 Sensuikantai" historical_model = 3 }
-	ship = { type = submarine name = "13 Sensuikantai" historical_model = 3 }
 	ship = { type = submarine name = "27 Sensuikantai" historical_model = 2 }
 	ship = { type = submarine name = "11 Sensuikantai" historical_model = 2 }
 	ship = { type = submarine name = "12 Sensuikantai" historical_model = 2 }
+	ship = { type = submarine name = "13 Sensuikantai" historical_model = 2 }
+}
+
+navy = {
+	name = "3. Kaigun"
+	base = 5218
+	location = 5218
+	ship = { type = submarine name = "9 Sensuikantai" historical_model = 3 }
+	ship = { type = submarine name = "13 Sensuikantai" historical_model = 3 }
 }
 
 

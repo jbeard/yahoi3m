@@ -4,7 +4,7 @@ country_event = {
 	title = "EVTNAME7000"
 	desc = "EVTDESC7000"
 	
-	triggered_only_once = yes
+	fire_only_once = yes
 	
 	trigger = {
 		TAG = GER
@@ -58,37 +58,6 @@ country_event = {
 			land_fort = -9
 		}
 	}
-	
-	option = {
-		name = "EVTOPTB7000"
-		3150 = {
-			land_fort = -9
-		}
-		3083 = {
-			land_fort = -9
-		}
-		2947 = {
-			land_fort = -9
-		}
-		2881 = {
-			land_fort = -9
-		}
-		2815 = {
-			land_fort = -9
-		}
-		2750 = {
-			land_fort = -9
-		}
-		2684 = {
-			land_fort = -9
-		}
-		2618 = {
-			land_fort = -9
-		}
-		2552 = {
-			land_fort = -9
-		}
-	}
 }
 
 # Sudeten line
@@ -97,7 +66,7 @@ country_event = {
 	title = "EVTNAME7001"
 	desc = "EVTDESC7001"
 	
-	triggered_only_once = yes
+	fire_only_once = yes
 	
 	trigger = {
 		TAG = GER
@@ -132,64 +101,6 @@ country_event = {
 	
 	option = {
 		name = "EVTOPTA7000"
-		2822 = {
-			land_fort = -4
-		}
-		2823 = {
-			land_fort = -4
-		}
-		2889 = {
-			land_fort = -4
-		}
-		2757 = {
-			land_fort = -4
-		}
-		2625 = {
-			land_fort = -4
-		}
-		2631 = {
-			land_fort = -4
-		}
-		2691 = {
-			land_fort = -4
-		}
-		2501 = {
-			land_fort = -4
-		}
-		2502 = {
-			land_fort = -4
-		}
-		2564 = {
-			land_fort = -4
-		}			
-		2565 = {
-			land_fort = -4
-		}			
-		2438 = {
-			land_fort = -4
-		}			
-		2439 = {
-			land_fort = -4
-		}			
-		2440 = {
-			land_fort = -4
-		}			
-		2498 = {
-			land_fort = -4
-		}			
-		2497 = {
-			land_fort = -4
-		}			
-		2380 = {
-			land_fort = -4
-		}
-		2381 = {
-			land_fort = -4
-		}
-	}
-	
-	option = {
-		name = "EVTOPTB7001"
 		2822 = {
 			land_fort = -4
 		}

@@ -2,7 +2,7 @@
 -- LUA Hearts of Iron 3 Utility7 File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/12/2010
+-- Date Last Modified: 6/30/2010
 -----------------------------------------------------------
 
 local P = {}
@@ -299,14 +299,14 @@ function P.Round(viNumber)
 end
 
 function P.IsFriend(ai, voFaction, voCountry)
-	-- If they are a 25 or more distance from us then consider them a potential enemy
-	-- 45 or more is real bad they are heavily aligning to someone else.
+	-- If they are a less than 70 toward another faction consider them a potential enemy
 	local rValue = true
 	
 	for loFaction in CCurrentGameState.GetFactions() do
-		if loFaction ~= voFaction then
+		if not(loFaction == voFaction) then
 			-- They are aligning with another faction
-			if ai:GetNormalizedAlignmentDistance(voCountry, loFaction):Get() < 25 then
+			if ai:GetCountryAlignmentDistance(voCountry, loFaction:GetFactionLeader():GetCountry()):Get() < 70 then
+			--if ai:GetNormalizedAlignmentDistance(voCountry, loFaction):Get() < 10 then
 				rValue = false
 				break
 			end
@@ -316,5 +316,46 @@ function P.IsFriend(ai, voFaction, voCountry)
 	return rValue
 end
 
+function P.Split(str, delim, maxNb)
+    -- Eliminate bad cases...
+    if string.find(str, delim) == nil then
+        return { str }
+    end
+    if maxNb == nil or maxNb < 1 then
+        maxNb = 0    -- No limit
+    end
+    local result = {}
+    local pat = "(.-)" .. delim .. "()"
+    local nb = 0
+    local lastPos
+    for part, pos in string.gfind(str, pat) do
+        nb = nb + 1
+        result[nb] = part
+        lastPos = pos
+        if nb == maxNb then break end
+    end
+    -- Handle the last field
+    if nb ~= maxNb then
+        result[nb + 1] = string.sub(str, lastPos)
+    end
+    return result
+end
+
+function P.CalculateHomeProduced(loResource)
+	local liDailyHome = loResource.vDailyHome
+	
+	if loResource.vConvoyedIn > 0 then
+		-- If the Convoy in exceeds Home Produced by 10% it means they have a glutten coming in or
+		--   are a sea bearing country like ENG or JAP
+		--   so go ahead and count this as home produced up to 80% of it just in case something happens!
+		if liDailyHome > loResource.vDailyExpense then
+			liDailyHome = liDailyHome + loResource.vConvoyedIn
+		elseif loResource.vConvoyedIn > (liDailyHome * 0.1) then
+			liDailyHome = liDailyHome + (loResource.vConvoyedIn * 0.9)
+		end
+	end	
+	
+	return liDailyHome
+end
 
 return Utils

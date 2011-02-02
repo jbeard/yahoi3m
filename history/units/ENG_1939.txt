@@ -626,6 +626,11 @@ navy = {
 	base = 2078
 	location = 2078
 	ship = { type = submarine name = "10th Submarine Flotilla" historical_model = 1 }
+}
+navy = {
+	name = "6th Submarine Squadron"
+	base = 2078
+	location = 2078
 	ship = { type = submarine name = "11th Submarine Flotilla" historical_model = 2 }
 }
 navy = {
@@ -687,9 +692,14 @@ navy = {
 	base = 5586
 	location = 5586
 	ship = { type = submarine name = "1st Submarine Flotilla" historical_model = 2 }
-	ship = { type = submarine name = "2nd Submarine Flotilla" historical_model = 0 }
 	ship = { type = submarine name = "3rd Submarine Flotilla" historical_model = 2 }
 	ship = { type = submarine name = "4th Submarine Flotilla" historical_model = 2 }
+}
+navy = {
+	name = "5th Submarine Squadron"
+	base = 5586
+	location = 5586
+	ship = { type = submarine name = "2nd Submarine Flotilla" historical_model = 0 }
 }
 navy = {
 	name = "3rd Transport Squadron"

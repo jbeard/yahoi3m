@@ -2,7 +2,7 @@
 -- LUA Hearts of Iron 3 Italy File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/22/2010
+-- Date Last Modified: 7/16/2010
 -----------------------------------------------------------
 
 local P = {}
@@ -337,17 +337,41 @@ function P.ProposeDeclareWar( minister )
 	end
 end
 
+-- Influence Ignore list
+function P.InfluenceIgnore(minister)
+	-- Ignore Denmark if they join allies don't waste the diplomacy
+	-- Ignore Poland as we will DOW them with Danzig or War event
+	-- Ignore Baltic states as Russia will annex them
+	-- Ignore Austria, Czechoslovakia as we will get them
+	-- Ignore Switzerland as there is no chance of them joining
+	-- Ignore Vichy, they wont join anyone unles DOWed
+	local laIgnoreList = {
+		"AUS",
+		"CZE",
+		"SCH",
+		"LAT",
+		"LIT",
+		"EST",
+		"DEN",
+		"VIC",
+		"POL"};
+	
+	return laIgnoreList
+end
+
 function P.DiploScore_InfluenceNation( score, ai, actor, recipient, observer )
 	local lsRepTag = tostring(recipient)
 	local lsFaction = tostring(actor:GetCountry():GetFaction():GetTag())
 	
 	if lsFaction == "axis" then
-		if lsRepTag == "AUS" or lsRepTag == "CZE" or lsRepTag == "SCH" then
-			score = 0 -- we get them anyway
-		elseif lsRepTag == "HUN" or lsRepTag == "ROM" or lsRepTag == "BUL" or lsRepTag == "FIN" or lsRepTag == "ITA" or lsRepTag == "JAP" then
-			score = score + 70
+		if lsRepTag == "ROM" then
+			score = score + 500
+		elseif lsRepTag == "BUL" or lsRepTag == "FIN" then
+			score = score + 300
+		elseif lsRepTag == "HUN" then
+			score = score + 120
 		elseif lsRepTag == "AST" or lsRepTag == "CAN" or lsRepTag == "SAF" or lsRepTag == "NZL" then
-			score = score - 20
+			score = score - 100
 		end
 	end
 
@@ -360,6 +384,23 @@ function P.DiploScore_OfferTrade(score, ai, actor, recipient, observer, voTraded
 	end
 	
 	return score
+end
+
+function P.DiploScore_InviteToFaction( score, ai, actor, recipient, observer)
+	local loRecipientGroup = recipient:GetCountry():GetRulingIdeology():GetGroup()
+	local loActorGroup = actor:GetCountry():GetRulingIdeology():GetGroup()
+
+	-- If they are not of the same Ideology group then dont join them no matter what!
+	if loActorGroup ~= loRecipientGroup then
+		score = 0
+	end
+	
+	return score
+end
+
+function P.DiploScore_Alliance(score, ai, actor, recipient, observer, action)
+	-- Just process the invite to faction code
+	return P.DiploScore_InviteToFaction( score, ai, actor, recipient, observer)	
 end
 
 return AI_ITA

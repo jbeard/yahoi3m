@@ -2,6 +2,4 @@ owner = CAN
 controller = CAN
 add_core = CAN
 
-infra = 4
-
-infra = 2
+infra = 1

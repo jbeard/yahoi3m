@@ -162,7 +162,6 @@ axis = {
 				}
 			}
 		}
-		primary = yes
 	}
 	axis_italy = {
 		trigger = {
@@ -317,6 +316,7 @@ axis = {
 				}
 			}
 		}
+		primary = yes
 	}
 	ax_control_stalingrad = {
 		trigger = {
@@ -732,17 +732,17 @@ allies = {
 			#ROM
 			3917 = {
 				controller = {
-					faction = axis
+					faction = allies
 				}
 			}
 			3778 = {
 				controller = {
-					faction = axis
+					faction = allies
 				}
 			}
 			3370 = {
 				controller = {
-					faction = axis
+					faction = allies
 				}
 			}
 			
@@ -1686,17 +1686,6 @@ comintern = {
 				}
 			}
 			2895 = {
-				controller = {
-					faction = comintern
-				}
-			}
-			#CRO
-			3633 = {
-				controller = {
-					faction = comintern
-				}
-			}
-			4174 = {
 				controller = {
 					faction = comintern
 				}

@@ -422,7 +422,7 @@ REVOLTRISK_EFFECT;$DIRECTION$ $VALUE$ revoltrisk in $WHERE$.\n;$DIRECTION$ $VALU
 LEDGER_CANT_BUILD_THIS_TECH;Your current technology level does not allow you to build this building;Votre niveau actuel en technologie ne vous permet pas de construire ce bâtiment;Ihre momentane Technologiestufe erlaubt Ihnen noch nicht den Bau dieses Gebäudes;;Tu actual nivel tecnológico no te permite la construcción de este edificio;;;;;;;;;x ,,,
 LEDGER_CANT_BUILD_THIS_FULL;Already built by all provinces;Déjà construit par toutes les provinces;Schon in allen Provinzen gebaut;;Ya se ha construido en todas las provincias;;;;;;;;;x ,,,
 LEDGER_OVERALL;Overall;Tout;Alles;;General;;;;;;;;;x,,,
-FROM_TECHNOLOGY;From Technology;À partir de la technologie;Von Technologie;;De tecnología;;;;;;;;;x,,,
+FROM_TECHNOLOGY;From Improved Technology;À partir de la technologie améliorée;Aus verbesserter Technologie;;De tecnología mejorada;;;;;;;;;x
 THEYGUARANT;They guarantee our independence, so we can not guarantee theirs.;Ils sont garants de notre indépendance, nous ne pouvons donc pas garantir la leur.;Sie garantieren unsere Unabhängigkeit. Wir können deshalb nicht ihre Unabhängigkeit garantieren.;;Garantizan nuestra independencia, por lo que no podemos garantizar la suya.;;;;;;;;;x,
 THEYWARN;They are warning us, so we can not warn them.;Ils nous ont déjà averti, nous ne pouvons donc pas faire de même.;Sie haben uns gewarnt, und wir können sie deshalb nicht warnen.;;No están advirtiendo, por lo que no podemos advertirles a ellos.;;;;;;;;;x
 WCRD_GUA;We have guaranteed their independence.;Nous avons garanti leur indépendance.;Wir haben ihre Unabhängigkeit garantiert.;;Hemos garantizado su independencia.;;;;;;;;;x,,,

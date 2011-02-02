@@ -311,9 +311,9 @@ general_winter = {
 		}
 		OR = {
 			month = 11
-		}
-		NOT = {
-			month = 5
+			NOT = {
+				month = 5
+			}
 		}
 	}
 	
@@ -733,8 +733,10 @@ blockade_suez_channel = {
 			TAG = ENG
 			TAG = ITA
 			TAG = FRA
-			TAG = GRE
+			TAG = GER
 			TAG = TUR
+			TAG = SPA
+			TAG = SPR
 		}
 	}
 	
@@ -815,6 +817,7 @@ control_over_makassar_strait = {
 	potential = {
 		OR = {
 			TAG = HOL
+			TAG = USA
 			TAG = ENG
 			TAG = JAP
 			TAG = AST
@@ -824,24 +827,15 @@ control_over_makassar_strait = {
 	trigger = {
 		controls = 6478
 		controls = 6508
-		controls = 6492
-		controls = 7788
-		controls = 7782
-		controls = 7775
-		controls = 7759
-		controls = 7749 
-		controls = 6416 
-		controls = 6401 
+		controls = 6492 
 		controls = 6472 
 		controls = 6455 
 		controls = 6444 
-		controls = 6408 
 		controls = 6434 
 		controls = 6428 
 		controls = 6424 
 		controls = 6421 
 		controls = 6407 
-		controls = 6400
 		total_amount_of_ships = 10
 	}
 	
@@ -855,6 +849,7 @@ blockade_makassar_strait = {
 
 	potential = {
 		OR = {
+			TAG = USA
 			TAG = HOL
 			TAG = ENG
 			TAG = JAP
@@ -865,24 +860,15 @@ blockade_makassar_strait = {
 	trigger = {
 		controls = 6478
 		controls = 6508
-		controls = 6492
-		controls = 7788
-		controls = 7782
-		controls = 7775
-		controls = 7759
-		controls = 7749 
-		controls = 6416 
-		controls = 6401 
+		controls = 6492 
 		controls = 6472 
 		controls = 6455 
 		controls = 6444 
-		controls = 6408 
 		controls = 6434 
 		controls = 6428 
 		controls = 6424 
 		controls = 6421 
 		controls = 6407 
-		controls = 6400
 		
 		OR = {
 			6478 = {
@@ -894,29 +880,6 @@ blockade_makassar_strait = {
 			6492 = {
 				is_blockaded = yes
 			}
-			7788 = {
-				is_blockaded = yes
-			}
-			7782 = {
-				is_blockaded = yes
-			}
-		}
-		OR = {
-			7775 = {
-				is_blockaded = yes
-			}
-			7759 = {
-				is_blockaded = yes
-			}
-			7749 = {
-				is_blockaded = yes
-			}
-			6416 = {
-				is_blockaded = yes
-			}
-			6401 = {
-				is_blockaded = yes
-			}
 		}
 		OR = {
 			6472 = {
@@ -926,9 +889,6 @@ blockade_makassar_strait = {
 				is_blockaded = yes
 			}
 			6444 = {
-				is_blockaded = yes
-			}
-			6408 = {
 				is_blockaded = yes
 			}
 			6434 = {
@@ -948,9 +908,6 @@ blockade_makassar_strait = {
 			6407 = {
 				is_blockaded = yes
 			}
-			6400 = {
-				is_blockaded = yes
-			}
 		}
 		total_amount_of_ships = 10
 	}
@@ -966,8 +923,12 @@ control_over_gibraltar = {
 	potential = {
 		OR = {
 			TAG = SPA
+			TAG = SPR
+			TAG = GER
+			TAG = ITA
 			TAG = ENG
 			TAG = FRA
+			TAG = SOV
 		}
 	}
 	
@@ -999,7 +960,7 @@ blockade_gibraltar = {
 		controls = 5258
 		5191 = {
 			is_blockaded = yes 
-			}
+		}
 		5258 = {
 			is_blockaded = yes 
 		}
@@ -1446,7 +1407,6 @@ control_over_iskenderun_gulf = {
 	
 	trigger = {
 		controls = 5047
-		controls = 5127
 		controls = 5139
 		controls = 5299
 		controls = 4976
@@ -1472,16 +1432,12 @@ blockade_iskenderun_gulf = {
 	
 	trigger = {
 		controls = 5047
-		controls = 5127
 		controls = 5139
 		controls = 5299
 		controls = 4976
 		
 		OR = {
 			5047 = {
-				is_blockaded = yes
-			}
-			5127 = {
 				is_blockaded = yes
 			}
 			5139 = {
@@ -1506,11 +1462,10 @@ control_over_chihli_gulf = {
 
 	potential = {
 		OR = {
-			TAG = TUR
-			TAG = ENG
-			TAG = FRA
-			TAG = GRE
-			TAG = ITA
+			TAG = JAP
+			TAG = CHI
+			TAG = SOV
+			TAG = MAN
 		}
 	}
 	

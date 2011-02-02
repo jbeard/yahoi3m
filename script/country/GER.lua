@@ -2,11 +2,28 @@
 -- LUA Hearts of Iron 3 Germany File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/20/2010
+-- Date Last Modified: 7/19/2010
 -----------------------------------------------------------
 
 local P = {}
 AI_GER = P
+
+-- #######################################
+-- Static Production Variables overide
+function P._LandRatio_Units_(minister)
+	local laLandRatioUnits = {
+		'garrison_brigade', -- Garrison
+		'infantry_brigade', -- Infantry
+		'motorized_brigade', -- Motorized
+		'mechanized_brigade', -- Mechanized
+		'armor_brigade|heavy_armor_brigade|super_heavy_armor_brigade', -- Armor
+		'militia_brigade', -- Militia
+		'cavalry_brigade'}; -- Cavalry
+	
+	return laLandRatioUnits
+end
+-- #######################################
+
 
 -- #######################################
 -- Start of Tech Research
@@ -204,15 +221,15 @@ function P.ProductionWeights(minister)
 		-- Desperation check and if so heavy production of land forces
 		if ministerCountry:CalcDesperation():Get() > 0.4 then
 			laArray = {
-				0.65, -- Land
-				0.30, -- Air
+				0.75, -- Land
+				0.20, -- Air
 				0.05, -- Sea
 				0.0}; -- Other
 		else
 			laArray = {
-				0.50, -- Land
-				0.25, -- Air
-				0.20, -- Sea
+				0.65, -- Land
+				0.20, -- Air
+				0.10, -- Sea
 				0.05}; -- Other
 		end
 	else
@@ -228,11 +245,11 @@ end
 -- Land ratio distribution
 function P.LandRatio(minister)
 	local laArray = {
-		2, -- Garrison
-		13, -- Infantry
-		2, -- Motorized
+		1, -- Garrison
+		10, -- Infantry
+		3, -- Motorized
 		1, -- Mechanized
-		1, -- Armor
+		1.5, -- Armor
 		0, -- Militia
 		0}; -- Cavalry
 	
@@ -356,6 +373,7 @@ end
 
 -- #######################################
 -- Diplomacy Hooks
+-- InfluenceIgnore(minister)
 
 -- These all must return a numeric score (100 being 100% chance of success)
 
@@ -374,15 +392,44 @@ end
 
 -- Scripted items no return value
 
+-- Influence Ignore list
+function P.InfluenceIgnore(minister)
+	-- Ignore Denmark if they join allies don't waste the diplomacy
+	-- Ignore Poland as we will DOW them with Danzig or War event
+	-- Ignore Baltic states as Russia will annex them
+	-- Ignore Austria, Czechoslovakia as we will get them
+	-- Ignore Switzerland as there is no chance of them joining
+	-- Ignore Vichy, they wont join anyone unles DOWed
+	-- Ignore Australia, Canada, South Africa and New Zealand, they are to heavy already to the allies.
+	local laIgnoreList = {
+		"AUS",
+		"CZE",
+		"SCH",
+		"LAT",
+		"LIT",
+		"EST",
+		"VIC",
+		"DEN",
+		"POL"};
+	
+	return laIgnoreList
+end
+
 function P.DiploScore_InfluenceNation( score, ai, actor, recipient, observer )
 	local lsRepTag = tostring(recipient)
 	
-	if lsRepTag == "AUS" or lsRepTag == "CZE" or lsRepTag == "SCH" then
-		score = 0 -- we get them anyway
-	elseif lsRepTag == "HUN" or lsRepTag == "ROM" or lsRepTag == "BUL" or lsRepTag == "FIN" or lsRepTag == "ITA" or lsRepTag == "JAP" then
-		score = score + 70
+	if lsRepTag == "JAP" then
+		score = score + 1500
+	elseif lsRepTag == "ITA" then
+		score = score + 1200
+	elseif lsRepTag == "ROM" then
+		score = score + 500
+	elseif lsRepTag == "BUL" or lsRepTag == "FIN" then
+		score = score + 300
+	elseif lsRepTag == "HUN" then
+		score = score + 120
 	elseif lsRepTag == "AST" or lsRepTag == "CAN" or lsRepTag == "SAF" or lsRepTag == "NZL" then
-		score = score - 20
+		score = score - 100
 	end
 
 	return score
@@ -442,7 +489,8 @@ end
 -- Foreign Minister Hooks
 
 -- ForeignMinister_EvaluateDecision(score, agent, decision, scope)
--- CallAlly(minister)
+-- Call_Ally(minister)
+-- Call_MilitaryAccess(minister)
 -- ProposeDeclareWar(minister)
 
 function P.ForeignMinister_EvaluateDecision(score, agent, decision, scope)
@@ -500,7 +548,7 @@ function P.ForeignMinister_EvaluateDecision(score, agent, decision, scope)
 	return score
 end
 
-function P.CallAlly(minister)
+function P.Call_Ally(minister)
 	local ministerCountry = minister:GetCountry()
 	local ministerTag = minister:GetCountryTag()
 	local ministerContinent = ministerCountry:GetActingCapitalLocation():GetContinent()
@@ -598,99 +646,192 @@ function P.ExecuteCallAlly(ai, ministerTag, voAllyTag, voTargetTag)
 	end
 end
 
+function P.Call_MilitaryAccess(minister)
+	local ministerTag = minister:GetCountryTag()
+	local ministerCountry = minister:GetCountry()
+	local ai = minister:GetOwnerAI()
+
+	for loCountryTag in ministerCountry:GetNeighbours() do
+		local loCountry = loCountryTag:GetCountry()
+		
+		-- Do not bother asking major powers for military access
+		if not(loCountry:IsMajor()) then
+			-- If they are already in a faction do not bother them
+			-- If they are in a war already do not bother them
+			if not(loCountry:HasFaction()) and not(loCountry:IsAtWar()) then
+				local loRelation = ai:GetRelation(ministerTag, loCountryTag)
+
+				-- Make sure we do not already have military access
+				if not(loRelation:HasMilitaryAccess()) then
+					local lbAsk = false
+					
+					-- Make an exception for Sweden
+					if tostring(loCountryTag) == "SWE" then
+						local norTag = CCountryDataBase.GetTag("NOR")
+						local loNorwayCountry = norTag:GetCountry()
+
+						-- Ask Sweden for Access if Norway is gone or allied
+						if not(loNorwayCountry:Exists())
+						or loNorwayCountry:IsGovernmentInExile() then
+							lbAsk = true
+						else
+							if loNorwayCountry:HasFaction()
+							and loNorwayCountry:GetFaction() == ministerCountry:GetFaction() then
+								lbAsk = true
+							end
+						end
+					else
+						-- Now check their neighbors to see if they touch an enemy
+						for loCountryTag2 in loCountry:GetNeighbours() do
+							if not(loCountryTag2 == ministerTag) then
+								local loRelation2 = ai:GetRelation(ministerTag, loCountryTag2)
+							
+								if loRelation2:HasWar() then
+									lbAsk = true
+									break
+								end
+							end
+						end
+					end
+					
+					if lbAsk then
+						local loAction = CMilitaryAccessAction(ministerTag, loCountryTag)
+
+						if loAction:IsSelectable() then
+							local liScore = DiploScore_DemandMilitaryAccess(ai, ministerTag, loCountryTag, ministerTag)
+
+							if liScore > 50 then
+								minister:Propose(loAction, liScore)
+							end
+						end
+					end					
+				end
+			end
+		end
+	end
+end
+
+
 function P.ProposeDeclareWar(minister)
 	local ministerCountry = minister:GetCountry()
 	local loStrategy = ministerCountry:GetStrategy()
 	
 	if not(loStrategy:IsPreparingWar()) then
-		if ministerCountry:GetFaction() == CCurrentGameState.GetFaction('axis') then	
-			local ai = minister:GetOwnerAI()		
-			local year = ai:GetCurrentDate():GetYear()
-			local month = ai:GetCurrentDate():GetMonthOfYear()
+		if ministerCountry:GetFaction() == CCurrentGameState.GetFaction("axis") then	
+			local sovTag = CCountryDataBase.GetTag("SOV")
 			
-			if ministerCountry:IsAtWar() or year >= 1940 then
-				local fraTag = CCountryDataBase.GetTag("FRA")
-				local norTag = CCountryDataBase.GetTag("NOR")
-				local liTotalNeighborWars = 0
-				local lbNorwayNeighbor = false
+			-- If we are atwar with Russia then do not even think of DOWing anyone else
+			if not(ministerCountry:GetRelation(sovTag):HasWar()) then
+				local ai = minister:GetOwnerAI()		
+				local year = ai:GetCurrentDate():GetYear()
+				local month = ai:GetCurrentDate():GetMonthOfYear()
 				
-				for neighborTag in ministerCountry:GetNeighbours() do
-					if ministerCountry:GetRelation(neighborTag):HasWar() then
-						
-						-- Do not count Norway as we are invading them
-						if not(norTag == neighborTag) then
-							liTotalNeighborWars = liTotalNeighborWars + 1
-						end
-					end
-				end
-			
-				if ministerCountry:GetRelation(fraTag):HasWar() and ministerCountry:IsNeighbour(fraTag) then
-					if liTotalNeighborWars == 1 then
-						P.DenmarkCheck(ai, ministerCountry, loStrategy)
-						
-						-- Try to time this first
-						if month >= 1 and month <= 6 then
-							P.NorwayCheck(ai, ministerCountry, loStrategy)
-						end
-						
-						-- Wait for good weather months to attack
-						if month >= 3 and month <= 7 then
-							P.LowCountriesCheck(ai, ministerCountry, loStrategy)
-						end
-					end
-				
-				-- Make sure its always in clear weather turns
-				elseif not ministerCountry:IsAtWar() and month >= 3 and month <= 7 then
-					-- Potential Wars with neighbors
-					local laPotentialWars = {}
+				if ministerCountry:IsAtWar() or year >= 1940 then
+					local fraTag = CCountryDataBase.GetTag("FRA")
+					local norTag = CCountryDataBase.GetTag("NOR")
+					local engTag = CCountryDataBase.GetTag("ENG")
+					local usaTag = CCountryDataBase.GetTag("USA")
+					
+					local sprTag = CCountryDataBase.GetTag("SPR")
+					local spaTag = CCountryDataBase.GetTag("SPA")
+					
+					local liTotalNeighborWars = 0
 					
 					for neighborTag in ministerCountry:GetNeighbours() do
-						if not(Utils.IsFriend(ai, ministerCountry:GetFaction(), neighborTag))
-						and not(ministerCountry:GetRelation(neighborTag):HasAlliance()) then
-							table.insert(laPotentialWars, neighborTag)
+						if ministerCountry:GetRelation(neighborTag):HasWar() then
+							
+							-- Do not count Norway as we are invading them
+							if not(norTag == neighborTag) then
+								-- Only count a front with the UK if they are allied with the USA
+								if neighborTag == engTag then
+									if engTag:GetCountry():GetRelation(usaTag):HasAlliance() then
+										liTotalNeighborWars = liTotalNeighborWars + 1
+									end
+								elseif neighborTag == sprTag or neighborTag == spaTag then
+									-- Gibraltar check, if UK no longer controls Gibralatar do not count Spain anymore
+									if CCurrentGameState.GetProvince(5191):GetController() == engTag then 
+										liTotalNeighborWars = liTotalNeighborWars + 1
+									end
+								else
+									liTotalNeighborWars = liTotalNeighborWars + 1
+								end
+							end
 						end
 					end
-
-					-- Pick a random country that is not friend to go to war with
-					if table.getn(laPotentialWars) > 0 then
-						-- Limited War
-						loStrategy:PrepareLimitedWar(laPotentialWars[math.random(table.getn(laPotentialWars))], 100)
-					end
-				else
-					P.DenmarkCheck(ai, ministerCountry, loStrategy)
-					P.NorwayCheck(ai, ministerCountry, loStrategy)
+				
+					if ministerCountry:GetRelation(fraTag):HasWar() and ministerCountry:IsNeighbour(fraTag) then
+						if liTotalNeighborWars == 1 then
+							P.DenmarkCheck(ai, ministerCountry, loStrategy)
+							
+							-- Try to time this first
+							if month >= 1 and month <= 6 then
+								P.NorwayCheck(ai, ministerCountry, loStrategy)
+							end
+							
+							-- Wait for good weather months to attack
+							if month >= 3 and month <= 7 then
+								P.LowCountriesCheck(ai, ministerCountry, loStrategy)
+							end
+						end
 					
-					if not(P.LowCountriesCheck(ai, ministerCountry, loStrategy)) then
-						-- If the Low Countries are gone then go ahead and look at other targets
-						local lbGreeceCheck = false
+					-- Make sure its always in clear weather turns
+					elseif not(ministerCountry:IsAtWar()) and month >= 3 and month <= 7 then
+						-- Potential Wars with neighbors
+						local laPotentialWars = {}
 						
-						if month >= 1 and month <= 6 then
-							lbGreeceCheck = P.GreeceCheck(ai, ministerCountry, loStrategy)
-						end 
+						for neighborTag in ministerCountry:GetNeighbours() do
+							if not(Utils.IsFriend(ai, ministerCountry:GetFaction(), neighborTag))
+							and not(ministerCountry:GetRelation(neighborTag):HasAlliance()) then
+								table.insert(laPotentialWars, neighborTag)
+							end
+						end
+
+						-- Pick a random country that is not friend to go to war with
+						if table.getn(laPotentialWars) > 0 then
+							-- Limited War
+							loStrategy:PrepareLimitedWar(laPotentialWars[math.random(table.getn(laPotentialWars))], 100)
+						end
+					else
+						P.DenmarkCheck(ai, ministerCountry, loStrategy)
+						P.NorwayCheck(ai, ministerCountry, loStrategy)
 						
-						if month >= 2 and month <= 6 then
-							if not(lbGreeceCheck) and liTotalNeighborWars == 0 then
-								-- Potential Wars with neighbors
-								local laPotentialWars = {}
-								
-								for loTargetTag in ministerCountry:GetNeighbours() do
-									-- Make sure Vichy is not part of this list!
-									local lsTargetTag = tostring(loTargetTag)
+						if not(P.LowCountriesCheck(ai, ministerCountry, loStrategy)) then
+							-- If the Low Countries are gone then go ahead and look at other targets
+							local lbGreeceCheck = false
+							
+							if month >= 1 and month <= 6 then
+								lbGreeceCheck = P.GreeceCheck(ai, ministerCountry, loStrategy)
+							end 
+							
+							if month >= 2 and month <= 6 then
+								if not(lbGreeceCheck) and liTotalNeighborWars == 0 then
+									-- Potential Wars with neighbors
+									local laPotentialWars = {}
 									
-									if not(lsTargetTag == "VIC")
-									and not(lsTargetTag == "SCH") then
-										if not(Utils.IsFriend(ai, ministerCountry:GetFaction(), loTargetTag:GetCountry()))
-										and not(ministerCountry:GetRelation(loTargetTag):HasAlliance()) then
-											table.insert(laPotentialWars, loTargetTag)
+									for loTargetTag in ministerCountry:GetNeighbours() do
+										-- Make sure Vichy is not part of this list!
+										local lsTargetTag = tostring(loTargetTag)
+										
+										if lsTargetTag == "SOV" then
+											-- Make sure its on solid weather when we attack them
+											if month >= 5 and month <= 7 then
+												table.insert(laPotentialWars, loTargetTag)
+											end										
+										elseif not(lsTargetTag == "VIC")
+										and not(lsTargetTag == "SCH") then
+											if not(Utils.IsFriend(ai, ministerCountry:GetFaction(), loTargetTag:GetCountry()))
+											and not(ministerCountry:GetRelation(loTargetTag):HasAlliance()) then
+												table.insert(laPotentialWars, loTargetTag)
+											end
 										end
 									end
-								end
 
-								-- Pick a random country that is not friend to go to war with
-								if table.getn(laPotentialWars) > 0 then
-									-- Limited War
-									loStrategy:PrepareLimitedWar(laPotentialWars[math.random(table.getn(laPotentialWars))], 100)
-								end			
+									-- Pick a random country that is not friend to go to war with
+									if table.getn(laPotentialWars) > 0 then
+										-- Limited War
+										loStrategy:PrepareLimitedWar(laPotentialWars[math.random(table.getn(laPotentialWars))], 100)
+									end			
+								end
 							end
 						end
 					end

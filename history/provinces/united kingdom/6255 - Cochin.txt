@@ -1,6 +1,4 @@
-owner = ENG
-controller = ENG
-add_core = ENG
+owner = ENGcontroller = ENGadd_core = ENG
 add_core = IND
 energy = 1.00
 rare_materials = 5.00
@@ -10,3 +8,4 @@ infra = 8
 air_base = 4
 manpower = 4.00
 leadership = 0.25
+naval_base = 1

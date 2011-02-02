@@ -465,12 +465,14 @@ country_event = {
 		ai_chance = { factor = 100 }
 		set_country_flag = fi_signs_peace
 		FROM = { country_event = 516 }
+		remove_country_modifier = disorganized_officer_corps
 	}
 	option = {
 		name = "EVTOPTB506"					 # We will never surrender!
 		set_country_flag = fi_signs_peace
 		relation = { who = SOV value = -50 }
 		relation = { who = GER value = 50 }
+		remove_country_modifier = disorganized_officer_corps
 	}
 }
 
@@ -496,7 +498,7 @@ country_event = {
 		}
 		relation = { who = FIN value = 10 }
 		end_war = FIN
-		dissent = -10	
+		dissent = -10
 	}
 	option = {
 		name = "EVTOPTB516"							# Create a Puppet
@@ -544,6 +546,7 @@ country_event = {
 		central_western_russia_region = { secede_province = GER }
 		baltic_states_region = { secede_province = GER }
 		bessarabia = { secede_province = GER }
+		karelia = { secede_province = GER }
 		capital = 8594 # Novosibirsk
 		
 		relation = { who = ENG value = -15 }
@@ -631,6 +634,7 @@ country_event = {
 		central_western_russia_region = { secede_province = GER }
 		baltic_states_region = { secede_province = GER }
 		bessarabia = { secede_province = GER }
+		karelia = { secede_province = GER }
 		khabarovskiy_kray_region { secede_province = JAP }
 		capital = 8594 # Novosibirsk
 		
@@ -685,7 +689,7 @@ country_event = {
 	}
 }
 
-# Germany surrenders v.2
+# Germany Surrenders
 country_event = {
 	
 	id = 520
@@ -738,6 +742,22 @@ country_event = {
 			limit = { controlled_by = SOV }
 			secede_province = SOV
 		} # Carpathian Ruthenia
+		
+		northern_france_region = {secede_province = FRA }
+		western_france_region = { secede_province = FRA }
+		southern_france_region = { add_core = FRA }
+		french_indochine_region = { add_core = FRA }
+		north_africa_region = { add_core = FRA }
+		syrian_region = { add_core = FRA }
+		FRA_6178 = { add_core = FRA }
+		FRA_7704 = { add_core = FRA }
+		FRA_4359 = { add_core = FRA }
+		FRA_9933 = { add_core = FRA }
+		FRA_9867 = { add_core = FRA }
+		FRA = {
+			capital = 2613 #Paris		
+		}
+		
 		2898 = { secede_province = SOV } # Uzhhorod
 		2832 = { secede_province = SOV } # Uzhok
 		SOV = { end_war = GER }
@@ -754,6 +774,9 @@ country_event = {
 		USA = { end_war = GER }
 		ENG = { end_war = GER }
 		LUX = { end_war = GER }
+		LIT = { end_war = GER }
+		EST = { end_war = GER }
+		LAT = { end_war = GER }
 		country_event = 521
 		country_event = 522
 		country_event = 523
@@ -795,10 +818,17 @@ country_event = {
 			add_core = DDR
 			secede_province = DDR
 		}
-		polish_germany_region = { secede_province = POL }
+		denmark_region = {
+			secede_province = DEN
+		}
+		polish_germany_region = {
+			secede_province = POL
+		}
+		polish_soviet_region = {
+			secede_province = POL
+		}
 		SOV = {
 			create_vassal = DDR
-			create_vassal = POL
 		}
 		
 		# Release any possible vassals
@@ -850,9 +880,9 @@ country_event = {
 	
 	trigger = {
 		SOV = {
-			controls = 1861
+			controls = 1861 #Berlin
 			NOT = {
-				controls = 2372
+				controls = 2372 #Bonn
 			}
 		}
 	}
@@ -866,6 +896,21 @@ country_event = {
 		east_germany_region = {
 			add_core = DDR 
 			secede_province = DDR
+		}
+		denmark_region = {
+			secede_province = DEN
+		}
+		polish_germany_region = {
+			secede_province = POL
+		}
+		polish_soviet_region = {
+			secede_province = POL
+		}
+		SOV = {
+			create_vassal = DDR
+		}
+		ENG = {
+			create_vassal = DFR
 		}
 		
 		# Release any possible vassals
@@ -902,12 +947,6 @@ country_event = {
 		CRO = { leave_faction = axis }
 		FIN = { leave_faction = axis }
 		
-		SOV = {
-			create_vassal = DDR
-		}
-		ENG = {
-			create_vassal = DFR
-		}
 	}
 }
 
@@ -946,8 +985,24 @@ country_event = {
 			add_core = DFR 
 			secede_province = DFR
 		}
+		denmark_region = {
+			secede_province = DEN
+		}
+		polish_germany_region = {
+			secede_province = POL
+		}
+		polish_soviet_region = {
+			secede_province = POL
+		}
 		ENG = {
 			create_vassal = DFR
+		}
+		
+		polish_germany_region = {
+			secede_province = POL
+		}
+		SOV = {
+			create_vassal = POL
 		}
 		
 		# Release any possible vassals

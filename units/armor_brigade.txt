@@ -17,8 +17,8 @@ armor_brigade = {
 	#Misc Abilities
 	maximum_speed = 6.00
 	transport_weight = 20.00
-	supply_consumption = 1.33
-	fuel_consumption = 1.70
+	supply_consumption = 1.66
+	fuel_consumption = 3.4
 	radio_strength = 1
 
 	#Defensive Abilities

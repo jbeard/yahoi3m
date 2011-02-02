@@ -1,5 +1,2 @@
-owner = VEN
-controller = VEN
-add_core = VEN
-
-infra = 2
+owner = VENcontroller = VENadd_core = VEN
+infra = 1

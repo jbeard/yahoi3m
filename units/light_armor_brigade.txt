@@ -17,8 +17,8 @@ light_armor_brigade = {
 	#Misc Abilities
 	maximum_speed = 8.00
 	transport_weight = 15.00
-	supply_consumption = 1.00
-	fuel_consumption = 1.15
+	supply_consumption = 1.33
+	fuel_consumption = 2.30
 	radio_strength = 1
 
 	#Defensive Abilities

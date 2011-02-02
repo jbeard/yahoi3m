@@ -154,7 +154,7 @@ theatre = {
 				location = 5233
 				regiment = { type = hq_brigade name = "IV Corpo d'Armata HQ" historical_model = 0 }
 				division = {
-					name = "2nd Divisione 'Sforzesca'"
+					name = "2a Divisione 'Sforzesca'"
 					location = 5233
 					regiment = { type = infantry_brigade name = "53. Rgt. di fanteria" historical_model = 1 }
 					regiment = { type = infantry_brigade name = "54. Rgt. di fanteria" historical_model = 1 }

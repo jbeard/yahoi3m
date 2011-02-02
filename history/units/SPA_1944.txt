@@ -222,8 +222,8 @@ navy = {
 }
 navy = {
 	name = "Base Naval Barcelona"
-	base = 4547
-	location = 4547
+	base = 4548
+	location = 4548
 	ship = { type = light_cruiser name = "ARNE Méndez Núñez" historical_model = 0 }
 	ship = { type = transport_ship name = "Flotilla Villalpando" historical_model = 0 }
 	ship = { type = transport_ship name = "Flotilla Benavende" historical_model = 0 }
@@ -236,8 +236,8 @@ navy = {
 }
 navy = {
 	name = "I Flotilla de la Armada"
-	base = 4547
-	location = 4547
+	base = 4548
+	location = 4548
 	ship = { type = light_cruiser name = "ARNE Navarra" historical_model = 0 }
 	ship = { type = destroyer name = "3a Flotilla de Destructores" historical_model = 1 }
 	ship = { type = destroyer name = "4a Flotilla de Destructores" historical_model = 0 }

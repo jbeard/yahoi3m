@@ -3,7 +3,7 @@ armygroup = {
 	location = 4888
 	regiment = { type = hq_brigade name = "North China Army HQ" historical_model = 0 }
 	army = {
-		name = "1st Army"
+		name = "1.  Hendan"
 		location = 4981
 		regiment = { type = hq_brigade name "1st Army HQ" historical_model = 0 }
 		division= {
@@ -25,6 +25,29 @@ armygroup = {
 		name = "13. Hendan"
 		location = 4934
 		regiment = { type = hq_brigade name = "13. Hendan HQ" historical_model = 0 }
+		division= {
+			name = "3. Hoheishidan"
+			location = 4833
+			regiment = { type = infantry_brigade name = "6th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "18th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "34th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "68th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "6. Hoheishidan"
+			location = 7313
+			regiment = { type = infantry_brigade name = "13th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "23rd Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "45th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
+			name = "13. Hoheishidan"
+			location = 7296
+			regiment = { type = infantry_brigade name = "58th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "65th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "104th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "116th Infantry Regiment" historical_model = 0 }
+		}
 		division= {
 			name = "15. Hoheishidan"
 			location = 4934
@@ -166,6 +189,13 @@ theatre = {
 		location = 7078
 		regiment = { type = hq_brigade name = "5. Hendan HQ" historical_model = 0 }
 		division= {
+			name = "11. Hoheishidan"
+			location = 7078
+			regiment = { type = infantry_brigade name = "12th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "43rd Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "44th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
 			name = "4. Border Guards"
 			location = 7043
 			regiment = { type = garrison_brigade name = "4th Border Guard" historical_model = 0 }
@@ -251,7 +281,7 @@ army = {
 		regiment = { type = motorized_brigade name = "47th Infantry Regiment" historical_model = 0 }
 	}
 }
-corps = {
+army = {
 	name = "16. Hendan"
 	location = 5315
 	regiment = { type = hq_brigade name = "16. Hendan HQ" historical_model = 0 }
@@ -261,6 +291,14 @@ corps = {
 		regiment = { type = infantry_brigade name = "4th Infantry Regiment" historical_model = 0 }
 		regiment = { type = infantry_brigade name = "16th Infantry Regiment" historical_model = 0 }
 		regiment = { type = infantry_brigade name = "29th Infantry Regiment" historical_model = 0 }
+	}
+	division= {
+		name = "5. Hoheishidan"
+		location = 5315
+		regiment = { type = infantry_brigade name = "11th Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "21st Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "41st Infantry Regiment" historical_model = 0 }
+		regiment = { type = infantry_brigade name = "42nd Infantry Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Imperial Guards"
@@ -274,6 +312,7 @@ corps = {
 division= {
 	name = "1. Pacific Garrison Guards"
 	location = 5966
+	is_reserve = yes
 	regiment = { type = garrison_brigade historical_model = 0 }
 	regiment = { type = garrison_brigade historical_model = 0 }
 	regiment = { type = garrison_brigade historical_model = 0 }
@@ -281,6 +320,7 @@ division= {
 division= {
 	name = "2. Pacific Garrison Guards"
 	location = 10663
+	is_reserve = yes
 	regiment = { type = garrison_brigade historical_model = 0 }
 	regiment = { type = garrison_brigade historical_model = 0 }
 	regiment = { type = garrison_brigade historical_model = 0 }
@@ -288,6 +328,7 @@ division= {
 division= {
 	name = "3. Pacific Garrison Guards"
 	location = 10651
+	is_reserve = yes
 	regiment = { type = garrison_brigade historical_model = 0 }
 	regiment = { type = garrison_brigade historical_model = 0 }
 	regiment = { type = garrison_brigade historical_model = 0 }
@@ -295,6 +336,7 @@ division= {
 division= {
 	name = "4. Pacific Garrison Guards"
 	location = 10653
+	is_reserve = yes
 	regiment = { type = garrison_brigade historical_model = 0 }
 	regiment = { type = garrison_brigade historical_model = 0 }
 	regiment = { type = garrison_brigade historical_model = 0 }
@@ -302,6 +344,7 @@ division= {
 division= {
 	name = "5. Pacific Garrison Guards"
 	location = 10657
+	is_reserve = yes
 	regiment = { type = garrison_brigade historical_model = 0 }
 	regiment = { type = garrison_brigade historical_model = 0 }
 	regiment = { type = garrison_brigade historical_model = 0 }
@@ -323,8 +366,16 @@ theatre = {
 		location = 4986
 		regiment = { type = hq_brigade name = "North Japan Army HQ" historical_model = 0 }
 		division= {
+			name = "7. Hoheishidan"
+			location = 4986
+			regiment = { type = infantry_brigade name = "26th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "27th Infantry Regiment" historical_model = 0 }
+			regiment = { type = infantry_brigade name = "28th Infantry Regiment" historical_model = 0 }
+		}
+		division= {
 			name = "1. Home Guards"
 			location = 4986
+			is_reserve = yes
 			regiment = { type = garrison_brigade historical_model = 0 }
 			regiment = { type = garrison_brigade historical_model = 0 }
 			regiment = { type = garrison_brigade historical_model = 0 }
@@ -332,6 +383,7 @@ theatre = {
 		division= {
 			name = "2. Home Guards"
 			location = 7238
+			is_reserve = yes
 			regiment = { type = garrison_brigade historical_model = 0 }
 			regiment = { type = garrison_brigade historical_model = 0 }
 			regiment = { type = garrison_brigade historical_model = 0 }
@@ -356,6 +408,7 @@ theatre = {
 		division= {
 			name = "8. Home Guards"
 			location = 5370
+			is_reserve = yes
 			regiment = { type = garrison_brigade historical_model = 0 }
 			regiment = { type = garrison_brigade historical_model = 0 }
 			regiment = { type = garrison_brigade historical_model = 0 }
@@ -363,6 +416,7 @@ theatre = {
 		division= {
 			name = "14. Home Guards"
 			location = 5425
+			is_reserve = yes
 			regiment = { type = garrison_brigade historical_model = 0 }
 			regiment = { type = garrison_brigade historical_model = 0 }
 			regiment = { type = garrison_brigade historical_model = 0 }
@@ -418,61 +472,73 @@ theatre = {
 	division= {
 		name = "Iwo Jima Garrison"
 		location = 10642
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Iwo Jima Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Minami Torishima Garrison"
 		location = 10643
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Minami Torishima Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Palau Garrison"
 		location = 6291
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Palau Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Yap Garrison"
 		location = 10645
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Yap Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Satawan Garrison"
 		location = 10652
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Satawan Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Kwajalein Garrison"
 		location = 10658
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Kwajalein Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Naha Garrison"
 		location = 5759
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Naha Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Ostrov Paramusir Garrison"
 		location = 6875
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Ostrov Paramusir Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Ponape Garrison"
 		location = 10653
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Ponape Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Truk Garrison"
 		location = 10651
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Truk Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Saipan Garrison"
 		location = 5966
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Saipan Regiment" historical_model = 0 }
 	}
 	division= {
 		name = "Eniwetok Garrison"
 		location = 10663
+		is_reserve = yes
 		regiment = { type = garrison_brigade name = "Eniwetok Regiment" historical_model = 0 }
 	}
 }
@@ -674,6 +740,11 @@ navy = {
 	ship = { type = submarine name = "7 Sensuikantai" historical_model = 2 }
 	ship = { type = submarine name = "8 Sensuikantai" historical_model = 2 }
 	ship = { type = submarine name = "9 Sensuikantai" historical_model = 2 }
+}
+navy = {
+	name = "24. Kaigun"
+	base = 5543
+	location = 5543
 	ship = { type = submarine name = "10 Sensuikantai" historical_model = 3 }
 }
 air = {

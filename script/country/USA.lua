@@ -2,11 +2,35 @@
 -- LUA Hearts of Iron 3 USA File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/13/2010
+-- Date Last Modified: 6/28/2010
 -----------------------------------------------------------
 
 local P = {}
 AI_USA = P
+
+-- #######################################
+-- Static Production Variables overide
+function P.LandToAirRatio(minister)
+	local laArray = {
+		5, -- Land Briages
+		1}; -- Air
+	
+	return laArray
+end
+
+function P._LandRatio_Units_(minister)
+	local laLandRatioUnits = {
+		'garrison_brigade', -- Garrison
+		'infantry_brigade', -- Infantry
+		'motorized_brigade', -- Motorized
+		'mechanized_brigade', -- Mechanized
+		'armor_brigade|heavy_armor_brigade|super_heavy_armor_brigade', -- Armor
+		'militia_brigade', -- Militia
+		'cavalry_brigade'}; -- Cavalry
+	
+	return laLandRatioUnits
+end
+-- #######################################
 
 -- Tech weights
 --   1.0 = 100% the total needs to equal 1.0
@@ -138,16 +162,16 @@ function P.ProductionWeights(minister)
 	if CCurrentGameState.GetCurrentDate():GetYear() <= 1940 and not(minister:GetCountry():IsAtWar()) then
 		local laArray = {
 			0.15, -- Land
-			0.25, -- Air
-			0.45, -- Sea
+			0.35, -- Air
+			0.35, -- Sea
 			0.15}; -- Other
 		
 		rValue = laArray	
 	else
 		local laArray = {
 			0.40, -- Land
-			0.25, -- Air
-			0.30, -- Sea
+			0.30, -- Air
+			0.25, -- Sea
 			0.05}; -- Other
 		
 		rValue = laArray
@@ -158,7 +182,7 @@ end
 -- Land ratio distribution
 function P.LandRatio(minister)
 	local laArray = {
-		2, -- Garrison
+		1, -- Garrison
 		10, -- Infantry
 		4, -- Motorized
 		3, -- Mechanized
@@ -236,17 +260,59 @@ end
 -- END OF PRODUTION OVERIDES
 -- #######################################
 
-function P.DiploScore_InfluenceNation( score, ai, actor, recipient, observer )
-	local lsRepTag = tostring(recipient)
+-- Influence Ignore list
+function P.InfluenceIgnore(minister)
+	-- Ignore Austria, Czechoslovakia as we will loose them
+	-- Ignore Switzerland as there is no chance of them joining
+	-- Ignore Vichy, they wont join anyone unles DOWed
+	local laIgnoreList = {
+		"AUS",
+		"CZE",
+		"SCH",
+		"VIC",
+		"JAP",
+		"ITA"};
 	
-	if lsRepTag == "AUS" or lsRepTag == "CZE" or lsRepTag == "SCH" then
-		score = 0
-	end
+	return laIgnoreList
+end
 
-	return score
+-- Influence Monitor list
+function P.InfluenceMonitor(minister)
+	local laMonitorList = {
+		"TUR", -- Europe
+		"SPA",
+		"SPR",
+		"POR",
+		"SWE",
+		"YUG",
+		"ARG", -- South America
+		"BOL",
+		"BRA",
+		"CHL",
+		"COL",
+		"ECU",
+		"GUY",
+		"PAR",
+		"PRU",
+		"URU",
+		"VEN",
+		"CUB", -- Central America
+		"COS",
+		"DOM",
+		"GUA",
+		"HAI",
+		"HON",
+		"MEX",
+		"NIC",
+		"PAN",
+		"SAL"};
+	
+	return laMonitorList
 end
 
 function P.DiploScore_OfferTrade(score, ai, actor, recipient, observer, voTradedFrom, voTradedTo)
+	local lsActorTag = tostring(actor)
+	
 	if tostring(actor) == "JAP"
 	or lsActorTag == "CHI"
 	or lsActorTag == "CHC" 
@@ -260,6 +326,65 @@ function P.DiploScore_OfferTrade(score, ai, actor, recipient, observer, voTraded
 		score = score + 20
 	elseif tostring(actor) == "GER" or tostring(actor) == "ITA" then
 		score = score - 20
+	end
+	
+	return score
+end
+
+function P.DiploScore_InviteToFaction(score, ai, actor, recipient, observer)
+	-- Only go through these checks if we are being asked to join the Allies
+	if tostring(actor:GetCountry():GetFaction():GetTag()) == "allies" then
+		local liYear = CCurrentGameState.GetCurrentDate():GetYear()
+		local liMonth = CCurrentGameState.GetCurrentDate():GetMonthOfYear()
+		local chiTag = CCountryDataBase.GetTag("CHI")
+		local lochiTagCountry = chiTag:GetCountry()
+		local lbChinaExists = lochiTagCountry:Exists()
+		
+		-- Date check to make sure they come in within resonable time
+		if liYear >= 1943 then
+			score = score + 30
+		elseif liYear >= 1942 then
+			score = score + 20
+		elseif liYear == 1941 and liMonth >= 10 then
+			score = score + 10
+		end
+		
+		-- China check see if Japan is being aggressive in China
+		if lbChinaExists then
+			local japTag = CCountryDataBase.GetTag("JAP")
+			local loChiJapRelation = lochiTagCountry:GetRelation(japTag)
+			
+			-- Check to see who they are a puppet of
+			if lochiTagCountry:IsPuppet() then
+				local lojapTagCountry = japTag:GetCountry()
+			
+				-- China has been taken over by Japan
+				if (loChiJapRelation:HasAlliance())
+				or (lochiTagCountry:HasFaction() and lochiTagCountry:GetFaction() == lojapTagCountry:GetFaction()) then
+					score = score + 50
+				end
+			else
+				local lbChiJapHasWar = loChiJapRelation:HasWar()
+				
+				if lochiTagCountry:IsGovernmentInExile() and lbChiJapHasWar then
+					score = score + 50
+				elseif lbChiJapHasWar then
+					score = score + 10
+				end
+			end
+		else
+			local loRecipientCountry = recipient:GetCountry()
+			local loControllerTag = CCurrentGameState.GetProvince(4191):GetController()  -- Shangzhi
+			local loControllerCountry = loControllerTag:GetCountry()
+
+			-- If the new owner is in a faction that is not ours then raise our score
+			--   if not it is an unknown factor what happend so do nothing
+			if loControllerCountry:HasFaction() then
+				if not(loControllerCountry:GetFaction() == loRecipientCountry:GetFaction()) then
+					score = score + 50
+				end
+			end
+		end
 	end
 	
 	return score

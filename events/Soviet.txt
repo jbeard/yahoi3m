@@ -73,3 +73,52 @@ country_event = {
 		money = -200
 	}
 }
+
+#########################
+# The Great Patriotic War #
+#########################
+country_event = {
+	
+	id = 2103
+
+	title = "EVTNAME2103"
+	desc = "EVTDESC2103"
+
+	
+	trigger = {
+			TAG = SOV
+			war_with = GER
+			NOT = { has_country_flag = Soviet_MP }
+			GER = {
+			OR = {
+				controls = 1534
+				controls = 2223
+				controls = 1991
+				controls = 3175
+				controls = 1535
+				controls = 1182
+				controls = 1102
+				controls = 909
+				controls = 782
+			
+			}
+		}
+	}
+
+
+	mean_time_to_happen =  {
+		months = 2
+	}
+	
+	option = {
+		name = "EVTOPTA2103"	#Crush the invader!
+		ai_chance = { factor = 100 }
+		manpower = 500
+		set_country_flag = Soviet_MP
+		add_country_modifier = {
+			name = "great_patriotic_war"
+			duration = -1
+		}
+}
+	
+

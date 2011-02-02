@@ -4879,14 +4879,14 @@ air = {
 }
 air = {
 	name = "I. Aviatsionnyi Korpus"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = strategic_bomber name = "313rd Night Bomber Division" historical_model = 0 }
 }
 air = {
 	name = "11th Mixed Air Corps"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = multi_role name = "4, 148 & 293 interceptor Regiments" historical_model = 2 }
 	wing = { type = cas name = "658 & 724 Assault Regiments" historical_model = 1 }
 	wing = { type = cas name = "225. ShAD" historical_model = 1 }
@@ -4894,8 +4894,8 @@ air = {
 }
 air = {
 	name = "14th Air Army"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = cas name = "281. ShAD" historical_model = 1 }
 	wing = { type = interceptor name = "269. IAD" historical_model = 3 }
 }
@@ -4931,35 +4931,35 @@ air = {
 }
 air = {
 	name = "11th interceptor Aviation Corps"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = interceptor name = "5th Gds interceptor Division" historical_model = 3 }
 	wing = { type = interceptor name = "190. IAD" historical_model = 3 }
 }
 air = {
 	name = "1st Guards Bomber Aviation Corps"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = tactical_bomber name = "4th Gds Bomber Division" historical_model = 3 }
 	wing = { type = tactical_bomber name = "5th Gds Bomber Division" historical_model = 3 }
 }
 air = {
 	name = "3rd Assault Aviation Corps"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = cas name = "307. ShAD" historical_model = 1 }
 	wing = { type = cas name = "308. ShAD" historical_model = 1 }
 }
 air = {
 	name = "III. Aviatsionnyi Korpus"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = strategic_bomber name = "213th Night Bomber Division" historical_model = 0 }
 }
 air = {
 	name = "3rd Gds Bomber Division"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = strategic_bomber name = "113. DBAD" historical_model = 0 }
 	wing = { type = cas name = "311. ShAD" historical_model = 1 }
 	wing = { type = interceptor name = "240. IAD" historical_model = 3 }
@@ -4967,30 +4967,30 @@ air = {
 }
 air = {
 	name = "1st Guards interceptor Aviation Corps "
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = interceptor name = "3rd Gds interceptor Division" historical_model = 3 }
 	wing = { type = interceptor name = "4th Gds interceptor Division" historical_model = 3 }
 }
 air = {
 	name = "3rd interceptor Aviation Corps"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = interceptor name = "265. IAD" historical_model = 3 }
 	wing = { type = interceptor name = "278. IAD" historical_model = 3 }
 }
 air = {
 	name = "IV. Aviatsionnyi Korpus"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = cas name = "311. ShAD" historical_model = 1 }
 	wing = { type = interceptor name = "303. IAD" historical_model = 1 }
 }
 air = {
 	is_reserve = yes
 	name = "1st Air Army Reserves"
-	base = 1535
-	location = 1535
+	base = 1536
+	location = 1536
 	wing = { type = tactical_bomber name = "6th Gds Bomber Division" historical_model = 3 }
 	wing = { type = cas name = "1st Gds Assault Division" historical_model = 1 }
 	wing = { type = interceptor name = "240. IAD" historical_model = 3 }

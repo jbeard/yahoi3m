@@ -122,8 +122,8 @@ at_ammo_muzzel = {
 
 aa_barrell_ammo = {
 	anti_air_brigade = {
-		air_attack = 0.2
-		air_defence = 0.2
+		air_attack = 0.3
+		air_defence = 0.3
 	}
 
 	allow = {

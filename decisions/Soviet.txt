@@ -110,6 +110,10 @@ diplomatic_decisions = {
 			national_unity = 25
 			manpower = 500
 			dissent = 5
+			add_country_modifier = {
+			name = "disorganized_officer_corps"
+			duration = -1
+			}
 
 			minister_of_security = 4041
 			chief_of_staff = 4051

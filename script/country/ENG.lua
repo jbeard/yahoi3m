@@ -2,11 +2,35 @@
 -- LUA Hearts of Iron 3 United Kingdom File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/13/2010
+-- Date Last Modified: 6/30/2010
 -----------------------------------------------------------
 
 local P = {}
 AI_ENG = P
+
+-- #######################################
+-- Static Production Variables overide
+function P.LandToAirRatio(minister)
+	local laArray = {
+		5, -- Land Briages
+		1}; -- Air
+	
+	return laArray
+end
+
+function P._LandRatio_Units_(minister)
+	local laLandRatioUnits = {
+		'garrison_brigade', -- Garrison
+		'infantry_brigade', -- Infantry
+		'motorized_brigade', -- Motorized
+		'mechanized_brigade', -- Mechanized
+		'armor_brigade|heavy_armor_brigade|super_heavy_armor_brigade', -- Armor
+		'militia_brigade', -- Militia
+		'cavalry_brigade'}; -- Cavalry
+	
+	return laLandRatioUnits
+end
+-- #######################################
 
 -- Tech weights
 --   1.0 = 100% the total needs to equal 1.0
@@ -138,15 +162,25 @@ end
 --   1.0 = 100% the total needs to equal 1.0
 function P.ProductionWeights(minister)
 	local rValue
+	local lbAtWar = minister:GetCountry():IsAtWar()
 	
-	if CCurrentGameState.GetCurrentDate():GetYear() <= 1938 and not(minister:GetCountry():IsAtWar()) then
+	if CCurrentGameState.GetCurrentDate():GetYear() <= 1938 and not(lbAtWar) then
 		local laArray = {
 			0.20, -- Land
 			0.25, -- Air
 			0.40, -- Sea
 			0.15}; -- Other
 		
-		rValue = laArray	
+		rValue = laArray
+	elseif lbAtWar then
+		local laArray = {
+			0.50, -- Land
+			0.20, -- Air
+			0.25, -- Sea
+			0.05}; -- Other
+		
+		rValue = laArray
+	
 	else
 		local laArray = {
 			0.40, -- Land
@@ -195,10 +229,10 @@ end
 function P.NavalRatio(minister)
 	local laArray = {
 		9, -- Destroyers
-		8, -- Submarines
+		3, -- Submarines
 		6, -- Cruisers
 		3, -- Capital
-		2, -- Escort Carrier
+		1, -- Escort Carrier
 		1}; -- Carrier
 	
 	return laArray
@@ -359,12 +393,65 @@ function P.DiploScore_OfferTrade(score, ai, actor, recipient, observer, voTraded
 	return score
 end
 
+-- Influence Ignore list
+function P.InfluenceIgnore(minister)
+	-- Ignore Afghanistan as they are not worth our time
+	-- Ignore Ethiopia as they are going to get hammered by Italy
+	-- Ignore Austria, Czechoslovakia as we will loose them
+	-- Ignore Switzerland as there is no chance of them joining
+	-- Ignore Vichy, they wont join anyone unles DOWed
+	local laIgnoreList = {
+		"SIK",
+		"AFG",
+		"ETH",
+		"AUS",
+		"CZE",
+		"SCH",
+		"VIC",
+		"JAP",
+		"ITA"};
+	
+	return laIgnoreList
+end
+
+-- Influence Monitor list
+function P.InfluenceMonitor(minister)
+	local laMonitorList = {
+		"TUR", -- Europe
+		"SPA",
+		"SPR",
+		"POR",
+		"SWE",
+		"YUG",
+		"ARG", -- South America
+		"BOL",
+		"BRA",
+		"CHL",
+		"COL",
+		"ECU",
+		"GUY",
+		"PAR",
+		"PRU",
+		"URU",
+		"VEN",
+		"CUB", -- Central America
+		"COS",
+		"DOM",
+		"GUA",
+		"HAI",
+		"HON",
+		"MEX",
+		"NIC",
+		"PAN",
+		"SAL"};
+	
+	return laMonitorList
+end
+
 function P.DiploScore_InfluenceNation( score, ai, actor, recipient, observer )
 	local lsRepTag = tostring(recipient)
 	
-	if lsRepTag == "AUS" or lsRepTag == "CZE" or lsRepTag == "SCH"  then
-		return 0 -- They are going anyways
-	elseif lsRepTag == "HUN" or lsRepTag == "ROM" or lsRepTag == "BUL" or lsRepTag == "FIN" or lsRepTag == "ITA" or lsRepTag == "JAP" then
+	if lsRepTag == "HUN" or lsRepTag == "ROM" or lsRepTag == "BUL" or lsRepTag == "FIN" then
 		score = score - 20
 	elseif lsRepTag == "AST" or lsRepTag == "CAN" or lsRepTag == "SAF" or lsRepTag == "NZL" or lsRepTag == "USA" then
 		score = score + 70
@@ -381,4 +468,3 @@ function P.CallLaw_training_laws(minister, voCurrentLaw)
 end
 
 return AI_ENG
-

@@ -18,8 +18,8 @@ tank_destroyer_brigade = {
 	#Misc Abilities
 	maximum_speed = 6.00
 	transport_weight = 8.00
-	supply_consumption = 1.33
-	fuel_consumption = 0.58
+	supply_consumption = 1.0
+	fuel_consumption = 1.15
 	radio_strength = 1
 
 	#Defensive Abilities

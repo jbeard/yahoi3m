@@ -8,6 +8,6 @@ infra = 10
 air_base = 4
 naval_base = 10
 
-1941.12.8 = {
+1941.12.25 = {
 	controller = JAP
 }

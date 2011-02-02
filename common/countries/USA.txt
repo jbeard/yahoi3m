@@ -437,7 +437,7 @@ ministers = {
 	}
 	6036 = {
 		name = "Wendell Willkie"
-		ideology = market_liberal
+		ideology = social_conservative
 		loyalty = 1.00
 		picture = M6036
 		head_of_state = autocratic_charmer
@@ -445,7 +445,7 @@ ministers = {
 	}
 	6037 = {
 		name = "Charles McNary"
-		ideology = market_liberal
+		ideology = social_conservative
 		loyalty = 1.00
 		picture = M6037
 		head_of_state = insignificant_layman

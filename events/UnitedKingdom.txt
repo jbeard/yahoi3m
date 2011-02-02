@@ -31,8 +31,6 @@ country_event = {
 	
 	mean_time_to_happen = {
 		months = 2
-
-		modifier = {}		
 	}
 	
 	title = "EVTNAME2602"
@@ -59,8 +57,6 @@ country_event = {
 	
 	mean_time_to_happen = {
 		months = 2
-
-		modifier = {}	
 	}
 	
 	title = "EVTNAME2603"
@@ -70,5 +66,112 @@ country_event = {
 	option = {
 		name = "EVTOPTA2603"
 		head_of_state = 1033		# George VI
+	}
+}
+
+############################
+# Stanley Baldwin resigns  #
+############################
+country_event = {
+	
+	id = 2604
+
+	trigger = {
+		tag = ENG
+		year = 1937
+		head_of_government = 1002
+		head_of_state = 1033
+	}
+	
+	mean_time_to_happen = {
+		months = 2
+	}
+	
+	title = "EVTNAME2604"
+	desc = "EVTDESC2604"
+	picture = "minister_resign"
+
+	option = {
+		name = "EVTOPTA2604"
+		head_of_government = 1004
+		armament_minister = 1005
+		minister_of_security = 1083
+	}
+}
+
+#####################
+# The Norway Debate #
+#####################
+
+country_event = {
+	
+	id = 2605
+
+	trigger = {
+		tag = ENG
+		head_of_government = 1004
+		war_with = GER
+		GER = { controls = 812 }
+		OR = {
+			GER = { controls = 2613 }
+			GER = { war_with = BEL }
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	title = "EVTNAME2605"
+	desc = "EVTDESC2605"
+	picture = "minister_resign"
+
+	option = {
+		name = "EVTOPTA2605"
+		ai_chance = { factor = 100 }
+		country_event = 2606
+	}
+	option = {
+		name = "EVTOPTB2605"
+		ai_chance = { factor = 0 }
+		country_event = 2607
+	}
+}
+
+############################
+# The King Calls Churchill #
+############################
+country_event = {
+	
+	id = 2606
+
+	is_triggered_only = yes
+	
+	title = "EVTNAME2606"
+	desc = "EVTDESC2606"
+	picture = "minister_resign"
+
+	option = {
+		name = "EVTOPTA2606"
+		head_of_government = 1038
+	}
+}
+
+##########################
+# The King Calls Halifax #
+##########################
+country_event = {
+	
+	id = 2607
+
+	is_triggered_only = yes
+	
+	title = "EVTNAME2607"
+	desc = "EVTDESC2607"
+	picture = "minister_resign"
+
+	option = {
+		name = "EVTOPTA2607"
+		head_of_government = 1045
 	}
 }

@@ -1109,11 +1109,15 @@ navy = {
 	name = "1. Unterseebootsflotte"
 	base = 1572
 	location = 1572
-	ship = { type = submarine name = "1. Unterseebootsflottille" historical_model = 1 }
 	ship = { type = submarine name = "5. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "8. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "9. Unterseebootsflottille" historical_model = 2 }
 	ship = { type = submarine name = "10. Unterseebootsflottille" historical_model = 2 }
+}
+navy = {
+	name = "8. Unterseebootsflotte"
+	base = 1572
+	location = 1572
 	ship = { type = submarine name = "11. Unterseebootsflottille" historical_model = 3 }
 }
 navy = {
@@ -1150,6 +1154,7 @@ navy = {
 	name = "7. Unterseebootsflotille"
 	base = 1570
 	location = 1570
+	ship = { type = submarine name = "1. Unterseebootsflottille" historical_model = 1 }
 	ship = { type = submarine name = "7. Unterseebootsflottille" historical_model = 1 }
 }
 navy = {

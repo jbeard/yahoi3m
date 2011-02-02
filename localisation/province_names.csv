@@ -1538,8 +1538,8 @@ PROV1531;Semeliskes;Semeliskes;Semeliskes;;Semeliskes;;;;;;;;;x
 PROV1532;Wilno;Wilno;Wilno;;Vilna;;;;;;;;;x
 PROV1533;Wilejka;Wilejka;Wilejka;;Wilejka;;;;;;;;;x
 PROV1534;Vitsyebsk;Vitebsk;Vitsyebsk;;Vitsyebsk;;;;;;;;;x
-PROV1535;Smolensk;Smolensk;Smolensk;;Smolensk;;;;;;;;;x
-PROV1536;Dorogobuz;Dorogobuz;Dorogobuz;;Dorogobuz;;;;;;;;;x
+PROV1535;Dorogobuz;Dorogobuz;Dorogobuz;;Dorogobuz;;;;;;;;;x
+PROV1536;Smolensk;Smolensk;Smolensk;;Smolensk;;;;;;;;;x
 PROV1537;Verkhnedneprovskiy;Verkhnedneprovskiy;Verkhnedneprovskiy;;Verkhnedneprovskiy;;;;;;;;;x
 PROV1538;Barjatino;Barjatino;Barjatino;;Barjatino;;;;;;;;;x
 PROV1539;Mosal'sk;Mosal'sk;Mosal'sk;;Mosal'sk;;;;;;;;;x
@@ -2544,7 +2544,7 @@ PROV2537;Torgun;Torgun;Torgun;;Torgun;;;;;;;;;x
 PROV2538;Tlinshe;Tlinshe;Tlinshe;;Tlinshe;;;;;;;;;x
 PROV2539;Karasu;Karasu;Karasu;;Karasu;;;;;;;;;x
 PROV2540;Inderborskiy;Inderborskiy;Inderborskiy;;Inderborskiy;;;;;;;;;x
-PROV2541;Brest;Brest;Brest;;Brest;;;;;;;;;x
+PROV2541;Morlaix;Morlaix;Morlaix;;Morlaix;;;;;;;;;x
 PROV2542;Treguier;Treguier;Treguier;;Treguier;;;;;;;;;x
 PROV2543;Granville;Granville;Granville;;Granville;;;;;;;;;x
 PROV2544;Vire;Vire;Vire;;Vire;;;;;;;;;x
@@ -2608,7 +2608,7 @@ PROV2601;Bisen;Bisen;Bisen;;Bisen;;;;;;;;;x
 PROV2602;Pyatimarskoye;Pyatimarskoye;Pyatimarskoye;;Pyatimarskoye;;;;;;;;;x
 PROV2603;Chapyev;Chapyev;Chapyev;;Chapyev;;;;;;;;;x
 PROV2604;Umpqua;Umpqua;Umpqua;;Umpqua;;;;;;;;;x
-PROV2605;Quimper;Quimper;Quimper;;Quimper;;;;;;;;;x
+PROV2605;Brest;Brest;Brest;;Brest;;;;;;;;;x
 PROV2606;Rostrenen;Rostrenen;Rostrenen;;Rostrenen;;;;;;;;;x
 PROV2607;St-Brieuc;St-Brieuc;St-Brieuc;;Saint-Brieuc;;;;;;;;;x
 PROV2608;St-Malo;St-Malo;St-Malo;;Saint-Malo;;;;;;;;;x
@@ -4563,7 +4563,7 @@ PROV4556;Kocani;Kocani;Kocani;;Kocani;;;;;;;;;x
 PROV4557;Kresna;Kresna;Kresna;;Kresna;;;;;;;;;x
 PROV4558;Yakoruda;Yakoruda;Yakoruda;;Yakoruda;;;;;;;;;x
 PROV4559;Smolyan;Smolyan;Smolyan;;Smolyan;;;;;;;;;x
-PROV4560;Gelibolu;Gelibolu;Malkara;;Malkara;;;;;;;;;x
+PROV4560;Gelibolu;Gelibolu;Gelibolu;;Gelibolu;;;;;;;;;x
 PROV4561;Gebze;Gebze;Gebze;;Gebze;;;;;;;;;x
 PROV4562;Akyazi;Akyazi;Akyazi;;Akyazi;;;;;;;;;x
 PROV4563;Bolu;Bolu;Bolu;;Bolu;;;;;;;;;x
@@ -4671,7 +4671,7 @@ PROV4664;Bitola;Bitola;Bitola;;Bitola;;;;;;;;;x
 PROV4665;Edessa;Edessa;Edessa;;Edessa;;;;;;;;;x
 PROV4666;Kilkis;Kilkis;Kilkis;;Kilkis;;;;;;;;;x
 PROV4667;Arnaia;Arnaia;Arnaia;;Arnaia;;;;;;;;;x
-PROV4668;Biga;Gelibolu;Gelibolu;;Gelibolu;;;;;;;;;x
+PROV4668;Biga;Biga;Biga;;Biga;;;;;;;;;x
 PROV4669;Karacabey;Karacabey;Karacabey;;Karacabey;;;;;;;;;x
 PROV4670;Inegöl;Inegöl;Inegöl;;Inegöl;;;;;;;;;x
 PROV4671;Cukurhisar;Cukurhisar;Cukurhisar;;Cukurhisar;;;;;;;;;x
@@ -9292,7 +9292,7 @@ PROV9285;Birjand;Birjand;Birjand;;Bîrjand;;;;;;;;;x
 PROV9286;Delaram;Delaram;Delaram;;Delaram;;;;;;;;;x
 PROV9287;Qalat;Qalat;Qalat;;Qalat;;;;;;;;;x
 PROV9288;Bhakkar;Bhakkar;Bhakkar;;Bhakkar;;;;;;;;;x
-PROV9289;Islamabad;Islamabad;Faisalabad;;Faisalabad;;;;;;;;;x
+PROV9289;Islamabad;Islamabad;Islamabad;;Islamabad;;;;;;;;;x
 PROV9290;Upshi;Upshi;Upshi;;Upshi;;;;;;;;;x
 PROV9291;Amdo;Amdo;Amdo;;Amdo;;;;;;;;;x
 PROV9292;Qamdo;Qamdo;Qamdo;;Qamdo;;;;;;;;;x

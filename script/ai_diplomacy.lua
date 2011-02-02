@@ -2,167 +2,110 @@
 -- LUA Hearts of Iron 3 Diplomacy File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/2/2010
+-- Date Last Modified: 7/9/2010
 -----------------------------------------------------------
 require('utils')
 
-
-function CalculateAlignmentFactor(ai, country1, country2)
-	local dist = ai:GetCountryAlignmentDistance( country1, country2 ):Get()
+function CalculateAlignmentFactor(voAI, country1, country2)
+	local dist = voAI:GetCountryAlignmentDistance( country1, country2 ):Get()
 	return math.min(dist / 400.0, 1.0)
 end
 
-function DiploScore_InviteToFaction(ai, actor, recipient, observer)
-	if observer == actor then -- are recipient worth inviting
-		local recipientCountry = recipient:GetCountry()
-		if recipientCountry:IsAtWar() then
-			-- is our war target at war with the faction
-			for diploStatus in recipientCountry:GetDiplomacy() do
-				local target = diploStatus:GetTarget()
-				if target:IsValid() and diploStatus:HasWar() then
-					if actor:GetCountry():GetRelation(target):HasWar() then
-						return 100 -- at war with our enemies
-					elseif target:GetCountry():IsFactionLeader() then
-						return 0 -- dont pull us into war against another faction we arent already
-					end
-				end					
-			end
-			return 100 -- at war with someone is no problem
-		else
-			return 100 -- if they can, let the,
+function DiploScore_InviteToFaction(voAI, voActorTag, voRecipientTag, voObserverTag)
+	local loActorCountry = voActorTag:GetCountry()
+	local loRecipientCountry = voRecipientTag:GetCountry()
+	local liScore = 0
+	local lbCalculateScore = true
+	
+	-- The enemy of my enemy is my friend
+	if loRecipientCountry:IsAtWar() then
+		for loDiploStatus in loRecipientCountry:GetDiplomacy() do
+			local loTarget = loDiploStatus:GetTarget()
+			
+			if loTarget:IsValid() and loDiploStatus:HasWar() then
+				-- We both have a war with the same country
+				if loActorCountry:GetRelation(loTarget):HasWar() then
+					liScore = 100
+					lbCalculateScore = false
+					break
+				end
+			end					
 		end
-	else -- do we, recipient want to accept invite to faction
-		local score = 100
-		--Utils.LUA_DEBUGOUT("-------------------------------------")
-		--Utils.LUA_DEBUGOUT("DiploScore_InviteToFaction (" .. tostring( actor )  .. "->" .. tostring( recipient ) .. ")")
-		local faction = actor:GetCountry():GetFaction()
-		
-		if recipient:GetCountry():IsNeighbourToFactionHostile(faction, true) 
-		and (not recipient:GetCountry():HasNeighborInFaction(faction))
-		then
-			score = 0 -- need some backup bro
-		end
-		
-		return Utils.CallScoredCountryAI(recipient, 'DiploScore_InviteToFaction', score, ai, actor, recipient, observer)
 	end
+
+	-- The higher their neutrality the more likely they will not get involved
+	if lbCalculateScore then
+		-- Calculate Neutrality
+		local liNeutrality = loRecipientCountry:GetNeutrality():Get()
+		
+		if liNeutrality > 70 then
+			liScore = ((100 - liNeutrality) / 2)
+		elseif liNeutrality > 60 then
+			liScore = 100 - liNeutrality
+		else
+			liScore = ((100 - liNeutrality) * 1.25)
+		end
+		
+		-- Calculate Ideology
+		local loActorGroup = loActorCountry:GetRulingIdeology():GetGroup()
+		local loRecipientGroup = loRecipientCountry:GetRulingIdeology():GetGroup()
+
+		-- Same ideology so a small bonus
+		if loRecipientGroup == loActorGroup then
+			liScore = liScore + 10
+		else
+			liScore = liScore - 20
+		end		
+			
+		liScore = Utils.CallScoredCountryAI(voRecipientTag, 'DiploScore_InviteToFaction', liScore, voAI, voActorTag, voRecipientTag, voObserverTag)
+	end
+	
+	return liScore
 end
 
-function DiploScore_NonAgression(ai, actor, recipient, observer)
-	if observer == actor then -- we demand nap with recipient
-		return DiploScore_NonAgression(ai, recipient, actor, observer)
-	else -- actor demands nap with us
+function DiploScore_NonAgression(voAI, voActorTag, voRecipientTag, voObserverTag)
+	if voObserverTag == voActorTag then -- we demand nap with voRecipientTag
+		return DiploScore_NonAgression(voAI, voRecipientTag, voActorTag, voObserverTag)
+	else -- voActorTag demands nap with us
 		local score = 0
-		local rel = ai:GetRelation(recipient, actor)
+		local rel = voAI:GetRelation(voRecipientTag, voActorTag)
 		local relation = 100 + rel:GetValue():GetTruncated()
 		
 		if relation > 150 then -- we like them
 			score = score + (relation - 150)
-		elseif ai:GetNumberOfOwnedProvinces(actor) / 2 >
-		       ai:GetNumberOfOwnedProvinces(recipient) then -- much bigger than us
+		elseif voAI:GetNumberOfOwnedProvinces(voActorTag) / 2 >
+		       voAI:GetNumberOfOwnedProvinces(voRecipientTag) then -- much bigger than us
 			score = score + 5 + relation / 5
 		end
 		
-		local recipientCountry = recipient:GetCountry()
+		local recipientCountry = voRecipientTag:GetCountry()
 		local strategy = recipientCountry:GetStrategy()
-		score = score + strategy:GetFriendliness(actor) / 4
-		score = score - strategy:GetAntagonism(actor) / 4
-		--score = score + strategy:GetThreat(actor) / 4
+		score = score + strategy:GetFriendliness(voActorTag) / 4
+		score = score - strategy:GetAntagonism(voActorTag) / 4
+		--score = score + strategy:GetThreat(voActorTag) / 4
 		
-		if not recipientCountry:IsNeighbour( actor ) then
+		if not recipientCountry:IsNeighbour( voActorTag ) then
 			score = score / 2
 		end
 
-		score = score - recipientCountry:GetDiplomaticDistance(actor):GetTruncated() 
+		score = score - recipientCountry:GetDiplomaticDistance(voActorTag):GetTruncated() 
 		--if score > 0 then
-			--Utils.LUA_DEBUGOUT("NAP score: " .. score .. " for " .. tostring(actor) .. " - " .. tostring(recipient) )
-			--Utils.LUA_DEBUGOUT("friendlyness: " .. strategy:GetFriendliness(actor) ) 
-			--Utils.LUA_DEBUGOUT("antagonism: " .. strategy:GetAntagonism(actor) ) 
-			--Utils.LUA_DEBUGOUT("threat: " .. strategy:GetThreat(actor) ) 
-			--Utils.LUA_DEBUGOUT("d. dist: " ..  recipientCountry:GetDiplomaticDistance(actor):GetTruncated() ) 
+			--Utils.LUA_DEBUGOUT("NAP score: " .. score .. " for " .. tostring(voActorTag) .. " - " .. tostring(voRecipientTag) )
+			--Utils.LUA_DEBUGOUT("friendlyness: " .. strategy:GetFriendliness(voActorTag) ) 
+			--Utils.LUA_DEBUGOUT("antagonism: " .. strategy:GetAntagonism(voActorTag) ) 
+			--Utils.LUA_DEBUGOUT("threat: " .. strategy:GetThreat(voActorTag) ) 
+			--Utils.LUA_DEBUGOUT("d. dist: " ..  recipientCountry:GetDiplomaticDistance(voActorTag):GetTruncated() ) 
 			--Utils.LUA_DEBUGOUT("------------------------")
 		--end
 
-		return Utils.CallScoredCountryAI(recipient, 'DiploScore_NonAgression', score, ai, actor, recipient, observer)
+		return Utils.CallScoredCountryAI(voRecipientTag, 'DiploScore_NonAgression', score, voAI, voActorTag, voRecipientTag, voObserverTag)
 	end
 end
 
-function DiploScore_DemandMilitaryAccess(ai, actor, recipient, observer)
-	local score = 0
-	
-	if observer == actor then -- we demand access of recipient
-		local actorCountry = actor:GetCountry()
-		local strategy = actorCountry:GetStrategy()
-		score = strategy:GetAccessScore(recipient)
-		
-	else -- actor demands access from us
-		--Utils.LUA_DEBUGOUT("DiploScore_DemandMilitaryAccess_________________")
-
-		local rel = ai:GetRelation(recipient, actor)
-		if rel:HasWar() then
-			return 0
-		end
-        
-		-- much bigger than us and bordering
-        local actorCountry = actor:GetCountry()
-		if ( ai:GetNumberOfOwnedProvinces(actor) / 5 > ai:GetNumberOfOwnedProvinces(recipient) )
-        and actorCountry:IsNeighbour( recipient )
-        then 
-			-- if we are not in faction and they are at war
-            if actorCountry:IsAtWar() 
-            and not (recipient:GetCountry():HasFaction())
-            then
-                score = 50
-            end
-		end
-
-		if rel:HasAlliance() then
-			score = 80
-		end
-
-		score = Utils.CallScoredCountryAI(recipient, "DiploScore_DemandMilitaryAccess", score,ai, actor, recipient, observer)
-	end
-	
-	return score
-end
-
-function DiploScore_OfferMilitaryAccess(ai, actor, recipient, observer, action)
-	local score = 0
-	if observer == actor then --should we offer access to recipient
-		local rel = ai:GetRelation(actor, recipient)
-		if rel:HasWar() then
-			return 0
-		end
-		if actor:GetCountry():HasFaction() then
-			return 0
-		end
-		if actor:GetCountry():GetEffectiveNeutrality():Get() > 70 then
-			return	0
-		end
-
-		local recipientCountry = recipient:GetCountry()
-		if recipientCountry:IsNeighbour( actor ) then -- only for neighbors
-			local strategy = actor:GetCountry():GetStrategy()
-			score = ( rel:GetValue():GetTruncated()) / 4
-			score = score + strategy:GetFriendliness(recipient) / 4
-			score = score - strategy:GetAntagonism(recipient) / 4
-			score = score - rel:GetThreat():Get()
-
-			if not recipientCountry:IsAtWar() then
-				score = score / 4 -- why would we if they dont need it
-			end
-		end
-	else
-		score = 100
- 	end
-
-	score = Utils.CallScoredCountryAI(recipient, 'DiploScore_OfferMilitaryAccess', score, ai, actor, recipient, observer, action)
-	return score
-end
-
-function DiploScore_Alliance(ai, actor, recipient, observer, action)
-	if observer == actor then 
-       		local recipientCountry = recipient:GetCountry()
-		local actorCountry = actor:GetCountry()
+function DiploScore_Alliance(voAI, voActorTag, voRecipientTag, voObserverTag, action)
+	if voObserverTag == voActorTag then 
+       	local recipientCountry = voRecipientTag:GetCountry()
+		local actorCountry = voActorTag:GetCountry()
 		local strategy = actorCountry:GetStrategy()
 		
 		if recipientCountry:IsFactionLeader() then -- as a faction leader we dont want alliances, we want faction members
@@ -170,17 +113,17 @@ function DiploScore_Alliance(ai, actor, recipient, observer, action)
 		end
 
 		
-		return strategy:GetFriendliness(recipient)
+		return strategy:GetFriendliness(voRecipientTag)
 	else 
-		local rel = ai:GetRelation(recipient, actor)
+		local rel = voAI:GetRelation(voRecipientTag, voActorTag)
 		local relation = 200 + rel:GetValue():GetTruncated()
 		
 		if relation < 100 then
 			return 0
 		end
 		
-		local recipientCountry = recipient:GetCountry()
-		local actorCountry = actor:GetCountry()
+		local recipientCountry = voRecipientTag:GetCountry()
+		local actorCountry = voActorTag:GetCountry()
 		
 		local score = relation / 12.0
 		
@@ -190,7 +133,7 @@ function DiploScore_Alliance(ai, actor, recipient, observer, action)
 		end
 		
 		-- check location
-		if not recipientCountry:IsNeighbour(actor) then
+		if not recipientCountry:IsNeighbour(voActorTag) then
 			-- check if on same continent first
 			local recipientContinent = recipientCountry:GetActingCapitalLocation():GetContinent()
 			local actorContinent = actorCountry:GetActingCapitalLocation():GetContinent()
@@ -217,26 +160,26 @@ function DiploScore_Alliance(ai, actor, recipient, observer, action)
 			end
 		end
 
-		score = score - recipientCountry:GetDiplomaticDistance(actor):GetTruncated() / 10
+		score = score - recipientCountry:GetDiplomaticDistance(voActorTag):GetTruncated() / 10
 
 		local strategy = recipientCountry:GetStrategy()
-		score = score + strategy:GetFriendliness(actor) / 2
-		score = score - strategy:GetAntagonism(actor) / 2
+		score = score + strategy:GetFriendliness(voActorTag) / 2
+		score = score - strategy:GetAntagonism(voActorTag) / 2
 		score = score - rel:GetThreat():Get() / 2
 	
 
-		return Utils.CallScoredCountryAI(recipient, 'DiploScore_Alliance', score, ai, actor, recipient, observer, action)
+		return Utils.CallScoredCountryAI(voRecipientTag, 'DiploScore_Alliance', score, voAI, voActorTag, voRecipientTag, voObserverTag, action)
 	end
 end
 
-function CalculateWarDesirability(ai, country, target)
+function CalculateWarDesirability(voAI, country, target)
 	local score = 0
 	local countryTag = country:GetCountryTag()
 	local targetCountry = target:GetCountry()
 	local strategy = country:GetStrategy()
 
 	-- can we even declare war?
-	if not ai:CanDeclareWar( countryTag, target ) then
+	if not voAI:CanDeclareWar( countryTag, target ) then
 	  return 0
 	end
 
@@ -278,19 +221,19 @@ function CalculateWarDesirability(ai, country, target)
 		score = score * 1.3
 	end
 	
-	return Utils.CallScoredCountryAI(countryTag, 'CalculateWarDesirability', score, ai, country, target)
+	return Utils.CallScoredCountryAI(countryTag, 'CalculateWarDesirability', score, voAI, country, target)
 
 end
 
-function DiploScore_PeaceAction(ai, actor, recipient, observer, action)
-	if observer == actor then
+function DiploScore_PeaceAction(voAI, voActorTag, voRecipientTag, voObserverTag, action)
+	if voObserverTag == voActorTag then
 		return 0
 	else
 		score = 0
 		
 		-- intel first
 		--Utils.LUA_DEBUGOUT("----------")
-		local intel = CAIIntel(recipient, actor)
+		local intel = CAIIntel(voRecipientTag, voActorTag)
 		if intel:GetFactor() > 0.1 then
 			local recipientStrength = intel:CalculateTheirPercievedMilitaryStrengh()
 			local actorStrength = intel:CalculateOurMilitaryStrength()
@@ -299,32 +242,32 @@ function DiploScore_PeaceAction(ai, actor, recipient, observer, action)
 		end
 		--Utils.LUA_DEBUGOUT("score: " .. score )
 		
-		local sizeFactor = actor:GetCountry():GetNumberOfControlledProvinces() / recipient:GetCountry():GetNumberOfControlledProvinces()
+		local sizeFactor = voActorTag:GetCountry():GetNumberOfControlledProvinces() / voRecipientTag:GetCountry():GetNumberOfControlledProvinces()
 		--Utils.LUA_DEBUGOUT("sizeFactor: " .. sizeFactor )
 		sizeFactor = (sizeFactor - 1) * 100
 				
 		score = score + math.min(sizeFactor, 100)
 		
-		score = score + recipient:GetCountry():GetSurrenderLevel():Get() * 100
+		score = score + voRecipientTag:GetCountry():GetSurrenderLevel():Get() * 100
 		--Utils.LUA_DEBUGOUT("score: " .. score )
-		score = score - actor:GetCountry():GetSurrenderLevel():Get() * 100
+		score = score - voActorTag:GetCountry():GetSurrenderLevel():Get() * 100
 		--Utils.LUA_DEBUGOUT("score: " .. score )
 		
-		local strategy = recipient:GetCountry():GetStrategy()
-		score = score + strategy:GetFriendliness(actor) / 2
-		score = score - strategy:GetAntagonism(actor) / 2
-		--score = score + strategy:GetThreat(actor) / 2
+		local strategy = voRecipientTag:GetCountry():GetStrategy()
+		score = score + strategy:GetFriendliness(voActorTag) / 2
+		score = score - strategy:GetAntagonism(voActorTag) / 2
+		--score = score + strategy:GetThreat(voActorTag) / 2
 		--Utils.LUA_DEBUGOUT("score: " .. score )
 		return score
 	end
 end
 
-function DiploScore_SendExpeditionaryForce(ai, actor, recipient, observer, action)
-	if observer == actor then
+function DiploScore_SendExpeditionaryForce(voAI, voActorTag, voRecipientTag, voObserverTag, action)
+	if voObserverTag == voActorTag then
 		return 0 
 	else
 		-- do we want to accept?
-		local recipientCountry = recipient:GetCountry()
+		local recipientCountry = voRecipientTag:GetCountry()
 		if recipientCountry:GetDailyBalance( CGoodsPool._SUPPLIES_ ):Get() > 1.0 then
 			local  score = 0
 			-- maybe we have enough stockpiles
@@ -365,8 +308,8 @@ function DiploScore_SendExpeditionaryForce(ai, actor, recipient, observer, actio
 	end
 end
 
-function DiploScore_LicenceTechnology(ai, actor, recipient, observer, action)
-	if observer == actor then
+function DiploScore_LicenceTechnology(voAI, voActorTag, voRecipientTag, voObserverTag, action)
+	if voObserverTag == voActorTag then
 		return 0 
 	else
 		--Utils.LUA_DEBUGOUT("LICENS ------------------------------")
@@ -375,9 +318,9 @@ function DiploScore_LicenceTechnology(ai, actor, recipient, observer, action)
 		end
 	
 		local score = 0
-		local actorCountry = actor:GetCountry()
-		local recipientCountry = recipient:GetCountry()
-		local rel = ai:GetRelation(recipient, actor)
+		local actorCountry = voActorTag:GetCountry()
+		local recipientCountry = voRecipientTag:GetCountry()
+		local rel = voAI:GetRelation(voRecipientTag, voActorTag)
 		
 		if rel:GetValue():GetTruncated() < 0 then
 			return 0
@@ -386,7 +329,7 @@ function DiploScore_LicenceTechnology(ai, actor, recipient, observer, action)
 		if rel:HasWar() then
 			return 0
 		end
-		--Utils.LUA_DEBUGOUT("1 LICENS " .. tostring(actor) .. " -> " ..  tostring(recipient) .. " = " .. score)
+		--Utils.LUA_DEBUGOUT("1 LICENS " .. tostring(voActorTag) .. " -> " ..  tostring(voRecipientTag) .. " = " .. score)
 		-- we can give tech to
 		-- - people in faction
 		-- - people in alliance
@@ -400,17 +343,17 @@ function DiploScore_LicenceTechnology(ai, actor, recipient, observer, action)
 			score = score + 60
 			allied = true
 		end
-		--Utils.LUA_DEBUGOUT("2 LICENS " .. tostring(actor) .. " -> " ..  tostring(recipient) .. " = " .. score)
+		--Utils.LUA_DEBUGOUT("2 LICENS " .. tostring(voActorTag) .. " -> " ..  tostring(voRecipientTag) .. " = " .. score)
 		local fightingFriend = false
 		local fightingEnemy = false
 		if actorCountry:IsAtWar() then
 			for enemy in actorCountry:GetCurrentAtWarWith() do
 				if recipientCountry:IsEnemy(enemy) then
-					--Utils.LUA_DEBUGOUT("mutual enemy: " .. tostring(enemy) .. " for " ..  tostring(actor) .. " and " . .tostring(recipient))
+					--Utils.LUA_DEBUGOUT("mutual enemy: " .. tostring(enemy) .. " for " ..  tostring(voActorTag) .. " and " . .tostring(voRecipientTag))
 					fightingEnemy = true
 					--Utils.LUA_DEBUGOUT("mutual enemy")
 				elseif recipientCountry:IsFriend(enemy, true)
-				and ai:GetRelation(enemy, actor):GetValue():GetTruncated() > 20
+				and voAI:GetRelation(enemy, voActorTag):GetValue():GetTruncated() > 20
 				then
 					fightingFriend = true
 				end
@@ -420,7 +363,7 @@ function DiploScore_LicenceTechnology(ai, actor, recipient, observer, action)
 		if fightingFriend then
 			return 0
 		end
-		--Utils.LUA_DEBUGOUT("3 LICENS " .. tostring(actor) .. " -> " ..  tostring(recipient) .. " = " .. score)
+		--Utils.LUA_DEBUGOUT("3 LICENS " .. tostring(voActorTag) .. " -> " ..  tostring(voRecipientTag) .. " = " .. score)
 		if fightingEnemy then
 			if not allied then
 				score = 20 -- need some base
@@ -428,14 +371,14 @@ function DiploScore_LicenceTechnology(ai, actor, recipient, observer, action)
 			score = score + 30
 			--Utils.LUA_DEBUGOUT("fightingenemy")
 		else
-			--Utils.LUA_DEBUGOUT("factor: " .. CalculateAlignmentFactor(ai, actorCountry, recipientCountry) * 50)
-			score = score - CalculateAlignmentFactor(ai, actorCountry, recipientCountry) * 50
+			--Utils.LUA_DEBUGOUT("factor: " .. CalculateAlignmentFactor(voAI, actorCountry, recipientCountry) * 50)
+			score = score - CalculateAlignmentFactor(voAI, actorCountry, recipientCountry) * 50
 			
 		end
-		--Utils.LUA_DEBUGOUT("4 LICENS " .. tostring(actor) .. " -> " ..  tostring(recipient) .. " = " .. score)
+		--Utils.LUA_DEBUGOUT("4 LICENS " .. tostring(voActorTag) .. " -> " ..  tostring(voRecipientTag) .. " = " .. score)
 		local threat = rel:GetThreat():Get()
-		score = score - threat * CalculateAlignmentFactor(ai, actorCountry, recipientCountry)
-		--Utils.LUA_DEBUGOUT("5 LICENS " .. tostring(actor) .. " -> " ..  tostring(recipient) .. " = " .. score)
+		score = score - threat * CalculateAlignmentFactor(voAI, actorCountry, recipientCountry)
+		--Utils.LUA_DEBUGOUT("5 LICENS " .. tostring(voActorTag) .. " -> " ..  tostring(voRecipientTag) .. " = " .. score)
 		-- consider the money
 		local offeredMoney = action:GetMoney():Get()
 		local moneyPile = math.max( recipientCountry:GetPool():Get( CGoodsPool._MONEY_ ):Get(), 100.0)
@@ -451,47 +394,149 @@ function DiploScore_LicenceTechnology(ai, actor, recipient, observer, action)
 			score = score - 15
 		end
 		
-		--Utils.LUA_DEBUGOUT("6 LICENS " .. tostring(actor) .. " -> " ..  tostring(recipient) .. " = " .. score)
+		--Utils.LUA_DEBUGOUT("6 LICENS " .. tostring(voActorTag) .. " -> " ..  tostring(voRecipientTag) .. " = " .. score)
 		--Utils.LUA_DEBUGOUT("LICENS ------------------------------")
 		return score
 	end
 end
 
-function DiploScore_CallAlly(ai, actor, recipient, observer, action)
-	if observer == actor then
+function DiploScore_CallAlly(voAI, voActorTag, voRecipientTag, voObserverTag, action)
+	if voObserverTag == voActorTag then
 		return 100
 	else
-		local actorCountry = actor:GetCountry()
-		local recipientCountry = recipient:GetCountry()
+		local actorCountry = voActorTag:GetCountry()
+		local recipientCountry = voRecipientTag:GetCountry()
 		local liScore = 0
 		
 		if actorCountry:GetFaction() == recipientCountry:GetFaction() then
 			liScore = 100
-		elseif recipientCountry:GetOverlord() == actor then
+		elseif recipientCountry:GetOverlord() == voActorTag then
 			liScore = 100
 		else
-			if DiploScore_Alliance(ai, actor, recipient, observer, nil) < 50 then
+			if DiploScore_Alliance(voAI, voActorTag, voRecipientTag, voObserverTag, nil) < 50 then
 				liScore = 40
 			else
 				liScore = 100
 			end
 		end
 		
-		return Utils.CallScoredCountryAI(actor, "DiploScore_CallAlly", liScore, ai, actor, recipient, observer)
+		return Utils.CallScoredCountryAI(voActorTag, "DiploScore_CallAlly", liScore, voAI, voActorTag, voRecipientTag, voObserverTag)
 	end
 end
 
+-- #######################
+-- Military Access
+-- #######################
+function DiploScore_DemandMilitaryAccess(voAI, voActorTag, voRecipientTag, voObserverTag)
+	local liScore = Generate_MilitaryAccess_Score(voAI, voActorTag, voRecipientTag, voObserverTag)
+	
+	if liScore > 0 then
+		-- Same as Offer but reverse the voActorTag and voRecipientTag
+		liScore = Utils.CallScoredCountryAI(voRecipientTag, "DiploScore_DemandMilitaryAccess", liScore, voAI, voActorTag, voRecipientTag, voObserverTag)			
+	end
+
+	return liScore
+end
+function DiploScore_OfferMilitaryAccess(voAI, voActorTag, voRecipientTag, voObserverTag, action)
+	-- voAI never offers military Access so its always 0
+	local liScore = Generate_MilitaryAccess_Score(voAI, voActorTag, voRecipientTag, voObserverTag)
+	
+	if liScore > 0 then
+		-- Same as Demand but reverse the voActorTag and voRecipientTag
+		liScore = Utils.CallScoredCountryAI(voRecipientTag, "DiploScore_OfferMilitaryAccess", liScore, voAI, voRecipientTag, voActorTag, voObserverTag)			
+	end
+
+	return liScore	
+end
+function Generate_MilitaryAccess_Score(voAI, voActorTag, voRecipientTag, voObserverTag)
+	local liScore = 0
+	local loRelation = voAI:GetRelation(voRecipientTag, voActorTag)
+	
+	-- If they are atwar with eachother this is impossible
+	if not(loRelation:HasWar()) then
+		local loRecipientCountry = voRecipientTag:GetCountry()
+		
+		-- If they are in a faction then exit
+		if not(loRecipientCountry:HasFaction()) then
+			local loActorCountry = voActorTag:GetCountry()
+			local lbMajorNeighborCheck = false
+			local loRecipientGroup = loRecipientCountry:GetRulingIdeology():GetGroup()
+			local loActorGroup = loActorCountry:GetRulingIdeology():GetGroup()
+		
+			-- Same ideology so a small bonus
+			if loRecipientGroup == loActorGroup then
+				liScore = liScore + 25
+			else
+				liScore = liScore - 10
+			end
+			
+			-- Check to see who they are after, if it is another major do not get involved
+			for loCountryTag in loRecipientCountry:GetNeighbours() do
+				local loRelation2 = voAI:GetRelation(voActorTag, loCountryTag)
+				
+				if loRelation2:HasWar() then
+					local loCountry2 = loCountryTag:GetCountry()
+					if loCountry2:IsMajor() then
+						lbMajorNeighborCheck = true
+						liScore = liScore - 25
+						break
+					end
+				end
+			end
+			
+			-- They are after a minor so go ahead and give them a small bonus
+			if not(lbMajorNeighborCheck) then
+				liScore = liScore + 25
+			end
+
+			-- Calculate strength based on IC
+			--   The smaller the minor the more likely they will say yes
+			local liRecipientIC = loRecipientCountry:GetMaxIC()
+			local liActorIC = loActorCountry:GetMaxIC()
+			
+			if liActorIC > (liRecipientIC * 7) then
+				liScore = liScore + 25
+			elseif liActorIC > (liRecipientIC * 5) then
+				liScore = liScore + 10
+			elseif liActorIC > (liRecipientIC * 3) then
+				liScore = liScore + 5
+			end
+
+			-- If they are heavily neutral then don't let them through
+			local liEffectiveNeutrality = loRecipientCountry:GetEffectiveNeutrality():Get()
+			if liEffectiveNeutrality > 90 then
+				liScore = liScore - 50
+			elseif liEffectiveNeutrality > 80 then
+				liScore = liScore - 25
+			elseif liEffectiveNeutrality > 70 then
+				liScore = liScore - 10
+			end
+			
+			-- Now Calculate Threat and Relations into the score
+			liScore = liScore - loRelation:GetThreat():Get() / 5
+			liScore = liScore + loRelation:GetValue():GetTruncated() / 3
+		end
+	end
+	
+	return liScore
+end
+-- #######################
 
 -- ############################
 --  Methods that do not use the GetAIAcceptance()
 -- ############################
-function DiploScore_InfluenceNation(ai, actor, recipient, observer)
-	if observer == actor then
+function DiploScore_InfluenceNation(voAI, voActorTag, voRecipientTag, voObserverTag)
+	if voObserverTag == voActorTag then
 		local liScore = 500
 	
-		local recipientCountry = recipient:GetCountry()
-		local actorCountry = actor:GetCountry()
+		local recipientCountry = voRecipientTag:GetCountry()
+		local actorCountry = voActorTag:GetCountry()
 		local actorFaction = actorCountry:GetFaction()
+		
+		-- Performance Check, are they already in our corner if so exit out do not influence
+		if voAI:GetCountryAlignmentDistance(recipientCountry, actorFaction:GetFactionLeader():GetCountry()):Get() < 10 then
+			return 0
+		end
 		
 		-- Calculate Importance based on IC
 		---   Remember on Majors can Influence
@@ -526,11 +571,11 @@ function DiploScore_InfluenceNation(ai, actor, recipient, observer)
 		end
 		
 		-- Political checks
-		local loRelation = ai:GetRelation(actor, recipient)
-		--local loStrategy = recipient:GetCountry():GetStrategy()
+		local loRelation = voAI:GetRelation(voActorTag, voRecipientTag)
+		--local loStrategy = voRecipientTag:GetCountry():GetStrategy()
 		
-		--liScore = liScore - loStrategy:GetAntagonism(actor) / 15			
-		--liScore = liScore + loStrategy:GetFriendliness(actor) / 10
+		--liScore = liScore - loStrategy:GetAntagonism(voActorTag) / 15			
+		--liScore = liScore + loStrategy:GetFriendliness(voActorTag) / 10
 		liScore = liScore - loRelation:GetThreat():Get() / 5
 		liScore = liScore + loRelation:GetValue():GetTruncated() / 3
 		
@@ -543,12 +588,12 @@ function DiploScore_InfluenceNation(ai, actor, recipient, observer)
 		if loRelation:AllowDebts() then
 			liScore = liScore + 5
 		end
-		if actorCountry:IsNeighbour(recipient) then
+		if actorCountry:IsNeighbour(voRecipientTag) then
 			liScore = liScore + 50
 		elseif recipientCountry:GetActingCapitalLocation():GetContinent() == actorCountry:GetActingCapitalLocation():GetContinent() then
 			liScore = liScore + 40
 		end
-		if Utils.IsFriend(ai, actorCountry:GetFaction(), recipientCountry) then
+		if Utils.IsFriend(voAI, actorCountry:GetFaction(), recipientCountry) then
 			liScore = liScore + 20
 		else
 			liScore = liScore - 20
@@ -559,43 +604,48 @@ function DiploScore_InfluenceNation(ai, actor, recipient, observer)
 		if recipientCountry:HasNeighborInFaction(actorFaction) then
 			liScore = liScore + 20
 		end
+		if recipientCountry:GetRulingIdeology():GetGroup() ~= actorCountry:GetRulingIdeology():GetGroup() then
+			liScore = liScore - 15
+		else
+			liScore = liScore + 15
+		end		
 		
-		return Utils.CallScoredCountryAI(actor, 'DiploScore_InfluenceNation', liScore, ai, actor, recipient, observer)
+		return Utils.CallScoredCountryAI(voActorTag, 'DiploScore_InfluenceNation', liScore, voAI, voActorTag, voRecipientTag, voObserverTag)
 	else
 		return 100 -- we cant respond to this
 	end
 end
-function DiploScore_Embargo(ai, actor, recipient, observer)
-	if observer == actor then
+function DiploScore_Embargo(voAI, voActorTag, voRecipientTag, voObserverTag)
+	if voObserverTag == voActorTag then
 		local score = 0
-		local actorCountry = actor:GetCountry() 
-		local recipientCountry = recipient:GetCountry() 
+		local actorCountry = voActorTag:GetCountry() 
+		local recipientCountry = voRecipientTag:GetCountry() 
 
 		if actorCountry:IsAtWar() then
 			for enemy in actorCountry:GetCurrentAtWarWith() do
-				if recipient:GetCountry():IsFriend(enemy, true) then
-					--Utils.LUA_DEBUGOUT( "embargo score " .. tostring(actor) .. " -> " .. tostring(recipient) .. " = " .. 100 )
+				if voRecipientTag:GetCountry():IsFriend(enemy, true) then
+					--Utils.LUA_DEBUGOUT( "embargo score " .. tostring(voActorTag) .. " -> " .. tostring(voRecipientTag) .. " = " .. 100 )
 					return 80 -- fighting our friends
 				end
 			end
 		end
-		--Utils.LUA_DEBUGOUT( "embargo score " .. tostring(actor) .. " -> " .. tostring(recipient) .. " = " .. score )
+		--Utils.LUA_DEBUGOUT( "embargo score " .. tostring(voActorTag) .. " -> " .. tostring(voRecipientTag) .. " = " .. score )
 		-- dont use up the last of our points for this
 		if actorCountry:GetDiplomaticInfluence():Get() < (defines.diplomacy.EMBARGO_INFLUENCE_COST + 2) then
 			score = score / 2 - 1
 		end
-		--Utils.LUA_DEBUGOUT( "embargo score " .. tostring(actor) .. " -> " .. tostring(recipient) .. " = " .. score )
-		return Utils.CallScoredCountryAI(actor, 'DiploScore_Embargo', score, ai, actor, recipient, observer)
+		--Utils.LUA_DEBUGOUT( "embargo score " .. tostring(voActorTag) .. " -> " .. tostring(voRecipientTag) .. " = " .. score )
+		return Utils.CallScoredCountryAI(voActorTag, 'DiploScore_Embargo', score, voAI, voActorTag, voRecipientTag, voObserverTag)
 	else
 		return 0 -- cant respond to this action
 	end
 end
-function DiploScore_Guarantee(ai, actor, recipient, observer)
+function DiploScore_Guarantee(voAI, voActorTag, voRecipientTag, voObserverTag)
 	local score = 0
 
-	if observer == actor then
-		local actorCountry = actor:GetCountry()
-		local recipientCountry = recipient:GetCountry()
+	if voObserverTag == voActorTag then
+		local actorCountry = voActorTag:GetCountry()
+		local recipientCountry = voRecipientTag:GetCountry()
 		if actorCountry:HasFaction() and actorCountry:GetFaction() == recipientCountry:GetFaction() then
 			return 0 -- pointless
 		end
@@ -604,22 +654,22 @@ function DiploScore_Guarantee(ai, actor, recipient, observer)
 			return 0 -- pointless
 		end
 		
-		local strategy = actor:GetCountry():GetStrategy()
-		score = score + strategy:GetFriendliness(recipient) / 2
-		score = score + strategy:GetProtectionism(recipient)
-		score = score - strategy:GetAntagonism(recipient) / 2
-		score = score - actor:GetCountry():GetDiplomaticDistance(recipient):GetTruncated() 
+		local strategy = voActorTag:GetCountry():GetStrategy()
+		score = score + strategy:GetFriendliness(voRecipientTag) / 2
+		score = score + strategy:GetProtectionism(voRecipientTag)
+		score = score - strategy:GetAntagonism(voRecipientTag) / 2
+		score = score - voActorTag:GetCountry():GetDiplomaticDistance(voRecipientTag):GetTruncated() 
 		
 	end
 
-	score = Utils.CallScoredCountryAI(actor, 'DiploScore_Guarantee', score, ai, actor, recipient, observer)
+	score = Utils.CallScoredCountryAI(voActorTag, 'DiploScore_Guarantee', score, voAI, voActorTag, voRecipientTag, voObserverTag)
 	return score
 end
-function DiploScore_Debt(ai, actor, recipient, observer)
-	local actorCountry = actor:GetCountry()
-	local recipientCountry = recipient:GetCountry()
+function DiploScore_Debt(voAI, voActorTag, voRecipientTag, voObserverTag)
+	local actorCountry = voActorTag:GetCountry()
+	local recipientCountry = voRecipientTag:GetCountry()
 	
-	if observer == actor then
+	if voObserverTag == voActorTag then
 		if recipientCountry:IsAtWar() 
 		and ( recipientCountry:HasFaction() and recipientCountry:GetFaction() == actorCountry:GetFaction() )
 		then
@@ -650,20 +700,20 @@ function DiploScore_Debt(ai, actor, recipient, observer)
 		end
 	end
 end
-function DiploScore_BreakAlliance(ai, actor, recipient, observer)
+function DiploScore_BreakAlliance(voAI, voActorTag, voRecipientTag, voObserverTag)
 	local liScore = 0
 
-	if actor == observer then
-		local actorCountry = actor:GetCountry()
-		local recipientCountry = recipient:GetCountry()
+	if voActorTag == voObserverTag then
+		local actorCountry = voActorTag:GetCountry()
+		local recipientCountry = voRecipientTag:GetCountry()
 		local loStrategy = actorCountry:GetStrategy()
 
-		local loRealtions = actorCountry:GetRelation(recipient)
+		local loRealtions = actorCountry:GetRelation(voRecipientTag)
 		local liRealtionValue = loRealtions:GetValue():GetTruncated()
 
-		local liThreat = loRealtions:GetThreat():Get() * CalculateAlignmentFactor(ai, actorCountry, recipientCountry)
-		local liAntagonism = loStrategy:GetAntagonism(recipient) / 4
-		local liFriendliness = loStrategy:GetFriendliness(recipient) / 4
+		local liThreat = loRealtions:GetThreat():Get() * CalculateAlignmentFactor(voAI, actorCountry, recipientCountry)
+		local liAntagonism = loStrategy:GetAntagonism(voRecipientTag) / 4
+		local liFriendliness = loStrategy:GetFriendliness(voRecipientTag) / 4
 
 		liScore = ((liAntagonism + liThreat) / 2.0) - liFriendliness
 		liScore = liScore - liRealtionValue / 2.0

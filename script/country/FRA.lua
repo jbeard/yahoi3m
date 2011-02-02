@@ -2,24 +2,40 @@
 -- LUA Hearts of Iron 3 France File
 -- Created By: Lothos
 -- Modified By: Lothos
--- Date Last Modified: 5/16/2010
+-- Date Last Modified: 7/6/2010
 -----------------------------------------------------------
 
 local P = {}
 AI_FRA = P
 
+-- #######################################
+-- Static Production Variables overide
+function P._LandRatio_Units_(minister)
+	local laLandRatioUnits = {
+		'garrison_brigade', -- Garrison
+		'infantry_brigade', -- Infantry
+		'motorized_brigade', -- Motorized
+		'mechanized_brigade', -- Mechanized
+		'armor_brigade|heavy_armor_brigade|super_heavy_armor_brigade', -- Armor
+		'militia_brigade', -- Militia
+		'cavalry_brigade'}; -- Cavalry
+	
+	return laLandRatioUnits
+end
+-- #######################################
+
 -- Tech weights
 --   1.0 = 100% the total needs to equal 1.0
 function P.TechWeights(minister)
 	local laTechWeights = {
-		0.24, -- landBasedWeight
-		0.18, -- landDoctrinesWeight
-		0.11, -- airBasedWeight
-		0.18, -- airDoctrinesWeight
-		0.06, -- navalBasedWeight
-		0.05, -- navalDoctrinesWeight
-		0.10, -- industrialWeight
-		0.04, -- secretWeaponsWeight
+		0.32, -- landBasedWeight
+		0.27, -- landDoctrinesWeight
+		0.10, -- airBasedWeight
+		0.10, -- airDoctrinesWeight
+		0.05, -- navalBasedWeight
+		0.04, -- navalDoctrinesWeight
+		0.08, -- industrialWeight
+		0.0, -- secretWeaponsWeight
 		0.04, -- otherWeight
 		false}; -- lbLandBased
 	
@@ -34,6 +50,10 @@ function P.LandTechs(minister)
 		"cavalry_support|3",
 		"cavalry_guns|3", 
 		"cavalry_at|3",
+		"militia_smallarms|0",
+		"militia_support|0",
+		"militia_guns|0",
+		"militia_at|0",
 		"marine_infantry|0",
 		"jungle_warfare_equipment|0",
 		"amphibious_warfare_equipment|0",
@@ -149,32 +169,18 @@ end
 -- Production Weights
 --   1.0 = 100% the total needs to equal 1.0
 function P.ProductionWeights(minister)
-	local rValue
+	local laArray = {
+		0.65, -- Land
+		0.20, -- Air
+		0.10, -- Sea
+		0.05}; -- Other
 	
-	if minister:GetCountry():IsAtWar() then
-		local laArray = {
-			0.50, -- Land
-			0.25, -- Air
-			0.20, -- Sea
-			0.05}; -- Other
-		
-		rValue = laArray	
-	else
-		local laArray = {
-			0.40, -- Land
-			0.25, -- Air
-			0.20, -- Sea
-			0.15}; -- Other
-		
-		rValue = laArray
-	end
-	
-	return rValue
+	return laArray
 end
 -- Land ratio distribution
 function P.LandRatio(minister)
 	local laArray = {
-		2, -- Garrison
+		0, -- Garrison
 		15, -- Infantry
 		2, -- Motorized
 		1, -- Mechanized
@@ -298,12 +304,68 @@ function P.DiploScore_OfferTrade(score, ai, actor, recipient, observer, voTraded
 	return score
 end
 
+-- Influence Ignore list
+function P.InfluenceIgnore(minister)
+	-- Ignore Afghanistan as they are not worth our time
+	-- Ignore Ethiopia as they are going to get hammered by Italy
+	-- Ignore Austria, Czechoslovakia as we will get them
+	-- Ignore Switzerland as there is no chance of them joining
+	-- Ignore Vichy, they wont join anyone unles DOWed
+	local laIgnoreList = {
+		"AFG",
+		"ETH",
+		"AUS",
+		"CZE",
+		"SCH",
+		"VIC",
+		"JAP",
+		"ITA"};
+	
+	return laIgnoreList
+end
+
+function P.HandleMobilization(minister)
+	local ai = minister:GetOwnerAI()
+	
+	local ministerTag =  minister:GetCountryTag()
+	local gerTag = CCountryDataBase.GetTag("GER")
+
+	-- If Germany Controls Czechoslovakia then
+	if CCurrentGameState.GetProvince(2562):GetController() == gerTag then -- Praha check
+		ai:Post(CToggleMobilizationCommand( ministerTag, true ))					
+	else
+		-- Check if a neighbor is starting to look threatening
+		-- This code should be idential to the one in ai_politics_minsiter.lua
+		local ministerCountry = minister:GetCountry()
+		local liTotalIC = ministerCountry:GetTotalIC()
+		local liNeutrality = ministerCountry:GetNeutrality():Get() * 0.9
+		
+		for loCountryTag in ministerCountry:GetNeighbours() do
+			local liThreat = ministerCountry:GetRelation(loCountryTag):GetThreat():Get()
+			
+			if (liNeutrality - liThreat) < 10 then
+				local loCountry = loCountryTag:GetCountry()
+				
+				liThreat = liThreat * CalculateAlignmentFactor(ai, ministerCountry, loCountry)
+				
+				if liTotalIC > 50 and loCountry:GetTotalIC() < liTotalIC then
+					liThreat = liThreat / 2 -- we can handle them if they descide to attack anyway
+				end
+				
+				if liThreat > 30 then
+					if CalculateWarDesirability(ai, loCountry, ministerTag) > 70 then
+						ai:Post(CToggleMobilizationCommand( ministerTag, true ))
+					end
+				end
+			end
+		end
+	end
+end
+
 function P.DiploScore_InfluenceNation( score, ai, actor, recipient, observer )
 	local lsRepTag = tostring(recipient)
 	
-	if lsRepTag == "AUS" or lsRepTag == "CZE" or lsRepTag == "SCH" then
-		return 0 -- They are going anyways
-	elseif lsRepTag == "HUN" or lsRepTag == "ROM" or lsRepTag == "BUL" or lsRepTag == "FIN" or lsRepTag == "ITA" or lsRepTag == "JAP" then
+	if lsRepTag == "HUN" or lsRepTag == "ROM" or lsRepTag == "BUL" or lsRepTag == "FIN" then
 		score = score - 20
 	elseif lsRepTag == "AST" or lsRepTag == "CAN" or lsRepTag == "SAF" or lsRepTag == "NZL" or lsRepTag == "USA" then
 		score = score + 70

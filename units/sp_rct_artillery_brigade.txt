@@ -18,7 +18,7 @@ sp_rct_artillery_brigade = {
 	maximum_speed = 8.00
 	transport_weight = 8.00
 	supply_consumption = 1.50
-	fuel_consumption = 0.43
+	fuel_consumption = 0.8
 	radio_strength = 1
 	
 	#Defensive Abilities

@@ -38,9 +38,9 @@ submarine = {
 	air_defence = 2.00
 
 	#Offensive Abilities
-	convoy_attack = 7.00
+	convoy_attack = 1.00
 	sea_attack = 1.20
-	sub_attack = 0.50 
+	sub_attack = 0.50
 	air_attack = 0.00
 	shore_bombardment = 0.00
 

@@ -378,13 +378,18 @@ navy = {
 	ship = { type = destroyer name = "3rd Destroyer Division" historical_model = 1 }
 }
 navy = {
-	name = "Pacific Submarine Fleet"
+	name = "1st Pacific Submarine Fleet"
 	base = 7350
 	location = 7350
 	ship = { type = submarine name = "1st Submarine Division" historical_model = 1 }
 	ship = { type = submarine name = "2nd Submarine Division" historical_model = 1 }
 	ship = { type = submarine name = "3rd Submarine Division" historical_model = 1 }
 	ship = { type = submarine name = "4th Submarine Division" historical_model = 1 }
+}
+navy = {
+	name = "2nd Pacific Submarine Fleet"
+	base = 7350
+	location = 7350
 	ship = { type = submarine name = "5th Submarine Division" historical_model = 0 }
 	ship = { type = submarine name = "6th Submarine Division" historical_model = 0 }
 }
@@ -484,13 +489,18 @@ navy = {
 	ship = { type = destroyer name = "28th Destroyer Division" historical_model = 0 }
 }
 navy = {
-	name = "Atlantic Submarine Fleet"
+	name = "1st Atlantic Submarine Fleet"
 	base = 4900
 	location = 4900
 	ship = { type = submarine name = "12th Submarine Division" historical_model = 1 }
 	ship = { type = submarine name = "13th Submarine Division" historical_model = 1 }
 	ship = { type = submarine name = "14th Submarine Division" historical_model = 1 }
 	ship = { type = submarine name = "15th Submarine Division" historical_model = 1 }
+}
+navy = {
+	name = "2nd Atlantic Submarine Fleet"
+	base = 4900
+	location = 4900
 	ship = { type = submarine name = "16th Submarine Division" historical_model = 2 }
 	ship = { type = submarine name = "17th Submarine Division" historical_model = 2 }
 }
