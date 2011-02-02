@@ -310,64 +310,64 @@ navy = {
 	name = "USN Battleship Fleet 1"
 	base = 7350
 	location = 7350
-	ship = { type = carrier name = "USS Lexington" historical_model = 1 air = { location = 7350 wing = { type = cag historical_model = 1 } } air = { location = 7350 wing = { type = cag historical_model = 1 } } }
-	ship = { type = battleship name = "USS Nevada" historical_model = 1 }
-	ship = { type = battleship name = "USS Arizona" historical_model = 1 }
-	ship = { type = battleship name = "USS Pennsylvania" historical_model = 1 }
+	ship = { type = carrier name = "USS Lexington (CV-2)*" historical_model = 1 air = { location = 7350 wing = { type = cag historical_model = 1 } } air = { location = 7350 wing = { type = cag historical_model = 1 } } }
+	ship = { type = battleship name = "USS Nevada (BB-36)*" historical_model = 2 }
+	ship = { type = battleship name = "USS Arizona (BB-39)" historical_model = 2 }
+	ship = { type = battleship name = "USS Pennsylvania (BB-38)" historical_model = 2 }
 }
 navy = {
 	name = "USN Battleship Fleet 2"
 	base = 7350
 	location = 7350
-	ship = { type = carrier name = "USS Saratoga" historical_model = 1 air = { location = 7350 wing = { type = cag historical_model = 1 } } air = { location = 7350 wing = { type = cag historical_model = 1 } } }
-	ship = { type = battleship name = "USS Oklahoma" historical_model = 1 }
-	ship = { type = battleship name = "USS Tennessee" historical_model = 1 pride = yes }
-	ship = { type = battleship name = "USS California" historical_model = 1 }
+	ship = { type = carrier name = "USS Saratoga (CV-3)" historical_model = 1 air = { location = 7350 wing = { type = cag historical_model = 1 } } air = { location = 7350 wing = { type = cag historical_model = 1 } } }
+	ship = { type = battleship name = "USS Oklahoma (BB-37)" historical_model = 2 }
+	ship = { type = battleship name = "USS Tennessee (BB-43)" historical_model = 3 }
+	ship = { type = battleship name = "USS California (BB-44)" historical_model = 3 }
 }
 navy = {
 	name = "USN Battleship Fleet 4"
 	base = 7350
 	location = 7350
-	ship = { type = battleship name = "USS Colorado" historical_model = 2 }
-	ship = { type = battleship name = "USS West Virginia" historical_model = 2 }
-	ship = { type = battleship name = "USS Maryland" historical_model = 2 }
+	ship = { type = battleship name = "USS Colorado (BB-45)*" historical_model = 4 }
+	ship = { type = battleship name = "USS West Virginia (BB-48)" historical_model = 4 }
+	ship = { type = battleship name = "USS Maryland (BB-46)" historical_model = 4 }
 }
 navy = {
 	name = "USN Cruiser Fleet 3"
 	base = 7350
 	location = 7350
-	ship = { type = light_cruiser name = "USS Richmond" historical_model = 1 }
-	ship = { type = light_cruiser name = "USS Trenton" historical_model = 1 }
-	ship = { type = light_cruiser name = "USS Concord" historical_model = 1 }
-	ship = { type = light_cruiser name = "USS Raleigh" historical_model = 1 }
-	ship = { type = light_cruiser name = "USS Detroit" historical_model = 1 }
+	ship = { type = light_cruiser name = "USS Richmond (CL-9)" historical_model = 1 }
+	ship = { type = light_cruiser name = "USS Trenton (CL-11)" historical_model = 1 }
+	ship = { type = light_cruiser name = "USS Concord (CL-10)" historical_model = 1 }
+	ship = { type = light_cruiser name = "USS Raleigh (CL-7)" historical_model = 1 }
+	ship = { type = light_cruiser name = "USS Detroit (CL-8)" historical_model = 1 }
 }
 navy = {
 	name = "USN Cruiser Fleet 4"
 	base = 7350
 	location = 7350
-	ship = { type = heavy_cruiser name = "USS Pensacola" historical_model = 1 }
-	ship = { type = heavy_cruiser name = "USS Salt Lake City" historical_model = 1 }
-	ship = { type = heavy_cruiser name = "USS Chicago" historical_model = 1 }
-	ship = { type = heavy_cruiser name = "USS Indianapolis" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "USS Pensacola (CA-24)*" historical_model = 0 }
+	ship = { type = heavy_cruiser name = "USS Salt Lake City (CA-25)" historical_model = 0 }
+	ship = { type = heavy_cruiser name = "USS Chicago (CA-29)" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "USS Indianapolis (CA-35)" historical_model = 2 }
 }
 navy = {
 	name = "USN Cruiser Fleet 5"
 	base = 7350
 	location = 7350
-	ship = { type = heavy_cruiser name = "USS Northampton" historical_model = 1 }
-	ship = { type = heavy_cruiser name = "USS Chester" historical_model = 1 }
-	ship = { type = heavy_cruiser name = "USS Louisville" historical_model = 1 }
-	ship = { type = heavy_cruiser name = "USS Portland" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "USS Northampton (CA-26)*" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "USS Chester (CA-27)" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "USS Louisville (CA-28)" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "USS Portland (CA-33)*" historical_model = 2 }
 }
 navy = {
 	name = "USN Cruiser Fleet 6"
 	base = 7350
 	location = 7350
-	ship = { type = heavy_cruiser name = "USS New Orleans" historical_model = 2 }
-	ship = { type = heavy_cruiser name = "USS Astoria" historical_model = 2 }
-	ship = { type = heavy_cruiser name = "USS Minneapolis" historical_model = 2 }
-	ship = { type = heavy_cruiser name = "USS San Francisco" historical_model = 2 }
+	ship = { type = heavy_cruiser name = "USS New Orleans (CA-32)" historical_model = 3 }
+	ship = { type = heavy_cruiser name = "USS Astoria (CA-34)" historical_model = 3 }
+	ship = { type = heavy_cruiser name = "USS Minneapolis (CA-36)" historical_model = 3 }
+	ship = { type = heavy_cruiser name = "USS San Francisco (CA-38)" historical_model = 3 }
 }
 navy = {
 	name = "Pacific Destroyer Fleet"
@@ -415,7 +415,7 @@ navy = {
 	name = "USN Seattle Fleet"
 	base = 6697
 	location = 6697
-	ship = { type = light_cruiser name = "USS Marblehead" historical_model = 1 }
+	ship = { type = light_cruiser name = "USS Marblehead (CL-12)" historical_model = 1 }
 	ship = { type = destroyer name = "16th Destroyer Division" historical_model = 0 }
 	ship = { type = destroyer name = "47th Destroyer Division" historical_model = 0 }
 }
@@ -423,7 +423,7 @@ navy = {
 	name = "USN Columbia Fleet"
 	base = 6697
 	location = 6697
-	ship = { type = heavy_cruiser name = "USS Houston" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "USS Houston (CA-30)" historical_model = 1 }
 	ship = { type = destroyer name = "43rd Destroyer Division" historical_model = 0 }
 	ship = { type = submarine name = "10th Submarine Division" historical_model = 1 }
 }
@@ -440,9 +440,9 @@ navy = {
 	name = "USN Battleship Fleet 3"
 	base = 4900
 	location = 4900
-	ship = { type = battleship name = "USS New Mexico" historical_model = 1 }
-	ship = { type = battleship name = "USS Mississippi" historical_model = 1 }
-	ship = { type = battleship name = "USS Idaho" historical_model = 1 }
+	ship = { type = battleship name = "USS New Mexico (BB-40)" historical_model = 3 }
+	ship = { type = battleship name = "USS Mississippi (BB-41)" historical_model = 3 }
+	ship = { type = battleship name = "USS Idaho (BB-42)" historical_model = 3 }
 	ship = { type = destroyer name = "44th Destroyer Division" historical_model = 0 }
 	ship = { type = destroyer name = "45th Destroyer Division" historical_model = 0 }
 	ship = { type = destroyer name = "46th Destroyer Division" historical_model = 0 }
@@ -451,31 +451,31 @@ navy = {
 	name = "USN Battleship Fleet 5"
 	base = 4900
 	location = 4900
-	ship = { type = battleship name = "USS Arkansas" historical_model = 0 }
-	ship = { type = battleship name = "USS New York" historical_model = 1 }
-	ship = { type = battleship name = "USS Texas" historical_model = 1 }
+	ship = { type = battleship name = "USS Arkansas (BB-33)" historical_model = 0 }
+	ship = { type = battleship name = "USS New York (BB-34)*" historical_model = 1 }
+	ship = { type = battleship name = "USS Texas (BB-35)" historical_model = 1 }
 }
 navy = {
 	name = "USN Cruiser Fleet 2"
 	base = 4900
 	location = 4900
-	ship = { type = light_cruiser name = "USS Omaha" historical_model = 1 }
-	ship = { type = light_cruiser name = "USS Milwaukee" historical_model = 1 }
-	ship = { type = light_cruiser name = "USS Cincinnati" historical_model = 1 }
-	ship = { type = light_cruiser name = "USS Memphis" historical_model = 1 }
+	ship = { type = light_cruiser name = "USS Omaha (CL-4)*" historical_model = 1 }
+	ship = { type = light_cruiser name = "USS Milwaukee (CL-5)" historical_model = 1 }
+	ship = { type = light_cruiser name = "USS Cincinnati (CL-6)" historical_model = 1 }
+	ship = { type = light_cruiser name = "USS Memphis (CL-13)" historical_model = 1 }
 }
 navy = {
 	name = "USN Cruiser Fleet 7"
 	base = 4900
 	location = 4900
-	ship = { type = heavy_cruiser name = "USS Augusta" historical_model = 1 }
-	ship = { type = heavy_cruiser name = "USS Tuscaloosa" historical_model = 2 }
+	ship = { type = heavy_cruiser name = "USS Augusta (CA-31)" historical_model = 1 }
+	ship = { type = heavy_cruiser name = "USS Tuscaloosa (CA-37)" historical_model = 3 }
 }
 navy = {
 	name = "USS Ranger Taskforce"
 	base = 4900
 	location = 4900
-	ship = { type = carrier name = "USS Ranger" historical_model = 2 air = { location = 4900 wing = { type = cag historical_model = 1 } } air = { location = 4900 wing = { type = cag historical_model = 1 } } }
+	ship = { type = carrier name = "USS Ranger (CV-4)" historical_model = 2 air = { location = 4900 wing = { type = cag historical_model = 1 } } air = { location = 4900 wing = { type = cag historical_model = 1 } } }
 	ship = { type = destroyer name = "18th Destroyer Division" historical_model = 0 }
 	ship = { type = destroyer name = "19th Destroyer Division" historical_model = 0 }
 	ship = { type = destroyer name = "20th Destroyer Division" historical_model = 0 }
@@ -573,7 +573,7 @@ air = {
 military_construction = {
 	country = USA
 	carrier = {
-		name = "USS Enterprise"
+		name = "USS Enterprise (CV-6)"
 		historical_model = 1
 	}
 	cost = 7.43
@@ -603,7 +603,7 @@ military_construction = {
 military_construction = {
 	country = USA
 	carrier = {
-		name = "USS Yorktown"
+		name = "USS Yorktown (CV-5)*"
 		historical_model = 2
 	}
 	cost = 4.80
@@ -633,8 +633,8 @@ military_construction = {
 military_construction = {
 	country = USA
 	heavy_cruiser = {
-		name = "USS Quincy"
-		historical_model = 2
+		name = "USS Quincy (CA-39)"
+		historical_model = 3
 	}
 	cost = 4.80
 	progress = 0
