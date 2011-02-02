@@ -1,3 +1,4 @@
+# Clemson-class 1919-1922 @ 156
 destroyer.0 = {
 	destroyer_armament = 0
 	destroyer_antiaircraft = 0
@@ -10,9 +11,10 @@ destroyer.0 = {
 	spotting = 0 
 }
 
+# Farragut-class 1932-1935 @ 8
 destroyer.1 = {
 	destroyer_armament = 1
-	destroyer_antiaircraft = 0
+	destroyer_antiaircraft = 1
 	destroyer_engine = 1
 	destroyer_armour = 0
 	smallwarship_radar = 0
@@ -22,11 +24,11 @@ destroyer.1 = {
 	spotting = 0 
 }
 
-
+# Porter-class 1933-1937 @ 8
 destroyer.2 = {
-	destroyer_armament = 2
-	destroyer_antiaircraft = 1
-	destroyer_engine = 2
+	destroyer_armament = 1
+	destroyer_antiaircraft = 0
+	destroyer_engine = 0
 	destroyer_armour = 2
 	smallwarship_radar = 0
 	smallwarship_asw = 0
@@ -35,10 +37,102 @@ destroyer.2 = {
 	spotting = 0 
 }
 
+# Mahan-class 1935-1937 @ 18
 destroyer.3 = {
+	destroyer_armament = 2
+	destroyer_antiaircraft = 1
+	destroyer_engine = 0
+	destroyer_armour = 1
+	smallwarship_radar = 0
+	smallwarship_asw = 1
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Gridley-class 1935-1938 @ 4
+destroyer.4 = {
+	destroyer_armament = 1
+	destroyer_antiaircraft = 1
+	destroyer_engine = 2
+	destroyer_armour = 1
+	smallwarship_radar = 0
+	smallwarship_asw = 0
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Bagley-class 1935-1937 @ 8
+destroyer.5 = {
 	destroyer_armament = 3
-	destroyer_antiaircraft =3
+	destroyer_antiaircraft = 1
+	destroyer_engine = 2
+	destroyer_armour = 1
+	smallwarship_radar = 0
+	smallwarship_asw = 1
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Somers-class 1935-1939 @ 5 (based on porter, but more guns, more torps, AA)
+destroyer.6 = {
+	destroyer_armament = 3
+	destroyer_antiaircraft = 2
+	destroyer_engine = 2
+	destroyer_armour = 2
+	smallwarship_radar = 0
+	smallwarship_asw = 1
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Benham-class 1938-1939 @ 10
+destroyer.7 = {
+	destroyer_armament = 1
+	destroyer_antiaircraft = 2
 	destroyer_engine = 3
+	destroyer_armour = 1
+	smallwarship_radar = 0
+	smallwarship_asw = 0
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Sims-class 1939-1940 @ 12
+destroyer.8 = {
+	destroyer_armament = 1
+	destroyer_antiaircraft = 2
+	destroyer_engine = 2
+	destroyer_armour = 1
+	smallwarship_radar = 0
+	smallwarship_asw = 0
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Benson-Gleaves-class 1939-1943 @ 30 + 62
+destroyer.9 = {
+	destroyer_armament = 3
+	destroyer_antiaircraft = 2
+	destroyer_engine = 2
+	destroyer_armour = 1
+	smallwarship_radar = 0
+	smallwarship_asw = 1
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Fletcher-class 1942-1944 @ 175
+destroyer.10 = {
+	destroyer_armament = 4
+	destroyer_antiaircraft = 4
+	destroyer_engine = 2
 	destroyer_armour = 3
 	smallwarship_radar = 0
 	smallwarship_asw = 1
@@ -47,12 +141,65 @@ destroyer.3 = {
 	spotting = 0 
 }
 
-destroyer.4 = {
-	destroyer_armament = 3
-	destroyer_antiaircraft = 4
-	destroyer_engine = 4
-	destroyer_armour = 3
+# Allen M. Sumner-class 1943-1945 @ 58
+destroyer.11 = {
+	destroyer_armament = 5
+	destroyer_antiaircraft = 5
+	destroyer_engine = 2
+	destroyer_armour = 4
 	smallwarship_radar = 0
+	smallwarship_asw = 1
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Gearing-class 1945-1945 @ 98
+destroyer.12 = {
+	destroyer_armament = 6
+	destroyer_antiaircraft = 6
+	destroyer_engine = 3
+	destroyer_armour = 5
+	smallwarship_radar = 0
+	smallwarship_asw = 1
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Forrest Sherman-class 1953-1959 @ 18
+destroyer.13 = {
+	destroyer_armament = 7
+	destroyer_antiaircraft = 7
+	destroyer_engine = 3
+	destroyer_armour = 6
+	smallwarship_radar = 1
+	smallwarship_asw = 1
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Charles F. Adams-class 1958-1967 @ 23
+destroyer.14 = {
+	destroyer_armament = 8
+	destroyer_antiaircraft = 8
+	destroyer_engine = 3
+	destroyer_armour = 8
+	smallwarship_radar = 1
+	smallwarship_asw = 1
+	destroyer_escort_role = 0 
+	destroyer_crew_training = 0 
+	spotting = 0 
+}
+
+# Farragut II-class 1957-1961 @ 10
+destroyer.15 = {
+	destroyer_armament = 9
+	destroyer_antiaircraft = 9
+	destroyer_engine = 3
+	destroyer_armour = 9
+	smallwarship_radar = 1
 	smallwarship_asw = 1
 	destroyer_escort_role = 0 
 	destroyer_crew_training = 0 

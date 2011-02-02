@@ -6,8 +6,8 @@ graphics=
 {
 size=
 {
-    x=1600
-    y=1024
+	x=1600
+	y=1024
 }
 
 refreshRate=60
