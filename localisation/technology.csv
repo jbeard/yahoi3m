@@ -5110,16 +5110,23 @@ USA_smallarms_technology_2;M1 Garand;M1 Garand;M1 Garand;;M1 Garand;;;;;;;;;x
 USA_smallarms_technology_3;M1 Carbine;M1 Carbine;M1-Karabiner;;Carabina M1;;;;;;;;;x
 USA_smallarms_technology_4;M1 Thompson SMG;M1 Thompson SMG;M1 Thompson-MP;;Subfusil Thompson M1;;;;;;;;;x
 USA_smallarms_technology_5;M3 Grease Gun;M3 Grease Gun;M3-MP;;Subfusil M3 Grease;;;;;;;;;x
+USA_smallarms_technology_6;M4 Carbine;M4 Carbine;M4-Karabiner;;Carabina M4;;;;;;;;;x
+USA_smallarms_technology_7;MP5 SMG;MP5 SMG;MP5-MP;;Subfusil MP5;;;;;;;;;x
 USA_infantry_support_0;0.30cal M1917A1 MG;MG M1917A1 cal 0,30;Kal. 0.30 M1917A1-MG;;Ametralladora M1917A1 cal. 0,30;;;;;;;;;x
 USA_infantry_support_1;M1 80mm Mortar;Mortier M1 80 mm;M1 80 mm-Mörser;;Mortero M1 80 mm;;;;;;;;;x
 USA_infantry_support_2;M2 60mm Mortar;Mortier M2 60 mm;M2 60 mm-Mörser;;Mortero M2 60 mm;;;;;;;;;x
 USA_infantry_support_3;M1918A2 BAR;M1918A2 BAR;M1918A2 BAR;;BAR?M1918A2;;;;;;;;;x
 USA_infantry_support_4;0.30cal M1919A4 MG;MG M1919A4 cal 0,30;Kal. 0.30 M1919A4-MG;;Ametralladora M1919A4 cal. 0,30;;;;;;;;;x
 USA_infantry_support_5;0.30cal M1941 MG;MG M1941 cal 0,30;Kal. 0.30cal M1941-MG;;Ametralladora M1941 cal. 0,30;;;;;;;;;x
-USA_infantry_support_6;M2 4.2 mortar;Mortier M2 4,2 pouces;M2 4.2 Zoll-Mörser;;Mortero M2 4,2'';;;;;;;;;x
+USA_infantry_support_6;M2 4.2in mortar;Mortier M2 4,2 pouces;M2 4.2 Zoll-Mörser;;Mortero M2 4,2'';;;;;;;;;x
+USA_infantry_support_7;M30 4.2in mortar;Mortier M30 4,2 pouces;M30 4.2 Zoll-Mörser;;Mortero M30 4,2'';;;;;;;;;x
+USA_infantry_support_8;M224 60mm mortar;Mortier M224 60mm;M224 60mm Zoll-Mörser;;Mortero M224 60mm;;;;;;;;;x
+USA_infantry_support_9;M252 60mm mortar;Mortier M252 60mm;M252 60mm Zoll-Mörser;;Mortero M252 60mm;;;;;;;;;x
 USA_infantry_guns_0;M1 75mm Pack Howitzer;Obusier démontable M1 75 mm;M1 75 mm-Haubitze;;Obús Pack M1 75 mm;;;;;;;;;x
 USA_infantry_guns_1;105 mm Howitzer M2;Obusier M2 105 mm;105 mm-Haubitze M2;;Obús M2 105 mm;;;;;;;;;x
 USA_infantry_guns_2;105 mm Howitzer M2A1;Obusier M2A1 105 mm ;105 mm-Haubitze M2A1;;Obús M2A1 105 mm;;;;;;;;;x
+USA_infantry_guns_3;105 mm Howitzer M102;Obusier M102 105 mm ;105 mm-Haubitze M102;;Obús M102 105 mm;;;;;;;;;x
+USA_infantry_guns_4;105 mm Howitzer M119A1;Obusier M119A1 105 mm ;105 mm-Haubitze M119A1;;Obús M119A1 105 mm;;;;;;;;;x
 USA_night_goggles_0;Sniperscope M1;Sniperscope M1;M1-Zielfernrohr;;Anteojo de francotirador M1;;;;;;;;;x
 USA_night_goggles_1;Sniperscope M3;Sniperscope M3;M3-Zielfernrohr;;Anteojo de francotirador M3;;;;;;;;;x
 USA_militia_smallarms_0;Springfield M1903;Springfield M1903;Springfield M1903;;Springfield M1903;;;;;;;;;x
@@ -5153,9 +5160,18 @@ USA_tank_armour_4;64mm;64 mm;64 mm;;64 mm;;;;;;;;;x
 USA_tank_armour_5;100mm;100 mm;100 mm;;100 mm;;;;;;;;;x;
 USA_destroyer_armament_0;4/50 Mk9;Mk9 4 pouces/50;4 Zoll / 50 Mk9;;Mk 9 4''/50;;;;;;;;;x;
 USA_destroyer_armament_1;5/38 Mk12;Mk12 5 pouces/38;5 Zoll / 38 Mk12;;Mk12 5''/38;;;;;;;;;x;
-USA_destroyer_armament_2;5/38 Mk12;Mk12 5 pouces/38;5 Zoll / 38 Mk12;;Mk12 5''/38;;;;;;;;;x;
-USA_destroyer_armament_3;5/38 Mk12;Mk12 5 pouces/38;5 Zoll / 38 Mk12;;Mk12 5''/38;;;;;;;;;x;
-USA_destroyer_armament_5;5/54 Mk16;Mk16 5 pouces/54;5 Zoll / 54 Mk16;;Mk16 5''/54;;;;;;;;;x;,
+USA_destroyer_armament_2;5/38 Mk16;Mk16 5 pouces/38;5 Zoll / 38 Mk16;;Mk16 5''/38;;;;;;;;;x;
+USA_destroyer_armament_3;5/38 Mk18;Mk18 5 pouces/38;5 Zoll / 38 Mk18;;Mk18 5''/38;;;;;;;;;x;
+USA_destroyer_armament_4;5/38 Mk21;Mk21 5 pouces/38;5 Zoll / 38 Mk21;;Mk21 5''/38;;;;;;;;;x;
+USA_destroyer_armament_5;5/38 Mk22;Mk22 5 pouces/38;5 Zoll / 38 Mk22;;Mk22 5''/38;;;;;;;;;x;
+USA_destroyer_armament_6;5/38 Mk24;Mk24 5 pouces/38;5 Zoll / 38 Mk24;;Mk24 5''/38;;;;;;;;;x;
+USA_destroyer_armament_7;5/38 Mk28;Mk28 5 pouces/38;5 Zoll / 38 Mk28;;Mk28 5''/38;;;;;;;;;x;
+USA_destroyer_armament_8;5/38 Mk29;Mk29 5 pouces/38;5 Zoll / 38 Mk29;;Mk29 5''/38;;;;;;;;;x;
+USA_destroyer_armament_9;5/38 Mk30;Mk30 5 pouces/38;5 Zoll / 38 Mk30;;Mk30 5''/38;;;;;;;;;x;
+USA_destroyer_armament_10;5/38 Mk32;Mk32 5 pouces/38;5 Zoll / 38 Mk32;;Mk32 5''/38;;;;;;;;;x;
+USA_destroyer_armament_11;5/38 Mk38;Mk38 5 pouces/38;5 Zoll / 38 Mk38;;Mk38 5''/38;;;;;;;;;x;
+USA_destroyer_armament_12;5/54 Mk16;Mk34 5 pouces/54;5 Zoll / 54 Mk34;;Mk34 5''/54;;;;;;;;;x;,
+USA_destroyer_armament_13;5/54 Mk16;Mk42 5 pouces/54;5 Zoll / 54 Mk42;;Mk42 5''/54;;;;;;;;;x;,
 USA_destroyer_antiaircraft_0;3/23 Mk7;Mk7 3 pouces/23;3 Zoll / 23 Mk7;;Mk 7 3''/23;;;;;;;;;x;,
 USA_destroyer_antiaircraft_1;1.1/75 Mk2;Mk2 1.1 pouces/75;1.1 Zoll / 75 Mk2;;Mk 2 1,1''/75;;;;;;;;;x;,
 USA_destroyer_antiaircraft_2;20mm/70 AA MG;MG AA 20 mm/70;20 mm / 70 Flak-MG;;Ametralladora AA 20 mm/70;;;;;;;;;x;,
