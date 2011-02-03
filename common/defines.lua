@@ -61,7 +61,7 @@ economy = {
 
 military = {
 	MAX_MANPOWER = 10,
-	HISTORICAL_MODEL_MAX = 10, 	-- historical models max
+	HISTORICAL_MODEL_MAX = 20, 	-- historical models max
 	BASE_CHANCE_TO_AVOID_HIT = 0.8,	-- Base chance to avoid hit if defences left.
 	CHANCE_TO_AVOID_HIT_AT_NO_DEF = 0.6,	-- chance to avoid hit if no defences left.
 	RIVER_CROSSING_PENALTY = -0.5,	-- base river crossing penalty.
