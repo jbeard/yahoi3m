@@ -1,0 +1,548 @@
+diff --git a/common/countries/USA.txt b/common/countries/USA.txt
+index 01aab4a..db407e8 100644
+--- a/common/countries/USA.txt
++++ b/common/countries/USA.txt
+@@ -240,31 +240,45 @@ unit_names = {
+ 		"50th USAAF Troop Carrier Wing" "51st USAAF Troop Carrier Wing" "52d USAAF Troop Carrier Wing" "53rd USAAF Troop Carrier Wing" "54th USAAF Troop Carrier Wing" "60th USAAF Troop Carrier Wing" "61st USAAF Troop Carrier Wing" "322d USAAF Troop Carrier Wing" "333th USAAF Troop Carrier Wing" "334th USAAF Troop Carrier Wing" "335th USAAF Troop Carrier Wing" 
+ 		"336th USAAF Troop Carrier Wing" 
+ 	}
++
+ 	battleship = {
+-		"USS North Carolina" "USS Washington" "USS South Dakota" "USS Indiana" "USS Massachusetts" "USS Alabama" "USS Iowa" "USS New Jersey" "USS Missouri" "USS Wisconsin" "USS Illinois" 
+-		"USS Kentucky" "USS Montana" "USS Ohio" "USS Maine" "USS New Hampshire" "USS Louisiana" "USS South Carolina" "USS Michigan" "USS Delaware" "USS North Dakota" "USS Florida" 
+-		"USS Utah" "USS Wyoming" "USS Arkansas" "USS New York" "USS Texas" "USS Nevada" "USS Oklahoma" "USS Pennsylvania" "USS Arizona" "USS New Mexico" "USS Mississippi" 
+-		"USS Idaho" "USS Tennessee" "USS California" "USS Colorado" "USS Maryland" "USS West Virginia" 
++		"USS West Virginia (BB-48)" "USS North Carolina (BB-55)" "USS Washington (BB-56)"
++		"USS South Dakota (BB-57)*" "USS Indiana (BB-58)" "USS Massachusetts (BB-59)" "USS Alabama (BB-60)"
++		"USS Iowa (BB-61)*" "USS New Jersey (BB-62)" "USS Missouri (BB-63)" "USS Wisconsin (BB-64)" "USS Illinois (BB-65)" "USS Kentucky (BB-66)"
++		"USS Montana (BB-67)*" "USS Ohio (BB-68)" "USS Maine (BB-69)" "USS New Hampshire (BB-70)" "USS Louisiana (BB-71)" "USS South Carolina (BB-72)"
++		"USS Michigan (BB-73)*" "USS Delaware (BB-74)" "USS North Dakota (BB-75)" "USS Florida (BB-76)"
++		"USS Utah (BB-77)*" "USS Wyoming (BB-78)" "USS Arkansas (BB-79)" "USS New York (BB-80)"
++		"USS Texas (BB-81)*" "USS Nevada (BB-82)" "USS Oklahoma (BB-83)" "USS Pennsylvania (BB-84)"
++		"USS Arizona (BB-85)*" "USS New Mexico (BB-86)" "USS Mississippi (BB-87)" "USS Idaho (BB-88)"
++		"USS Tennessee (BB-89)*" "USS California (BB-90)" "USS Colorado (BB-91)" "USS Maryland (BB-92)"
++		"USS West Virginia (BB-93)*"
+ 	}
+ 	light_cruiser = {
+-		"USS Brooklyn" "USS Philadelphia" "USS Savannah" "USS Nashville" "USS Honolulu" "USS Phoenix" "USS Boise" "USS St Louis" "USS Helena" "USS Atlanta" "USS Juneau" 
+-		"USS San Diego" "USS San Juan" "USS Oakland" "USS Cleveland" "USS Columbia" "USS Montpelier" "USS Denver" "USS Santa Fe" "USS Reno" "USS Birmingham" "USS Mobile" 
+-		"USS Biloxi" "USS Houston" "USS Miami" "USS Flint" "USS Vincennes" "USS Pasadena" "USS Springfield" "USS Topeka" "USS Vicksburg" "USS Duluth" "USS Astoria" 
+-		"USS Oklahoma City" "USS Wilkes-Barre" "USS Tucson" "USS Providence" "USS Little Rock" "USS Amsterdam" "USS Portsmouth" "USS Dayton" "USS Fargo" "USS Spokane" "USS Fresno" 
+-		"USS Manchester" "USS Galveston" "USS Huntington" "USS Worcester" "USS Roanoke" "USS Tallahassee" "USS New Haven" "USS Wilmington" "USS Buffalo" "USS Youngstown" "USS Newark" 
+-		"USS Vallejo" "USS Cheyenne" "USS Chattanooga" "USS Gary" "USS Omaha" "USS Milwaukee" "USS Detroit" "USS Richmond" "USS Concord" "USS Cincinnati" "USS Raleigh" 
+-		"USS Trenton" "USS Marblehead" "USS Memphis" 
++		"USS Brooklyn (CL-40)*" "USS Philadelphia (CL-41)" "USS Savannah (CL-42)" "USS Nashville (CL-43)" "USS Honolulu (CL-48)" "USS Phoenix (CL-46)" "USS Boise (CL-47)"
++		"USS St Louis (CL-49)*" "USS Helena (CL-50)"
++		"USS Atlanta (CL-51)*" "USS Juneau (CL-52)" "USS San Diego (CL-53)" "USS San Juan (CL-54)"
++		"USS Cleveland (CL-55)*" "USS Columbia (CL-56)" "USS Montpelier (CL-57)" "USS Denver (CL-58)" "USS Santa Fe (CL-60)" "USS Birmingham (CL-62)" "USS Mobile (CL-63)" "USS Vincennes (CL-64)" "USS Padadena (CL-65)" "USS Springfield (CL-66)" "USS Topeka (CL-67)" "USS Biloxi (CL-80)" "USS Houston (CL-81)" "USS Providence (CL-82)" "USS Manchester (CL-83)" "USS Vicksburg (CL-86)" "USS Duluth (CL-87)" "USS Miami (CL-89)" "USS Astoria (CL-90)" "USS Oklahoma City (CL-91)" "USS Little Rock (CL-92)"
++		"USS Oakland (CL-95)*" "USS Reno (CL-96)" "USS Flint (CL-97)" "USS Tucson (CL-98)"
++		"USS Galveston (CL-93)*" "USS Amsterdam (CL-101)" "USS Portsmouth (CL-102)" "USS Wilkes-Barre (CL-103)" "USS Atlanta (CL-104)" "USS Dayton (CL-105)"
++		"USS Fargo (CL-106)*" "USS Huntington (CL-107)" "USS Juneau (CL-119)" "USS Spokane (CL-120)" "USS Fresno (CL-121)"
++		"USS Worcester (CL-144)" "USS Roanoke (CL-145)" "USS Vallejo (CL-146)" "USS Gary (CL-147)"
+ 	}
+ 	heavy_cruiser = {
+-		"USS Pensacola" "USS Salt Lake City" "USS Northampton" "USS Chester" "USS Louisville" "USS Chicago" "USS Houston" "USS Augusta" "USS Portland" "USS Indianapolis" "USS New Orleans" 
+-		"USS Astoria" "USS Minneapolis" "USS Tuscaloosa" "USS Quincy" "USS Vincennes" "USS San Francisco" "USS Wichita" "USS Baltimore" "USS Boston" "USS Canberra" "USS Quincy" 
+-		"USS Pittsburgh" "USS St Paul" "USS Bremerton" "USS Columbus" "USS Fall River" "USS Los Angeles" "USS Macon" "USS Helena" "USS Oregon City" "USS Albany" "USS Toledo" 
+-		"USS Rochester" "USS Cambridge" "USS Bridgeport" "USS Kansas City" "USS Tulsa" "USS Norfolk" "USS Scranton" "USS Des Moines" "USS Salem" "USS Newport News" "USS Dallas" 
+-		"USS Long Beach" 
++		"USS Vincennes (CA-44)" "USS Wichita (CA-45)"
++		"USS Baltimore (CA-68)*" "USS Boston (CA-69)" "USS Canberra (CA-70)" "USS Quincy (CA-71)" "USS Pittsburgh (CA-72)" "USS Saint Paul (CA-73)" "USS Columbus (CA-74)" "USS Helena (CA-75)"
++		"USS Bremerton (CA-130)" "USS Fall River (CA-131)" "USS Macon (CA-132)" "USS Toledo (CA-133)" "USS Los Angeles (CA-135)" "USS Chicago (CA-136)"
++		"USS Oregon City (CA-122)*" "USS Albany (CA-123)" "USS Rochester (CA-124)" "USS Cambridge (CA-126)" "USS Bridgeport (CA-127)" "USS Kansas City (CA-128)" "USS Tulsa (CA-129)" "USS Norfolk (CA-137)" "USS Scranton (CA-138)"
++		"USS Des Moines (CA-134)*" "USS Salem (CA-139)" "USS Newport News (CA-148)" "USS Dallas (CA-150)"
++		"USS Long Beach (CGN-160)*"
+ 	}
+ 	battlecruiser = {
+-		"USS Alaska" "USS Guam" "USS Hawaii" "USS Philippines" "USS Puerto Rico" "USS Samoa" "USS Lexington" "USS Constellation" "USS Saratoga" "USS Ranger" "USS Constitution" 
+-		"USS United States" 
++		"USS Alaska (CB-1)*" "USS Guam (CB-2)" "USS Hawaii (CB-3)" "USS Philippines (CB-4)" "USS Puerto Rico (CB-5)" "USS Samoa (CB-6)" "USS United States (CB-7)"
++		"USS Chesapeake (CB-8)" "USS Constitution (CB-9)" "USS President (CB-10)" "USS Congress (CB-11)" "USS Constellation (CB-12)"
++		"USS Union (CB-14)" "USS Liberty (CB-15)"
++		"Leahy (CG-16)*" "Harry E. Yarnell (CG-17)" "Worden (CG-18)" "Dale (CG-19)" "Richmond K. Turner (CG-20)" "Gridley (CG-21)" "England (CG-22)" "Halsey (CG-23)" "Reeves (CG-24)"
++		"Belknap (CG-26)" "Josephus Daniels (CG-27)" "Wainwright (CG-28)" "Jouett (CG-29)" "Horne (CG-30)" "Sterett (CG-31)" "William H. Standley (CG-32)" "Fox (CG-33)" "Biddle (CG-34)"
++		"Truxtun (CGN-35)" "California (CGN-36)" "South Carolina (CGN-37)"
++		"Virginia (CGN-38)" "Texas (CGN-39)" "Mississippi (CGN-40)" "Arkansas (CGN-41)"
+ 	}
+ 	destroyer = {
+ 		"1st Destroyer Division" "2nd Destroyer Division" "3rd Destroyer Division" "4th Destroyer Division" "5th Destroyer Division" "6th Destroyer Division" "7th Destroyer Division" "8th Destroyer Division" "9th Destroyer Division" "10th Destroyer Division" "11th Destroyer Division" 
+@@ -279,15 +293,25 @@ unit_names = {
+ 		"100th Destroyer Division" 
+ 	}
+ 	carrier = {
+-		"USS Lexington" "USS Saratoga" "USS Ranger" "USS Yorktown" "USS Enterprise" "USS Wasp" "USS Hornet" "USS Essex" "USS Intrepid" "USS Franklin" "USS Ticonderoga" 
+-		"USS Randolph" "USS Bunker Hill" "USS Hancock" "USS Bennington" "USS Bon Homme Richard" "USS Leyte" "USS Kearsarge" "USS Oriskany" "USS Reprisal" "USS Antietam" "USS Shangri-La" 
+-		"USS Lake Champlain" "USS Midway" "USS Franklin D. Roosevelt" "USS Coral Sea" "USS Philippine Sea" "USS United States" "USS Forrestal" "USS Saratoga" "USS Kitty Hawk" "USS Constellation" "USS America" 
+-		"USS Theodore Roosevelt" "USS Abraham Lincoln" "USS George Washington" 
++		"USS Yorktown (CV-5)*" "USS Enterprise (CV-6)" "USS Wasp (CV-7)" "USS Hornet (CV-8)"
++		"USS Essex (CV-9)*" "USS Bon Homme Richard (CV-10)" "USS Intrepid (CV-11)" "USS Kearsarge (CV-12)" "USS Franklin (CV-13)" "USS Ticonderoga (CV-14)" "USS Randolph (CV-15)" "USS Cabot (CV-16)" "USS Bunker Hill (CV-17)" "USS Oriskany (CV-18)" "USS Hancock (CV-19)" "USS Bennington (CV-20)" "USS Boxer (CV-21)" "USS Franklin (CV-31)" "USS Leyte (CV-32)" "USS Mohican (CV-33)" "USS Stanwix (CV-34)" "USS Reprisal (CV-35)" "USS Antietam (CV-36)" "USS Princeton (CV-37)" "USS Shangri-La (CV-38)" "USS Lake Champlain (CV-39)" "USS Tarawa (CV-40)" "USS Valley Forge (CV-45)" "USS Philippine Sea (CV-47)" 
++		"USS Midway (CV-41)*" "USS Franklin D. Roosevelt (CV-42)" "USS Coral Sea (CV-43)"
++		"USS Forrestal (CV-59)*" "USS Saratoga (CV-60)" "USS Ranger (CV-61)" "Independence (CV-62)"
++		"USS Kitty Hawk (CV-63)*" "USS Constellation (CV-64)"
++		"USS Enterprise (CV-65)*" "USS America (CV-66)" "USS John F. Kennedy (CV-67)"
++		"USS Nimitz (CVN-68)*" "USS Dwight D. Eisenhower (CVN-69)" "USS Carl Vinson (CVN-70)" "USS Theodore Roosevelt (CVN-71)" "USS Abraham Lincoln (CVN-72)" "USS George Washington (CVN-73)" "USS John C. Stennis (CVN-74)" "USS Harry S. Truman (CVN-75)" "USS Ronald Reagan (CVN-76)" "USS George H.W. Bush (CVN-77)"
+ 	}
++
+ 	escort_carrier = {
+-		"USS Independence" "USS Princeton" "USS Belleau Wood" "USS Cowpens" "USS Monterey" "USS Langley" "USS Cabot" "USS Bataan" "USS San Jacinto" "USS Saipan" "USS Wright" 
+-		"USS Block Island" "USS Iwo Jima" "USS Okinawa" "USS Boxer" "USS Thetis Bay" "USS Guadalcanal" "USS Valley Forge" "USS Guam" "USS Tripoli" "USS New Orleans" "USS Tarawa" 
+-		"USS Nassau" "USS Peleliu" 
++		"USS Long Island (CVE-1)*"
++		"USS Bogue (CVE-9)*" "USS Card (CVE-11)" "USS Copahee (CVE-12)" "USS Core (CVE-13)" "USS Nassau (CVE-16)" "USS Altamaha (CVE-18)" "USS Barnes (CVE-20)" "USS Breton (CVE-23)" "USS Croatan (CVE-25)" "USS Prince William (CVE-31)"
++		"USS Sangamon (CVE-26)*" "USS Suwannee (CVE-27)" "USS Chenango (CVE-28)" "USS Santee (CVE-29)"
++		"USS Casablanca (CVE-55)*" "USS Liscome Bay (CVE-56)" "USS Anzio (CVE-57)" "USS Corregidor (CVE-58)" "USS Mission Bay (CVE-59)" "USS Guadalcanal (CVE-60)" "USS Manila Bay (CVE-61)" "USS Natoma Bay (CVE-62)" "USS St. Lo (CVE-63)" "USS Tripoli (CVE-64)" "USS Wake Island (CVE-65)" "USS Whie Plains (CVE-66)" "USS Solomons (CVE-67)" "USS Kalinin Bay (CVE-68)" "USS Kasaan Bay (CVE-69)" "USS Fanshaw Bay (CVE-70)" "USS Kitkun Bay (CVE-71)" "USS Tulagi (CVE-72)" "USS Gambier Bay (CVE-73)" "USS Nehenta Bay (CVE-74)" "USS Hoggatt Bay (CVE-75)" "USS Kadasahan Bay (CVE-76)" "USS Marcus Island (CVE-77)" "USS Savo Island (CVE-78)" "USS Ommaney Bay (CVE-79)" "USS Petrof Bay (CVE-80)" "USS Rudyerd Bay (CVE-81)" "USS Saginaw Bay (CVE-82)" "USS Sargent Bay (CVE-83)" "USS Shamrock Bay (CVE-84)" "USS Shipley Bay (CVE-85)" "USS Sitkoh Bay (CVE-86)" "USS Steamer Bay (CVE-87)" "USS Cape Esperance (CVE-88)" "USS Takanis Bay (CVE-89)" "USS Thetis Bay (CVE-90)" "USS Makassar Strait (CVE-91)" "USS Windham Bay (CVE-92)" "USS Makin Island (CVE-93)" "USS Lunga Point (CVE-94)" "USS Bismarck Sea (CVE-95)" "USS Salamaua (CVE-96)" "USS Hollandia (CVE-97)" "USS Kwajalein (CVE-98)" "USS Admiralty Islands (CVE-99)" "USS Bougainville (CVE-100)" "USS Matanikau (CVE-101)" "USS Attu (CVE-102)" "USS Roi (CVE-103)" USS Munda (CVE-104)"
++		"USS Commencement Bay (CVE-105)*" "USS Block Island (CVE-105)" "USS Gilbert Islands (CVE-107)" "USS Kula Gulf (CVE-108)" "USS Cape Gloucester (CVE-109)" "USS Salerno Bay (CVE-110)" "USS Vella Gulf (CVE-111)" "USS Siboney (CVE-112)" "USS Puget Sounds (CVE-113)" "USS Rendova (CVE-114)" "USS Bairoko (CVE-115)" "USS Badoeng Strait (CVE-116)" "USS Saidor (CVE-117)" "USS Sicily (CVE-118)" "USS Point Cruz (CVE-119)" "USS Mindoro (CVE-120)" "USS Rabaul (CVE-121)" "USS Palau (CVE-122)" "USS Tinian (CVE-123)" "USS Bastogne (CVE-124)" "USS Eniwetok (CVE-125)" "USS Lingayen (CVE-127)"
++		"USS Independence (CVL-22)*" "USS Princeton (CVL-23)" "USS Belleau Wood (CVL-24)" "USS Cowpens (CVL-25)" "USS Monterey (CVL-26)" "USS Langley (CVL-27)" "USS Cabot (CVL-28)" "USS Bataan (CVL-29)" "USS San Jacinto (CVL-30)"
++		"USS Saipan (CVL-48)*" "USS Wright (CVL-49)" 
++		"USS Iwo Jima (LPH-2)*" "USS Okinawa (LPH-3)" "USS Guadalcanal (LPH-7)" "USS Guam (LPH-9)" "USS Tripoli (LPH-10)" "USS New Orleans (LPH-11)" "USS Inchon (LPH-12)"
++		"USS Tarawa (LHA-1)*" "USS Saipan (LHA-2)" "USS Belleau Wood (LHA-3)" "USS Nassau (LHA-4)" "USS Peleliu (LHA-5)"
+ 	}
+ 	submarine = {
+ 		"1st Submarine Division" "2nd Submarine Division" "3rd Submarine Division" "4th Submarine Division" "5th Submarine Division" "6th Submarine Division" "7th Submarine Division" "8th Submarine Division" "9th Submarine Division" "10th Submarine Division" "11th Submarine Division" 
+diff --git a/history/units/USA_1936.txt b/history/units/USA_1936.txt
+index 851da65..b679947 100644
+--- a/history/units/USA_1936.txt
++++ b/history/units/USA_1936.txt
+@@ -310,64 +310,64 @@ navy = {
+ 	name = "USN Battleship Fleet 1"
+ 	base = 7350
+ 	location = 7350
+-	ship = { type = carrier name = "USS Lexington" historical_model = 1 air = { location = 7350 wing = { type = cag historical_model = 1 } } air = { location = 7350 wing = { type = cag historical_model = 1 } } }
+-	ship = { type = battleship name = "USS Nevada" historical_model = 1 }
+-	ship = { type = battleship name = "USS Arizona" historical_model = 1 }
+-	ship = { type = battleship name = "USS Pennsylvania" historical_model = 1 }
++	ship = { type = carrier name = "USS Lexington (CV-2)*" historical_model = 1 air = { location = 7350 wing = { type = cag historical_model = 1 } } air = { location = 7350 wing = { type = cag historical_model = 1 } } }
++	ship = { type = battleship name = "USS Nevada (BB-36)*" historical_model = 2 }
++	ship = { type = battleship name = "USS Arizona (BB-39)" historical_model = 2 }
++	ship = { type = battleship name = "USS Pennsylvania (BB-38)" historical_model = 2 }
+ }
+ navy = {
+ 	name = "USN Battleship Fleet 2"
+ 	base = 7350
+ 	location = 7350
+-	ship = { type = carrier name = "USS Saratoga" historical_model = 1 air = { location = 7350 wing = { type = cag historical_model = 1 } } air = { location = 7350 wing = { type = cag historical_model = 1 } } }
+-	ship = { type = battleship name = "USS Oklahoma" historical_model = 1 }
+-	ship = { type = battleship name = "USS Tennessee" historical_model = 1 pride = yes }
+-	ship = { type = battleship name = "USS California" historical_model = 1 }
++	ship = { type = carrier name = "USS Saratoga (CV-3)" historical_model = 1 air = { location = 7350 wing = { type = cag historical_model = 1 } } air = { location = 7350 wing = { type = cag historical_model = 1 } } }
++	ship = { type = battleship name = "USS Oklahoma (BB-37)" historical_model = 2 }
++	ship = { type = battleship name = "USS Tennessee (BB-43)" historical_model = 3 }
++	ship = { type = battleship name = "USS California (BB-44)" historical_model = 3 }
+ }
+ navy = {
+ 	name = "USN Battleship Fleet 4"
+ 	base = 7350
+ 	location = 7350
+-	ship = { type = battleship name = "USS Colorado" historical_model = 2 }
+-	ship = { type = battleship name = "USS West Virginia" historical_model = 2 }
+-	ship = { type = battleship name = "USS Maryland" historical_model = 2 }
++	ship = { type = battleship name = "USS Colorado (BB-45)*" historical_model = 4 }
++	ship = { type = battleship name = "USS West Virginia (BB-48)" historical_model = 4 }
++	ship = { type = battleship name = "USS Maryland (BB-46)" historical_model = 4 }
+ }
+ navy = {
+ 	name = "USN Cruiser Fleet 3"
+ 	base = 7350
+ 	location = 7350
+-	ship = { type = light_cruiser name = "USS Richmond" historical_model = 1 }
+-	ship = { type = light_cruiser name = "USS Trenton" historical_model = 1 }
+-	ship = { type = light_cruiser name = "USS Concord" historical_model = 1 }
+-	ship = { type = light_cruiser name = "USS Raleigh" historical_model = 1 }
+-	ship = { type = light_cruiser name = "USS Detroit" historical_model = 1 }
++	ship = { type = light_cruiser name = "USS Richmond (CL-9)" historical_model = 1 }
++	ship = { type = light_cruiser name = "USS Trenton (CL-11)" historical_model = 1 }
++	ship = { type = light_cruiser name = "USS Concord (CL-10)" historical_model = 1 }
++	ship = { type = light_cruiser name = "USS Raleigh (CL-7)" historical_model = 1 }
++	ship = { type = light_cruiser name = "USS Detroit (CL-8)" historical_model = 1 }
+ }
+ navy = {
+ 	name = "USN Cruiser Fleet 4"
+ 	base = 7350
+ 	location = 7350
+-	ship = { type = heavy_cruiser name = "USS Pensacola" historical_model = 1 }
+-	ship = { type = heavy_cruiser name = "USS Salt Lake City" historical_model = 1 }
+-	ship = { type = heavy_cruiser name = "USS Chicago" historical_model = 1 }
+-	ship = { type = heavy_cruiser name = "USS Indianapolis" historical_model = 1 }
++	ship = { type = heavy_cruiser name = "USS Pensacola (CA-24)*" historical_model = 0 }
++	ship = { type = heavy_cruiser name = "USS Salt Lake City (CA-25)" historical_model = 0 }
++	ship = { type = heavy_cruiser name = "USS Chicago (CA-29)" historical_model = 1 }
++	ship = { type = heavy_cruiser name = "USS Indianapolis (CA-35)" historical_model = 2 }
+ }
+ navy = {
+ 	name = "USN Cruiser Fleet 5"
+ 	base = 7350
+ 	location = 7350
+-	ship = { type = heavy_cruiser name = "USS Northampton" historical_model = 1 }
+-	ship = { type = heavy_cruiser name = "USS Chester" historical_model = 1 }
+-	ship = { type = heavy_cruiser name = "USS Louisville" historical_model = 1 }
+-	ship = { type = heavy_cruiser name = "USS Portland" historical_model = 1 }
++	ship = { type = heavy_cruiser name = "USS Northampton (CA-26)*" historical_model = 1 }
++	ship = { type = heavy_cruiser name = "USS Chester (CA-27)" historical_model = 1 }
++	ship = { type = heavy_cruiser name = "USS Louisville (CA-28)" historical_model = 1 }
++	ship = { type = heavy_cruiser name = "USS Portland (CA-33)*" historical_model = 2 }
+ }
+ navy = {
+ 	name = "USN Cruiser Fleet 6"
+ 	base = 7350
+ 	location = 7350
+-	ship = { type = heavy_cruiser name = "USS New Orleans" historical_model = 2 }
+-	ship = { type = heavy_cruiser name = "USS Astoria" historical_model = 2 }
+-	ship = { type = heavy_cruiser name = "USS Minneapolis" historical_model = 2 }
+-	ship = { type = heavy_cruiser name = "USS San Francisco" historical_model = 2 }
++	ship = { type = heavy_cruiser name = "USS New Orleans (CA-32)" historical_model = 3 }
++	ship = { type = heavy_cruiser name = "USS Astoria (CA-34)" historical_model = 3 }
++	ship = { type = heavy_cruiser name = "USS Minneapolis (CA-36)" historical_model = 3 }
++	ship = { type = heavy_cruiser name = "USS San Francisco (CA-38)" historical_model = 3 }
+ }
+ navy = {
+ 	name = "Pacific Destroyer Fleet"
+@@ -415,7 +415,7 @@ navy = {
+ 	name = "USN Seattle Fleet"
+ 	base = 6697
+ 	location = 6697
+-	ship = { type = light_cruiser name = "USS Marblehead" historical_model = 1 }
++	ship = { type = light_cruiser name = "USS Marblehead (CL-12)" historical_model = 1 }
+ 	ship = { type = destroyer name = "16th Destroyer Division" historical_model = 0 }
+ 	ship = { type = destroyer name = "47th Destroyer Division" historical_model = 0 }
+ }
+@@ -423,7 +423,7 @@ navy = {
+ 	name = "USN Columbia Fleet"
+ 	base = 6697
+ 	location = 6697
+-	ship = { type = heavy_cruiser name = "USS Houston" historical_model = 1 }
++	ship = { type = heavy_cruiser name = "USS Houston (CA-30)" historical_model = 1 }
+ 	ship = { type = destroyer name = "43rd Destroyer Division" historical_model = 0 }
+ 	ship = { type = submarine name = "10th Submarine Division" historical_model = 1 }
+ }
+@@ -440,9 +440,9 @@ navy = {
+ 	name = "USN Battleship Fleet 3"
+ 	base = 4900
+ 	location = 4900
+-	ship = { type = battleship name = "USS New Mexico" historical_model = 1 }
+-	ship = { type = battleship name = "USS Mississippi" historical_model = 1 }
+-	ship = { type = battleship name = "USS Idaho" historical_model = 1 }
++	ship = { type = battleship name = "USS New Mexico (BB-40)" historical_model = 3 }
++	ship = { type = battleship name = "USS Mississippi (BB-41)" historical_model = 3 }
++	ship = { type = battleship name = "USS Idaho (BB-42)" historical_model = 3 }
+ 	ship = { type = destroyer name = "44th Destroyer Division" historical_model = 0 }
+ 	ship = { type = destroyer name = "45th Destroyer Division" historical_model = 0 }
+ 	ship = { type = destroyer name = "46th Destroyer Division" historical_model = 0 }
+@@ -451,31 +451,31 @@ navy = {
+ 	name = "USN Battleship Fleet 5"
+ 	base = 4900
+ 	location = 4900
+-	ship = { type = battleship name = "USS Arkansas" historical_model = 0 }
+-	ship = { type = battleship name = "USS New York" historical_model = 1 }
+-	ship = { type = battleship name = "USS Texas" historical_model = 1 }
++	ship = { type = battleship name = "USS Arkansas (BB-33)" historical_model = 0 }
++	ship = { type = battleship name = "USS New York (BB-34)*" historical_model = 1 }
++	ship = { type = battleship name = "USS Texas (BB-35)" historical_model = 1 }
+ }
+ navy = {
+ 	name = "USN Cruiser Fleet 2"
+ 	base = 4900
+ 	location = 4900
+-	ship = { type = light_cruiser name = "USS Omaha" historical_model = 1 }
+-	ship = { type = light_cruiser name = "USS Milwaukee" historical_model = 1 }
+-	ship = { type = light_cruiser name = "USS Cincinnati" historical_model = 1 }
+-	ship = { type = light_cruiser name = "USS Memphis" historical_model = 1 }
++	ship = { type = light_cruiser name = "USS Omaha (CL-4)*" historical_model = 1 }
++	ship = { type = light_cruiser name = "USS Milwaukee (CL-5)" historical_model = 1 }
++	ship = { type = light_cruiser name = "USS Cincinnati (CL-6)" historical_model = 1 }
++	ship = { type = light_cruiser name = "USS Memphis (CL-13)" historical_model = 1 }
+ }
+ navy = {
+ 	name = "USN Cruiser Fleet 7"
+ 	base = 4900
+ 	location = 4900
+-	ship = { type = heavy_cruiser name = "USS Augusta" historical_model = 1 }
+-	ship = { type = heavy_cruiser name = "USS Tuscaloosa" historical_model = 2 }
++	ship = { type = heavy_cruiser name = "USS Augusta (CA-31)" historical_model = 1 }
++	ship = { type = heavy_cruiser name = "USS Tuscaloosa (CA-37)" historical_model = 3 }
+ }
+ navy = {
+ 	name = "USS Ranger Taskforce"
+ 	base = 4900
+ 	location = 4900
+-	ship = { type = carrier name = "USS Ranger" historical_model = 2 air = { location = 4900 wing = { type = cag historical_model = 1 } } air = { location = 4900 wing = { type = cag historical_model = 1 } } }
++	ship = { type = carrier name = "USS Ranger (CV-4)" historical_model = 2 air = { location = 4900 wing = { type = cag historical_model = 1 } } air = { location = 4900 wing = { type = cag historical_model = 1 } } }
+ 	ship = { type = destroyer name = "18th Destroyer Division" historical_model = 0 }
+ 	ship = { type = destroyer name = "19th Destroyer Division" historical_model = 0 }
+ 	ship = { type = destroyer name = "20th Destroyer Division" historical_model = 0 }
+@@ -573,7 +573,7 @@ air = {
+ military_construction = {
+ 	country = USA
+ 	carrier = {
+-		name = "USS Enterprise"
++		name = "USS Enterprise (CV-6)"
+ 		historical_model = 1
+ 	}
+ 	cost = 7.43
+@@ -603,7 +603,7 @@ military_construction = {
+ military_construction = {
+ 	country = USA
+ 	carrier = {
+-		name = "USS Yorktown"
++		name = "USS Yorktown (CV-5)*"
+ 		historical_model = 2
+ 	}
+ 	cost = 4.80
+@@ -633,8 +633,8 @@ military_construction = {
+ military_construction = {
+ 	country = USA
+ 	heavy_cruiser = {
+-		name = "USS Quincy"
+-		historical_model = 2
++		name = "USS Quincy (CA-39)"
++		historical_model = 3
+ 	}
+ 	cost = 4.80
+ 	progress = 0
+diff --git a/localisation/Models.csv b/localisation/Models.csv
+index 897d68a..a8935fc 100644
+--- a/localisation/Models.csv
++++ b/localisation/Models.csv
+@@ -2291,22 +2291,36 @@ USA_battleship_4;Colorado-class;Classe Colorado;Colorado-Klasse;;Clase Colorado;
+ USA_battleship_5;South Dakota-class;Classe South Dakota;South Dakota-Klasse;;Clase South Dakota;;;;;;;;;x
+ USA_battleship_6;Iowa-class;Classe Iowa;Iowa-Klasse;;Clase Iowa;;;;;;;;;x
+ USA_super_heavy_battleship_0;Montana-class;Classe Montana;Montana-Klasse;;Clase Montana;;;;;;;;;x
+-USA_light_cruiser_1;Chester-class;Classe Chester;Chester-Klasse;;Clase Chester;;;;;;;;;x
+-USA_light_cruiser_2;Omaha-class;Classe Omaha;Omaha-Klasse;;Clase Omaha;;;;;;;;;x
+-USA_light_cruiser_3;Brooklyn-class;Classe Brooklyn;Brooklyn-Klasse;;Clase Brooklyn;;;;;;;;;x
+-USA_light_cruiser_4;Cleveland-class;Classe Cleveland;Cleveland-Klasse;;Clase Cleveland;;;;;;;;;x
+-USA_light_cruiser_5;Worcester-class;Classe Worcester;Worcester-Klasse;;Clase Worcester;;;;;;;;;x
+-USA_light_cruiser_6;Galveston-class;Classe Galveston;Galveston-Klasse;;Clase Galveston;;;;;;;;;x
++USA_super_heavy_battleship_1;Michigan-class;Classe Michigan;Michigan-Klasse;;Clase Michigan;;;;;;;;;x
++USA_super_heavy_battleship_2;Utah-class;Classe Utah;Utah-Klasse;;Clase Utah;;;;;;;;;x
++USA_super_heavy_battleship_3;Texas-class;Classe Texas;Texas-Klasse;;Clase Texas;;;;;;;;;x
++USA_super_heavy_battleship_4;Arizona-class;Classe Arizona;Arizona-Klasse;;Clase Arizona;;;;;;;;;x
++USA_super_heavy_battleship_5;Tennessee-class;Classe Tennessee;Tennessee-Klasse;;Clase Tennessee;;;;;;;;;x
++USA_super_heavy_battleship_6;West Virginia-class;Classe West Virginia;West Virginia-Klasse;;Clase West Virginia;;;;;;;;;x
++USA_light_cruiser_0;Chester-class;Classe Chester;Chester-Klasse;;Clase Chester;;;;;;;;;x
++USA_light_cruiser_1;Omaha-class;Classe Omaha;Omaha-Klasse;;Clase Omaha;;;;;;;;;x
++USA_light_cruiser_2;Brooklyn-class;Classe Brooklyn;Brooklyn-Klasse;;Clase Brooklyn;;;;;;;;;x
++USA_light_cruiser_3;Cleveland-class;Classe Cleveland;Cleveland-Klasse;;Clase Cleveland;;;;;;;;;x
++USA_light_cruiser_4;Oakland-class;Classe Oakland;Oakland-Klasse;;Clase Oakland;;;;;;;;;x
++USA_light_cruiser_5;Galveston-class;Classe Galveston;Galveston-Klasse;;Clase Galveston;;;;;;;;;x
++USA_light_cruiser_6;Fargo-class;Classe Fargo;Fargo-Klasse;;Clase Fargo;;;;;;;;;x
++USA_light_cruiser_7;Worcester-class;Classe Worcester;Worcester-Klasse;;Clase Worcester;;;;;;;;;x
+ USA_heavy_cruiser_0;Pensacola-class;Classe Pensacola;Pensacola-Klasse;;Clase Pensacola;;;;;;;;;x
+ USA_heavy_cruiser_1;Northampton-class;Classe Northampton;Northampton-Klasse;;Clase Northampton;;;;;;;;;x
+-USA_heavy_cruiser_2;New Orleans-class;Classe New Orleans;New Orleans-Klasse;;Clase New Orleans;;;;;;;;;x
++USA_heavy_cruiser_2;Portland-class;Classe Portland;Portland-Klasse;;Clase Portland;;;;;;;;;x
++USA_heavy_cruiser_3;New Orleans-class;Classe New Orleans;New Orleans-Klasse;;Clase New Orleans;;;;;;;;;x
+ USA_heavy_cruiser_4;Baltimore-class;Classe Baltimore;Baltimore-Klasse;;Clase Baltimore;;;;;;;;;x
+-USA_heavy_cruiser_5;Des Moines-class;Classe Des Moines;Des Moines-Klasse;;Clase Des Moines;;;;;;;;;x
+-USA_heavy_cruiser_6;Long Beach-class;Classe Long Beach;Long Beach-Klasse;;Clase Long Beach;;;;;;;;;x
+-USA_heavy_cruiser_7;Leahy-class;Classe Leahy;Leahy-Klasse;;Clase Leahy;;;;;;;;;x
+-USA_battlecruiser_2;Lexington-class;Classe Lexington;Lexington-Klasse;;Clase Lexington;;;;;;;;;x
+-USA_battlecruiser_4;Alaska-class;Classe Alaska;Alaska-Klasse;;Clase Alaska;;;;;;;;;x
+-USA_battlecruiser_6;CGN 42-class;Classe CGN 42;CGN 42-Klasse;;Clase CGN 42;;;;;;;;;x
++USA_heavy_cruiser_5;Oregon City-class;Classe Oregon City;Oregon City-Klasse;;Clase Oregon City;;;;;;;;;x
++USA_heavy_cruiser_6;Des Moines-class;Classe Des Moines;Des Moines-Klasse;;Clase Des Moines;;;;;;;;;x
++USA_heavy_cruiser_7;Long Beach-class;Classe Long Beach;Long Beach-Klasse;;Clase Long Beach;;;;;;;;;x
++USA_battlecruiser_0;Lexington-class;Classe Lexington;Lexington-Klasse;;Clase Lexington;;;;;;;;;x
++USA_battlecruiser_1;Saratoga-class;Classe Saratoga;Saratoga-Klasse;;Clase Saratoga;;;;;;;;;x
++USA_battlecruiser_2;Ranger-class;Classe Ranger;Ranger-Klasse;;Clase Ranger;;;;;;;;;x
++USA_battlecruiser_3;Alaska-class;Classe Alaska;Alaska-Klasse;;Clase Alaska;;;;;;;;;x
++USA_battlecruiser_4;Leahy-class;Classe Leahy;Leahy-Klasse;;Clase Leahy;;;;;;;;;x
++USA_battlecruiser_5;Belknap-class;Classe Belknap;Belknap-Klasse;;Clase Belknap;;;;;;;;;x
++USA_battlecruiser_6;Truxtun-class;Classe Truxtun;Truxtun-Klasse;;Clase Truxtun;;;;;;;;;x
++USA_battlecruiser_7;Virginia-class;Classe Virginia;Virginia-Klasse;;Clase Virginia;;;;;;;;;x
+ USA_destroyer_0;Clemson-class;Classe Clemson;Clemson-Klasse;;Clase Clemson;;;;;;;;;x
+ USA_destroyer_1;Farragut-class;Classe Farragut;Farragut-Klasse;;Clase Farragut;;;;;;;;;x
+ USA_destroyer_2;Somers-class;Classe Somers;Somers-Klasse;;Clase Somers;;;;;;;;;x
+@@ -2318,17 +2332,19 @@ USA_carrier_1;Lexington-class;Classe Lexington;Lexington-Klasse;;Clase Lexington
+ USA_carrier_2;Yorktown-class;Classe Yorktown;Yorktown-Klasse;;Clase Yorktown;;;;;;;;;x
+ USA_carrier_4;Essex-class;Classe Essex;Essex-Klasse;;Clase Essex;;;;;;;;;x
+ USA_carrier_5;Midway-class;Classe Midway;Midway-Klasse;;Clase Midway;;;;;;;;;x
+-USA_carrier_6;United States-class;Classe United States;United States-Klasse;;Clase United States;;;;;;;;;x
+-USA_carrier_7;Forrestal-class;Classe Forrestal;Forrestal-Klasse;;Clase Forrestal;;;;;;;;;x
+-USA_carrier_8;Kitty Hawk-class;Classe Kitty Hawk;Kitty Hawk-Klasse;;Clase Kitty Hawk;;;;;;;;;x
+-USA_carrier_9;Enterprise-class;Classe Enterprise;Enterprise-Klasse;;Clase Enterprise;;;;;;;;;x
+-USA_escort_carrier_0;Langley-class;Classe Langley;Langley-Klasse;;Clase Langley;;;;;;;;;x
+-USA_escort_carrier_1;Langley-class;Classe Langley;Langley-Klasse;;Clase Langley;;;;;;;;;x
+-USA_escort_carrier_2;Langley-class;Classe Langley;Langley-Klasse;;Clase Langley;;;;;;;;;x
+-USA_escort_carrier_3;Independence-class;Classe Independence;Independence-Klasse;;Clase Independence;;;;;;;;;x
+-USA_escort_carrier_4;Independence-class;Classe Independence;Independence-Klasse;;Clase Independence;;;;;;;;;x
+-USA_escort_carrier_5;Saipan-class;Classe Saipan;Saipan-Klasse;;Clase Saipan;;;;;;;;;x
++USA_carrier_6;Forrestal-class;Classe Forrestal;Forrestal-Klasse;;Clase Forrestal;;;;;;;;;x
++USA_carrier_7;Kitty Hawk-class;Classe Kitty Hawk;Kitty Hawk-Klasse;;Clase Kitty Hawk;;;;;;;;;x
++USA_carrier_8;Enterprise-class;Classe Enterprise;Enterprise-Klasse;;Clase Enterprise;;;;;;;;;x
++USA_carrier_8;Nimitz-class;Classe Nimitz;Nimitz-Klasse;;Clase Nimitz;;;;;;;;;x
++USA_escort_carrier_0;Long Island-class;Classe Long Island;Long Island-Klasse;;Clase Long Island;;;;;;;;;x
++USA_escort_carrier_1;Bogue-class;Classe Bogue;Bogue-Klasse;;Clase Bogue;;;;;;;;;x
++USA_escort_carrier_2;Sangamon-class;Classe Sangamon;Sangamon-Klasse;;Clase Sangamon;;;;;;;;;x
++USA_escort_carrier_3;Casablanca-class;Classe Casablanca;Casablanca-Klasse;;Clase Casablanca;;;;;;;;;x
++USA_escort_carrier_4;Commencement Bay-class;Classe Commencement Bay;Commencement Bay-Klasse;;Clase Commencement Bay;;;;;;;;;x
++USA_escort_carrier_5;Independence-class;Classe Independence;Independence-Klasse;;Clase Independence;;;;;;;;;x
+ USA_escort_carrier_6;Saipan-class;Classe Saipan;Saipan-Klasse;;Clase Saipan;;;;;;;;;x
++USA_escort_carrier_7;Iwo Jima-class;Classe Iwo Jima;Iwo Jima-Klasse;;Clase Iwo Jima;;;;;;;;;x
++USA_escort_carrier_8;Tarawa-class;Classe Tarawa;Tarawa-Klasse;;Clase Tarawa;;;;;;;;;x
+ USA_submarine_0;S-boat;S-boat;S-Boat;;S-boat;;;;;;;;;x
+ USA_submarine_1;R-boat;R-boat;R-Boat;;R-boat;;;;;;;;;x
+ USA_submarine_2;Barracuda-class;Classe Barracuda;Barracuda-Klasse;;Clase Barracuda;;;;;;;;;x
+diff --git a/patch.txt b/patch.txt
+index ab0733c..e69de29 100644
+--- a/patch.txt
++++ b/patch.txt
+@@ -1,47 +0,0 @@
+-diff --git a/localisation/Models.csv b/localisation/Models.csv
+-index cce4f95..f63857f 100644
+---- a/localisation/Models.csv
+-+++ b/localisation/Models.csv
+-@@ -2283,17 +2283,22 @@ USA_transport_plane_4;Douglas C-124 Globemaster II;Douglas C-124 Globemaster II;
+- USA_flying_rocket_0;Redstone;Redstone;Redstone;;Redstone;;;;;;;;;x
+- USA_flying_rocket_1;Thor;Thor;Thor;;Thor;;;;;;;;;x
+- USA_flying_rocket_2;Atlas-D;Atlas-D;Atlas-D;;Atlas-D;;;;;;;;;x
+--USA_battleship_0;Arkansas-class;Classe Arkansas;Arkansas-Klasse;;Clase Arkansas;;;;;;;;;x
+-+USA_battleship_0;Wyoming-class;Classe Wyoming;Wyoming-Klasse;;Clase Wyoming;;;;;;;;;x
+- USA_battleship_1;New York-class;Classe New York;New York-Klasse;;Clase New York;;;;;;;;;x
+--USA_battleship_2;Colorado-class;Classe Colorado;Colorado-Klasse;;Clase Colorado;;;;;;;;;x
+--USA_battleship_3;North Carolina-class;Classe North Carolina;North Carolina-Klasse;;Clase North Carolina;;;;;;;;;x
+--USA_battleship_4;Iowa-class;Classe Iowa;Iowa-Klasse;;Clase Iowa;;;;;;;;;x
+-+USA_battleship_2;Nevada-class;Classe Nevada;Nevada-Klasse;;Clase Nevada;;;;;;;;;x
+-+USA_battleship_3;New Mexico-class;Classe New Mexico;New Mexico-Klasse;;Clase New Mexico;;;;;;;;;x
+-+USA_battleship_4;Colorado-class;Classe Colorado;Colorado-Klasse;;Clase Colorado;;;;;;;;;x
+-+USA_battleship_5;South Dakota-class;Classe South Dakota;South Dakota-Klasse;;Clase South Dakota;;;;;;;;;x
+-+USA_battleship_6;Iowa-class;Classe Iowa;Iowa-Klasse;;Clase Iowa;;;;;;;;;x
+- USA_super_heavy_battleship_0;Montana-class;Classe Montana;Montana-Klasse;;Clase Montana;;;;;;;;;x
+--USA_light_cruiser_1;Omaha-class;Classe Omaha;Omaha-Klasse;;Clase Omaha;;;;;;;;;x
+-+USA_light_cruiser_1;Chester-class;Classe Chester;Chester-Klasse;;Clase Chester;;;;;;;;;x
+-+USA_light_cruiser_2;Omaha-class;Classe Omaha;Omaha-Klasse;;Clase Omaha;;;;;;;;;x
+- USA_light_cruiser_3;Brooklyn-class;Classe Brooklyn;Brooklyn-Klasse;;Clase Brooklyn;;;;;;;;;x
+- USA_light_cruiser_4;Cleveland-class;Classe Cleveland;Cleveland-Klasse;;Clase Cleveland;;;;;;;;;x
+- USA_light_cruiser_5;Worcester-class;Classe Worcester;Worcester-Klasse;;Clase Worcester;;;;;;;;;x
+- USA_light_cruiser_6;Galveston-class;Classe Galveston;Galveston-Klasse;;Clase Galveston;;;;;;;;;x
+-+USA_heavy_cruiser_0;Pensacola-class;Classe Pensacola;Pensacola-Klasse;;Clase Pensacola;;;;;;;;;x
+-+USA_heavy_cruiser_1;Northampton-class;Classe Northampton;Northampton-Klasse;;Clase Northampton;;;;;;;;;x
+- USA_heavy_cruiser_2;New Orleans-class;Classe New Orleans;New Orleans-Klasse;;Clase New Orleans;;;;;;;;;x
+- USA_heavy_cruiser_4;Baltimore-class;Classe Baltimore;Baltimore-Klasse;;Clase Baltimore;;;;;;;;;x
+- USA_heavy_cruiser_5;Des Moines-class;Classe Des Moines;Des Moines-Klasse;;Clase Des Moines;;;;;;;;;x
+-@@ -2318,8 +2323,12 @@ USA_carrier_7;Forrestal-class;Classe Forrestal;Forrestal-Klasse;;Clase Forrestal
+- USA_carrier_8;Kitty Hawk-class;Classe Kitty Hawk;Kitty Hawk-Klasse;;Clase Kitty Hawk;;;;;;;;;x
+- USA_carrier_9;Enterprise-class;Classe Enterprise;Enterprise-Klasse;;Clase Enterprise;;;;;;;;;x
+- USA_escort_carrier_0;Langley-class;Classe Langley;Langley-Klasse;;Clase Langley;;;;;;;;;x
+--USA_escort_carrier_1;Independence-class;Classe Independence;Independence-Klasse;;Clase Independence;;;;;;;;;x
+--USA_escort_carrier_2;Saipan-class;Classe Saipan;Saipan-Klasse;;Clase Saipan;;;;;;;;;x
+-+USA_escort_carrier_1;Langley-class;Classe Langley;Langley-Klasse;;Clase Langley;;;;;;;;;x
+-+USA_escort_carrier_2;Langley-class;Classe Langley;Langley-Klasse;;Clase Langley;;;;;;;;;x
+-+USA_escort_carrier_3;Independence-class;Classe Independence;Independence-Klasse;;Clase Independence;;;;;;;;;x
+-+USA_escort_carrier_4;Independence-class;Classe Independence;Independence-Klasse;;Clase Independence;;;;;;;;;x
+-+USA_escort_carrier_5;Saipan-class;Classe Saipan;Saipan-Klasse;;Clase Saipan;;;;;;;;;x
+-+USA_escort_carrier_6;Saipan-class;Classe Saipan;Saipan-Klasse;;Clase Saipan;;;;;;;;;x
+- USA_submarine_0;S-boat;S-boat;S-Boat;;S-boat;;;;;;;;;x
+- USA_submarine_1;R-boat;R-boat;R-Boat;;R-boat;;;;;;;;;x
+- USA_submarine_2;Barracuda-class;Classe Barracuda;Barracuda-Klasse;;Clase Barracuda;;;;;;;;;x
+diff --git a/units/models/USA - Ships.txt b/units/models/USA - Ships.txt
+index 9d6e877..b8a9d53 100644
+--- a/units/models/USA - Ships.txt	
++++ b/units/models/USA - Ships.txt	
+@@ -74,8 +74,8 @@ light_cruiser.1 = {
+ light_cruiser.2 = {
+ 	lightcruiser_armament = 1
+ 	lightcruiser_antiaircraft = 1
+-	lightcruiser_engine = 1
+-	lightcruiser_armour = 1
++	lightcruiser_engine = 2
++	lightcruiser_armour = 2
+ 	smallwarship_radar = 0
+ 	smallwarship_asw = 0
+ 	light_cruiser_escort_role = 0 
+@@ -121,6 +121,26 @@ light_cruiser.5 = {
+ }
+ 
+ 
++heavy_cruiser.0 = {
++	heavycruiser_armament = 0
++	heavycruiser_antiaircraft = 1
++	heavycruiser_engine = 0
++	heavycruiser_armour = 0
++	largewarship_radar = 0
++	cruiser_warfare = 0 
++	cruiser_crew_training = 0 
++}
++
++heavy_cruiser.1 = {
++	heavycruiser_armament = 1
++	heavycruiser_antiaircraft = 1
++	heavycruiser_engine = 1
++	heavycruiser_armour = 1
++	largewarship_radar = 0
++	cruiser_warfare = 0 
++	cruiser_crew_training = 0 
++}
++
+ heavy_cruiser.2 = {
+ 	heavycruiser_armament = 1
+ 	heavycruiser_antiaircraft = 1
+@@ -174,7 +194,7 @@ battlecruiser.4 = {
+ 
+ battleship.0 = {
+ 	capitalship_armament = 0
+-	battleship_antiaircraft = 0
++	battleship_antiaircraft = 1
+ 	battleship_engine = 0
+ 	battleship_armour = 0
+ 	largewarship_radar = 0
+@@ -184,7 +204,7 @@ battleship.0 = {
+ 
+ battleship.1 = {
+ 	capitalship_armament = 1
+-	battleship_antiaircraft = 0
++	battleship_antiaircraft = 1
+ 	battleship_engine = 1
+ 	battleship_armour = 1
+ 	largewarship_radar = 0
+@@ -196,44 +216,33 @@ battleship.2 = {
+ 	capitalship_armament = 2
+ 	battleship_antiaircraft = 1
+ 	battleship_engine = 2
+-	battleship_armour = 1
++	battleship_armour = 2
+ 	largewarship_radar = 0
+ 	battlefleet_concentration_doctrine = 0 
+ 	battleship_crew_training = 0  
+ }
+ 
+ battleship.3 = {
+-	capitalship_armament = 3
+-	battleship_antiaircraft = 3
++	capitalship_armament = 2
++	battleship_antiaircraft = 1
+ 	battleship_engine = 2
+ 	battleship_armour = 3
+-	largewarship_radar = 1
++	largewarship_radar = 0
+ 	battlefleet_concentration_doctrine = 0 
+ 	battleship_crew_training = 0 
+ }
+ 
+ battleship.4 = {
+-	capitalship_armament = 4
+-	battleship_antiaircraft = 4
++	capitalship_armament = 3
++	battleship_antiaircraft = 1
+ 	battleship_engine = 3
+ 	battleship_armour = 4
+-	largewarship_radar = 2
++	largewarship_radar = 0
+ 	battlefleet_concentration_doctrine = 0 
+ 	battleship_crew_training = 0 
+ }
+ 
+ 
+-carrier.0 = {
+-	carrier_hanger = 0
+-	carrier_antiaircraft = 0
+-	carrier_engine = 0
+-	carrier_armour = 0
+-	largewarship_radar = 0
+-	carrier_group_doctrine = 0 
+-	carrier_crew_training = 0 
+-	radar_training = 0 
+-}
+-
+ carrier.1 = {
+ 	carrier_hanger = 1
+ 	carrier_antiaircraft = 1
